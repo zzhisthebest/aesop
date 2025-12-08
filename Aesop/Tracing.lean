@@ -80,6 +80,10 @@ initialize forwardDebug : TraceOption ←
 initialize rpinf : TraceOption ←
   registerTraceOption `rpinf
     "(aesop) Trace RPINF calculations."
+--自己注册一个trace
+initialize zzh_custom : TraceOption ←
+  registerTraceOption `zzh_custom
+    "(aesop) Custom trace for debugging. Use this for any temporary or experimental tracing."
 
 end TraceOption
 

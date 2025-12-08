@@ -7,6 +7,7 @@ module
 
 public import Aesop.Builder.Basic
 import Aesop.Util.Unfold
+import Aesop.Tracing
 
 public section
 
@@ -21,9 +22,12 @@ def hasConst (c : Name) (e : Expr) : Bool :=
 
 def checkUnfoldableConst (decl : Name) : MetaM (Option Name) :=
   withoutModifyingState do
+    aesop_trace![zzh_custom] "checkUnfoldableConst: checking decl = {decl}"
     let e ← mkConstWithFreshMVarLevels decl
     let t := (← getConstInfo decl).type
+    aesop_trace![zzh_custom] "decl type: {t}"
     let unfoldThm? ← getUnfoldEqnFor? decl
+    aesop_trace![zzh_custom] "unfoldThm? = {unfoldThm?}"
     forallTelescope t λ args _ => do
       let testExpr := mkAppN e args
       let unfoldResult ←
@@ -37,12 +41,15 @@ def checkUnfoldableConst (decl : Name) : MetaM (Option Name) :=
     return unfoldThm?
 
 def unfoldCore (decl : Name) : MetaM LocalRuleSetMember := do
+  aesop_trace![zzh_custom] "unfoldCore: processing decl = {decl}"
   let unfoldThm? ← checkUnfoldableConst decl
+  aesop_trace![zzh_custom] "unfoldCore: creating rule for decl = {decl}, unfoldThm? = {unfoldThm?}"
   return .global $ .base $ .unfoldRule { decl, unfoldThm? }
 
 -- TODO support local unfold rules
 def unfold : RuleBuilder := λ input => do
   let decl ← elabGlobalRuleIdent .unfold input.term
+  aesop_trace![zzh_custom] "unfold builder: elab decl = {decl}"
   unfoldCore decl
 
 end Aesop.RuleBuilder

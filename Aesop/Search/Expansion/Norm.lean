@@ -17,6 +17,7 @@ import Batteries.Lean.HashSet
 import Aesop.Forward.State.ApplyGoalDiff
 import Aesop.Search.Expansion.Basic
 import Aesop.Search.Expansion.Simp
+import Aesop.Tracing
 
 public section
 
@@ -185,21 +186,104 @@ def mkNormSimpScriptStep
     preGoal, preState, postState
   }
 
+/-- 检查名称是否是内部生成的函数（如 match_1 等） -/
+private def isInternalGenerated (n : Name) : Bool :=
+  let rec checkComponents (name : Name) : Bool :=
+    match name with
+    | .str parent str =>
+      (str.startsWith "match_" ||
+       str.startsWith "_") || checkComponents parent
+    | .num parent _ => checkComponents parent
+    | _ => false
+  checkComponents n
+
+/-- 检查常量是否在当前文件中定义（通过命名空间匹配） -/
+private def isCurrentFileConstant (decl : Name) : MetaM Bool := do
+  -- 排除内部生成的函数
+  if isInternalGenerated decl then
+    return false
+  let env ← getEnv
+  if ! env.contains decl then
+    return false
+  -- 检查是否是定义（def）
+  match env.find? decl with
+  | some (.defnInfo _) =>
+    -- 获取当前命名空间
+    let currNamespace ← getCurrNamespace
+    -- 如果当前命名空间不是匿名的，检查名称是否在当前命名空间下
+    if currNamespace != Name.anonymous then
+      if currNamespace.isPrefixOf decl then
+        return true
+    return false
+  | _ => return false
+
+/-- 收集目标中出现的常量，并过滤出当前文件定义的常量 -/
+private def collectCurrentFileConstants (goal : MVarId) : MetaM (Array Name) :=
+  goal.withContext do
+    let tgt ← instantiateMVars $ ← goal.getType
+    let mut constants := tgt.foldConsts (init := ({} : Std.HashSet Name)) λ c acc => acc.insert c
+    for ldecl in (← getLCtx) do
+      if ! ldecl.isImplementationDetail then
+        let type ← instantiateMVars ldecl.type
+        constants := type.foldConsts (init := constants) λ c acc => acc.insert c
+        if let some value := ldecl.value? then
+          let value ← instantiateMVars value
+          constants := value.foldConsts (init := constants) λ c acc => acc.insert c
+    -- 过滤出当前文件定义的常量
+    let mut result := #[]
+    aesop_trace![zzh_custom] "Found {constants.size} constants in goal"
+    for const in constants do
+      aesop_trace![zzh_custom] "Checking if constant {const} is from current file"
+      if ← isCurrentFileConstant const then
+        result := result.push const
+        aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"
+    return result
+
+/-- 将当前文件定义的常量添加到 simp 上下文中 -/
+private def addCurrentFileConstantsToSimp (ctx : Simp.Context) (goal : MVarId) :
+    MetaM Simp.Context := do
+  let constants ← collectCurrentFileConstants goal
+  if constants.isEmpty then
+    return ctx
+  -- 获取 base simp theorems
+  let mut simpTheoremsArray := ctx.simpTheorems
+  if simpTheoremsArray.isEmpty then
+    simpTheoremsArray := #[{}]
+  let baseSimpTheorems := simpTheoremsArray[0]!
+  -- 添加常量到 simp theorems
+  let mut newSimpTheorems := baseSimpTheorems
+  for const in constants do
+    try
+      let info ← getConstInfo const
+      let isPropType ← isProp info.type
+      newSimpTheorems ←
+        if isPropType then
+          newSimpTheorems.addConst const
+        else
+          newSimpTheorems.addDeclToUnfold const
+    catch _ =>
+      pure ()
+  -- 更新数组
+  simpTheoremsArray := #[newSimpTheorems] ++ simpTheoremsArray[1:]
+  return ctx.setSimpTheorems simpTheoremsArray
+
 def normSimpCore (goal : MVarId) (goalMVars : Std.HashSet MVarId) :
     NormM (Option NormRuleResult) := do
   let ctx := (← read).normSimpContext
   goal.withContext do
     let preState ← show MetaM _ from saveState
     let localRules := (← read).ruleSet.localNormSimpRules
+    -- 添加当前文件常量到 simp 上下文
+    let ctxWithCurrentFile ← addCurrentFileConstantsToSimp ctx.toContext goal
     let result ←
       if ctx.useHyps then
         let (ctx, simprocs) ←
-          addLocalRules localRules ctx.toContext ctx.simprocs
+          addLocalRules localRules ctxWithCurrentFile ctx.simprocs
             (isSimpAll := true)
         Aesop.simpAll goal ctx simprocs
       else
         let (ctx, simprocs) ←
-          addLocalRules localRules ctx.toContext ctx.simprocs
+          addLocalRules localRules ctxWithCurrentFile ctx.simprocs
             (isSimpAll := false)
         Aesop.simpGoalWithAllHypotheses goal ctx simprocs
 
