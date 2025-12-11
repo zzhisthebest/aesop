@@ -82,6 +82,7 @@ def cases : RuleBuilder := λ input => do
     -- (Specifically, it can *replace* existing metavariables, which Aesop
     -- counts as an assignment and an introduction.)
   let (decl, info) ← elabInductiveRuleIdent .cases input.term opts.casesTransparency
+
   casesCore decl info opts.casesPatterns opts.indexingMode? opts.casesTransparency
     opts.casesIndexTransparency input.phase
 

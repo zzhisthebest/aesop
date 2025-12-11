@@ -118,7 +118,7 @@ def runNormRuleTac (rule : NormRule) (input : RuleTacInput) (fs : ForwardState)
     show MetaM _ from restoreState rapp.postState
     if rapp.goals.isEmpty then
       return (some (.proved rapp.scriptSteps?, fs, #[], ∅), forwardRuleMatches)
-    let (#[{ diff }]) := rapp.goals
+    let (#[{ diff, .. }]) := rapp.goals
       | err m!"rule produced more than one subgoal."
     let (fs, ms) ← fs.applyGoalDiff rs diff
     let g := diff.newGoal
@@ -231,9 +231,9 @@ private def collectCurrentFileConstants (goal : MVarId) : MetaM (Array Name) :=
           constants := value.foldConsts (init := constants) λ c acc => acc.insert c
     -- 过滤出当前文件定义的常量
     let mut result := #[]
-    aesop_trace![zzh_custom] "Found {constants.size} constants in goal"
+    -- aesop_trace![zzh_custom] "Found {constants.size} constants in goal"
     for const in constants do
-      aesop_trace![zzh_custom] "Checking if constant {const} is from current file"
+      -- aesop_trace![zzh_custom] "Checking if constant {const} is from current file"
       if ← isCurrentFileConstant const then
         result := result.push const
         aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"

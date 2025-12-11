@@ -55,13 +55,14 @@ instance : ToString ScopeName where
 
 end ScopeName
 
-
+--己。
 inductive BuilderName
   | apply
   | cases
   | constructors
   | destruct
   | forward
+  | induction
   | simp
   | tactic
   | unfold
@@ -81,6 +82,7 @@ instance : ToString BuilderName where
     | constructors => "constructors"
     | destruct => "destruct"
     | forward => "forward"
+    | induction => "induction"
     | simp => "simp"
     | tactic => "tactic"
     | unfold => "unfold"

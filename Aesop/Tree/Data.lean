@@ -348,6 +348,9 @@ structure GoalData (Rapp MVarCluster : Type) : Type where
   unsafeRulesSelected : Bool
   unsafeQueue : UnsafeQueue
   failedRapps : Array RegularRule
+  /-- Variables introduced by induction tactics in ancestor goals. These should
+  not be used for further induction. -/
+  inductionIntroducedVars : Std.HashSet FVarId := {}
   deriving Nonempty
 
 structure MVarClusterData (Goal Rapp : Type) : Type where
@@ -568,6 +571,10 @@ def failedRapps (g : Goal) : Array RegularRule :=
   g.elim.failedRapps
 
 @[inline]
+def inductionIntroducedVars (g : Goal) : Std.HashSet FVarId :=
+  g.elim.inductionIntroducedVars
+
+@[inline]
 def unsafeRulesSelected (g : Goal) : Bool :=
   g.elim.unsafeRulesSelected
 
@@ -657,6 +664,10 @@ def setState (state : GoalState) (g : Goal) : Goal :=
 @[inline]
 def setFailedRapps (failedRapps : Array RegularRule) (g : Goal) : Goal :=
   g.modify λ g => { g with failedRapps }
+
+@[inline]
+def setInductionIntroducedVars (inductionIntroducedVars : Std.HashSet FVarId) (g : Goal) : Goal :=
+  g.modify λ g => { g with inductionIntroducedVars }
 
 instance : Nonempty Goal :=
   ⟨Goal.mk Classical.ofNonempty⟩

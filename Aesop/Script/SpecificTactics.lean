@@ -94,6 +94,20 @@ def casesOrObtain (goal : MVarId) (e : Expr) (ctorNames : Array CtorNames) :
   else
     cases goal e ctorNames
 
+def induction (goal : MVarId) (fvarId : FVarId) (ctorNames : Array CtorNames)
+    (_subgoals : Array InductionSubgoal) : TacticBuilder :=
+  goal.withContext do
+    let fvarIdent := mkIdent (← fvarId.getUserName)
+    let uTactic ← `(tactic| induction $fvarIdent:ident)
+    let sTactic := {
+      numSubgoals := ctorNames.size
+      run := λ conts =>
+        Unhygienic.run do
+          let alts := ctorNamesToInductionAlts (ctorNames.zip conts)
+          `(tactic| induction $fvarIdent:ident $alts:inductionAlts)
+    }
+    return .structured uTactic sTactic
+
 def renameInaccessibleFVars (postGoal : MVarId) (renamedFVars : Array FVarId) :
     TacticBuilder :=
   if renamedFVars.isEmpty then
@@ -284,6 +298,21 @@ def tryCasesS (goal : MVarId) (fvarId : FVarId) (ctorNames : Array CtorNames) :
   withOptScriptStep goal (·.map (·.mvarId)) tacticBuilder do
     observing? $ goal.cases fvarId (ctorNames.map (·.toAltVarNames))
       (useNatCasesAuxOn := true)
+where
+  getUnusedCtorNames (lctx : LocalContext) : Array CtorNames :=
+    Prod.fst $ ctorNames.foldl (init := (Array.mkEmpty ctorNames.size, lctx))
+      λ (ctorNames, lctx) cn =>
+        let (cn, lctx) := cn.mkFreshArgNames lctx
+        (ctorNames.push cn, lctx)
+
+def tryInductionS (goal : MVarId) (fvarId : FVarId) (ctorNames : Array CtorNames)
+    (recursorName : Name) : ScriptM (Option (Array InductionSubgoal)) := do
+  let ctorNames := getUnusedCtorNames (← goal.getDecl).lctx
+  let altVarNames := ctorNames.map (·.toAltVarNames)
+  let tacticBuilder (subgoals : Array InductionSubgoal) : Script.TacticBuilder :=
+    TacticBuilder.induction goal fvarId ctorNames subgoals
+  withOptScriptStep goal (·.map (·.mvarId)) tacticBuilder do
+    show MetaM _ from observing? $ goal.induction fvarId recursorName altVarNames
 where
   getUnusedCtorNames (lctx : LocalContext) : Array CtorNames :=
     Prod.fst $ ctorNames.foldl (init := (Array.mkEmpty ctorNames.size, lctx))

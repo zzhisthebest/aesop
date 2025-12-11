@@ -45,6 +45,9 @@ structure RuleTacInput where
   /-- Normalised types of all non-implementation detail hypotheses in the local
   context of `goal`. -/
   hypTypes : PHashSet RPINF
+  /-- Variables introduced by induction tactics. These should not be used for
+  further induction. -/
+  inductionIntroducedVars : Std.HashSet FVarId := {}
   deriving Inhabited
 
 /-- A subgoal produced by a rule. -/
@@ -56,6 +59,9 @@ structure Subgoal where
   it may not give optimal results.
   -/
   diff : GoalDiff
+  /-- Variables introduced by induction tactics in this subgoal. These should
+  not be used for further induction. -/
+  inductionIntroducedVars : Std.HashSet FVarId := {}
   deriving Inhabited
 
 namespace Subgoal
@@ -65,8 +71,9 @@ def mvarId (g : Subgoal) : MVarId :=
 
 end Subgoal
 
-def mvarIdToSubgoal (parentMVarId mvarId : MVarId) : BaseM Subgoal :=
-  return { diff := ← diffGoals parentMVarId mvarId }
+def mvarIdToSubgoal (parentMVarId mvarId : MVarId) : BaseM Subgoal := do
+  let diff ← diffGoals parentMVarId mvarId
+  return { diff, inductionIntroducedVars := {} }
 
 /--
 A single rule application, representing the application of a tactic to the input
@@ -109,7 +116,7 @@ structure RuleTacOutput where
   deriving Inhabited
 
 /--
-A `RuleTac` is the tactic that is run when a rule is applied to a goal.
+A `RuleTac` is the tactic that is run when a rule is applied to a goal.己。
 -/
 @[expose] def RuleTac := RuleTacInput → BaseM RuleTacOutput
 

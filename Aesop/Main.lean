@@ -17,7 +17,7 @@ open Lean
 open Lean.Elab.Tactic
 
 namespace Aesop
-
+--己。
 @[tactic Frontend.Parser.aesopTactic, tactic Frontend.Parser.aesopTactic?]
 meta def evalAesop : Tactic := λ stx => do
   profileitM Exception "aesop" (← getOptions) do
@@ -29,8 +29,10 @@ meta def evalAesop : Tactic := λ stx => do
 where
   go (stx : Syntax) (goal : MVarId) : StateRefT Stats TacticM Unit :=
     profiling (λ s _ t => { s with total := t }) do
+      --config对应用户的设置，例如add unsafe 50% Matrix.mul_apply
       let config ← profiling (λ s _ t => { s with configParsing := t }) do
         Frontend.TacticConfig.parse stx goal
+      --ruleSet是一个合并和更新后的
       let ruleSet ←
         profiling (λ s _ t => { s with ruleSetConstruction := t }) do
           config.getRuleSet goal

@@ -9,6 +9,7 @@ public import Aesop.RuleTac.Apply
 public import Aesop.RuleTac.Basic
 public import Aesop.RuleTac.Cases
 public import Aesop.RuleTac.Forward
+public import Aesop.RuleTac.Induction
 public import Aesop.RuleTac.Preprocess
 public import Aesop.RuleTac.Tactic
 public import Aesop.RuleTac.Descr
@@ -25,6 +26,8 @@ protected def run : RuleTacDescr → RuleTac
   | forward t immediate clear => RuleTac.forward t immediate clear
   | cases target md isRecursiveType ctorNames =>
     RuleTac.cases target md isRecursiveType ctorNames
+  | induction target md isRecursiveType ctorNames =>
+    RuleTac.induction target md isRecursiveType ctorNames
   | tacticM decl => RuleTac.tacticM decl
   | singleRuleTac decl => RuleTac.singleRuleTac decl
   | ruleTac decl => RuleTac.ruleTac decl

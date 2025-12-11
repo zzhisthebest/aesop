@@ -17,6 +17,8 @@ inductive RuleTacDescr
       (isDestruct : Bool)
   | cases (target : CasesTarget) (md : TransparencyMode)
       (isRecursiveType : Bool) (ctorNames : Array CtorNames)
+  | induction (target : CasesTarget) (md : TransparencyMode)
+      (isRecursiveType : Bool) (ctorNames : Array CtorNames)
   | tacticM (decl : Name)
   | ruleTac (decl : Name)
   | tacGen (decl : Name)

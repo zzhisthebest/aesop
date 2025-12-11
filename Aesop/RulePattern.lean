@@ -17,12 +17,17 @@ namespace Aesop
 
 /--
 A rule pattern. For a rule of type `∀ (x₀ : T₀) ... (xₙ : Tₙ), U`, a valid rule
-pattern is an expression `p` such that `x₀ : T₁, ..., xₙ : Tₙ ⊢ p : P`. Let
-`y₀, ..., yₖ` be those variables `xᵢ` on which `p` depends. When `p` matches an
+pattern is an expression `p` such that `x₀ : T₁, ..., xₙ : Tₙ ⊢ p : P`
+（'⊢'不是goal里的'⊢',即不是"证明目标"符号，而是"类型判断"符号（在类型论中读作"has type"），
+它只是在说："在这些变量声明下，这个表达式有这样的类型"。). Let
+`y₀, ..., yₖ` be those variables `xᵢ` on which `p` depends.（也就是{y₀, ..., yₖ}
+是{x₀,...,xₙ}的子集，例如n=10时，可以是{x1,x3}） When `p` matches an
 expression `e`, this means that `e` is defeq to `p` (where each `yᵢ` is replaced
 with a metavariable) and we obtain a substitution
 
-    {y₀ ↦ t₀ : T₀, y₁ ↦ t₁ : T₁[x₀ := t₀], ...}
+    {y₀ ↦ t₀ : T₀, y₁ ↦ t₁ : T₁[y₀ := t₀], ...}即y₀替换成了具体值t₀，t₀的类型是T₀，
+    y₁替换成了具体值t₁，t₁的类型是T₁[y₀ := t₀]，类型T₁里有变量y₀,替换为具体值t₀。例如：
+    类型Vector Nat n类型里有变量n
 
 Now suppose we want to match the above rule type against a type `V` (where `V`
 is the target for an `apply`-like rule and a hypothesis type for a
@@ -48,7 +53,7 @@ structure RulePattern where
   -/
   levelArgMap : Array (Option Nat)
   /--
-  Discrimination tree keys for `p`.
+  Discrimination tree keys for `p`.离散树是一种高效检索表达式模式的数据结构。
   -/
   discrTreeKeys : Array DiscrTree.Key
   deriving Inhabited

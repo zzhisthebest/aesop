@@ -12,6 +12,7 @@ import Aesop.Builder.Cases
 import Aesop.Builder.Constructors
 import Aesop.Builder.Default
 import Aesop.Builder.Forward
+import Aesop.Builder.Induction
 import Aesop.Builder.NormSimp
 import Aesop.Builder.Tactic
 import Aesop.Builder.Unfold
@@ -110,6 +111,7 @@ syntax "constructors" : Aesop.builder_name
 syntax "forward" : Aesop.builder_name
 syntax "destruct" : Aesop.builder_name
 syntax "cases" : Aesop.builder_name
+syntax "induction" : Aesop.builder_name
 syntax "default" : Aesop.builder_name
 
 end Parser
@@ -132,6 +134,7 @@ def «elab» (stx : Syntax) : ElabM DBuilderName :=
     | `(builder_name| forward) => return regular .forward
     | `(builder_name| destruct) => return regular .destruct
     | `(builder_name| cases) => return regular .cases
+    | `(builder_name| induction) => return regular .induction
     | `(builder_name| default) => return «default»
     | _ => throwUnsupportedSyntax
 
@@ -150,6 +153,7 @@ def toRuleBuilder : DBuilderName → RuleBuilder
   | .regular .constructors => RuleBuilder.constructors
   | .regular .destruct => RuleBuilder.forward (isDestruct := true)
   | .regular .forward => RuleBuilder.forward (isDestruct := false)
+  | .regular .induction => RuleBuilder.induction
   | .regular .simp => RuleBuilder.simp
   | .regular .tactic => RuleBuilder.tactic
   | .regular .unfold => RuleBuilder.unfold

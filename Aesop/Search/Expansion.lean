@@ -20,9 +20,9 @@ open Lean.Meta
 namespace Aesop
 
 variable [Aesop.Queue Q]
-
+--己。
 inductive RuleResult
-  | proved (newRapps : Array RappRef)
+  | proved (newRapps : Array RappRef)--proved是constructor，newRapps是constructor的参数
   | succeeded (newRapps : Array RappRef)
   | failed
 
@@ -62,10 +62,11 @@ def runRegularRuleTac (goal : Goal) (tac : RuleTac) (ruleName : RuleName)
     BaseM (Except Exception RuleTacOutput) := do
   let some (postNormGoal, postNormState) := goal.postNormGoalAndMetaState? | throwError
     "aesop: internal error during expansion: expected goal {goal.id} to be normalised (but not proven by normalisation)."
-  let input := {
+  let input : RuleTacInput := {
     goal := postNormGoal
     mvars := goal.mvars
     hypTypes, indexMatchLocations, patternSubsts?, options
+    inductionIntroducedVars := goal.inductionIntroducedVars
   }
   runRuleTac tac ruleName postNormState input
 
@@ -180,6 +181,7 @@ def SafeRulesResult.toEmoji : SafeRulesResult → String
   | failed .. => ruleFailureEmoji
   | skipped => ruleSkippedEmoji
 
+--己。
 def runFirstSafeRule (gref : GoalRef) : SearchM Q SafeRulesResult := do
   let g ← gref.get
   if g.unsafeRulesSelected then
@@ -188,8 +190,8 @@ def runFirstSafeRule (gref : GoalRef) : SearchM Q SafeRulesResult := do
     -- safe rules.
   let rules ← selectSafeRules g
   let mut postponedRules := {}
-  for r in rules do
-    let result ← runSafeRule gref r
+  for r in rules do--一个个地应用safe rule
+    let result ← runSafeRule gref r--核心代码
     match result with
     | .regular .failed => continue
     | .regular (.proved newRapps) => return .proved newRapps
@@ -227,7 +229,9 @@ partial def runFirstUnsafeRule (postponedSafeRules : Array PostponedSafeRule)
       | .postponedSafeRule r =>
         return (queue, ← applyPostponedSafeRule r parentRef)
 
+--己。
 def expandGoal (gref : GoalRef) : SearchM Q RuleResult := do
+  --normalize
   let provedByNorm ←
     withAesopTraceNode .steps fmtNorm (normalizeGoalIfNecessary gref)
   aesop_trace[steps] do
@@ -238,8 +242,11 @@ def expandGoal (gref : GoalRef) : SearchM Q RuleResult := do
         aesop_trace![steps] "Goal after normalisation:{indentD goal}"
   if provedByNorm then
     return .proved #[]
+
+  --apply safe rules
   let safeResult ←
     withAesopTraceNode .steps fmtSafe (runFirstSafeRule gref)
+  --apply unsafe rules
   match safeResult with
   | .succeeded newRapps => return .succeeded newRapps
   | .proved newRapps => return .proved newRapps

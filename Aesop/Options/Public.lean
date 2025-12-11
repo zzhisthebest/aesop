@@ -13,7 +13,7 @@ set_option linter.missingDocs true
 /--
 Search strategies which Aesop can use.
 -/
-inductive Strategy
+inductive Strategy --己
   /--
   Best-first search. This is the default strategy.
   -/
@@ -35,7 +35,7 @@ inductive Strategy
 /--
 Options which modify the behaviour of the `aesop` tactic.
 -/
-structure Options where
+structure Options where--己
   /--
   The search strategy used by Aesop.
   -/

@@ -8,6 +8,7 @@ module
 public import Aesop.Builder.Basic
 import Aesop.Builder.Apply
 import Aesop.Builder.Constructors
+import Aesop.Builder.Induction
 import Aesop.Builder.NormSimp
 import Aesop.Builder.Tactic
 
@@ -30,11 +31,13 @@ def RuleBuilder.default : RuleBuilder := λ input =>
   match input.phase.phase with
   | .safe =>
     constructors input <|>
+    induction input <|>
     tactic input <|>
     apply input <|>
     err "a safe" input
   | .unsafe =>
     constructors input <|>
+    induction input <|>
     tactic input <|>
     apply input <|>
     err "an unsafe" input

@@ -13,12 +13,14 @@ open Lean
 open Lean.Meta
 
 namespace Aesop
-
+--己。
 def runRuleTac (tac : RuleTac) (ruleName : RuleName)
     (preState : Meta.SavedState) (input : RuleTacInput) :
     BaseM (Except Exception RuleTacOutput) := do
   let result ←
     try
+      --tac input是核心代码。在这里，才终于运行了这个rule。
+      --tac可以是assumption、ext等等aesop自己定义的rule，也可以是rulebuider build出来的rule
       Except.ok <$> runInMetaState preState do tac input
     catch e =>
       return .error e

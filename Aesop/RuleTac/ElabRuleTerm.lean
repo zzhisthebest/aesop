@@ -70,8 +70,8 @@ def withFullElaboration (x : TermElabM α) : TermElabM α :=
 
 def elabRuleTermForApplyLikeCore (goal : MVarId) (stx : Term): TermElabM Expr :=
   withFullElaboration $ runTacticMAsTermElabM goal do
-    elabTermForApply stx (mayPostpone := false)
-
+    elabTermForApply stx (mayPostpone := false)--直接调用了Lean内核的elabTermForApply
+--己。
 def elabRuleTermForApplyLikeMetaM (goal : MVarId) (stx : Term) : MetaM Expr :=
   elabRuleTermForApplyLikeCore goal stx |>.run'
 

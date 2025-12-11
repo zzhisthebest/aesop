@@ -85,9 +85,9 @@ def toRule (phase : PhaseSpec) (ruleExprName : Name) (builder : BuilderName)
 
 end PhaseSpec
 
-
+--己。
 structure RuleBuilderInput where
-  term : Term
+  term : Term--例如：Nat.le_trans
   options : RuleBuilderOptions
   phase : PhaseSpec
   deriving Inhabited

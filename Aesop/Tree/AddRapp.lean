@@ -122,6 +122,7 @@ unsafe def copyGoals (assignedMVars : UnorderedArraySet MVarId)
       unsafeRulesSelected := false
       unsafeQueue := {}
       failedRapps := #[]
+      inductionIntroducedVars := g.inductionIntroducedVars
     }
 
 def makeInitialGoal (goal : Subgoal) (mvars : UnorderedArraySet MVarId)
@@ -152,6 +153,7 @@ def makeInitialGoal (goal : Subgoal) (mvars : UnorderedArraySet MVarId)
     unsafeRulesSelected := false
     unsafeQueue := {}
     failedRapps := #[]
+    inductionIntroducedVars := goal.inductionIntroducedVars
     parent, origin, depth, mvars, successProbability
   }
 
@@ -218,8 +220,10 @@ unsafe def addRappUnsafe (r : AddRapp) : TreeM RappRef := do
     copyGoals assignedOrDroppedMVars r.parent r.postState
       r.successProbability goalDepth
   let copiedSubgoals : Array Subgoal :=
-    copiedGoals.map λ g =>
-      { diff := { (default : GoalDiff) with newGoal := g.preNormGoal } }
+    copiedGoals.map λ g => {
+      diff := { (default : GoalDiff) with newGoal := g.preNormGoal }
+      inductionIntroducedVars := g.inductionIntroducedVars
+    }
     -- The diff is irrelevant because we later add `g` to the tree (and the
     -- forward state of `g` is already up to date).
 

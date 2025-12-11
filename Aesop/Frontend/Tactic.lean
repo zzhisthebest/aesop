@@ -8,6 +8,7 @@ module
 public import Aesop.Frontend.RuleExpr
 public import Batteries.Linter.UnreachableTactic
 public import Aesop.RuleSet
+import Aesop.Builder.Induction
 import Aesop.Frontend.Extension
 import Lean.Elab.SyntheticMVars
 import Lean.Meta.Eval
@@ -86,7 +87,7 @@ def elabSimpConfig : Syntax → TermElabM Simp.Config :=
 
 def elabSimpConfigCtx : Syntax → TermElabM Simp.ConfigCtx :=
   unsafe elabConfigUnsafe ``Simp.ConfigCtx
-
+--己
 structure TacticConfig where
   additionalRules : Array RuleExpr
   erasedRules : Array RuleExpr
@@ -175,6 +176,9 @@ def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
     for rule in rules do
       rs := rs.add rule
 
+  -- Automatically add induction rules for List and Nat if they appear in the goal
+  rs ← autoAddInductionRules rs goal
+
   -- Erase erased rules
   for ruleExpr in c.erasedRules do
     let filters ← ruleExpr.toLocalRuleFilters |>.run $ .forErasing goal
@@ -184,7 +188,77 @@ def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
       if ! anyErased then
         throwError "aesop: '{rFilter.name}' is not registered (with the given features) in any rule set."
   return rs
+  where
+    autoAddInductionRules (rs : LocalRuleSet) (goal : MVarId) :
+        TermElabM LocalRuleSet := do
+      goal.withContext do
+        let mut rs := rs
+        let mut foundTypes : Std.HashSet Name := {}
 
+        -- Check target type
+        let targetType ← goal.getType
+        let targetTypes ← findInductiveTypes targetType
+        foundTypes := foundTypes.insertMany targetTypes
+        if ! targetTypes.isEmpty then
+          dbg_trace "zzh_custom: Found types in target: {targetTypes}"
+
+        -- Check all hypotheses
+        for ldecl in (← getLCtx) do
+          if ! ldecl.isImplementationDetail then
+            let hypTypes ← findInductiveTypes ldecl.type
+            if ! hypTypes.isEmpty then
+              dbg_trace "zzh_custom: Found types in hyp {ldecl.userName}: {hypTypes}"
+            foundTypes := foundTypes.insertMany hypTypes
+
+        dbg_trace "zzh_custom: All found types: {foundTypes.toArray}"
+
+        -- Add induction rules for found types
+        for declName in foundTypes do
+          if declName == ``List || declName == ``Nat then
+            -- Check if rule already exists
+            let ruleName : RuleName := {
+              name := declName
+              builder := .induction
+              phase := .unsafe
+              scope := .global
+            }
+            if ! (rs.contains ruleName) then
+              dbg_trace "zzh_custom: Adding induction rule for {declName}"
+              -- Build induction rule directly using RuleBuilder
+              let term := mkIdent declName
+              let builderInput : RuleBuilderInput := {
+                term := term
+                options := ∅
+                phase := .unsafe { successProbability := defaultSuccessProbability }
+              }
+              let rule ← ElabM.run (.forAdditionalRules goal) do
+                RuleBuilder.induction builderInput
+              rs := rs.add rule
+              dbg_trace "zzh_custom: Added induction rule for {declName}"
+            else
+              dbg_trace "zzh_custom: Induction rule for {declName} already exists"
+
+        return rs
+
+    findInductiveTypes (type : Expr) : MetaM (Array Name) := do
+      let rec visit (e : Expr) : MetaM (Array Name) := do
+        match e with
+        | .const declName _ =>
+          if declName == ``List || declName == ``Nat then
+            return #[declName]
+          else
+            return #[]
+        | .app fn arg => do
+          let fnTypes ← visit fn
+          let argTypes ← visit arg
+          return fnTypes ++ argTypes
+        | .forallE _ _ body _ => visit body
+        | .lam _ _ body _ => visit body
+        | .mdata _ e => visit e
+        | _ => return #[]
+      visit type
+
+--己。
 def getRuleSet (goal : MVarId) (c : TacticConfig) :
     TermElabM LocalRuleSet :=
   goal.withContext do

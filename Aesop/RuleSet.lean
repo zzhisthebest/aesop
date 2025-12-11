@@ -398,7 +398,7 @@ def BaseRuleSet.erase (rs : BaseRuleSet) (f : RuleFilter) :
   for r in toErase do
     match r.builder with
     | .unfold => unfoldRules := unfoldRules.erase r.name
-    | .tactic | .forward | .destruct | .constructors | .cases | .apply =>
+    | .tactic | .forward | .destruct | .constructors | .cases | .apply | .induction =>
       erased := erased.insert r
     | .simp => continue
 

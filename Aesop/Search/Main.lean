@@ -14,6 +14,7 @@ public import Aesop.Tree.Tracing
 import Aesop.Frontend.Extension
 import Aesop.Search.Queue
 import Aesop.Tree.Free
+import Aesop.Tracing
 
 public section
 
@@ -25,7 +26,7 @@ open Lean.Meta
 namespace Aesop
 
 variable [Aesop.Queue Q]
-
+--己。
 partial def nextActiveGoal : SearchM Q GoalRef := do
   let some gref ← popGoal?
     | throwError "aesop/expandNextGoal: internal error: no active goals left"
@@ -49,16 +50,17 @@ def expandNextGoal : SearchM Q Unit := do
       gref.markForcedUnprovable
       setMaxRuleApplicationDepthReached
       return .failed
-    let result ← expandGoal gref
+    let result ← expandGoal gref--核心代码
     let currentIteration ← getIteration
     gref.modify λ g => g.setLastExpandedInIteration currentIteration
     if ← (← gref.get).isActive then
       enqueueGoals #[gref]
     return result
   match result with
-  | .proved newRapps | .succeeded newRapps => traceNewRapps newRapps
+  | .proved newRapps | .succeeded newRapps => traceNewRapps newRapps--多分支合并语法
   | .failed => return
   where
+    --这个函数仅仅是记录日志
     fmt (id : GoalId) (priority : Percent) (initialGoal : MVarId)
         (initialMetaState : Meta.SavedState)
         (result : Except Exception RuleResult) : SearchM Q MessageData := do
@@ -66,7 +68,7 @@ def expandNextGoal : SearchM Q Unit := do
         initialGoal.withContext do
           addMessageContext $ toMessageData (← initialGoal.getType)
       return m!"{exceptRuleResultToEmoji (·.toEmoji) result} (G{id}) [{priority.toHumanString}] ⋯ ⊢ {tgt}"
-
+    --这个函数仅仅是记录日志
     traceNewRapps (newRapps : Array RappRef) : SearchM Q Unit := do
       aesop_trace[steps] do
         for rref in newRapps do
@@ -98,6 +100,7 @@ def checkRappLimit : SearchM Q (Option MessageData) := do
     return m!"maximum number of rule applications ({maxRapps}) reached. Set the 'maxRuleApplications' option to increase the limit."
   return none
 
+--己。
 def checkRootUnprovable : SearchM Q (Option MessageData) := do
   let root := (← getTree).root
   if (← root.get).state.isUnprovable then
@@ -246,6 +249,8 @@ def handleNonfatalError (err : MessageData) : SearchM Q (Array MVarId) := do
     logWarning m!"aesop: safe prefix was not fully expanded because the maximum number of rule applications ({(← read).options.maxSafePrefixRuleApplications}) was reached."
   safeGoals.mapM (clearForwardImplDetailHyps ·)
 
+
+--己。
 partial def searchLoop : SearchM Q (Array MVarId) :=
   withIncRecDepth do
     checkSystem "aesop"
@@ -278,7 +283,7 @@ def search (goal : MVarId) (ruleSet? : Option LocalRuleSet := none)
   let ⟨Q, _⟩ := options.queue
   let go : SearchM _ _ := do
     show SearchM Q _ from
-    try searchLoop
+    try searchLoop--核心代码
     finally freeTree
   let ((goals, _, _), stats) ←
     go.run ruleSet options simpConfig simpConfigSyntax? goal |>.run stats
