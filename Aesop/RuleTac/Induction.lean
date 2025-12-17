@@ -8,6 +8,7 @@ module
 public import Aesop.RuleTac.Basic
 public import Aesop.Script.CtorNames
 import Aesop.Script.SpecificTactics
+import Aesop.Util.Unfold
 import Lean.Meta.Tactic.Induction
 
 public section
@@ -26,6 +27,50 @@ def getRecursorName (decl : Name) : MetaM Name := do
     return recOnName
   else
     throwError "Could not find recursor {recOnName} for {decl}"
+
+/-- 判断常量是否属于当前命名空间 -/
+def isCurrentNamespaceConstant (constName : Name) : MetaM Bool := do
+  let currentNs ← getCurrNamespace
+  return currentNs.isPrefixOf constName
+
+/-- 在归纳之后，对目标中出现的本地递归定义做一次 unfold。
+    递归性通过 `getUnfoldEqnFor?` 检测（有 unfold 等式就视为递归）。
+    只做一遍 unfoldManyTarget，不会循环。
+    注意：不生成 script step，所以 aesop? 会报错，但 aesop 能用。 -/
+def unfoldRecursiveDefsInTarget (goal : MVarId) : MetaM MVarId :=
+  goal.withContext do
+    let tgt ← instantiateMVars (← goal.getType)
+    let constants := tgt.foldConsts (init := ({} : Std.HashSet Name)) (fun c acc =>
+      acc.insert c)
+
+    let currentNs ← getCurrNamespace
+    -- 收集当前命名空间下、在目标中出现的递归定义
+    let mut recursiveDefs : Array (Name × Option Name) := #[]
+    for const in constants do
+      if currentNs.isPrefixOf const then
+        let unfoldThm? ← getUnfoldEqnFor? const
+        if unfoldThm?.isSome then
+          recursiveDefs := recursiveDefs.push (const, unfoldThm?)
+          dbg_trace "zzh_custom: Found recursive: {const}"
+
+    if recursiveDefs.isEmpty then
+      dbg_trace "zzh_custom: No recursive defs to unfold"
+      return goal
+
+    -- 构造 unfold 函数
+    let unfold? (decl : Name) : Option (Option Name) :=
+      match recursiveDefs.find? (fun p => p.fst == decl) with
+      | some (_, unfoldThm?) => some unfoldThm?
+      | none                 => none
+
+    -- 只做一次 unfold pass
+    if let some (unfoldedGoal, _) ← Aesop.unfoldManyTarget unfold? goal then
+      let names := recursiveDefs.map (·.1)
+      dbg_trace "zzh_custom: Induction unfolded: {names}"
+      return unfoldedGoal
+    else
+      dbg_trace "zzh_custom: unfoldManyTarget returned none"
+      return goal
 
 def induction (target : CasesTarget) (md : TransparencyMode)
     (_isRecursiveType : Bool) (ctorNames : Array CtorNames) : RuleTac :=
@@ -55,6 +100,11 @@ def induction (target : CasesTarget) (md : TransparencyMode)
         throwError "Induction failed"
 
     dbg_trace "zzh_custom: Induction succeeded, got {subgoals.size} subgoals"
+
+    -- 归纳后，对每个子目标的 target 做一次本地递归定义的 unfold
+    let subgoals ← subgoals.mapM fun isg => do
+      let unfoldedGoal ← unfoldRecursiveDefsInTarget isg.mvarId
+      return { isg with mvarId := unfoldedGoal }
 
     -- Get FVarIds and names of variables that existed in the original goal before induction
     let (originalFVarIds, originalVarNames) ← input.goal.withContext do

@@ -67,14 +67,14 @@ def CalSum_postcond (N : Nat) (result: Nat) (h_precond : CalSum_precond (N)) :=
 
 theorem CalSum_spec_satisfied (N: Nat) (h_precond : CalSum_precond (N)) :
     CalSum_postcond (N) (CalSum (N) h_precond) h_precond := by
-  aesop?
+  aesop
   induction N
   ·
     unfold CalSum.loop
-    aesop
+    grind
   ·
     unfold CalSum.loop
-    aesop
+    grind
   -- !benchmark @start proof
   -- unfold CalSum_postcond CalSum
   -- induction N with
