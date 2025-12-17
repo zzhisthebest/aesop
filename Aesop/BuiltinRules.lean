@@ -12,7 +12,9 @@ public import Aesop.BuiltinRules.Assumption
 public import Aesop.BuiltinRules.ApplyHyps
 public import Aesop.BuiltinRules.DestructProducts
 public import Aesop.BuiltinRules.Ext
+public import Aesop.BuiltinRules.Grind
 public import Aesop.BuiltinRules.Intros
+public import Aesop.BuiltinRules.Omega
 public import Aesop.BuiltinRules.Rfl
 public import Aesop.BuiltinRules.Split
 public import Aesop.BuiltinRules.Subst
