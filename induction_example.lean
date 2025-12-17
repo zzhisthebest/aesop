@@ -42,6 +42,16 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 theorem filterlist_length_eq_count (x : Int) (xs : List Int) :
     (filterlist x xs).length = xs.count x:= by
     aesop?
+    simp_all only [filterlist]
+    induction xs with
+    | nil => simp_all only [filterlist.aux, List.length_nil, List.count_nil]
+    | cons head tail =>
+      simp_all only [filterlist.aux]
+      split
+      next tail_ih h =>
+        subst h
+        simp_all only [List.length_cons, List.count_cons_self, Nat.add_left_cancel_iff]
+      next tail_ih h => simp_all only [ne_eq, not_false_eq_true, List.count_cons_of_ne]
 
 
 end tmp

@@ -20,8 +20,8 @@ def Triple_postcond (x : Int) (result: Int) (h_precond : Triple_precond (x)) :=
 
 theorem then_branch_eq (x : Int) (hx : x < 18) :
     (let a := 2 * x; let b := 4 * x; (a + b) / 2) = 3 * x:= by
-  aesop
-  omega
+  simp_all only
+  grind
 
 
 end tmp

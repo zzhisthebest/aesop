@@ -197,6 +197,10 @@ private def isInternalGenerated (n : Name) : Bool :=
     | _ => false
   checkComponents n
 
+/-- 检查定义是否是递归的：如果有 unfoldEqn 就视为递归 -/
+private def isRecursiveDef (decl : Name) : MetaM Bool := do
+  return (← getUnfoldEqnFor? decl).isSome
+
 /-- 检查常量是否在当前文件中定义（通过命名空间匹配） -/
 private def isCurrentFileConstant (decl : Name) : MetaM Bool := do
   -- 排除内部生成的函数
@@ -213,6 +217,10 @@ private def isCurrentFileConstant (decl : Name) : MetaM Bool := do
     -- 如果当前命名空间不是匿名的，检查名称是否在当前命名空间下
     if currNamespace != Name.anonymous then
       if currNamespace.isPrefixOf decl then
+        -- 有 unfoldEqn 的视为递归，跳过
+        if ← isRecursiveDef decl then
+          aesop_trace![zzh_custom] "Skipping recursive def from simp: {decl}"
+          return false
         return true
     return false
   | _ => return false
