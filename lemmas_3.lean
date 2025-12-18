@@ -41,7 +41,7 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 
 theorem precond_nonempty (nums : List Int) (h : FindSingleNumber_precond nums) :
     nums.length > 0:= by
-  aesop
+  aesop (config := { useDefaultSimpSet := false })
   by_contra hlen--一个反证法，aesop就会了
   aesop?
   -- grind

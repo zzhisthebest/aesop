@@ -193,50 +193,30 @@ def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
         TermElabM LocalRuleSet := do
       goal.withContext do
         let mut rs := rs
-        let mut foundTypes : Std.HashSet Name := {}
 
-        -- Check target type
-        let targetType ← goal.getType
-        let targetTypes ← findInductiveTypes targetType
-        foundTypes := foundTypes.insertMany targetTypes
-        if ! targetTypes.isEmpty then
-          dbg_trace "zzh_custom: Found types in target: {targetTypes}"
-
-        -- Check all hypotheses
-        for ldecl in (← getLCtx) do
-          if ! ldecl.isImplementationDetail then
-            let hypTypes ← findInductiveTypes ldecl.type
-            if ! hypTypes.isEmpty then
-              dbg_trace "zzh_custom: Found types in hyp {ldecl.userName}: {hypTypes}"
-            foundTypes := foundTypes.insertMany hypTypes
-
-        dbg_trace "zzh_custom: All found types: {foundTypes.toArray}"
-
-        -- Add induction rules for found types
-        for declName in foundTypes do
-          if declName == ``List || declName == ``Nat then
-            -- Check if rule already exists
-            let ruleName : RuleName := {
-              name := declName
-              builder := .induction
-              phase := .unsafe
-              scope := .global
+        -- Always add induction rules for common types (Nat, List)
+        -- regardless of whether they appear in the initial goal
+        for declName in [``Nat, ``List] do
+          let ruleName : RuleName := {
+            name := declName
+            builder := .induction
+            phase := .unsafe
+            scope := .global
+          }
+          if ! (rs.contains ruleName) then
+            dbg_trace "zzh_custom: Adding induction rule for {declName}"
+            let term := mkIdent declName
+            let builderInput : RuleBuilderInput := {
+              term := term
+              options := ∅
+              phase := .unsafe { successProbability := defaultSuccessProbability }
             }
-            if ! (rs.contains ruleName) then
-              dbg_trace "zzh_custom: Adding induction rule for {declName}"
-              -- Build induction rule directly using RuleBuilder
-              let term := mkIdent declName
-              let builderInput : RuleBuilderInput := {
-                term := term
-                options := ∅
-                phase := .unsafe { successProbability := defaultSuccessProbability }
-              }
-              let rule ← ElabM.run (.forAdditionalRules goal) do
-                RuleBuilder.induction builderInput
-              rs := rs.add rule
-              dbg_trace "zzh_custom: Added induction rule for {declName}"
-            else
-              dbg_trace "zzh_custom: Induction rule for {declName} already exists"
+            let rule ← ElabM.run (.forAdditionalRules goal) do
+              RuleBuilder.induction builderInput
+            rs := rs.add rule
+            dbg_trace "zzh_custom: Added induction rule for {declName}"
+          else
+            dbg_trace "zzh_custom: Induction rule for {declName} already exists"
 
         return rs
 

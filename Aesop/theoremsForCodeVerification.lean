@@ -30,10 +30,36 @@ This will use:
 
 namespace Aesop.TheoremsForCodeVerification
 
-
--- -- 基本算术
--- attribute [aesop norm simp] Nat.add_zero
-
+attribute [aesop simp]
+Array.any_eq_true
+Array.size_eq_zero_iff
+List.all_map
+List.head?_filter
+List.filter_eq_self
+List.find?_isSome
+List.Pairwise.nil
+List.length_zipIdx
+String.append_empty
+String.toList
+String.data_eq_nil_iff
+String.length_empty
+not_exists
+Nat.not_lt
+ne_eq
+String.mk_eq_asString
+List.asString_eq_empty_iff
+List.data_asString
+not_false_eq_true
+Int.mul_ediv_cancel_left
+List.pairwise_cons
+List.mem_flatMap
+List.mem_map
+List.asString_append
+List.length_eq_zero_iff
+List.length_mergeSort
+decide_eq_false_iff_not
+Nat.div_eq_zero_iff
+List.mem_cons
 
 -- -- 示例：自定义一个 simp 定理
 -- @[aesop norm simp]

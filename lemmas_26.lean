@@ -40,7 +40,17 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
     (x = result) ∨ ((filterlist x nums).length = 2))
 
 theorem nums_nonempty (nums : List Int)
-    (h : FindSingleNumber_precond nums) : nums.length > 0:= by sorry
-
+    (h : FindSingleNumber_precond nums) : nums.length > 0:= by
+  aesop?
+  simp_all only [FindSingleNumber_precond, Bool.decide_or, List.all_map, List.all_eq_true, Function.comp_apply,
+    Bool.or_eq_true, decide_eq_true_eq, gt_iff_lt]
+  obtain ⟨left, right⟩ := h
+  induction nums with
+  | nil =>
+    simp_all only [List.not_mem_nil, List.count_nil, Nat.zero_ne_one, reduceCtorEq, or_false, implies_true,
+      List.map_nil]
+  | cons head tail =>
+    simp_all only [List.mem_cons, forall_eq_or_imp, List.count_cons_self, Nat.add_eq_right, Nat.reduceEqDiff,
+      List.map_cons, List.length_cons, Nat.zero_lt_succ]
 
 end tmp

@@ -41,7 +41,7 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 
 theorem filterlist_length_eq_count (x : Int) (xs : List Int) :
     (filterlist x xs).length = xs.count x:= by
-    aesop
+    aesop (config := { useDefaultSimpSet := false })
     simp_all only [filterlist]
     induction xs with
     | nil =>

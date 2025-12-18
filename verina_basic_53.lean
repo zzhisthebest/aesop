@@ -64,9 +64,10 @@ def CalSum_postcond (N : Nat) (result: Nat) (h_precond : CalSum_precond (N)) :=
 
 -- !benchmark @end proof_aux
 
-
+#check List
 theorem CalSum_spec_satisfied (N: Nat) (h_precond : CalSum_precond (N)) :
     CalSum_postcond (N) (CalSum (N) h_precond) h_precond := by
+  aesop (config := { useDefaultSimpSet := false })
   aesop
   induction N
   ·
