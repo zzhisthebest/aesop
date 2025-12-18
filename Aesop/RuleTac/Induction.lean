@@ -7,6 +7,7 @@ module
 
 public import Aesop.RuleTac.Basic
 public import Aesop.Script.CtorNames
+public import Aesop.Script.ScriptM
 import Aesop.Script.SpecificTactics
 import Aesop.Util.Unfold
 import Lean.Meta.Tactic.Induction
@@ -33,11 +34,10 @@ def isCurrentNamespaceConstant (constName : Name) : MetaM Bool := do
   let currentNs ← getCurrNamespace
   return currentNs.isPrefixOf constName
 
-/-- 在归纳之后，对目标中出现的本地递归定义做一次 unfold。
+/-- 在归纳之后，对目标中出现的本地递归定义做一次 unfold（ScriptM 版本，生成 script）。
     递归性通过 `getUnfoldEqnFor?` 检测（有 unfold 等式就视为递归）。
-    只做一遍 unfoldManyTarget，不会循环。
-    注意：不生成 script step，所以 aesop? 会报错，但 aesop 能用。 -/
-def unfoldRecursiveDefsInTarget (goal : MVarId) : MetaM MVarId :=
+    只做一遍 unfoldManyTarget，不会循环。 -/
+def unfoldRecursiveDefsInTargetS (goal : MVarId) : ScriptM MVarId := do
   goal.withContext do
     let tgt ← instantiateMVars (← goal.getType)
     let constants := tgt.foldConsts (init := ({} : Std.HashSet Name)) (fun c acc =>
@@ -63,8 +63,8 @@ def unfoldRecursiveDefsInTarget (goal : MVarId) : MetaM MVarId :=
       | some (_, unfoldThm?) => some unfoldThm?
       | none                 => none
 
-    -- 只做一次 unfold pass
-    if let some (unfoldedGoal, _) ← Aesop.unfoldManyTarget unfold? goal then
+    -- 使用 unfoldManyTargetS（会生成 script step）
+    if let some (unfoldedGoal, usedDecls) ← unfoldManyTargetS unfold? goal then
       let names := recursiveDefs.map (·.1)
       dbg_trace "zzh_custom: Induction unfolded: {names}"
       return unfoldedGoal
@@ -93,18 +93,23 @@ def induction (target : CasesTarget) (md : TransparencyMode)
     -- Get recursor name
     let recursorName ← getRecursorName declName
 
-    -- Perform induction using ScriptM
-    let (some subgoals, steps) ← tryInductionS input.goal hyp ctorNames recursorName |>.run
+    -- Perform induction using ScriptM, then unfold in ScriptM
+    let (some subgoals, steps) ← (do
+      -- 先执行归纳
+      let some subgoals ← tryInductionS input.goal hyp ctorNames recursorName
+        | return none
+      dbg_trace "zzh_custom: Induction succeeded, got {subgoals.size} subgoals"
+
+      -- 在 ScriptM 里对每个子目标做 unfold（会生成 script steps）
+      let subgoals ← subgoals.mapM fun (isg : InductionSubgoal) => do
+        let unfoldedGoal ← unfoldRecursiveDefsInTargetS isg.mvarId
+        return ({ isg with mvarId := unfoldedGoal } : InductionSubgoal)
+
+      return some subgoals
+    ).run
       | do
         dbg_trace "zzh_custom: Induction failed"
         throwError "Induction failed"
-
-    dbg_trace "zzh_custom: Induction succeeded, got {subgoals.size} subgoals"
-
-    -- 归纳后，对每个子目标的 target 做一次本地递归定义的 unfold
-    let subgoals ← subgoals.mapM fun isg => do
-      let unfoldedGoal ← unfoldRecursiveDefsInTarget isg.mvarId
-      return { isg with mvarId := unfoldedGoal }
 
     -- Get FVarIds and names of variables that existed in the original goal before induction
     let (originalFVarIds, originalVarNames) ← input.goal.withContext do
