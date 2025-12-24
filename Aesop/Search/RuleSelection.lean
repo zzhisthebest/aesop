@@ -7,14 +7,98 @@ module
 
 public import Aesop.Tree.RunMetaM
 public import Aesop.Search.SearchM
+import Aesop.Builder.Induction
+import Aesop.RuleTac.Induction
+import Aesop.Script.CtorNames
+import Aesop.Rule
 
 public section
 
 open Lean
+open Lean.Meta
 
 namespace Aesop
 
 variable [Aesop.Queue Q]
+
+/-- Create dynamic induction rules for each Nat/List variable in the goal.
+    Returns an array of index match results with induction rules for each variable. -/
+--己。
+def createDynamicInductionRules (goal : MVarId)
+    (inductionIntroducedVars : Std.HashSet FVarId) :
+    MetaM (Array (IndexMatchResult UnsafeRule)) := do
+  goal.withContext do
+    let mut rules : Array (IndexMatchResult UnsafeRule) := #[]
+    let mut idx : Int := 0
+    for ldecl in (← getLCtx) do
+      if ldecl.isImplementationDetail then continue
+      -- Skip variables introduced by previous inductions
+      if inductionIntroducedVars.contains ldecl.fvarId then continue
+
+      let varType ← instantiateMVars ldecl.type
+      let declName? : Option Name :=
+        if varType.isConstOf ``Nat then
+          some ``Nat
+        else if varType.isAppOf ``List then
+          some ``List
+        else
+          none
+
+      match declName? with
+      | none => continue
+      | some declName =>
+        -- Get constructor names for the inductive type
+        let info ← getConstInfoInduct declName
+        let ctorNames ← mkCtorNamesForInfo info
+
+        idx:=idx+1
+        -- Create induction rule for this specific variable
+        let ruleName : RuleName := {
+          name := declName ++ Name.mkSimple (toString idx) --++ ldecl.userName
+          builder := .induction
+          phase := .unsafe
+          scope := .global
+        }
+        let ruleInfo : UnsafeRuleInfo := {
+          successProbability := defaultSuccessProbability
+        }
+
+        -- Create rule that directly targets this specific fvarId
+        let rule : UnsafeRule := {
+          name := ruleName
+          indexingMode := .unindexed
+          pattern? := none
+          extra := ruleInfo
+          tac := .inductionOnVar ldecl.fvarId declName ctorNames
+        }
+
+        let matchResult : IndexMatchResult UnsafeRule := {
+          rule := rule
+          locations := ∅
+          patternSubsts? := none
+        }
+        rules := rules.push matchResult
+
+        aesop_trace![zzh_custom] "{goal} Added dynamic induction rule for variable {ldecl.userName} : {declName}"
+
+    return rules
+where
+  mkCtorNamesForInfo (info : InductiveVal) : MetaM (Array CtorNames) := do
+    let ctorNamesList ← info.ctors.toArray.toList.mapM λ ctorName => do
+      let ctorInfo ← getConstInfoCtor ctorName
+      -- Check if constructor has implicit arguments
+      let hasImplicitArg := ctorInfo.numParams > 0
+      -- Generate default argument names: a, a_1, a_2, ...
+      let argNames := (List.range ctorInfo.numFields).map (λ i =>
+        if i == 0 then `a else Name.mkSimple s!"a_{i}"
+      ) |>.toArray
+      let cn : CtorNames := {
+        ctor := ctorName
+        args := argNames
+        hasImplicitArg := hasImplicitArg
+      }
+      return cn
+    return ctorNamesList.toArray
 
 def selectNormRules (rs : LocalRuleSet) (fms : ForwardRuleMatches)
     (goal : MVarId) : BaseM (Array (IndexMatchResult NormRule)) :=
@@ -44,7 +128,7 @@ def selectSafeRules (g : Goal) :
     let ruleSet := (← read).ruleSet
     g.runMetaMInPostNormState' λ postNormGoal =>
       ruleSet.applicableSafeRules g.forwardRuleMatches postNormGoal
-
+--己。
 def selectUnsafeRules (postponedSafeRules : Array PostponedSafeRule)
     (gref : GoalRef) : SearchM Q UnsafeQueue := do
   profilingRuleSelection do
@@ -53,9 +137,15 @@ def selectUnsafeRules (postponedSafeRules : Array PostponedSafeRule)
     | some rules => return rules
     | none => do
       let ruleSet := (← read).ruleSet
-      let unsafeRules ←
+      let mut unsafeRules ←
         g.runMetaMInPostNormState' λ postNormGoal =>
           ruleSet.applicableUnsafeRules g.forwardRuleMatches postNormGoal
+
+      -- Dynamically add induction rules for each Nat/List variable in the goal
+      let dynamicInductionRules ← g.runMetaMInPostNormState' λ postNormGoal =>
+        createDynamicInductionRules postNormGoal g.inductionIntroducedVars
+      unsafeRules := unsafeRules ++ dynamicInductionRules
+
       let unsafeQueue := UnsafeQueue.initial postponedSafeRules unsafeRules
       gref.set $ g.setUnsafeRulesSelected true |>.setUnsafeQueue unsafeQueue
       return unsafeQueue

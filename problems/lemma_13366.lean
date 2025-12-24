@@ -13,7 +13,7 @@ def ComputeIsEven_postcond (x : Int) (result: Bool) (h_precond : ComputeIsEven_p
   result = true ↔ ∃ k : Int, x = 2 * k
 
 
-theorem mod_mul_left_mod (a b : Int) : (a * b) % b = 0:= by 
+theorem mod_mul_left_mod (a b : Int) : (a * b) % b = 0:= by
   aesop?
   aesop?(config := { useDefaultSimpSet := false })
 

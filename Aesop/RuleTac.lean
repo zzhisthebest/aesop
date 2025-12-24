@@ -26,8 +26,10 @@ protected def run : RuleTacDescr → RuleTac
   | forward t immediate clear => RuleTac.forward t immediate clear
   | cases target md isRecursiveType ctorNames =>
     RuleTac.cases target md isRecursiveType ctorNames
-  | induction target md isRecursiveType ctorNames =>
-    RuleTac.induction target md isRecursiveType ctorNames
+  -- | induction target md isRecursiveType ctorNames =>
+  --   RuleTac.induction target md isRecursiveType ctorNames
+  | inductionOnVar fvarId declName ctorNames =>
+    RuleTac.Induction.inductionOnSpecificVar fvarId declName ctorNames
   | tacticM decl => RuleTac.tacticM decl
   | singleRuleTac decl => RuleTac.singleRuleTac decl
   | ruleTac decl => RuleTac.ruleTac decl

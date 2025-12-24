@@ -219,7 +219,7 @@ private def isCurrentFileConstant (decl : Name) : MetaM Bool := do
       if currNamespace.isPrefixOf decl then
         -- 有 unfoldEqn 的视为递归，跳过
         if ← isRecursiveDef decl then
-          aesop_trace![zzh_custom] "Skipping recursive def from simp: {decl}"
+          -- aesop_trace![zzh_custom] " recursive def from simp: {decl}"
           return false
         return true
     return false
@@ -244,7 +244,7 @@ private def collectCurrentFileConstants (goal : MVarId) : MetaM (Array Name) :=
       -- aesop_trace![zzh_custom] "Checking if constant {const} is from current file"
       if ← isCurrentFileConstant const then
         result := result.push const
-        aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"
+        -- aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"
     return result
 
 /-- 将当前文件定义的常量添加到 simp 上下文中 -/
@@ -302,7 +302,7 @@ def normSimpCore (goal : MVarId) (goalMVars : Std.HashSet MVarId) :
       | .solved .. =>
         let anyMVarDropped ← goalMVars.anyM (notM ·.isAssignedOrDelayedAssigned)
         if anyMVarDropped then
-          aesop_trace[steps] "Normalisation simp solved the goal but dropped some metavariables. Skipping normalisation simp."
+          -- aesop_trace[steps] "Normalisation simp solved the goal but dropped some metavariables. Skipping normalisation simp."
           show MetaM _ from restoreState preState
           pure .unchanged
         else

@@ -38,11 +38,14 @@ def longestIncreasingSubsequence_postcond (numbers : List Int) (result: Nat) (h_
   let allSubseq := (numbers.foldl fun acc x => acc ++ acc.map (fun sub => x :: sub)) [[]] |>.map List.reverse
   let increasingSubseqLens := allSubseq.filter (fun l => List.Pairwise (· < ·) l) |>.map (·.length)
   increasingSubseqLens.contains result ∧ increasingSubseqLens.all (· ≤ result)
-
+attribute [aesop simp]
+decide_true
+List.filter_cons_of_pos
 
 theorem filter_pairwise_of_inc {l : List Int} (h : List.Pairwise (· < ·) l) :
-    (List.filter (fun t => List.Pairwise (· < ·) t) [l]).head! = l:= by 
-  aesop?
+    (List.filter (fun t => List.Pairwise (· < ·) t) [l]).head! = l:= by
+  --simp_all only [decide_true, List.filter_cons_of_pos]
+  --rfl
   aesop?(config := { useDefaultSimpSet := false })
 
 

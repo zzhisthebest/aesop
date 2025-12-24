@@ -204,7 +204,7 @@ def applyPostponedSafeRule (r : PostponedSafeRule) (parentRef : GoalRef) :
     SearchM Q RuleResult := do
   withRuleTraceNode r.rule.name (·.toEmoji) " (postponed)" do
     addRapps parentRef (.unsafe r.toUnsafeRule) r.output.applications
-
+--己。
 partial def runFirstUnsafeRule (postponedSafeRules : Array PostponedSafeRule)
     (parentRef : GoalRef) : SearchM Q RuleResult := do
   let queue ← selectUnsafeRules postponedSafeRules parentRef
@@ -225,8 +225,8 @@ partial def runFirstUnsafeRule (postponedSafeRules : Array PostponedSafeRule)
         match result with
         | .proved .. => return (queue, result)
         | .succeeded .. => return (queue, result)
-        | .failed => loop queue
-      | .postponedSafeRule r =>
+        | .failed => loop queue--递归调用自己
+      | .postponedSafeRule r =>--直接运行啊，所以aesop认为postponedSafeRule必然可以成功
         return (queue, ← applyPostponedSafeRule r parentRef)
 
 --己。

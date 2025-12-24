@@ -31,13 +31,13 @@ def RuleBuilder.default : RuleBuilder := λ input =>
   match input.phase.phase with
   | .safe =>
     constructors input <|>
-    induction input <|>
+    -- induction input <|>  -- 已废弃，使用动态规则
     tactic input <|>
     apply input <|>
     err "a safe" input
   | .unsafe =>
     constructors input <|>
-    induction input <|>
+    -- induction input <|>  -- 已废弃，使用动态规则
     tactic input <|>
     apply input <|>
     err "an unsafe" input

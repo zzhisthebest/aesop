@@ -18,6 +18,8 @@ namespace Aesop
 
 namespace RuleBuilder
 
+-- 原来的 induction builder（手动添加规则用，已被动态规则替代）
+/-
 def induction : RuleBuilder := λ input => do
   let opts := input.options
   if input.phase.phase == .norm then throwError
@@ -37,5 +39,6 @@ def induction : RuleBuilder := λ input => do
   else
     pure IndexingMode.unindexed
   return .global $ .base $ input.phase.toRule decl .induction .global tac imode none
+-/
 
 end Aesop.RuleBuilder

@@ -167,7 +167,7 @@ def parse (stx : Syntax) (goal : MVarId) : TermElabM TacticConfig :=
         | `(tactic_clause| (simp_config := $t:term)) =>
           modify λ c => { c with simpConfigSyntax? := some t }
         | _ => throwUnsupportedSyntax
-
+--这里添加了induction的动态生成的rules。
 def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
     TermElabM LocalRuleSet := do
   let mut rs := rs
@@ -176,8 +176,8 @@ def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
     for rule in rules do
       rs := rs.add rule
 
-  -- Automatically add induction rules for List and Nat if they appear in the goal
-  rs ← autoAddInductionRules rs goal
+  -- Note: Induction rules are now dynamically created per-variable in RuleSelection.lean
+  -- No need to add generic Nat/List rules here anymore
 
   -- Erase erased rules
   for ruleExpr in c.erasedRules do
@@ -188,55 +188,8 @@ def updateRuleSet (rs : LocalRuleSet) (c : TacticConfig) (goal : MVarId):
       if ! anyErased then
         throwError "aesop: '{rFilter.name}' is not registered (with the given features) in any rule set."
   return rs
-  where
-    autoAddInductionRules (rs : LocalRuleSet) (goal : MVarId) :
-        TermElabM LocalRuleSet := do
-      goal.withContext do
-        let mut rs := rs
 
-        -- Always add induction rules for common types (Nat, List)
-        -- regardless of whether they appear in the initial goal
-        for declName in [``Nat, ``List] do
-          let ruleName : RuleName := {
-            name := declName
-            builder := .induction
-            phase := .unsafe
-            scope := .global
-          }
-          if ! (rs.contains ruleName) then
-            dbg_trace "zzh_custom: Adding induction rule for {declName}"
-            let term := mkIdent declName
-            let builderInput : RuleBuilderInput := {
-              term := term
-              options := ∅
-              phase := .unsafe { successProbability := defaultSuccessProbability }
-            }
-            let rule ← ElabM.run (.forAdditionalRules goal) do
-              RuleBuilder.induction builderInput
-            rs := rs.add rule
-            dbg_trace "zzh_custom: Added induction rule for {declName}"
-          else
-            dbg_trace "zzh_custom: Induction rule for {declName} already exists"
 
-        return rs
-
-    findInductiveTypes (type : Expr) : MetaM (Array Name) := do
-      let rec visit (e : Expr) : MetaM (Array Name) := do
-        match e with
-        | .const declName _ =>
-          if declName == ``List || declName == ``Nat then
-            return #[declName]
-          else
-            return #[]
-        | .app fn arg => do
-          let fnTypes ← visit fn
-          let argTypes ← visit arg
-          return fnTypes ++ argTypes
-        | .forallE _ _ body _ => visit body
-        | .lam _ _ body _ => visit body
-        | .mdata _ e => visit e
-        | _ => return #[]
-      visit type
 
 --己。
 def getRuleSet (goal : MVarId) (c : TacticConfig) :

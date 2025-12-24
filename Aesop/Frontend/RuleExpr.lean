@@ -153,7 +153,7 @@ def toRuleBuilder : DBuilderName → RuleBuilder
   | .regular .constructors => RuleBuilder.constructors
   | .regular .destruct => RuleBuilder.forward (isDestruct := true)
   | .regular .forward => RuleBuilder.forward (isDestruct := false)
-  | .regular .induction => RuleBuilder.induction
+  | .regular .induction => λ _ => throwError "aesop: manual induction rules are deprecated. Induction is now automatic for Nat/List variables."
   | .regular .simp => RuleBuilder.simp
   | .regular .tactic => RuleBuilder.tactic
   | .regular .unfold => RuleBuilder.unfold
