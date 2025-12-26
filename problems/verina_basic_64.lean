@@ -1,0 +1,103 @@
+-- -----Description-----  
+-- This task requires writing a Lean 4 method that inserts a subarray of characters into another array of characters at a specified index. The method takes the original array (oline) and, given the effective length l to consider, inserts another array of characters (nl) of effective length p starting at the index atPos. The resulting array is of length l + p and is constructed as follows:
+-- • All characters before the insertion position (atPos) remain unchanged.  
+-- • The new characters from nl are inserted starting at index atPos.  
+-- • The remaining characters from the original array (starting at atPos) are shifted right by p positions.
+--
+-- -----Input-----  
+-- The input consists of:  
+-- • oline: An array of characters representing the original sequence.  
+-- • l: A natural number indicating how many characters from oline to consider.  
+-- • nl: An array of characters to be inserted into oline.  
+-- • p: A natural number indicating how many characters from nl to consider for insertion.  
+-- • atPos: A natural number indicating the position in oline where the insertion should occur (0-indexed).
+--
+-- -----Output-----  
+-- The output is an array of characters that is the result of inserting nl into oline at the given atPos. Specifically, the output array should:  
+-- • Contain the original characters from index 0 up to (but not including) atPos.  
+-- • Have the next p characters equal to the characters from nl.  
+-- • Contain the remaining characters from oline (starting from atPos) shifted right by p positions.
+--
+-- -----Note-----  
+-- It is assumed that:  
+-- • atPos is within the range [0, l].  
+-- • l does not exceed the size of oline.  
+-- • p does not exceed the size of nl.
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible, simp]
+def insert_precond (oline : Array Char) (l : Nat) (nl : Array Char) (p : Nat) (atPos : Nat) : Prop :=
+  -- !benchmark @start precond
+  l ≤ oline.size ∧
+  p ≤ nl.size ∧
+  atPos ≤ l
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+
+-- !benchmark @end code_aux
+
+
+def insert (oline : Array Char) (l : Nat) (nl : Array Char) (p : Nat) (atPos : Nat) (h_precond : insert_precond (oline) (l) (nl) (p) (atPos)) : Array Char :=
+  -- !benchmark @start code
+  let result := Array.mkArray (l + p) ' '
+
+  let result := Array.foldl
+    (fun acc i =>
+      if i < atPos then acc.set! i (oline[i]!) else acc)
+    result
+    (Array.range l)
+
+  let result := Array.foldl
+    (fun acc i =>
+      acc.set! (atPos + i) (nl[i]!))
+    result
+    (Array.range p)
+
+  let result := Array.foldl
+    (fun acc i =>
+      if i >= atPos then acc.set! (i + p) (oline[i]!) else acc)
+    result
+    (Array.range l)
+
+  result
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible, simp]
+def insert_postcond (oline : Array Char) (l : Nat) (nl : Array Char) (p : Nat) (atPos : Nat) (result: Array Char) (h_precond : insert_precond (oline) (l) (nl) (p) (atPos)) :=
+  -- !benchmark @start postcond
+  result.size = l + p ∧
+  (List.range p).all (fun i => result[atPos + i]! = nl[i]!) ∧
+  (List.range atPos).all (fun i => result[i]! = oline[i]!) ∧
+  (List.range (l - atPos)).all (fun i => result[atPos + p + i]! = oline[atPos + i]!)
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem insert_spec_satisfied (oline: Array Char) (l: Nat) (nl: Array Char) (p: Nat) (atPos: Nat) (h_precond : insert_precond (oline) (l) (nl) (p) (atPos)) :
+    insert_postcond (oline) (l) (nl) (p) (atPos) (insert (oline) (l) (nl) (p) (atPos) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+

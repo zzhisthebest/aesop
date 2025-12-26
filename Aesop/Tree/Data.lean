@@ -351,6 +351,9 @@ structure GoalData (Rapp MVarCluster : Type) : Type where
   /-- Variables introduced by induction tactics in ancestor goals. These should
   not be used for further induction. -/
   inductionIntroducedVars : Std.HashSet FVarId := {}
+  /-- Recursive functions that have already had function induction applied.
+  Prevents repeated application of function induction on the same function. -/
+  functionInductionApplied : Std.HashSet Name := {}
   deriving Nonempty
 
 structure MVarClusterData (Goal Rapp : Type) : Type where
@@ -575,6 +578,10 @@ def inductionIntroducedVars (g : Goal) : Std.HashSet FVarId :=
   g.elim.inductionIntroducedVars
 
 @[inline]
+def functionInductionApplied (g : Goal) : Std.HashSet Name :=
+  g.elim.functionInductionApplied
+
+@[inline]
 def unsafeRulesSelected (g : Goal) : Bool :=
   g.elim.unsafeRulesSelected
 
@@ -668,6 +675,10 @@ def setFailedRapps (failedRapps : Array RegularRule) (g : Goal) : Goal :=
 @[inline]
 def setInductionIntroducedVars (inductionIntroducedVars : Std.HashSet FVarId) (g : Goal) : Goal :=
   g.modify λ g => { g with inductionIntroducedVars }
+
+@[inline]
+def setFunctionInductionApplied (functionInductionApplied : Std.HashSet Name) (g : Goal) : Goal :=
+  g.modify λ g => { g with functionInductionApplied }
 
 instance : Nonempty Goal :=
   ⟨Goal.mk Classical.ofNonempty⟩

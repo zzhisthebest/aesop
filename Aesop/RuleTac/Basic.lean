@@ -48,6 +48,8 @@ structure RuleTacInput where
   /-- Variables introduced by induction tactics. These should not be used for
   further induction. -/
   inductionIntroducedVars : Std.HashSet FVarId := {}
+  /-- Functions that have had function induction applied. -/
+  functionInductionApplied : Std.HashSet Name := {}
   deriving Inhabited
 
 /-- A subgoal produced by a rule. -/
@@ -62,6 +64,8 @@ structure Subgoal where
   /-- Variables introduced by induction tactics in this subgoal. These should
   not be used for further induction. -/
   inductionIntroducedVars : Std.HashSet FVarId := {}
+  /-- Functions that have had function induction applied. -/
+  functionInductionApplied : Std.HashSet Name := {}
   deriving Inhabited
 
 namespace Subgoal

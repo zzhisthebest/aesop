@@ -1,0 +1,88 @@
+-- -----Description-----
+-- Implement the insertion sort algorithm in Lean 4. The function takes a single list of integers
+-- as input and returns a new list that contains the same integers in ascending order.
+--
+-- Implementation must follow a standard insertion sort approach, placing each element into its correct position.
+-- The resulting list must be sorted in ascending order.
+-- The returned list must be a permutation of the input list (i.e., contain exactly the same elements).
+--
+-- -----Input-----
+-- A single list of integers, denoted as xs.
+--
+-- -----Output-----
+-- A list of integers, sorted in ascending order.
+--
+-- Example:
+-- Input:  [3, 1, 4, 2]
+-- Output: [1, 2, 3, 4]
+--
+--
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible]
+def insertionSort_precond (xs : List Int) : Prop :=
+  -- !benchmark @start precond
+  True
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+
+-- !benchmark @end code_aux
+
+
+def insertionSort (xs : List Int) (h_precond : insertionSort_precond (xs)) : List Int :=
+  -- !benchmark @start code
+    let rec insert (x : Int) (ys : List Int) : List Int :=
+      match ys with
+      | []      => [x]
+      | y :: ys' =>
+        if x <= y then
+          x :: y :: ys'
+        else
+          y :: insert x ys'
+
+    let rec sort (arr : List Int) : List Int :=
+      match arr with
+      | []      => []
+      | x :: xs => insert x (sort xs)
+
+    sort xs
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible]
+def insertionSort_postcond (xs : List Int) (result: List Int) (h_precond : insertionSort_precond (xs)) : Prop :=
+  -- !benchmark @start postcond
+  List.Pairwise (· ≤ ·) result ∧ List.isPerm xs result
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem insertionSort_spec_satisfied (xs: List Int) (h_precond : insertionSort_precond (xs)) :
+    insertionSort_postcond (xs) (insertionSort (xs) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+
+
+

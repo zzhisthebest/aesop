@@ -244,7 +244,7 @@ private def collectCurrentFileConstants (goal : MVarId) : MetaM (Array Name) :=
       -- aesop_trace![zzh_custom] "Checking if constant {const} is from current file"
       if ← isCurrentFileConstant const then
         result := result.push const
-        -- aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"
+        aesop_trace![zzh_custom] "Adding current file constant to simp: {const}"
     return result
 
 /-- 将当前文件定义的常量添加到 simp 上下文中 -/

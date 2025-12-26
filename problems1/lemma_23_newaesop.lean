@@ -45,7 +45,8 @@ theorem findUnique_correct (xs : List Int) (h : FindSingleNumber_precond xs) :
       have := FindSingleNumber xs h
       exact this)
     (filterlist y xs).length = 1 ∧
-    (∀ z, z ∈ xs → z = y ∨ (filterlist z xs).length = 2):= by 
+    (∀ z, z ∈ xs → z = y ∨ (filterlist z xs).length = 2):= by
+  simp
   aesop?
 
 

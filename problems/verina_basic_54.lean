@@ -1,0 +1,81 @@
+-- -----Description-----  
+-- This task is about determining the minimum absolute difference between any pair of integers, where one integer is taken from the first sorted array and the other integer is taken from the second sorted array. The focus is on accurately finding the smallest absolute difference between any two elements from the arrays, independent of the specific techniques or programming language used.
+--
+-- -----Input-----  
+-- The input consists of:  
+-- • a: An array of integers, sorted in non-decreasing order and guaranteed to be non-empty.  
+-- • b: An array of integers, also sorted in non-decreasing order and non-empty.
+--
+-- -----Output-----  
+-- The output is a natural number (Nat) representing the minimum absolute difference between any element a[i] from the first array and b[j] from the second array.
+--
+-- -----Note-----  
+-- • It is assumed that both arrays are non-empty.  
+-- • The arrays are assumed to be sorted in non-decreasing order.
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible, simp]
+def CanyonSearch_precond (a : Array Int) (b : Array Int) : Prop :=
+  -- !benchmark @start precond
+  a.size > 0 ∧ b.size > 0 ∧ List.Pairwise (· ≤ ·) a.toList ∧ List.Pairwise (· ≤ ·) b.toList
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+def canyonSearchAux (a : Array Int) (b : Array Int) (m n d : Nat) : Nat :=
+  if m < a.size ∧ n < b.size then
+    let diff : Nat := ((a[m]! - b[n]!).natAbs)
+    let new_d := if diff < d then diff else d
+    if a[m]! <= b[n]! then
+      canyonSearchAux a b (m + 1) n new_d
+    else
+      canyonSearchAux a b m (n + 1) new_d
+  else
+    d
+termination_by a.size + b.size - m - n
+-- !benchmark @end code_aux
+
+
+def CanyonSearch (a : Array Int) (b : Array Int) (h_precond : CanyonSearch_precond (a) (b)) : Nat :=
+  -- !benchmark @start code
+  let init : Nat :=
+    if a[0]! < b[0]! then (b[0]! - a[0]!).natAbs
+    else (a[0]! - b[0]!).natAbs
+  canyonSearchAux a b 0 0 init
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible, simp]
+def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_precond : CanyonSearch_precond (a) (b)) :=
+  -- !benchmark @start postcond
+  (a.any (fun ai => b.any (fun bi => result = (ai - bi).natAbs))) ∧
+  (a.all (fun ai => b.all (fun bi => result ≤ (ai - bi).natAbs)))
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem CanyonSearch_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : CanyonSearch_precond (a) (b)) :
+    CanyonSearch_postcond (a) (b) (CanyonSearch (a) (b) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+

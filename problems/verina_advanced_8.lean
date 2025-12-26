@@ -1,0 +1,112 @@
+-- -----Description-----
+-- This task requires writing a Lean 4 method that determines whether it is possible to complete a circular journey around a set of gas stations. Each gas station provides a certain amount of gas, and traveling from one station to the next consumes a certain amount of gas.
+--
+-- You start the journey at one of the gas stations with an empty tank. The goal is to find the starting station's index that allows completing the entire circuit once in the clockwise direction without running out of gas. If such a station exists, return its index. Otherwise, return -1.
+--
+-- If multiple solutions exist, return the one with the smallest starting gas station index.
+--
+-- -----Input-----
+-- The input consists of two arrays:
+--
+-- gas: An array of integers where gas[i] represents the amount of gas available at the ith station.
+--
+-- cost: An array of integers where cost[i] is the amount of gas required to travel from station i to station i + 1.
+--
+-- -----Output-----
+-- The output is an integer:
+-- Returns the index of the starting gas station that allows a complete trip around the circuit. If it is not possible to complete the circuit, return -1.
+--
+--
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible]
+def canCompleteCircuit_precond (gas : List Int) (cost : List Int) : Prop :=
+  -- !benchmark @start precond
+  True
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+
+-- !benchmark @end code_aux
+
+
+def canCompleteCircuit (gas : List Int) (cost : List Int) (h_precond : canCompleteCircuit_precond (gas) (cost)) : Int :=
+  -- !benchmark @start code
+  let totalGas := gas.foldl (· + ·) 0
+  let totalCost := cost.foldl (· + ·) 0
+
+  if totalGas < totalCost then
+    -1
+  else
+    let rec loop (g c : List Int) (idx : Nat) (tank : Int) (start : Nat) : Int :=
+      match g, c with
+      | [], [] => start
+      | gi :: gs, ci :: cs =>
+        let tank' := tank + gi - ci
+        if tank' < 0 then
+          loop gs cs (idx + 1) 0 (idx + 1)
+        else
+          loop gs cs (idx + 1) tank' start
+      | _, _ => -1  -- lengths don’t match
+
+    let zipped := List.zip gas cost
+    let rec walk (pairs : List (Int × Int)) (i : Nat) (tank : Int) (start : Nat) : Int :=
+      match pairs with
+      | [] => start
+      | (g, c) :: rest =>
+        let newTank := tank + g - c
+        if newTank < 0 then
+          walk rest (i + 1) 0 (i + 1)
+        else
+          walk rest (i + 1) newTank start
+
+    walk zipped 0 0 0
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible]
+def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int) (h_precond : canCompleteCircuit_precond (gas) (cost)) : Prop :=
+  -- !benchmark @start postcond
+  let valid (start : Nat) := List.range gas.length |>.all (fun i =>
+    let acc := List.range (i + 1) |>.foldl (fun t j =>
+      let jdx := (start + j) % gas.length
+      t + gas[jdx]! - cost[jdx]!) 0
+    acc ≥ 0)
+  -- For result = -1: It's impossible to complete the circuit starting from any index
+  -- In other words, there's no starting point from which we can always maintain a non-negative gas tank
+  (result = -1 → (List.range gas.length).all (fun start => ¬ valid start)) ∧
+  -- For result ≥ 0: This is the valid starting point
+  -- When starting from this index, the gas tank never becomes negative during the entire circuit
+  (result ≥ 0 → result < gas.length ∧ valid result.toNat ∧ (List.range result.toNat).all (fun start => ¬ valid start))
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem canCompleteCircuit_spec_satisfied (gas: List Int) (cost: List Int) (h_precond : canCompleteCircuit_precond (gas) (cost)) :
+    canCompleteCircuit_postcond (gas) (cost) (canCompleteCircuit (gas) (cost) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+
+
+

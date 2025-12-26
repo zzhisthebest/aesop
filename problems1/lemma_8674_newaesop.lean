@@ -23,7 +23,7 @@ def isSorted_postcond (a : Array Int) (result: Bool) (h_precond : isSorted_preco
 theorem isSorted_eq_true_iff_adjacent (a : Array Int)
     (h_precond : isSorted_precond a) (hsize : ¬ a.size ≤ 1) :
     isSorted a h_precond = true ↔
-      (∀ i, (hi : i < a.size - 1) → a[i] ≤ a[i + 1]):= by 
+      (∀ i, (hi : i < a.size - 1) → a[i] ≤ a[i + 1]):= by
   aesop?
 
 

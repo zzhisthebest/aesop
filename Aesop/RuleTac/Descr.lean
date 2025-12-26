@@ -20,6 +20,7 @@ inductive RuleTacDescr
   -- | induction (target : CasesTarget) (md : TransparencyMode)
   --     (isRecursiveType : Bool) (ctorNames : Array CtorNames)
   | inductionOnVar (fvarId : FVarId) (declName : Name) (ctorNames : Array CtorNames)
+  | functionInduction (funcName : Name) (numFixed : Nat) (numInductVars : Nat)
   | tacticM (decl : Name)
   | ruleTac (decl : Name)
   | tacGen (decl : Name)

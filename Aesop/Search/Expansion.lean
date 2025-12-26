@@ -67,6 +67,7 @@ def runRegularRuleTac (goal : Goal) (tac : RuleTac) (ruleName : RuleName)
     mvars := goal.mvars
     hypTypes, indexMatchLocations, patternSubsts?, options
     inductionIntroducedVars := goal.inductionIntroducedVars
+    functionInductionApplied := goal.functionInductionApplied
   }
   runRuleTac tac ruleName postNormState input
 

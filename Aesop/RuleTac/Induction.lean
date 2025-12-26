@@ -16,6 +16,7 @@ public section
 
 open Lean
 open Lean.Meta
+open Lean.Elab.Tactic (evalTactic withoutRecover)
 
 namespace Aesop
 
@@ -28,7 +29,7 @@ def getRecursorName (decl : Name) : MetaM Name := do
     return recOnName
   else
     throwError "Could not find recursor {recOnName} for {decl}"
-
+--己。
 /-- 判断常量是否属于当前命名空间 -/
 def isCurrentNamespaceConstant (constName : Name) : MetaM Bool := do
   let currentNs ← getCurrNamespace
@@ -62,10 +63,10 @@ def unfoldRecursiveDefsInTargetS (goal : MVarId) (hypsToUnfold : Array FVarId) :
         let unfoldThm? ← getUnfoldEqnFor? const
         if unfoldThm?.isSome then
           recursiveDefs := recursiveDefs.push (const, unfoldThm?)
-          aesop_trace![zzh_custom] m!"Found recursive: {const}"
+          -- aesop_trace![zzh_custom] m!"Found recursive: {const}"
 
     if recursiveDefs.isEmpty then
-      aesop_trace![zzh_custom] m!"No recursive defs to unfold"
+      -- aesop_trace![zzh_custom] m!"No recursive defs to unfold"
       return goal
 
     -- 构造 unfold 函数
@@ -84,7 +85,7 @@ def unfoldRecursiveDefsInTargetS (goal : MVarId) (hypsToUnfold : Array FVarId) :
     for fvarId in hypsToUnfold do
       if let some (unfoldedGoal, _usedDecls) ← unfoldManyAtS unfold? currentGoal fvarId then
         currentGoal := unfoldedGoal
-        aesop_trace![zzh_custom] m!"Unfolded in hyp"
+        -- aesop_trace![zzh_custom] m!"Unfolded in hyp"
         -- -- dbg_trace "Unfolded in hyp "
 
     return currentGoal
@@ -226,6 +227,74 @@ def induction (target : CasesTarget) (md : TransparencyMode)
 -/
 
 namespace Induction
+--己。
+/-- 解析函数归纳定理的参数结构，返回 (固定参数数量, 归纳变量数量) -/
+def parseFunctionInductType (inductType : Expr) : MetaM (Nat × Nat) := do
+  -- inductType 形如: ∀ (fixed...) (motive : ...) (cases...) (vars...), motive vars...
+  -- 通过遍历 forall 绑定，用参数名识别 motive
+  let mut motiveIdx : Option Nat := none
+  let mut casesEnd : Option Nat := none
+  let mut currentIdx := 0
+  let mut e := inductType
+
+  -- 遍历所有 forall 绑定
+  while e.isForall do
+    let varName := e.bindingName!
+    let varType := e.bindingDomain!
+
+    -- 识别 motive：参数名是 "motive"
+    if varName == `motive then
+      motiveIdx := some currentIdx
+      -- aesop_trace![zzh_custom] m!"Found motive at index {currentIdx}, name: {varName}"
+
+    -- motive 之后的参数：如果还是函数类型，就是 case；否则就是归纳变量
+    if motiveIdx.isSome && casesEnd.isNone then
+      if !varType.isForall then
+        -- 第一个非函数类型参数，归纳变量开始
+        casesEnd := some currentIdx
+        -- aesop_trace![zzh_custom] m!"Induction vars start at index {currentIdx}"
+
+    e := e.bindingBody!
+    currentIdx := currentIdx + 1
+
+  let finalMotiveIdx := motiveIdx.getD 0
+  let finalInductVarsStart := casesEnd.getD currentIdx
+
+  let numFixedVars := finalMotiveIdx
+  let numInductVars := currentIdx - finalInductVarsStart
+
+  -- aesop_trace![zzh_custom] m!"motiveIdx:{finalMotiveIdx}, inductVarsStart:{finalInductVarsStart}"
+  aesop_trace![zzh_custom] m!"numFixedVars:{numFixedVars}, numInductVars:{numInductVars}"
+  return (numFixedVars, numInductVars)
+
+--己。
+/-- 从表达式中找到所有本地递归函数调用 -/
+def findAllLocalRecursiveCalls (e : Expr) : MetaM (Array (Name × Array Expr)) := do
+  let currentNs ← getCurrNamespace
+  let env ← getEnv
+
+  -- 收集所有常量
+  let constants : Std.HashSet Name := e.foldConsts {} (fun c acc => acc.insert c)
+
+  let mut results : Array (Name × Array Expr) := #[]
+
+  -- 遍历常量查找有 .induct 定理的本地递归函数
+  for constName in constants.toArray do
+    if currentNs.isPrefixOf constName then
+      -- 检查是否是递归函数（有 unfold equation）
+      let unfoldThm? ← getUnfoldEqnFor? constName
+      if unfoldThm?.isSome then
+        -- aesop_trace![zzh_custom] m!"Found local recursive function: {constName}"
+        -- 在表达式中查找这个常量的具体调用
+        if let some sub := e.find? (fun s =>
+          match s.getAppFn with
+          | .const name _ => name == constName
+          | _ => false
+        ) then
+          -- aesop_trace![zzh_custom] m!"   Found call with args: {sub.getAppArgs} "
+          results := results.push (constName, sub.getAppArgs)
+
+  return results
 
 /-- Create a custom induction RuleTac for a specific variable (FVarId). -/
 def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
@@ -235,7 +304,7 @@ def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
     let some ldecl := (← input.goal.withContext getLCtx).find? targetFVarId
       | throwError "Target variable for induction not found"
 
-    aesop_trace![zzh_custom] m!"zzh_custom: Trying induction on specific var {ldecl.userName}"
+    -- aesop_trace![zzh_custom] m!"zzh_custom: Trying induction on specific var {ldecl.userName}"
 
     -- Get FVarIds and names of variables that existed in the original goal before induction
     let (originalFVarIds, originalVarNames) ← input.goal.withContext do
@@ -255,7 +324,7 @@ def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
       -- 先执行归纳
       let some subgoals ← tryInductionS input.goal targetFVarId ctorNames recursorName
         | return none
-      aesop_trace![zzh_custom] m!"Induction on {ldecl.userName} succeeded✅"
+      -- aesop_trace![zzh_custom] m!"Induction on {ldecl.userName} succeeded✅"
 
       -- 在 ScriptM 里对每个子目标做 unfold（会生成 script steps）
       let subgoals ← subgoals.mapM fun (isg : InductionSubgoal) => do
@@ -274,7 +343,7 @@ def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
             -- 否则，至少有一个是老的，应该 unfold
             if !(isNewFVarId && isNewName) then
               vars := vars.push fvarId
-              aesop_trace![zzh_custom] "Will unfold in {varName}"
+              -- aesop_trace![zzh_custom] "Will unfold in {varName}"
           return vars
         let unfoldedGoal ← unfoldRecursiveDefsInTargetS isg.mvarId hypsToUnfold
         return ({ isg with mvarId := unfoldedGoal } : InductionSubgoal)
@@ -307,6 +376,139 @@ def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
         inductionIntroducedVars := newVars
       }
 
+    return (goals, some steps, none)
+
+/-- Try function induction in ScriptM, similar to tryInductionS -/
+def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
+    (numInductVars : Nat) : ScriptM (Option (Array MVarId)) := do
+  aesop_trace![zzh_custom] m!"tryFunctionInductionS: funcName={funcName}, numFixed={numFixed}, numInductVars={numInductVars}"
+  -- 构造 tactic 并执行
+  let stxOpt ← goal.withContext do
+    let tgt ← instantiateMVars (← goal.getType)
+    aesop_trace![zzh_custom] m!"Goal type: {tgt}"
+    let some call := tgt.find? (fun e =>
+      match e.getAppFn with
+      | .const name _ => name == funcName
+      | _ => false
+    ) | aesop_trace![zzh_custom] m!"❌ Function {funcName} not found in goal"
+        return none
+
+    aesop_trace![zzh_custom] m!"✅ Found function call"
+    let args := call.getAppArgs
+    aesop_trace![zzh_custom] m!"Args size: {args.size}, required: {numFixed + numInductVars}"
+    if args.size < numFixed + numInductVars then
+      aesop_trace![zzh_custom] m!"❌ Not enough arguments"
+      return none
+
+    let fixedArgs := args.extract 0 numFixed
+    let inductArgs := args.extract numFixed args.size
+
+    let mut fixedNames : Array Name := #[]
+    for arg in fixedArgs do
+      if !arg.isFVar then
+        aesop_trace![zzh_custom] m!"❌ Fixed arg is not fvar: {arg}"
+        return none
+      fixedNames := fixedNames.push (← arg.fvarId!.getUserName)
+
+    let mut inductNames : Array Name := #[]
+    for arg in inductArgs do
+      if !arg.isFVar then
+        aesop_trace![zzh_custom] m!"❌ Induct arg is not fvar: {arg}"
+        return none
+      inductNames := inductNames.push (← arg.fvarId!.getUserName)
+
+    -- 动态构造 induction tactic
+    let inductIdent := Lean.mkIdent (funcName ++ `induct)
+    let inductStr := String.intercalate ", " (inductNames.map toString).toList
+    let fixedStr := String.intercalate " " (fixedNames.map toString).toList
+    let tacticStr := s!"induction {inductStr} using {inductIdent.getId} {fixedStr}"
+
+    aesop_trace![zzh_custom] m!"Generated tactic string: {tacticStr}"
+
+    -- 解析 tactic 字符串
+    let env ← getEnv
+    let parserFn := Parser.runParserCategory env `tactic tacticStr
+    match parserFn with
+    | Except.ok stx =>
+      aesop_trace![zzh_custom] m!"✅ Tactic parsed successfully"
+      return some stx
+    | Except.error err =>
+      aesop_trace![zzh_custom] m!"❌ Parse error: {err}"
+      return none
+
+  let some stx := stxOpt |
+    aesop_trace![zzh_custom] m!"❌ stxOpt is none"
+    return none
+
+  -- 创建简单的 TacticBuilder
+  let tacticBuilder (_ : Array MVarId) : Script.TacticBuilder := do
+    -- 将 Syntax 转换为 TSyntax `tactic
+    let tacticSyntax : TSyntax `tactic := ⟨stx⟩
+    return .unstructured tacticSyntax
+  aesop_trace![zzh_custom] m!"zzh"
+  -- 在 ScriptM 中执行 tactic
+  withOptScriptStep goal id tacticBuilder do
+    show MetaM _ from observing? do
+      let postGoalsList ← Lean.Elab.Tactic.run goal (evalTactic stx) |>.run'
+      return postGoalsList.toArray
+
+/-- Create a RuleTac that applies function induction for a specific recursive function,
+    modeled after inductionOnSpecificVar -/
+def functionInductionRule (funcName : Name) (_numFixed : Nat) (_numInductVars : Nat) : RuleTac :=
+  SingleRuleTac.toRuleTac λ input => do
+    aesop_trace![zzh_custom] m!"🎯 Applying function induction for {funcName}"
+
+
+    let (originalFVarIds, originalVarNames) ← input.goal.withContext do
+      -- 获取原始变量
+      let mut fvarIds : Std.HashSet FVarId := {}
+      let mut names : Std.HashSet Name := {}
+      for ldecl in (← getLCtx) do
+        if ! ldecl.isImplementationDetail then
+          fvarIds := fvarIds.insert ldecl.fvarId
+          names := names.insert ldecl.userName
+
+      return (fvarIds, names)
+
+    -- 使用 tryFunctionInductionS 执行归纳并 unfold（模仿 inductionOnSpecificVar 的结构）
+    let (some subgoals, steps) ← (do
+      -- 先执行函数归纳
+      let some subgoals ← tryFunctionInductionS input.goal funcName 1 2
+        | aesop_trace![zzh_custom] m!"❌ tryFunctionInductionS failed"
+          return none
+      aesop_trace![zzh_custom] m!"Function induction succeeded✅"
+
+      -- 在 ScriptM 里对每个子目标做 unfold（会生成 script steps）
+      let subgoals ← subgoals.mapM fun (mvarId : MVarId) => do
+        -- 从子 goal 的所有 hypotheses 中找出原始的（至少名字或FVarId有一个是原来的）
+        let hypsToUnfold ← (mvarId.withContext do
+          let mut vars : Array FVarId := #[]
+          for ldecl in (← getLCtx) do
+            if ldecl.isImplementationDetail then
+              continue
+            let fvarId := ldecl.fvarId
+            let varName := ldecl.userName
+
+            let isNewFVarId := ! originalFVarIds.contains fvarId
+            let isNewName := ! originalVarNames.contains varName
+            -- 只有当 FVarId 和名字都是新的时候，才是完全新的变量（如 ih）
+            -- 否则，至少有一个是老的，应该 unfold
+            if !(isNewFVarId && isNewName) then
+              vars := vars.push fvarId
+          return vars: MetaM (Array FVarId))
+        let unfoldedGoal ← unfoldRecursiveDefsInTargetS mvarId hypsToUnfold
+        return unfoldedGoal
+
+      return some subgoals
+    ).run
+      | throwError "Function induction failed"
+
+    -- 转换为 Subgoal（与 inductionOnSpecificVar 相同）
+    let goals ← subgoals.mapM λ mvarId => do
+      let sg ← mvarIdToSubgoal input.goal mvarId
+      return { sg with functionInductionApplied := input.functionInductionApplied.insert funcName }
+
+    aesop_trace![zzh_custom] m!"Function induction on {funcName} completed✅"
     return (goals, some steps, none)
 
 end Induction

@@ -1,0 +1,72 @@
+-- -----Description-----  
+-- This task involves finding the minimum element in a non-empty array of integers. The goal is to identify and return the smallest number present in the array.
+--
+-- -----Input-----  
+-- The input consists of:  
+-- • a: An array of integers (the array is assumed to be non-empty).
+--
+-- -----Output-----  
+-- The output is an integer that:  
+-- • Is the smallest element from the input array.  
+-- • Satisfies the property that it is less than or equal to every element in the array and is exactly equal to at least one element of the array.
+--
+-- -----Note-----  
+-- It is assumed that the input array contains at least one element. The implementation uses a helper function (loop) to recursively compare elements and determine the minimum value.
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible, simp]
+def minArray_precond (a : Array Int) : Prop :=
+  -- !benchmark @start precond
+  a.size > 0
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+def loop (a : Array Int) (i : Nat) (currentMin : Int) : Int :=
+  if i < a.size then
+    let newMin := if currentMin > a[i]! then a[i]! else currentMin
+    loop a (i + 1) newMin
+  else
+    currentMin
+-- !benchmark @end code_aux
+
+
+def minArray (a : Array Int) (h_precond : minArray_precond (a)) : Int :=
+  -- !benchmark @start code
+  loop a 1 (a[0]!)
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible, simp]
+def minArray_postcond (a : Array Int) (result: Int) (h_precond : minArray_precond (a)) :=
+  -- !benchmark @start postcond
+  (∀ i : Nat, i < a.size → result <= a[i]!) ∧ (∃ i : Nat, i < a.size ∧ result = a[i]!)
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem minArray_spec_satisfied (a: Array Int) (h_precond : minArray_precond (a)) :
+    minArray_postcond (a) (minArray (a) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+

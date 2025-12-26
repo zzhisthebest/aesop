@@ -79,7 +79,7 @@ def createDynamicInductionRules (goal : MVarId)
         }
         rules := rules.push matchResult
 
-        aesop_trace![zzh_custom] "{goal} Added dynamic induction rule for variable {ldecl.userName} : {declName}"
+        -- aesop_trace![zzh_custom] "{goal} Added dynamic induction rule for variable {ldecl.userName} : {declName}"
 
     return rules
 where
@@ -99,6 +99,59 @@ where
       }
       return cn
     return ctorNamesList.toArray
+--己。
+/-- Create dynamic function induction rules for all local recursive function calls in the goal -/
+def createDynamicFunctionInductionRules (goal : MVarId)
+    (appliedFunctions : Std.HashSet Name) :
+    MetaM (Array (IndexMatchResult UnsafeRule)) := do
+  goal.withContext do
+    -- Find all local recursive function calls with .induct theorems
+    let tgt ← instantiateMVars (← goal.getType)
+    let allCalls ← RuleTac.Induction.findAllLocalRecursiveCalls tgt
+
+    let mut rules : Array (IndexMatchResult UnsafeRule) := #[]
+    let mut idx : Int := 0
+    -- Create a rule for each function that hasn't been applied yet
+    for (funcName, _callArgs) in allCalls do
+      -- Check if we've already applied function induction on this function
+      if appliedFunctions.contains funcName then
+        aesop_trace![zzh_custom] m!"Skipping function induction for {funcName} (already applied)"
+        continue
+
+      let inductName := funcName ++ `induct
+      aesop_trace![zzh_custom] m!"Creating rule for {funcName}"
+      idx:=idx+1
+
+      -- Create a dynamic rule for function induction
+      -- 传递 0, 0 作为占位符，实际参数数量在 functionInductionRule 中动态获取
+      let ruleName : RuleName := {
+        name := inductName ++ Name.mkSimple (toString idx)
+        builder := .induction
+        phase := .unsafe
+        scope := .global
+      }
+      let ruleInfo : UnsafeRuleInfo := {
+        successProbability := ⟨0.25⟩--设置为25%的优先级
+      }
+
+      let rule : UnsafeRule := {
+        name := ruleName
+        indexingMode := .unindexed
+        pattern? := none
+        extra := ruleInfo
+        tac := .functionInduction funcName 0 0  -- 占位符，在 functionInductionRule 中动态获取
+      }
+
+      let matchResult : IndexMatchResult UnsafeRule := {
+        rule := rule
+        locations := ∅
+        patternSubsts? := none
+      }
+
+      aesop_trace![zzh_custom] m!"Added dynamic function induction rule for {funcName}"
+      rules := rules.push matchResult
+
+    return rules
 
 def selectNormRules (rs : LocalRuleSet) (fms : ForwardRuleMatches)
     (goal : MVarId) : BaseM (Array (IndexMatchResult NormRule)) :=
@@ -145,6 +198,12 @@ def selectUnsafeRules (postponedSafeRules : Array PostponedSafeRule)
       let dynamicInductionRules ← g.runMetaMInPostNormState' λ postNormGoal =>
         createDynamicInductionRules postNormGoal g.inductionIntroducedVars
       unsafeRules := unsafeRules ++ dynamicInductionRules
+
+      -- Dynamically add function induction rules for all recursive functions
+      let dynamicFunctionInductionRules ←
+        g.runMetaMInPostNormState' λ postNormGoal =>
+          createDynamicFunctionInductionRules postNormGoal g.functionInductionApplied
+      unsafeRules := unsafeRules ++ dynamicFunctionInductionRules
 
       let unsafeQueue := UnsafeQueue.initial postponedSafeRules unsafeRules
       gref.set $ g.setUnsafeRulesSelected true |>.setUnsafeQueue unsafeQueue

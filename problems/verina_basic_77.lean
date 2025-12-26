@@ -1,0 +1,77 @@
+-- -----Description-----  
+-- This task involves updating an element within a 2-dimensional array. The goal is to modify only a specific inner array by changing one of its elements to a new value while keeping every other element and all other inner arrays unchanged.
+--
+-- -----Input-----  
+-- The input consists of:  
+-- • arr: An array of arrays of natural numbers.  
+-- • index1: A natural number representing the index in the outer array identifying which inner array to modify (0-indexed).  
+-- • index2: A natural number representing the index within the selected inner array that should be updated (0-indexed).  
+-- • val: A natural number which is the new value to set at the specified inner index.
+--
+-- -----Output-----  
+-- The output is an array of arrays of natural numbers that:  
+-- • Has the same overall structure as the input.  
+-- • Contains all original inner arrays unchanged except for the inner array at position index1.  
+-- • In the modified inner array, only the element at index2 is replaced with val, while all other elements remain the same.
+--
+-- -----Note-----  
+-- It is assumed that index1 is a valid index for the outer array and that index2 is a valid index within the corresponding inner array.
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible, simp]
+def modify_array_element_precond (arr : Array (Array Nat)) (index1 : Nat) (index2 : Nat) (val : Nat) : Prop :=
+  -- !benchmark @start precond
+  index1 < arr.size ∧
+  index2 < (arr[index1]!).size
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+def updateInner (a : Array Nat) (idx val : Nat) : Array Nat :=
+  a.set! idx val
+-- !benchmark @end code_aux
+
+
+def modify_array_element (arr : Array (Array Nat)) (index1 : Nat) (index2 : Nat) (val : Nat) (h_precond : modify_array_element_precond (arr) (index1) (index2) (val)) : Array (Array Nat) :=
+  -- !benchmark @start code
+  let inner := arr[index1]!
+  let inner' := updateInner inner index2 val
+  arr.set! index1 inner'
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible, simp]
+def modify_array_element_postcond (arr : Array (Array Nat)) (index1 : Nat) (index2 : Nat) (val : Nat) (result: Array (Array Nat)) (h_precond : modify_array_element_precond (arr) (index1) (index2) (val)) :=
+  -- !benchmark @start postcond
+  (∀ i, i < arr.size → i ≠ index1 → result[i]! = arr[i]!) ∧
+  (∀ j, j < (arr[index1]!).size → j ≠ index2 → (result[index1]!)[j]! = (arr[index1]!)[j]!) ∧
+  ((result[index1]!)[index2]! = val)
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem modify_array_element_spec_satisfied (arr: Array (Array Nat)) (index1: Nat) (index2: Nat) (val: Nat) (h_precond : modify_array_element_precond (arr) (index1) (index2) (val)) :
+    modify_array_element_postcond (arr) (index1) (index2) (val) (modify_array_element (arr) (index1) (index2) (val) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+

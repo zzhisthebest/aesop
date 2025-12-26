@@ -1,0 +1,96 @@
+-- -----Description-----  
+-- his task requires writing a Lean 4 method decomposes a natural number `n` into its prime factorization components based on a user-provided list of primes. Specifically, it calculates the exponents for each prime in the factorization such that:
+-- \[ n = \prod p^e \]
+-- In other words, it determines the exponent e for each prime p.
+--
+-- -----Input-----  
+-- The input consists of a natural number n, and a list of prime numbers. The input n is obtained by multiplying together any powers of the prime numbers from the provided list.
+-- n: The natural number to be factorized.  
+-- primes: A list of primes to decompose n into.  
+--
+-- -----Output-----  
+-- The output is `List (Nat × Nat)`:
+-- Return a list of pair/Cartesian product of two natural numbers (p, e), where p is the prime and e is the exponent of p in the factorization. Each prime in the output must be from the input list, and every prime in the input list must appear in the output.
+--
+--
+
+-- !benchmark @start import type=solution
+import Mathlib.Data.Nat.Prime.Defs
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+
+-- !benchmark @end precond_aux
+@[reducible]
+def findExponents_precond (n : Nat) (primes : List Nat) : Prop :=
+  -- !benchmark @start precond
+  primes.all (fun p => Nat.Prime p)
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+
+-- !benchmark @end code_aux
+
+
+def findExponents (n : Nat) (primes : List Nat) (h_precond : findExponents_precond (n) (primes)) : List (Nat × Nat) :=
+  -- !benchmark @start code
+  let rec countFactors (n : Nat) (primes : List Nat) : List (Nat × Nat) :=
+    match primes with
+    | [] => []
+    | p :: ps =>
+      let (count, n') :=
+        countFactor n p 0
+      (p, count) :: countFactors n' ps
+
+  countFactors n primes
+  where
+
+  countFactor : Nat → Nat → Nat → Nat × Nat
+  | 0, _, count =>
+    (count, 0)
+  | n, p, count =>
+    if h : n > 0 ∧ p > 1 then
+      have : n / p < n :=
+        Nat.div_lt_self h.1 h.2
+      if n % p == 0 then
+        countFactor (n / p) p (count + 1)
+      else
+        (count, n)
+    else
+      (count, n)
+  termination_by n _ _ => n
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible]
+def findExponents_postcond (n : Nat) (primes : List Nat) (result: List (Nat × Nat)) (h_precond : findExponents_precond (n) (primes)) : Prop :=
+  -- !benchmark @start postcond
+  (n = result.foldl (fun acc (p, e) => acc * p ^ e) 1) ∧
+  result.all (fun (p, _) => p ∈ primes) ∧
+  primes.all (fun p => result.any (fun pair => pair.1 = p))
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem findExponents_spec_satisfied (n: Nat) (primes: List Nat) (h_precond : findExponents_precond (n) (primes)) :
+    findExponents_postcond (n) (primes) (findExponents (n) (primes) h_precond) h_precond := by
+  -- !benchmark @start proof
+  sorry
+  -- !benchmark @end proof
+
+
+

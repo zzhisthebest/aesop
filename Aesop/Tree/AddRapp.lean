@@ -91,14 +91,15 @@ unsafe def copyGoals (assignedMVars : UnorderedArraySet MVarId)
   let toCopy ← getGoalsToCopy assignedMVars start
   toCopy.mapM λ gref => do
     let g ← gref.get
+    let startGoal ← start.get
     let rs := (← read).ruleSet
     let (forwardState, forwardRuleMatches, mvars) ←
       runInMetaState parentMetaState do
-        let start ← start.get
-        let diff ← diffGoals start.currentGoal g.preNormGoal
-        let (forwardState, ms) ← start.forwardState.applyGoalDiff rs diff
+        let startG ← start.get
+        let diff ← diffGoals startG.currentGoal g.preNormGoal
+        let (forwardState, ms) ← startG.forwardState.applyGoalDiff rs diff
         let forwardRuleMatches :=
-          start.forwardRuleMatches.update ms diff.removedFVars
+          startG.forwardRuleMatches.update ms diff.removedFVars
             (consumedForwardRuleMatches := #[]) -- TODO unsure whether this is correct
         let mvars ← .ofHashSet <$> g.preNormGoal.getMVarDependencies
         pure (forwardState, forwardRuleMatches, mvars)
@@ -123,6 +124,10 @@ unsafe def copyGoals (assignedMVars : UnorderedArraySet MVarId)
       unsafeQueue := {}
       failedRapps := #[]
       inductionIntroducedVars := g.inductionIntroducedVars
+      -- Merge: inherit from parent (start) AND subgoal's own additions
+      functionInductionApplied := g.functionInductionApplied.fold
+        (init := startGoal.functionInductionApplied)
+        (fun acc f => acc.insert f)
     }
 
 def makeInitialGoal (goal : Subgoal) (mvars : UnorderedArraySet MVarId)
@@ -154,6 +159,8 @@ def makeInitialGoal (goal : Subgoal) (mvars : UnorderedArraySet MVarId)
     unsafeQueue := {}
     failedRapps := #[]
     inductionIntroducedVars := goal.inductionIntroducedVars
+    -- Inherit from subgoal (which already merged from parent)
+    functionInductionApplied := goal.functionInductionApplied
     parent, origin, depth, mvars, successProbability
   }
 
@@ -223,6 +230,7 @@ unsafe def addRappUnsafe (r : AddRapp) : TreeM RappRef := do
     copiedGoals.map λ g => {
       diff := { (default : GoalDiff) with newGoal := g.preNormGoal }
       inductionIntroducedVars := g.inductionIntroducedVars
+      functionInductionApplied := g.functionInductionApplied
     }
     -- The diff is irrelevant because we later add `g` to the tree (and the
     -- forward state of `g` is already up to date).

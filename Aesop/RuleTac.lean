@@ -30,6 +30,8 @@ protected def run : RuleTacDescr → RuleTac
   --   RuleTac.induction target md isRecursiveType ctorNames
   | inductionOnVar fvarId declName ctorNames =>
     RuleTac.Induction.inductionOnSpecificVar fvarId declName ctorNames
+  | functionInduction funcName numFixedVars numInductVars =>
+    RuleTac.Induction.functionInductionRule funcName numFixedVars numInductVars
   | tacticM decl => RuleTac.tacticM decl
   | singleRuleTac decl => RuleTac.singleRuleTac decl
   | ruleTac decl => RuleTac.ruleTac decl
