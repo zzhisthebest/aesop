@@ -22,7 +22,8 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-
+import Aesop
+namespace tmp
 -- !benchmark @end precond_aux
 @[reducible]
 def LongestCommonSubsequence_precond (a : Array Int) (b : Array Int) : Prop :=
@@ -82,5 +83,6 @@ def LongestCommonSubsequence_postcond (a : Array Int) (b : Array Int) (result: I
 theorem LongestCommonSubsequence_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : LongestCommonSubsequence_precond (a) (b)) :
     LongestCommonSubsequence_postcond (a) (b) (LongestCommonSubsequence (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
+  aesop
   sorry
   -- !benchmark @end proof

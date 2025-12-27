@@ -1,0 +1,49 @@
+import Aesop
+set_option maxHeartbeats 0
+namespace tmp
+@[reducible, simp]
+def task_code_precond (sequence : List Int) : Prop :=
+  True
+
+def task_code (sequence : List Int) (h_precond : task_code_precond (sequence)) : Int :=
+  match sequence with
+  | []      => 0
+  | x :: xs =>
+      let (_, maxSoFar) :=
+        xs.foldl (fun (acc : Int × Int) (x : Int) =>
+          let (cur, maxSoFar) := acc
+          let newCur := if cur + x >= x then cur + x else x
+          let newMax := if maxSoFar >= newCur then maxSoFar else newCur
+          (newCur, newMax)
+        ) (x, x)
+      maxSoFar
+
+@[reducible, simp]
+def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_code_precond (sequence)) : Prop :=
+  let subArrays :=
+    List.range (sequence.length + 1) |>.flatMap (fun start =>
+      List.range (sequence.length - start + 1) |>.map (fun len =>
+        sequence.drop start |>.take len))
+  let subArraySums := subArrays.filter (· ≠ []) |>.map (·.sum)
+  subArraySums.contains result ∧ subArraySums.all (· ≤ result)
+
+
+theorem foldl_step (xs : List Int) (init : Int × Int) :
+    xs.foldl
+      (fun (acc : Int × Int) (x : Int) =>
+        let (cur, maxSoFar) := acc
+        let newCur := if cur + x ≥ x then cur + x else x
+        let newMax := if maxSoFar ≥ newCur then maxSoFar else newCur
+        (newCur, newMax))
+      init
+    = xs.foldl
+        (fun (p : Int × Int) y =>
+          let (c, m) := p
+          let nc := if c + y ≥ y then c + y else y
+          let nm := if m ≥ nc then m else nc
+          (nc, nm))
+        init:= by 
+aesop
+
+
+end tmp

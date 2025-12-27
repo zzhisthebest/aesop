@@ -16,8 +16,8 @@ def removeElement_postcond (s : Array Int) (k : Nat) (result: Array Int) (h_prec
 
 
 theorem eraseIdx!_eq_eraseIdx (s : Array Int) (k : Nat) (hk : k < s.size) :
-    s.eraseIdx! k = s.eraseIdx k:= by 
-  aesop?
+    s.eraseIdx! k = s.eraseIdx k:= by
+  simp_all only [Array.eraseIdx!, ↓reduceDIte]
   aesop?(config := { useDefaultSimpSet := false })
 
 

@@ -1,4 +1,4 @@
--- -----Description----- 
+-- -----Description-----
 -- This task requires writing a Lean 4 method that identifies the dissimilar elements between two arrays of integers. In other words, the method should return an array containing all elements that appear in one input array but not in the other. The output array must contain no duplicate elements and the order of elements does not matter.
 --
 -- -----Input-----
@@ -64,6 +64,5 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 theorem dissimilarElements_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : dissimilarElements_precond (a) (b)) :
     dissimilarElements_postcond (a) (b) (dissimilarElements (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof
-

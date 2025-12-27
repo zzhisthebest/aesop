@@ -79,6 +79,7 @@ theorem FindEvenNumbers_spec_satisfied (arr: Array Int) (h_precond : FindEvenNum
   constructor
   unfold FindEvenNumbers.loop
   simp
+  aesop
 
 
   -- !benchmark @end proof

@@ -1,0 +1,21 @@
+import Aesop
+set_option maxHeartbeats 0
+namespace tmp
+@[reducible, simp]
+def ComputeAvg_precond (a : Int) (b : Int) : Prop :=
+  True
+
+def ComputeAvg (a : Int) (b : Int) (h_precond : ComputeAvg_precond (a) (b)) : Int :=
+  (a + b) / 2
+
+@[reducible, simp]
+def ComputeAvg_postcond (a : Int) (b : Int) (result: Int) (h_precond : ComputeAvg_precond (a) (b)) :=
+  2 * result = a + b - ((a + b) % 2)
+
+
+theorem div_mul_add_mod_two (x : Int) :
+    (x / 2) * 2 + x % 2 = x:= by 
+aesop
+
+
+end tmp

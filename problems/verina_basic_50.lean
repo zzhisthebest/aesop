@@ -62,6 +62,7 @@ def Abs_postcond (x : Int) (result: Int) (h_precond : Abs_precond (x)) :=
 theorem Abs_spec_satisfied (x: Int) (h_precond : Abs_precond (x)) :
     Abs_postcond (x) (Abs (x) h_precond) h_precond := by
   -- !benchmark @start proof
+    aesop
     simp [Abs_postcond, Abs]
     apply And.intro
     . intro h

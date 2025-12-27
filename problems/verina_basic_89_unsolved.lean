@@ -1,0 +1,70 @@
+-- -----Description-----
+-- This problem asks you to design a solution that transforms a list with possible duplicate entries into a new list where each element appears only once, maintaining the order of its first occurrence.
+--
+-- -----Input-----
+-- The input consists of:
+-- • s: A list of integers (or any type supporting decidable equality) that may contain duplicate elements.
+--
+-- -----Output-----
+-- The output is a list of integers (or the original type) in which every duplicate element is removed. The order of elements is preserved based on their first appearance in the input list, ensuring that the set of elements in the output is identical to the set in the input.
+--
+-- -----Note-----
+-- No additional preconditions are required. The method should correctly handle any list, including an empty list.
+
+-- !benchmark @start import type=solution
+
+-- !benchmark @end import
+
+-- !benchmark @start solution_aux
+
+-- !benchmark @end solution_aux
+
+-- !benchmark @start precond_aux
+import Aesop
+namespace tmp
+-- !benchmark @end precond_aux
+@[reducible, simp]
+def SetToSeq_precond (s : List Int) : Prop :=
+  -- !benchmark @start precond
+  True
+  -- !benchmark @end precond
+
+
+-- !benchmark @start code_aux
+
+-- !benchmark @end code_aux
+
+
+def SetToSeq (s : List Int) (h_precond : SetToSeq_precond (s)) : List Int :=
+  -- !benchmark @start code
+  s.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []
+  -- !benchmark @end code
+
+
+-- !benchmark @start postcond_aux
+
+-- !benchmark @end postcond_aux
+
+
+@[reducible, simp]
+def SetToSeq_postcond (s : List Int) (result: List Int) (h_precond : SetToSeq_precond (s)) :=
+  -- !benchmark @start postcond
+  -- Contains exactly the elements of the set
+  result.all (fun a => a ∈ s) ∧ s.all (fun a => a ∈ result) ∧
+  -- All elements are unique in the result
+  result.all (fun a => result.count a = 1) ∧
+  -- The order of elements in the result is preserved
+  List.Pairwise (fun a b => (result.idxOf a < result.idxOf b) → (s.idxOf a < s.idxOf b)) result
+  -- !benchmark @end postcond
+
+
+-- !benchmark @start proof_aux
+
+-- !benchmark @end proof_aux
+
+
+theorem SetToSeq_spec_satisfied (s: List Int) (h_precond : SetToSeq_precond (s)) :
+    SetToSeq_postcond (s) (SetToSeq (s) h_precond) h_precond := by
+  -- !benchmark @start proof
+  aesop
+  -- !benchmark @end proof

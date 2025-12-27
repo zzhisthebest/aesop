@@ -393,9 +393,9 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
     ) | aesop_trace![zzh_custom] m!"❌ Function {funcName} not found in goal"
         return none
 
-    aesop_trace![zzh_custom] m!"✅ Found function call"
+    aesop_trace![zzh_custom] m!"✅ Found function call: {call}"
     let args := call.getAppArgs
-    aesop_trace![zzh_custom] m!"Args size: {args.size}, required: {numFixed + numInductVars}"
+
     if args.size < numFixed + numInductVars then
       aesop_trace![zzh_custom] m!"❌ Not enough arguments"
       return none
@@ -403,24 +403,34 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
     let fixedArgs := args.extract 0 numFixed
     let inductArgs := args.extract numFixed args.size
 
-    let mut fixedNames : Array Name := #[]
+    -- 处理固定参数：如果是 fvar 就用名字，否则用表达式字符串
+    let mut fixedStrs : Array String := #[]
     for arg in fixedArgs do
-      if !arg.isFVar then
-        aesop_trace![zzh_custom] m!"❌ Fixed arg is not fvar: {arg}"
-        return none
-      fixedNames := fixedNames.push (← arg.fvarId!.getUserName)
+      if arg.isFVar then
+        let name ← arg.fvarId!.getUserName
+        fixedStrs := fixedStrs.push (toString name)
+      else
+        -- 对于非 fvar，使用 pretty print
+        let argStr := toString (← ppExpr arg)
+        fixedStrs := fixedStrs.push argStr
+        aesop_trace![zzh_custom] m!"Fixed arg (non-fvar): {argStr}"
 
-    let mut inductNames : Array Name := #[]
+    -- 处理归纳参数：可以是任何表达式（不限于 fvar）
+    let mut inductStrs : Array String := #[]
     for arg in inductArgs do
-      if !arg.isFVar then
-        aesop_trace![zzh_custom] m!"❌ Induct arg is not fvar: {arg}"
-        return none
-      inductNames := inductNames.push (← arg.fvarId!.getUserName)
+      if arg.isFVar then
+        let name ← arg.fvarId!.getUserName
+        inductStrs := inductStrs.push (toString name)
+      else
+        -- 对于非 fvar（如 N+1, 0 等），使用 pretty print
+        let argStr := toString (← ppExpr arg)
+        inductStrs := inductStrs.push argStr
+        aesop_trace![zzh_custom] m!"Induct arg (non-fvar): {argStr}"
 
     -- 动态构造 induction tactic
     let inductIdent := Lean.mkIdent (funcName ++ `induct)
-    let inductStr := String.intercalate ", " (inductNames.map toString).toList
-    let fixedStr := String.intercalate " " (fixedNames.map toString).toList
+    let inductStr := String.intercalate ", " inductStrs.toList
+    let fixedStr := String.intercalate " " fixedStrs.toList
     let tacticStr := s!"induction {inductStr} using {inductIdent.getId} {fixedStr}"
 
     aesop_trace![zzh_custom] m!"Generated tactic string: {tacticStr}"
@@ -430,14 +440,12 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
     let parserFn := Parser.runParserCategory env `tactic tacticStr
     match parserFn with
     | Except.ok stx =>
-      aesop_trace![zzh_custom] m!"✅ Tactic parsed successfully"
       return some stx
     | Except.error err =>
-      aesop_trace![zzh_custom] m!"❌ Parse error: {err}"
+      aesop_trace![zzh_custom] m!"❌ Tactic Parse error: {err}"
       return none
 
   let some stx := stxOpt |
-    aesop_trace![zzh_custom] m!"❌ stxOpt is none"
     return none
 
   -- 创建简单的 TacticBuilder
@@ -445,7 +453,6 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
     -- 将 Syntax 转换为 TSyntax `tactic
     let tacticSyntax : TSyntax `tactic := ⟨stx⟩
     return .unstructured tacticSyntax
-  aesop_trace![zzh_custom] m!"zzh"
   -- 在 ScriptM 中执行 tactic
   withOptScriptStep goal id tacticBuilder do
     show MetaM _ from observing? do
@@ -485,7 +492,6 @@ def functionInductionRule (funcName : Name): RuleTac :=
       let some subgoals ← tryFunctionInductionS input.goal funcName numFixed numInductVars
         | aesop_trace![zzh_custom] m!"❌ tryFunctionInductionS failed"
           return none
-      aesop_trace![zzh_custom] m!"Function induction succeeded✅"
 
       -- 在 ScriptM 里对每个子目标做 unfold（会生成 script steps）
       let subgoals ← subgoals.mapM fun (mvarId : MVarId) => do
@@ -508,6 +514,7 @@ def functionInductionRule (funcName : Name): RuleTac :=
         let unfoldedGoal ← unfoldRecursiveDefsInTargetS mvarId hypsToUnfold
         return unfoldedGoal
 
+      aesop_trace![zzh_custom] m!"函数归纳产生的subgoals: {subgoals}"
       return some subgoals
     ).run
       | throwError "Function induction failed"
@@ -517,7 +524,8 @@ def functionInductionRule (funcName : Name): RuleTac :=
       let sg ← mvarIdToSubgoal input.goal mvarId
       return { sg with functionInductionApplied := input.functionInductionApplied.insert funcName }
 
-    aesop_trace![zzh_custom] m!"Function induction on {funcName} completed✅"
+    aesop_trace![zzh_custom] m!"Function induction on {funcName} succeeded✅"
+
     return (goals, some steps, none)
 
 end Induction

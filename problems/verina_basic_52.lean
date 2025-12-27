@@ -82,5 +82,5 @@ def BubbleSort_postcond (a : Array Int) (result: Array Int) (h_precond : BubbleS
 theorem BubbleSort_spec_satisfied (a: Array Int) (h_precond : BubbleSort_precond (a)) :
     BubbleSort_postcond (a) (BubbleSort (a) h_precond) h_precond := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof
