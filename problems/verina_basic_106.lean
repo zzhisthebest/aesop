@@ -1,18 +1,18 @@
--- -----Description-----  
+-- -----Description-----
 -- The task is to compute the element-wise sum of two integer arrays. The result should be a new array where each element is the sum of the corresponding elements from the two input arrays. The problem assumes that both arrays have the same length.
 --
--- -----Input-----  
--- The input consists of two parameters:  
--- • a: An array of integers.  
--- • b: An array of integers.  
+-- -----Input-----
+-- The input consists of two parameters:
+-- • a: An array of integers.
+-- • b: An array of integers.
 -- Note: Both arrays must have the same length.
 --
--- -----Output-----  
--- The output is an array of integers that:  
--- • Has the same size as the input arrays.  
+-- -----Output-----
+-- The output is an array of integers that:
+-- • Has the same size as the input arrays.
 -- • Contains elements where each element at index i is computed as a[i]! + b[i]! from the input arrays.
 --
--- -----Note-----  
+-- -----Note-----
 -- It is assumed that the two input arrays have equal lengths.
 
 -- !benchmark @start import type=solution
@@ -24,7 +24,8 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-
+import Aesop
+namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
 def arraySum_precond (a : Array Int) (b : Array Int) : Prop :=
@@ -74,6 +75,5 @@ def arraySum_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h_pre
 theorem arraySum_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : arraySum_precond (a) (b)) :
     arraySum_postcond (a) (b) (arraySum (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof
-

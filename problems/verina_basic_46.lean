@@ -1,4 +1,4 @@
--- -----Description----- 
+-- -----Description-----
 -- This task requires writing a Lean 4 method that finds the last occurrence of a specified element in a sorted array of integers. The method should return the index corresponding to the last occurrence of the element if it is present; if the element is absent, it should return -1. Additionally, the array must remain unchanged after the method is executed.
 --
 -- -----Input-----
@@ -25,7 +25,8 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-
+import Aesop
+namespace tmp
 @[reducible, simp]
 def lastPosition_precond (arr : Array Int) (elem : Int) : Prop :=
   -- !benchmark @start precond
@@ -71,6 +72,6 @@ def lastPosition_postcond (arr : Array Int) (elem : Int) (result: Int) (h_precon
 theorem lastPosition_spec_satisfied (arr: Array Int) (elem: Int) (h_precond : lastPosition_precond (arr) (elem)) :
     lastPosition_postcond (arr) (elem) (lastPosition (arr) (elem) h_precond) h_precond := by
   -- !benchmark @start proof
+  aesop
   sorry
   -- !benchmark @end proof
-

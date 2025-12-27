@@ -154,7 +154,7 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
       aesop
     · --这是一个spec
       have aux (x : Nat) : (x ≤ a.size) → (∀ i, x ≤ i → i < LinearSearch.loop a e x → a[i]! ≠ e) := by
-        --aesop
+        aesop
         induction x using LinearSearch.loop.induct a e with
         | case1 =>
           unfold LinearSearch.loop

@@ -1,6 +1,6 @@
 -- -----Description-----
--- This task requires writing a Lean 4 function that finds the maximum subarray sum from a given list of integers. 
--- A subarray is a contiguous sequence of elements within the list. 
+-- This task requires writing a Lean 4 function that finds the maximum subarray sum from a given list of integers.
+-- A subarray is a contiguous sequence of elements within the list.
 -- The function should return the maximum sum that can be obtained from any subarray.
 --
 -- -----Input-----
@@ -9,7 +9,7 @@
 --
 -- -----Output-----
 -- The output is an integer:
--- Returns the maximum sum among all contiguous subarrays of xs. 
+-- Returns the maximum sum among all contiguous subarrays of xs.
 -- If the list is empty, the result should be 0.
 --
 --
@@ -23,7 +23,8 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-
+import Aesop
+namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
 def maxSubarraySum_precond (xs : List Int) : Prop :=
@@ -87,8 +88,5 @@ def maxSubarraySum_postcond (xs : List Int) (result: Int) (h_precond : maxSubarr
 theorem maxSubarraySum_spec_satisfied (xs: List Int) (h_precond : maxSubarraySum_precond (xs)) :
     maxSubarraySum_postcond (xs) (maxSubarraySum (xs) h_precond) h_precond := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof
-
-
-

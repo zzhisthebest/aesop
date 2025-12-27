@@ -1,17 +1,17 @@
--- -----Description-----  
+-- -----Description-----
 -- This task requires developing a solution that sorts an array of integers in non-decreasing order. The solution must return an array that is a rearrangement of the input, containing exactly the same elements but ordered from smallest to largest.
 --
--- -----Input-----  
--- The input consists of:  
+-- -----Input-----
+-- The input consists of:
 -- • a: An array of integers. This array can be empty or non-empty.
 --
--- -----Output-----  
--- The output is an array of integers that:  
--- • Is sorted in non-decreasing order (i.e., for any indices i and j with i < j, a[i]! ≤ a[j]!).  
--- • Has the same size as the input array.  
+-- -----Output-----
+-- The output is an array of integers that:
+-- • Is sorted in non-decreasing order (i.e., for any indices i and j with i < j, a[i]! ≤ a[j]!).
+-- • Has the same size as the input array.
 -- • Contains exactly the same elements as the input array, ensuring that the multiset of elements is preserved.
 --
--- -----Note-----  
+-- -----Note-----
 -- The implementation uses helper functions for swapping elements and performing inner and outer loops of the bubble sort algorithm. No additional preconditions are required as the function should correctly handle empty and non-empty arrays.
 
 -- !benchmark @start import type=solution
@@ -25,6 +25,8 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
+import Aesop
+namespace tmp
 @[reducible, simp]
 def BubbleSort_precond (a : Array Int) : Prop :=
   -- !benchmark @start precond
@@ -82,4 +84,3 @@ theorem BubbleSort_spec_satisfied (a: Array Int) (h_precond : BubbleSort_precond
   -- !benchmark @start proof
   sorry
   -- !benchmark @end proof
-

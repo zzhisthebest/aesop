@@ -1,7 +1,7 @@
--- -----Description----- 
+-- -----Description-----
 -- Given an integer array arr and a positive integer k, this task requires writing a Lean 4 method that finds the
 -- maximum sum of a subarray of arr, such that the length of the subarray is divisible by k.
--- If the array is empty, or generally if there exists no subarray with length divisible by k, 
+-- If the array is empty, or generally if there exists no subarray with length divisible by k,
 -- the default return value should be 0.
 --
 -- -----Input-----
@@ -25,7 +25,8 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-
+import Aesop
+namespace tmp
 -- !benchmark @end precond_aux
 @[reducible]
 def maxSubarraySumDivisibleByK_precond (arr : Array Int) (k : Int) : Prop :=
@@ -97,6 +98,5 @@ def maxSubarraySumDivisibleByK_postcond (arr : Array Int) (k : Int) (result: Int
 theorem maxSubarraySumDivisibleByK_spec_satisfied (arr: Array Int) (k: Int) :
     maxSubarraySumDivisibleByK_postcond (arr) (k) (maxSubarraySumDivisibleByK (arr) (k)) := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof
-

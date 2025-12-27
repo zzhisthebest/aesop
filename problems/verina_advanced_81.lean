@@ -20,7 +20,8 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-
+import Aesop
+namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
 def uniqueSorted_precond (arr : List Int) : Prop :=
@@ -91,5 +92,5 @@ def uniqueSorted_postcond (arr : List Int) (result: List Int) (h_precond : uniqu
 theorem uniqueSorted_spec_satisfied (arr: List Int) (h_precond : uniqueSorted_precond (arr)) :
     uniqueSorted_postcond (arr) (uniqueSorted (arr) h_precond) h_precond := by
   -- !benchmark @start proof
-  sorry
+  aesop
   -- !benchmark @end proof

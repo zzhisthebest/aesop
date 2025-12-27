@@ -1,0 +1,25 @@
+import Aesop
+set_option maxHeartbeats 0
+namespace tmp
+@[reducible, simp]
+def CalSum_precond (N : Nat) : Prop :=
+  True
+
+def CalSum (N : Nat) (h_precond : CalSum_precond (N)) : Nat :=
+  let rec loop (n : Nat) : Nat :=
+    if n = 0 then 0
+    else n + loop (n - 1)
+  loop N
+
+@[reducible, simp]
+def CalSum_postcond (N : Nat) (result: Nat) (h_precond : CalSum_precond (N)) :=
+  2 * result = N * (N + 1)
+
+
+theorem CalSum_succ (N : Nat) (h : CalSum_precond (N+1)) :
+    CalSum (N+1) h = (N+1) + CalSum N (by
+      simp [CalSum_precond] ):= by 
+aesop
+
+
+end tmp

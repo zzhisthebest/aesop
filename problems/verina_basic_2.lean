@@ -63,6 +63,7 @@ def findSmallest_postcond (s : Array Nat) (result: Option Nat) (h_precond : find
 theorem findSmallest_spec_satisfied (s: Array Nat) (h_precond : findSmallest_precond (s)) :
     findSmallest_postcond (s) (findSmallest (s) h_precond) h_precond := by
   -- !benchmark @start proof
+
   unfold findSmallest_postcond findSmallest
   cases res : s.toList.min? with--本质是by_cases,讨论s.toList.min?的两种情形
   | none =>

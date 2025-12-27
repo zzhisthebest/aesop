@@ -27,6 +27,8 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
+import Aesop
+namespace tmp
 @[reducible, simp]
 def BinarySearch_precond (a : Array Int) (key : Int) : Prop :=
   -- !benchmark @start precond
@@ -75,4 +77,3 @@ theorem BinarySearch_spec_satisfied (a: Array Int) (key: Int) (h_precond : Binar
   -- !benchmark @start proof
   sorry
   -- !benchmark @end proof
-

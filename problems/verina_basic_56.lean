@@ -1,24 +1,24 @@
--- -----Description-----  
+-- -----Description-----
 -- The problem is to update a destination array by replacing a specific segment with values taken from a source array. Given two arrays, starting positions, and a length, the task is to construct a new array where the segment in the destination from the specified starting index for the given length is replaced by the corresponding segment from the source, while all other elements remain unchanged.
 --
--- -----Input-----  
--- The input consists of:  
--- • src: An array of integers representing the source array.  
--- • sStart: A natural number indicating the starting index in src from where to begin copying.  
--- • dest: An array of integers representing the destination array.  
--- • dStart: A natural number indicating the starting index in dest where the segment will be replaced.  
+-- -----Input-----
+-- The input consists of:
+-- • src: An array of integers representing the source array.
+-- • sStart: A natural number indicating the starting index in src from where to begin copying.
+-- • dest: An array of integers representing the destination array.
+-- • dStart: A natural number indicating the starting index in dest where the segment will be replaced.
 -- • len: A natural number specifying the number of elements to copy.
 --
--- -----Output-----  
--- The output is an array of integers that:  
--- • Has the same size as the destination array (dest).  
--- • Preserves the original elements of dest except for the segment starting at index dStart of length len, which is replaced by the corresponding segment from src.  
--- • Under the preconditions that src.size ≥ sStart + len and dest.size ≥ dStart + len, guarantees that:  
---   - All elements with indices less than dStart remain as in dest.  
---   - All elements with indices greater than or equal to dStart + len remain as in dest.  
+-- -----Output-----
+-- The output is an array of integers that:
+-- • Has the same size as the destination array (dest).
+-- • Preserves the original elements of dest except for the segment starting at index dStart of length len, which is replaced by the corresponding segment from src.
+-- • Under the preconditions that src.size ≥ sStart + len and dest.size ≥ dStart + len, guarantees that:
+--   - All elements with indices less than dStart remain as in dest.
+--   - All elements with indices greater than or equal to dStart + len remain as in dest.
 --   - For each index i with 0 ≤ i < len, the element at index dStart + i in the output equals the element at index sStart + i in src.
 --
--- -----Note-----  
+-- -----Note-----
 -- It is assumed that the input arrays satisfy the preconditions: the source array has enough elements starting from sStart and the destination array has enough space starting from dStart to accommodate the copied segment.
 
 -- !benchmark @start import type=solution
@@ -32,6 +32,8 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
+import Aesop
+namespace tmp
 @[reducible, simp]
 def copy_precond (src : Array Int) (sStart : Nat) (dest : Array Int) (dStart : Nat) (len : Nat) : Prop :=
   -- !benchmark @start precond
@@ -81,6 +83,6 @@ def copy_postcond (src : Array Int) (sStart : Nat) (dest : Array Int) (dStart : 
 theorem copy_spec_satisfied (src: Array Int) (sStart: Nat) (dest: Array Int) (dStart: Nat) (len: Nat) (h_precond : copy_precond (src) (sStart) (dest) (dStart) (len)) :
     copy_postcond (src) (sStart) (dest) (dStart) (len) (copy (src) (sStart) (dest) (dStart) (len) h_precond) h_precond := by
   -- !benchmark @start proof
+  aesop
   sorry
   -- !benchmark @end proof
-
