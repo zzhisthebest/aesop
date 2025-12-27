@@ -139,7 +139,7 @@ def createDynamicFunctionInductionRules (goal : MVarId)
         indexingMode := .unindexed
         pattern? := none
         extra := ruleInfo
-        tac := .functionInduction funcName 0 0  -- 占位符，在 functionInductionRule 中动态获取
+        tac := .functionInduction funcName  -- 参数数量在 functionInductionRule 中动态获取
       }
 
       let matchResult : IndexMatchResult UnsafeRule := {

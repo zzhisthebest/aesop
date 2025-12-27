@@ -454,9 +454,18 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
 
 /-- Create a RuleTac that applies function induction for a specific recursive function,
     modeled after inductionOnSpecificVar -/
-def functionInductionRule (funcName : Name) (_numFixed : Nat) (_numInductVars : Nat) : RuleTac :=
+def functionInductionRule (funcName : Name): RuleTac :=
   SingleRuleTac.toRuleTac λ input => do
-    aesop_trace![zzh_custom] m!"🎯 Applying function induction for {funcName}"
+    -- aesop_trace![zzh_custom] m!"🎯 Applying function induction for {funcName}"
+    -- Get .induct theorem info
+
+    let inductName := funcName ++ `induct
+    Lean.executeReservedNameAction inductName--.induct是lazy generation的，所以要先use一次。
+    let inductConst ← mkConstWithFreshMVarLevels inductName
+    let inductType ← inferType inductConst
+
+    -- Parse parameter structure
+    let (numFixed, numInductVars) ← parseFunctionInductType inductType
 
 
     let (originalFVarIds, originalVarNames) ← input.goal.withContext do
@@ -473,7 +482,7 @@ def functionInductionRule (funcName : Name) (_numFixed : Nat) (_numInductVars : 
     -- 使用 tryFunctionInductionS 执行归纳并 unfold（模仿 inductionOnSpecificVar 的结构）
     let (some subgoals, steps) ← (do
       -- 先执行函数归纳
-      let some subgoals ← tryFunctionInductionS input.goal funcName 1 2
+      let some subgoals ← tryFunctionInductionS input.goal funcName numFixed numInductVars
         | aesop_trace![zzh_custom] m!"❌ tryFunctionInductionS failed"
           return none
       aesop_trace![zzh_custom] m!"Function induction succeeded✅"
