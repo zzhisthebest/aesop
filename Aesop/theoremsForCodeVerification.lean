@@ -34,7 +34,7 @@ attribute [simp]
 Array.eraseIdx!
 Int.mul_neg_of_neg_of_pos
 Int.mul_comm
-
+Array.all_iff_forall
 
 -- attribute [aesop safe constructors cases] Array
 

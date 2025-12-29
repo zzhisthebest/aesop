@@ -297,7 +297,7 @@ def normSimpCore (goal : MVarId) (goalMVars : Std.HashSet MVarId) :
             addLocalRules localRules ctxWithCurrentFile ctx.simprocs
               (isSimpAll := true)
           let resultAll ← Aesop.simpAll goal ctxAll simprocsAll
-          aesop_trace![zzh_custom] m!"✅ simp_all succeeded"
+          -- aesop_trace![zzh_custom] m!"✅ simp_all succeeded"
           pure (some resultAll)
         catch e =>
           aesop_trace![zzh_custom] m!"❌ simp_all failed: {e.toMessageData}"

@@ -106,8 +106,23 @@ def createDynamicFunctionInductionRules (goal : MVarId)
     MetaM (Array (IndexMatchResult UnsafeRule)) := do
   goal.withContext do
     -- Find all local recursive function calls with .induct theorems
+    -- Check both target and hypotheses (like createDynamicInductionRules)
+    let mut allCalls : Std.HashMap Name (Array Expr) := {}
+
+    -- 1. Find calls in target
     let tgt ← instantiateMVars (← goal.getType)
-    let allCalls ← RuleTac.Induction.findAllLocalRecursiveCalls tgt
+    let targetCalls ← RuleTac.Induction.findAllLocalRecursiveCalls tgt
+    for (funcName, callArgs) in targetCalls do
+      allCalls := allCalls.insert funcName callArgs
+
+    -- 2. Find calls in hypotheses (模仿 createDynamicInductionRules)
+    for ldecl in (← getLCtx) do
+      if ldecl.isImplementationDetail then continue
+      let hypType ← instantiateMVars ldecl.type
+      let hypCalls ← RuleTac.Induction.findAllLocalRecursiveCalls hypType
+      for (funcName, callArgs) in hypCalls do
+        if !allCalls.contains funcName then
+          allCalls := allCalls.insert funcName callArgs
 
     let mut rules : Array (IndexMatchResult UnsafeRule) := #[]
     let mut idx : Int := 0
@@ -123,7 +138,6 @@ def createDynamicFunctionInductionRules (goal : MVarId)
       idx:=idx+1
 
       -- Create a dynamic rule for function induction
-      -- 传递 0, 0 作为占位符，实际参数数量在 functionInductionRule 中动态获取
       let ruleName : RuleName := {
         name := inductName ++ Name.mkSimple (toString idx)
         builder := .induction
@@ -131,7 +145,7 @@ def createDynamicFunctionInductionRules (goal : MVarId)
         scope := .global
       }
       let ruleInfo : UnsafeRuleInfo := {
-        successProbability := ⟨0.25⟩--设置为25%的优先级
+        successProbability := ⟨0.75⟩--设置优先级
       }
 
       let rule : UnsafeRule := {

@@ -82,10 +82,12 @@ def unfoldRecursiveDefsInTargetS (goal : MVarId) (hypsToUnfold : Array FVarId) :
       -- -- dbg_trace "zzh_custom: Unfolded in target"
 
     -- 然后在指定的 hypotheses 上 unfold
+    let mut idx:Nat :=0
     for fvarId in hypsToUnfold do
       if let some (unfoldedGoal, _usedDecls) ← unfoldManyAtS unfold? currentGoal fvarId then
         currentGoal := unfoldedGoal
-        -- aesop_trace![zzh_custom] m!"Unfolded in hyp"
+        aesop_trace![zzh_custom] m!"Unfolded in hyp at idx:{idx}"
+      idx:=idx+1
         -- -- dbg_trace "Unfolded in hyp "
 
     return currentGoal
@@ -384,16 +386,43 @@ def tryFunctionInductionS (goal : MVarId) (funcName : Name) (numFixed : Nat)
   aesop_trace![zzh_custom] m!"tryFunctionInductionS: funcName={funcName}, numFixed={numFixed}, numInductVars={numInductVars}"
   -- 构造 tactic 并执行
   let stxOpt ← goal.withContext do
+    -- 1. 先在 target 中查找函数调用
     let tgt ← instantiateMVars (← goal.getType)
     aesop_trace![zzh_custom] m!"Goal type: {tgt}"
-    let some call := tgt.find? (fun e =>
+    let callOpt := tgt.find? (fun e =>
       match e.getAppFn with
       | .const name _ => name == funcName
       | _ => false
-    ) | aesop_trace![zzh_custom] m!"❌ Function {funcName} not found in goal"
-        return none
+    )
 
-    aesop_trace![zzh_custom] m!"✅ Found function call: {call}"
+    -- 2. 如果 target 中没找到，在 hypotheses 中查找
+    let call ← match callOpt with
+      | some c =>
+        aesop_trace![zzh_custom] m!"✅ Found function call in target: {c}"
+        pure c
+      | none =>
+        aesop_trace![zzh_custom] m!"Function {funcName} not found in target, searching in hypotheses..."
+        let mut foundCall : Option Expr := none
+        for ldecl in (← getLCtx) do
+          if ldecl.isImplementationDetail then continue
+          let hypType ← instantiateMVars ldecl.type
+          let hypCall := hypType.find? (fun e =>
+            match e.getAppFn with
+            | .const name _ => name == funcName
+            | _ => false
+          )
+          if hypCall.isSome then
+            aesop_trace![zzh_custom] m!"✅ Found function call in hypothesis {ldecl.userName}: {hypCall.get!}"
+            foundCall := hypCall
+            break
+
+        match foundCall with
+        | some c => pure c
+        | none =>
+          aesop_trace![zzh_custom] m!"❌ Function {funcName} not found in goal or hypotheses"
+          return none
+
+    aesop_trace![zzh_custom] m!"Using function call: {call}"
     let args := call.getAppArgs
 
     if args.size < numFixed + numInductVars then
@@ -510,6 +539,7 @@ def functionInductionRule (funcName : Name): RuleTac :=
             -- 否则，至少有一个是老的，应该 unfold
             if !(isNewFVarId && isNewName) then
               vars := vars.push fvarId
+              aesop_trace![zzh_custom] m!"要unfold的hyp: {varName}"
           return vars: MetaM (Array FVarId))
         let unfoldedGoal ← unfoldRecursiveDefsInTargetS mvarId hypsToUnfold
         return unfoldedGoal

@@ -66,12 +66,12 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 #check sumOfDigits.loop.induct
 -- 累加器平移引理
 theorem sumOfDigits_loop_acc (n y x: Nat) :
-    sumOfDigits.loop n x+y = sumOfDigits.loop n x + y := by
+    sumOfDigits.loop n (x+y) = sumOfDigits.loop n x + y := by
   induction n, y using sumOfDigits.loop.induct generalizing x with
   | case1 acc => aesop
   | case2 n acc h_ne ih =>
     unfold sumOfDigits.loop
-    simp
+    aesop
 
     --aesop
 

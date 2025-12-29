@@ -24,7 +24,17 @@ def check_and_maybe_delete(file_path, do_delete: bool):
                 os.remove(file_path)
                 return filename, True, "deleted"
             else:
-                return filename, True, "passed"
+                # 新增：通过的文件重命名为 _solvedByAesop
+                dir_name = os.path.dirname(file_path)
+                stem, ext = os.path.splitext(filename)
+                new_name = f"{stem}_solvedByAesop{ext}"
+                new_path = os.path.join(dir_name, new_name)
+
+                if not os.path.exists(new_path):
+                    os.rename(file_path, new_path)
+                    return filename, True, f"renamed to {new_name}"
+                else:
+                    return filename, True, f"already exists {new_name}"
         else:
             return filename, False, result.stderr
 
