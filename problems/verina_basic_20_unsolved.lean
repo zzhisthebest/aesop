@@ -69,7 +69,7 @@ def uniqueProduct_postcond (arr : Array Int) (result: Int) (h_precond : uniquePr
 -- !benchmark @start proof_aux
 
 -- !benchmark @end proof_aux
-
+#check uniqueProduct.loop.induct
 
 theorem uniqueProduct_spec_satisfied (arr: Array Int) (h_precond : uniqueProduct_precond (arr)) :
     uniqueProduct_postcond (arr) (uniqueProduct (arr) h_precond) h_precond := by
@@ -80,6 +80,8 @@ theorem uniqueProduct_spec_satisfied (arr: Array Int) (h_precond : uniqueProduct
   rw [Int.sub_eq_zero]
   rw [eq_comm]
   simp
+  apply uniqueProduct.loop.induct
+
   -- 将 a ≤ b ∧ b ≤ a 转换为 a = b,
   --两个spec等价，本质上是一个spec
   cases arr with | mk d =>--还是把Array转为List

@@ -165,14 +165,16 @@ def runFirstNormRule (goal : MVarId) (mvars : UnorderedArraySet MVarId)
 
 def mkNormSimpScriptStep
     (preGoal : MVarId) (postGoal? : Option MVarId)
-    (preState postState : Meta.SavedState) (usedTheorems : Simp.UsedSimps) :
+    (preState postState : Meta.SavedState) (usedTheorems : Simp.UsedSimps)
+    (actuallyUsedSimpAll : Bool := false) :
     NormM Script.LazyStep := do
   let ctx := (← read).normSimpContext
+  -- 使用实际执行成功的方法，而不是配置的方法
   let simpBuilder :=
-    TacticBuilder.simpAllOrSimpAtStar (simpAll := ctx.useHyps) preGoal
+    TacticBuilder.simpAllOrSimpAtStar (simpAll := actuallyUsedSimpAll) preGoal
       ctx.configStx? usedTheorems
   let simpOnlyBuilder :=
-    TacticBuilder.simpAllOrSimpAtStarOnly (simpAll := ctx.useHyps) preGoal
+    TacticBuilder.simpAllOrSimpAtStarOnly (simpAll := actuallyUsedSimpAll) preGoal
       ctx.configStx? usedTheorems
   let tacticBuilders :=
     if (← read).options.useDefaultSimpSet then
@@ -283,12 +285,45 @@ def normSimpCore (goal : MVarId) (goalMVars : Std.HashSet MVarId) :
     let localRules := (← read).ruleSet.localNormSimpRules
     -- 添加当前文件常量到 simp 上下文
     let ctxWithCurrentFile ← addCurrentFileConstantsToSimp ctx.toContext goal
+
+    -- 记录实际使用的方法
+    let mut actuallyUsedSimpAll := ctx.useHyps
+
     let result ←
       if ctx.useHyps then
-        let (ctx, simprocs) ←
-          addLocalRules localRules ctxWithCurrentFile ctx.simprocs
-            (isSimpAll := true)
-        Aesop.simpAll goal ctx simprocs
+        -- 先尝试 simp_all（用 ConfigCtx 构建的 context）
+        let resultOpt ← try
+          let (ctxAll, simprocsAll) ←
+            addLocalRules localRules ctxWithCurrentFile ctx.simprocs
+              (isSimpAll := true)
+          let resultAll ← Aesop.simpAll goal ctxAll simprocsAll
+          aesop_trace![zzh_custom] m!"✅ simp_all succeeded"
+          pure (some resultAll)
+        catch e =>
+          aesop_trace![zzh_custom] m!"❌ simp_all failed: {e.toMessageData}"
+          pure none
+
+        match resultOpt with
+        | some result => pure result
+        | none =>
+          -- simp_all 失败，用 Simp.Config（而非 ConfigCtx）重新构建 context 并使用 simp at *
+          aesop_trace![zzh_custom] m!"Rebuilding context with Simp.Config for simp at * fallback"
+          show MetaM _ from restoreState preState  -- 恢复状态
+          actuallyUsedSimpAll := false  -- 记录实际用了 simp at *
+
+          -- 用 Simp.Config 重新构建 simp context（关键：不用 ConfigCtx）
+          let ruleSet := (← read).ruleSet
+          let fallbackCtx ← Simp.mkContext (config := {})
+            (simpTheorems := ruleSet.simpTheoremsArray.map (·.snd))
+            (congrTheorems := ← getSimpCongrTheorems)
+          let fallbackCtxWithFile ← addCurrentFileConstantsToSimp fallbackCtx goal
+
+          let (ctxStar, simprocsStar) ←
+            addLocalRules localRules fallbackCtxWithFile ctx.simprocs
+              (isSimpAll := false)
+          let resultStar ← Aesop.simpGoalWithAllHypotheses goal ctxStar simprocsStar
+          aesop_trace![zzh_custom] m!"✅ simp at * completed"
+          pure resultStar
       else
         let (ctx, simprocs) ←
           addLocalRules localRules ctxWithCurrentFile ctx.simprocs
@@ -318,11 +353,11 @@ def normSimpCore (goal : MVarId) (goalMVars : Std.HashSet MVarId) :
     | .unchanged => return none
     | .solved usedTheorems => do
       let step ←
-        mkNormSimpScriptStep goal none preState postState usedTheorems
+        mkNormSimpScriptStep goal none preState postState usedTheorems actuallyUsedSimpAll
       return some $ .proved #[step]
     | .simplified newGoal usedTheorems => do
       let step ←
-        mkNormSimpScriptStep goal newGoal preState postState usedTheorems
+        mkNormSimpScriptStep goal newGoal preState postState usedTheorems actuallyUsedSimpAll
       applyDiffToForwardState (← diffGoals goal newGoal)
       return some $ .succeeded newGoal #[step]
 where

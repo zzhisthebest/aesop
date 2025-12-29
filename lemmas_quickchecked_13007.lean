@@ -22,7 +22,30 @@ def Find_postcond (a : Array Int) (key : Int) (result: Int) (h_precond : Find_pr
 
 theorem Find.search_nonneg_or_neg_one (a : Array Int) (key : Int) :
     ∀ i : Nat, (Find.search a key i = -1) ∨ (0 ≤ Find.search a key i):= by
-  aesop?
+  intro i
+  induction i using tmp.Find.search.induct a key
+  · unfold tmp.Find.search
+    subst h✝
+    simp_all only [↓reduceIte, getElem!_pos, Int.ofNat_eq_coe, Int.reduceNeg, reduceCtorEq, Int.ofNat_zero_le,
+      or_true]
+  · unfold tmp.Find.search
+    simp_all only [getElem!_pos, Int.reduceNeg, ↓reduceIte]
+  · unfold tmp.Find.search
+    simp_all only [Nat.not_lt, getElem!_pos, Int.ofNat_eq_coe, getElem!_neg, Int.default_eq_zero, Int.reduceNeg,
+      ite_eq_right_iff]
+    split
+    next x h h_1 =>
+      subst h_1
+      simp_all only [Int.reduceNeg, reduceCtorEq, imp_false, Nat.not_lt, true_or]
+    next x h h_1 =>
+      split
+      next h_2 =>
+        simp_all only [Int.reduceNeg, forall_const]
+        grind
+      next h_2 =>
+        simp_all only [Nat.not_lt, Int.reduceNeg, Int.neg_nonneg, Int.reduceLE, or_false]
+        intro a_1
+        grind
   aesop?(config := { useDefaultSimpSet := false })
 
 

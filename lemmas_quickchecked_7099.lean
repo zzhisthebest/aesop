@@ -43,8 +43,8 @@ def twoSum_postcond (nums : List Int) (target : Int) (result: Option (Nat × Nat
 
 
 theorem precond_true (nums : List Int) (target : Int) :
-    twoSum_precond nums target:= by 
-  aesop?
+    twoSum_precond nums target:= by
+  simp_all only [twoSum_precond]
   aesop?(config := { useDefaultSimpSet := false })
 
 
