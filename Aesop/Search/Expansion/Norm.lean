@@ -266,9 +266,16 @@ private def addCurrentFileConstantsToSimp (ctx : Simp.Context) (goal : MVarId) :
     try
       let info ← getConstInfo const
       let isPropType ← isProp info.type
+      -- if isPropType then
+      --   aesop_trace![zzh_custom]m!"本地prop：{const}"
+      -- else
+      --   aesop_trace![zzh_custom]m!"本地非prop：{const}"
       newSimpTheorems ←
         if isPropType then
           newSimpTheorems.addConst const
+
+          -- 设置优先级为900，低于默认的1000
+          -- newSimpTheorems.addConst const (inv := true) (post := false) (prio := 900)
         else
           newSimpTheorems.addDeclToUnfold const
     catch _ =>

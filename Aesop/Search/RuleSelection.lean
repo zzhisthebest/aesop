@@ -204,9 +204,16 @@ def selectUnsafeRules (postponedSafeRules : Array PostponedSafeRule)
     | some rules => return rules
     | none => do
       let ruleSet := (← read).ruleSet
+      let options := (← read).options
       let mut unsafeRules ←
         g.runMetaMInPostNormState' λ postNormGoal =>
-          ruleSet.applicableUnsafeRules g.forwardRuleMatches postNormGoal
+          -- Filter grind rule if disabled
+          let include? := fun (r : UnsafeRule) =>
+            if !options.enableGrind && r.name.name == `Aesop.BuiltinRules.grind then
+              false
+            else
+              true
+          ruleSet.applicableUnsafeRulesWith g.forwardRuleMatches postNormGoal include?
 
       -- Dynamically add induction rules for each Nat/List variable in the goal
       let dynamicInductionRules ← g.runMetaMInPostNormState' λ postNormGoal =>

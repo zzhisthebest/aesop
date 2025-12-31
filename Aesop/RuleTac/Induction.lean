@@ -230,10 +230,21 @@ def induction (target : CasesTarget) (md : TransparencyMode)
 
 namespace Induction
 --己。
+/-- 检查参数名是否是 case 加数字（如 case1, case2 等） -/
+def isCaseName (name : Name) : Bool :=
+  -- 检查名称是否以 "case" 开头，后面跟数字
+  -- 例如：case1, case2, case3 等
+  let nameStr := name.toString
+  if nameStr.startsWith "case" && nameStr.length > 4 then
+    let suffix := nameStr.drop 4
+    suffix.toList.all (fun c => c.isDigit)
+  else
+    false
+--己。
 /-- 解析函数归纳定理的参数结构，返回 (固定参数数量, 归纳变量数量) -/
 def parseFunctionInductType (inductType : Expr) : MetaM (Nat × Nat) := do
   -- inductType 形如: ∀ (fixed...) (motive : ...) (cases...) (vars...), motive vars...
-  -- 通过遍历 forall 绑定，用参数名识别 motive
+  -- 通过遍历 forall 绑定，用参数名识别 motive 和 case
   let mut motiveIdx : Option Nat := none
   let mut casesEnd : Option Nat := none
   let mut currentIdx := 0
@@ -247,14 +258,16 @@ def parseFunctionInductType (inductType : Expr) : MetaM (Nat × Nat) := do
     -- 识别 motive：参数名是 "motive"
     if varName == `motive then
       motiveIdx := some currentIdx
-      -- aesop_trace![zzh_custom] m!"Found motive at index {currentIdx}, name: {varName}"
+      aesop_trace![zzh_custom] m!"Found motive at index {currentIdx}, name: {varName}"
 
-    -- motive 之后的参数：如果还是函数类型，就是 case；否则就是归纳变量
-    if motiveIdx.isSome && casesEnd.isNone then
-      if !varType.isForall then
-        -- 第一个非函数类型参数，归纳变量开始
-        casesEnd := some currentIdx
-        -- aesop_trace![zzh_custom] m!"Induction vars start at index {currentIdx}"
+    else if let some _mIdx := motiveIdx then
+      if casesEnd.isNone then
+        let isCaseName := isCaseName varName
+        if !isCaseName then
+          -- 不是 case 名称，说明这是归纳变量
+          -- 例如：lst : List Int（不是 case1/case2 等）
+          casesEnd := some currentIdx
+          aesop_trace![zzh_custom] m!"Induction vars start at index {currentIdx} (name: {varName}"
 
     e := e.bindingBody!
     currentIdx := currentIdx + 1

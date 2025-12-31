@@ -141,6 +141,10 @@ structure Options where--己
   Enable the builtin `unfold` normalisation rule.
   -/
   enableUnfold := true
+  /--
+  Enable the builtin `grind` unsafe rule.
+  -/
+  enableGrind := true
   deriving Inhabited, BEq, Repr
 
 /--
