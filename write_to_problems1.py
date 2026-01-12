@@ -1,45 +1,64 @@
 import json
 import os
 import shutil
+
+def load_solved_ids(path):
+    """读取 solved_ids.txt，返回一个 int 集合"""
+    with open(path, "r", encoding="utf-8") as f:
+        return {int(line.strip()) for line in f if line.strip().isdigit()}
+
 def main():
     json_file = "/data1/zzh/verina/verina_lemmas_quickchecked.json"
-    tactic="aesop"
-    # tactic="aesop"
+    solved_ids_file = "solved_ids.txt"
+
+    tactic = "aesop"
+    # tactic = "aesop"
     import_statement = "import Aesop\n"
+
+    # 读取 solved ids
+    solved_ids = load_solved_ids(solved_ids_file)
+    print(f"Loaded {len(solved_ids)} solved ids")
+
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
+
     if not data:
         print("Error: JSON file is empty")
         return
-    
+
     print(f"Processing {len(data)} objects from {json_file}")
-    
-    # Prepare all proofs with tactic based on premise_names
-    all_proofs = []
-    for obj in data:
-        obj["header"]=obj["header"].replace("import Mathlib\n", "")
-        test_code = import_statement+obj["header"]+"\n"+obj["lemma_formal_statements"].replace("sorry", f"\n{tactic}")
-        all_proofs.append(test_code)
-    # 1. 定义并创建输出目录
+
+    # 输出目录
     output_path = "/data1/zzh/aesop/problems1"
-    #  如果文件夹存在，直接删除整个文件夹及其内容
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
         print(f"Cleared existing directory: {output_path}")
-
-    # 2. 重新创建空的文件夹
     os.makedirs(output_path)
 
-    # 2. 启动新循环进行文件写入
-    for i, proof_content in enumerate(all_proofs):
+    written = 0
+
+    # 只处理编号在 solved_ids 中的题目
+    for i, obj in enumerate(data):
+        if i in solved_ids:
+            continue
+
+        obj["header"] = obj["header"].replace("import Mathlib\n", "")
+        proof_content = (
+            import_statement
+            + obj["header"]
+            + "\n"
+            + obj["lemma_formal_statements"].replace("sorry", f"\n{tactic}")
+        )
+
         file_name = f"lemma_{i}.lean"
         full_path = os.path.join(output_path, file_name)
-        
+
         with open(full_path, 'w', encoding='utf-8') as f_out:
             f_out.write(proof_content)
-            
-    print(f"Finished: {len(all_proofs)} files saved to {output_path}")
+
+        written += 1
+
+    print(f"Finished: wrote {written} files to {output_path}")
 
 if __name__ == "__main__":
     main()

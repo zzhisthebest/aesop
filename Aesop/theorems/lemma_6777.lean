@@ -1,0 +1,43 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_6777
+public def task_code_precond (sequence : List Int) : Prop :=
+  True
+
+public def task_code (sequence : List Int) (h_precond : task_code_precond (sequence)) : Int :=
+  match sequence with
+  | []      => 0
+  | x :: xs =>
+      let (_, maxSoFar) :=
+        xs.foldl (fun (acc : Int × Int) (x : Int) =>
+          let (cur, maxSoFar) := acc
+          let newCur := if cur + x >= x then cur + x else x
+          let newMax := if maxSoFar >= newCur then maxSoFar else newCur
+          (newCur, newMax)
+        ) (x, x)
+      maxSoFar
+
+public def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_code_precond (sequence)) : Prop :=
+  let subArrays :=
+    List.range (sequence.length + 1) |>.flatMap (fun start =>
+      List.range (sequence.length - start + 1) |>.map (fun len =>
+        sequence.drop start |>.take len))
+  let subArraySums := subArrays.filter (· ≠ []) |>.map (·.sum)
+  subArraySums.contains result ∧ subArraySums.all (· ≤ result)
+
+
+public theorem subArray_sum_mem_map {sequence : List Int} {start len : Nat}
+    (h_start : start ≤ sequence.length)
+    (h_len   : len ≤ sequence.length - start)
+    (h_len_pos : 0 < len) :
+    let subArray := sequence.drop start |>.take len
+    let subArraySums :=
+      ((List.range (sequence.length + 1)).flatMap
+        (fun s => (List.range (sequence.length - s + 1)).map (fun l => sequence.drop s |>.take l))
+        ).filter (· ≠ []) |>.map (·.sum)
+    subArraySums.contains subArray.sum:= by 
+sorry
+
+
+end tmp_lemma_6777

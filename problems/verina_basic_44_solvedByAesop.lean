@@ -65,7 +65,7 @@ def isOddAtIndexOdd_postcond (a : Array Int) (result: Bool) (h_precond : isOddAt
 
 -- !benchmark @end proof_aux
 
-attribute [simp] Array.all_iff_forall
+--attribute [simp] Array.all_iff_forall
 theorem isOddAtIndexOdd_spec_satisfied (a: Array Int) (h_precond : isOddAtIndexOdd_precond (a)) :
     isOddAtIndexOdd_postcond (a) (isOddAtIndexOdd (a) h_precond) h_precond := by
   -- !benchmark @start proof

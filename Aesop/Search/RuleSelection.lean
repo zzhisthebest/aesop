@@ -207,9 +207,11 @@ def selectUnsafeRules (postponedSafeRules : Array PostponedSafeRule)
       let options := (← read).options
       let mut unsafeRules ←
         g.runMetaMInPostNormState' λ postNormGoal =>
-          -- Filter grind rule if disabled
+          -- Filter grind and omega rules if disabled
           let include? := fun (r : UnsafeRule) =>
             if !options.enableGrind && r.name.name == `Aesop.BuiltinRules.grind then
+              false
+            else if !options.enableOmega && r.name.name == `Aesop.BuiltinRules.omega then
               false
             else
               true

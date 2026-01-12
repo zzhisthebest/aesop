@@ -1,0 +1,1320 @@
+lemma_4558.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_3172.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_1975.lean | PARTIAL_OR_FAILED | refine let m := List.foldl (fun acc s => max acc s.length) init L;
+  ?_
+lemma_2460.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_5645.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_5699.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_6773.lean | PARTIAL_OR_FAILED | refine let subArray := List.take len (List.drop start sequence);
+  ?_
+lemma_2848.lean | PARTIAL_OR_FAILED | refine List.max?_eq_some_iff'.mp ?_
+lemma_5691.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_11319.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_7538.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_7738.lean | PARTIAL_OR_FAILED | refine Int.Linear.mul_eq_kk 3 x ?_ ?_ (x + x + x) ?_ ?_ ?_
+lemma_2091.lean | PARTIAL_OR_FAILED | refine let max := List.foldl Max.max 0 l;
+  ?_
+lemma_306.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_639.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_7303.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_1950.lean | PARTIAL_OR_FAILED | refine let m := List.foldl (fun acc n => max acc n) 0 ns;
+  ?_
+lemma_6354.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_add_of_sub_eq ?_ ?_)
+lemma_4037.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_9161.lean | PARTIAL_OR_FAILED | refine Array.size_eq_of_beq ?_
+lemma_2495.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_2211.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1026.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_10161.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_7177.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_1776.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_3622.lean | PARTIAL_OR_FAILED | refine Int.max_le.mpr ?_
+lemma_5285.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_6613.lean | PARTIAL_OR_FAILED | refine fun r a a_1 => ?_
+lemma_13127.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_2917.lean | PARTIAL_OR_FAILED | refine Int.max_le.mp ?_
+lemma_6828.lean | PARTIAL_OR_FAILED | refine Nat.le_min_of_le_of_le ?_ ?_
+lemma_5776.lean | PARTIAL_OR_FAILED | refine ⟨?_, rfl⟩
+lemma_3712.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_1480.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_1955.lean | PARTIAL_OR_FAILED | refine fun n a => ?_
+lemma_1769.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_243.lean | PARTIAL_OR_FAILED | refine fun x => ?_
+lemma_4557.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_1754.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_6076.lean | PARTIAL_OR_FAILED | refine List.Sublist.length_le ?_
+lemma_1055.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_491.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_10358.lean | PARTIAL_OR_FAILED | refine List.take_left' ?_
+lemma_690.lean | PARTIAL_OR_FAILED | refine Nat.mul_div_cancel' ?_
+lemma_7518.lean | PARTIAL_OR_FAILED | refine Int.mul_nonneg ?_ hb
+lemma_8627.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_13840.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_6497.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_6833.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_13474.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_10821.lean | PARTIAL_OR_FAILED | refine List.length_lt_of_drop_ne_nil ?_
+lemma_3421.lean | PARTIAL_OR_FAILED | refine Int.neg_ne_zero.mp ?_
+lemma_11204.lean | PARTIAL_OR_FAILED | refine List.any_eq_true.mpr ?_
+lemma_8664.lean | PARTIAL_OR_FAILED | refine and_or_left.mpr ?_
+lemma_5009.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_13804.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_10588.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_9633.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_5862.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_2427.lean | PARTIAL_OR_FAILED | refine List.IsSuffix.count_le x ?_
+lemma_8667.lean | PARTIAL_OR_FAILED | refine fun i hi => ?_
+lemma_5936.lean | PARTIAL_OR_FAILED | refine fun a i a_1 => ?_
+lemma_9620.lean | PARTIAL_OR_FAILED | refine List.mem_range'_1.mpr ?_
+lemma_13438.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_1374.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_11177.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_11155.lean | PARTIAL_OR_FAILED | refine List.any_eq_true.mpr ?_
+lemma_4383.lean | PARTIAL_OR_FAILED | refine List.ext_getElem ?_ ?_
+lemma_11134.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4014.lean | PARTIAL_OR_FAILED | refine Nat.div_le_of_le_mul ?_
+lemma_14083.lean | PARTIAL_OR_FAILED | refine List.getElem?_eq_none_iff.mp ?_
+lemma_14216.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_7903.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_10656.lean | PARTIAL_OR_FAILED | refine fun j a a_1 => ?_
+lemma_5563.lean | PARTIAL_OR_FAILED | refine Int.le_min.mpr ?_
+lemma_13975.lean | PARTIAL_OR_FAILED | refine List.ext_getElem ?_ ?_
+lemma_12834.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_12189.lean | PARTIAL_OR_FAILED | refine let diff := (a[m]! - b[n]!).natAbs;
+  let new_d := if diff < d then diff else d;
+  ?_
+lemma_2603.lean | PARTIAL_OR_FAILED | refine List.mem_cons_of_mem a ?_
+lemma_3700.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_8700.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_11346.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Bool.eq_not_self_or.mpr) ?_)
+lemma_10855.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_15698.lean | PARTIAL_OR_FAILED | refine List.nodup_iff_count.mpr ?_
+lemma_15583.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_8701.lean | PARTIAL_OR_FAILED | refine List.min?_eq_some_iff'.mpr ?_
+lemma_3105.lean | PARTIAL_OR_FAILED | refine Nat.le_sub_of_add_le ?_
+lemma_9758.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_8470.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_16566.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_15652.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_1180.lean | PARTIAL_OR_FAILED | refine let len := lst.length;
+  let validPeaks :=
+    List.filter
+      (fun p =>
+        decide
+          (1 ≤ p ∧
+            p < len - 1 ∧
+              ((List.range p).all fun i => decide (lst[i]! < lst[i + 1]!)) = true ∧
+                ((List.range (len - 1 - p)).all fun i => decide (lst[p + i]! > lst[p + i + 1]!)) = true))
+      (List.range len);
+  ?_
+lemma_1659.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_506.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_6663.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_504.lean | PARTIAL_OR_FAILED | refine not_exists.mpr ?_
+lemma_2004.lean | PARTIAL_OR_FAILED | refine let m := List.foldl max 0 ns;
+  ?_
+lemma_5719.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_15060.lean | PARTIAL_OR_FAILED | refine let r := Int.ofNat (x % y);
+  let q := Int.ofNat (x / y);
+  ?_
+lemma_3717.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_15792.lean | PARTIAL_OR_FAILED | refine (List.pairwise_middle ?_).mpr ?_
+lemma_5647.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_12934.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1640.lean | PARTIAL_OR_FAILED | refine eq_false_of_ne_true ?_
+lemma_6506.lean | PARTIAL_OR_FAILED | refine (Nat.div_le_iff_le_mul_of_dvd ?_ ?_).mp ?_
+lemma_7094.lean | PARTIAL_OR_FAILED | refine Nat.zero_eq_one_mod_iff.mp ?_
+lemma_12288.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_8819.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_11023.lean | PARTIAL_OR_FAILED | refine forall_and.mp ?_
+lemma_6275.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_2604.lean | PARTIAL_OR_FAILED | refine Nat.max_le.mp ?_
+lemma_3851.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_13733.lean | PARTIAL_OR_FAILED | refine List.forall_mem_replicate.mp ?_
+lemma_11261.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_13123.lean | PARTIAL_OR_FAILED | refine Char.eq_of_val_eq ?_
+lemma_2583.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_9587.lean | PARTIAL_OR_FAILED | refine List.mem_range'_1.mpr ?_
+lemma_9127.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_715.lean | PARTIAL_OR_FAILED | refine List.zipIdx_eq_cons_iff.mpr ?_
+lemma_236.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1044.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_6368.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_14169.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_11915.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_4184.lean | PARTIAL_OR_FAILED | refine Bool.coe_iff_coe.mpr ?_
+lemma_8591.lean | PARTIAL_OR_FAILED | refine Nat.sub_le_of_le_add ?_
+lemma_584.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_528.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_11309.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_13966.lean | PARTIAL_OR_FAILED | refine List.append_inj' ?_ ?_
+lemma_7322.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_13893.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_13024.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_5718.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_13025.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_11513.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_7073.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_right 1 ?_
+lemma_11925.lean | PARTIAL_OR_FAILED | refine List.mem_range.mpr ?_
+lemma_12253.lean | PARTIAL_OR_FAILED | refine let diff := (a[m]! - b[n]!).natAbs;
+  let new_d := if diff < d then diff else d;
+  ?_
+lemma_1307.lean | PARTIAL_OR_FAILED | refine Int.pow_pos ?_
+lemma_11955.lean | PARTIAL_OR_FAILED | refine Nat.le_div_two_of_div_two_lt_sub ?_
+lemma_13873.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.div_eq_of_eq_mul_right ?_ ?_)
+lemma_13997.lean | PARTIAL_OR_FAILED | refine Eq.symm (List.ext_getElem ?_ ?_)
+lemma_12818.lean | PARTIAL_OR_FAILED | refine Bool.not_eq_not.mp ?_
+lemma_14220.lean | PARTIAL_OR_FAILED | refine Int.max_le.mp ?_
+lemma_10242.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_308.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_12528.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_7906.lean | PARTIAL_OR_FAILED | refine Array.size_pos_iff_exists_push.mpr ?_
+lemma_13750.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_2513.lean | PARTIAL_OR_FAILED | refine List.Sublist.length_le ?_
+lemma_15898.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_12214.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_14429.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_16550.lean | PARTIAL_OR_FAILED | refine Eq.symm (Int.Linear.mul_eq_kk 3 x ?_ ?_ (6 * x / 2) ?_ ?_ ?_)
+lemma_13835.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.div_eq_of_eq_mul_right ?_ ?_)
+lemma_9199.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_2971.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_13831.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_15733.lean | PARTIAL_OR_FAILED | refine List.pairwise_reverse.mp ?_
+lemma_4527.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expected := n * (n + 1) / 2;
+  let actual := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  let diff := expected - actual;
+  ?_
+lemma_11400.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_3594.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_14495.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_13528.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_13848.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_11254.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_10774.lean | PARTIAL_OR_FAILED | refine (Int.toNat_lt ?_).mpr ?_
+lemma_10573.lean | PARTIAL_OR_FAILED | refine fun {j} a a_1 => ?_
+lemma_12217.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_11361.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4623.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_12620.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4365.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_6753.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_5651.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_8910.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_2970.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_3391.lean | PARTIAL_OR_FAILED | refine Int.le_min.mp ?_
+lemma_12906.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_6438.lean | PARTIAL_OR_FAILED | refine (Std.Internal.List.Option.exists_eq_some_and_iff
+        (List.foldl
+          (fun acc cur =>
+            match acc with
+            | none => some cur
+            | some best =>
+              if cur.length < best.length ∨ cur.length = best.length ∧ isLexSmaller cur best = true then some cur
+              else some best)
+          none cands)
+        fun x =>
+        ∀ (x_1 : List Char),
+          x_1 ∈ cands → x_1.length > x.length ∨ x_1.length = x.length ∧ listToString x ≤ listToString x_1).mpr
+    ?_
+lemma_5008.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6172.lean | PARTIAL_OR_FAILED | refine List.getElem!_of_getElem? ?_
+lemma_7308.lean | PARTIAL_OR_FAILED | refine Nat.zero_lt_of_ne_zero ?_
+lemma_10587.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_817.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_1486.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4087.lean | PARTIAL_OR_FAILED | refine List.Pairwise.cons ?_ hxs
+lemma_4273.lean | PARTIAL_OR_FAILED | refine List.elem_eq_true_of_mem ?_
+lemma_1541.lean | PARTIAL_OR_FAILED | refine Array.size_pos_iff_exists_push.mpr ?_
+lemma_13807.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_7390.lean | PARTIAL_OR_FAILED | refine fun c => ?_
+lemma_7758.lean | PARTIAL_OR_FAILED | refine Int.ediv_mul_cancel ?_
+lemma_10107.lean | PARTIAL_OR_FAILED | refine fun x a a_1 => ?_
+lemma_10069.lean | PARTIAL_OR_FAILED | refine List.eq_toArray_iff.mp ?_
+lemma_11683.lean | PARTIAL_OR_FAILED | refine iff_true_intro ?_
+lemma_11584.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_right 1 ?_
+lemma_8641.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1088.lean | PARTIAL_OR_FAILED | refine Nat.mod_eq_mod_iff.mpr ?_
+lemma_10596.lean | PARTIAL_OR_FAILED | refine Int.ne_iff_lt_or_gt.mpr ?_
+lemma_1099.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_4747.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expectedSum := n * (n + 1) / 2;
+  let actualSum := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  let result := expectedSum - actualSum;
+  ?_
+lemma_12309.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_6664.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6412.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_6411.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_1703.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_4630.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let r := missingNumber nums h_precond;
+  ?_
+lemma_12339.lean | PARTIAL_OR_FAILED | refine Bool.not_eq_not.mp ?_
+lemma_3855.lean | PARTIAL_OR_FAILED | refine List.Pairwise.cons ?_ h₂
+lemma_6265.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_14309.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_10594.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_14049.lean | PARTIAL_OR_FAILED | refine List.length_take_of_le ?_
+lemma_2013.lean | PARTIAL_OR_FAILED | refine List.mem_of_elem_eq_true ?_
+lemma_1360.lean | PARTIAL_OR_FAILED | refine (Int.ediv_lt_iff_of_dvd_of_pos ?_ ?_).mpr ?_
+lemma_10854.lean | PARTIAL_OR_FAILED | refine Array.mem_def.mpr ?_
+lemma_14192.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_8949.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_4430.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_11506.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_2474.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_2446.lean | PARTIAL_OR_FAILED | refine forall_eq_or_imp.mp ?_
+lemma_659.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_12340.lean | PARTIAL_OR_FAILED | refine Bool.not_eq_not.mp ?_
+lemma_2914.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_3997.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt (x + y + c) ?_
+lemma_11591.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ rfl
+lemma_11255.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_5989.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_sub_of_add_eq' ?_)
+lemma_6181.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_4577.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_13258.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14265.lean | PARTIAL_OR_FAILED | refine fun j a => ?_
+lemma_6507.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_9246.lean | PARTIAL_OR_FAILED | refine Array.size_pos_iff_exists_push.mpr ?_
+lemma_400.lean | PARTIAL_OR_FAILED | refine Or.symm (Or.inr ?_)
+lemma_1351.lean | PARTIAL_OR_FAILED | refine not_congr ?_
+lemma_9624.lean | PARTIAL_OR_FAILED | refine Nat.le_add_right_of_le ?_
+lemma_15582.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_11441.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_10815.lean | PARTIAL_OR_FAILED | refine (Int.toNat_lt ?_).mpr ?_
+lemma_16109.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_11924.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_6776.lean | PARTIAL_OR_FAILED | refine let subArray := List.take len (List.drop start sequence);
+  ?_
+lemma_2492.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7023.lean | PARTIAL_OR_FAILED | refine List.mem_flatMap.mpr ?_
+lemma_1327.lean | PARTIAL_OR_FAILED | refine (Int.ediv_eq_iff_eq_mul_left ?_ ?_).mpr ?_
+lemma_1953.lean | PARTIAL_OR_FAILED | refine or_and_left.mpr ?_
+lemma_141.lean | PARTIAL_OR_FAILED | refine fun a b a_1 a_2 => ?_
+lemma_2397.lean | PARTIAL_OR_FAILED | refine Option.mem_def.mp ?_
+lemma_6732.lean | PARTIAL_OR_FAILED | refine exists_eq_left.mpr ?_
+lemma_8204.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_12670.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_6959.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_12315.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_11769.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_2132.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_577.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_10555.lean | PARTIAL_OR_FAILED | refine fun i j a a_1 => ?_
+lemma_3982.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt (a + c) ?_
+lemma_1231.lean | PARTIAL_OR_FAILED | refine fun a p => ?_
+lemma_4083.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_5360.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1985.lean | PARTIAL_OR_FAILED | refine Or.symm (Or.inr ?_)
+lemma_2967.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_7214.lean | PARTIAL_OR_FAILED | refine List.getElem?_eq_none_iff.mp ?_
+lemma_4057.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_8822.lean | PARTIAL_OR_FAILED | refine List.Perm.foldl_eq' ?_ ?_ 1
+lemma_2047.lean | PARTIAL_OR_FAILED | refine Nat.max_le.mp ?_
+lemma_8985.lean | PARTIAL_OR_FAILED | refine Array.Perm.mem_iff ?_
+lemma_3728.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_8636.lean | PARTIAL_OR_FAILED | refine fun c a => ?_
+lemma_4908.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_add_of_sub_eq ?_ ?_)
+lemma_9713.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_8217.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_13213.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_8979.lean | PARTIAL_OR_FAILED | refine Array.any_eq_false.mpr ?_
+lemma_1403.lean | PARTIAL_OR_FAILED | refine (Int.ediv_eq_iff_eq_mul_left ?_ ?_).mpr rfl
+lemma_10020.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_14045.lean | PARTIAL_OR_FAILED | refine List.getElem?_eq_none_iff.mp ?_
+lemma_13098.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_6234.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_10645.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_13863.lean | PARTIAL_OR_FAILED | refine Nat.div_mul_cancel ?_
+lemma_4134.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_7316.lean | PARTIAL_OR_FAILED | refine List.any_eq_true.mpr ?_
+lemma_11875.lean | PARTIAL_OR_FAILED | refine let mid := (lo + hi) / 2;
+  ?_
+lemma_4509.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_1489.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_2692.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_12686.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_13755.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_15421.lean | PARTIAL_OR_FAILED | refine let idx := (Int.ofNat i + offset) % Int.ofNat len;
+  ?_
+lemma_195.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_12525.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_7342.lean | PARTIAL_OR_FAILED | refine Prod.exists.mpr ?_
+lemma_498.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14295.lean | PARTIAL_OR_FAILED | refine let n := if c > e then c else e;
+  ?_
+lemma_5761.lean | PARTIAL_OR_FAILED | refine Eq.symm (List.le_antisymm ?_ ?_)
+lemma_501.lean | PARTIAL_OR_FAILED | refine Nat.mul_div_cancel' ?_
+lemma_6002.lean | PARTIAL_OR_FAILED | refine eq_false_of_ne_true ?_
+lemma_11931.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_right 1 ?_
+lemma_11879.lean | PARTIAL_OR_FAILED | refine Nat.div_two_le_of_sub_le_div_two ?_
+lemma_15732.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_6905.lean | PARTIAL_OR_FAILED | refine let lmax := List.foldl Nat.max 0 (List.take (i + 1) height);
+  let rmax := List.foldl Nat.max 0 (List.drop i height);
+  ?_
+lemma_14318.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_3356.lean | PARTIAL_OR_FAILED | refine Int.sub_one_lt_of_le ?_
+lemma_6917.lean | PARTIAL_OR_FAILED | refine List.length_lt_of_drop_ne_nil ?_
+lemma_4053.lean | PARTIAL_OR_FAILED | refine List.Pairwise.cons ?_ h₁
+lemma_6817.lean | PARTIAL_OR_FAILED | refine List.mem_drop_iff_getElem.mpr ?_
+lemma_15180.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_6150.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_14244.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_16158.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_6149.lean | PARTIAL_OR_FAILED | refine List.Sublist.length_le ?_
+lemma_11460.lean | PARTIAL_OR_FAILED | refine List.eq_toArray_iff.mp ?_
+lemma_2259.lean | PARTIAL_OR_FAILED | refine List.Pairwise.cons ?_ h₂
+lemma_14461.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_16108.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_7507.lean | PARTIAL_OR_FAILED | refine and_or_right.mpr ?_
+lemma_1411.lean | PARTIAL_OR_FAILED | refine Int.natAbs_lt_natAbs_of_nonneg_of_lt ?_ ?_
+lemma_9126.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_10356.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_2552.lean | PARTIAL_OR_FAILED | refine List.forall_mem_replicate.mp ?_
+lemma_1312.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_945.lean | PARTIAL_OR_FAILED | refine List.Perm.foldl_eq' ?_ ?_ init
+lemma_3506.lean | PARTIAL_OR_FAILED | refine List.getElem?_eq_none_iff.mp ?_
+lemma_15417.lean | PARTIAL_OR_FAILED | refine Int.emod_nonneg (Int.ofNat i + offset) ?_
+lemma_10359.lean | PARTIAL_OR_FAILED | refine List.drop_left' ?_
+lemma_4746.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4889.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_12062.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_3108.lean | PARTIAL_OR_FAILED | refine List.zipIdx_eq_cons_iff.mpr ?_
+lemma_3835.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_13894.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_4694.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4596.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expected := n * (n + 1) / 2;
+  let actual := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  ?_
+lemma_9625.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_3404.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_3998.lean | PARTIAL_OR_FAILED | refine Nat.div_le_of_le_mul ?_
+lemma_6516.lean | PARTIAL_OR_FAILED | refine List.length_pos_iff_exists_mem.mpr ?_
+lemma_1368.lean | PARTIAL_OR_FAILED | refine not_congr ?_
+lemma_11310.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_8456.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_13339.lean | PARTIAL_OR_FAILED | refine (Int.not_dvd_iff_lt_mul_succ x ?_).mpr ?_
+lemma_14457.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_14901.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_16489.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_6047.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_sub_of_add_eq' ?_)
+lemma_13613.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_14120.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4536.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_2994.lean | PARTIAL_OR_FAILED | refine and_assoc.mpr ?_
+lemma_7508.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_11021.lean | PARTIAL_OR_FAILED | refine Nat.max_lt.mp ?_
+lemma_15622.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_9636.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_11664.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4076.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_5230.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_12247.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_3981.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt (a + b + c) ?_
+lemma_4823.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_13015.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_9178.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_3290.lean | PARTIAL_OR_FAILED | refine Array.extract_empty_of_size_le_start ?_
+lemma_12734.lean | PARTIAL_OR_FAILED | refine Std.min_le.mp ?_
+lemma_9549.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_2892.lean | PARTIAL_OR_FAILED | refine Std.le_max.mp ?_
+lemma_6200.lean | PARTIAL_OR_FAILED | refine fun ds => ?_
+lemma_12010.lean | PARTIAL_OR_FAILED | refine Array.none_eq_getElem?_iff.mp ?_
+lemma_4502.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expected := n * (n + 1) / 2;
+  let actual := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  let missing := expected - actual;
+  ?_
+lemma_2444.lean | PARTIAL_OR_FAILED | refine let len := xs.length;
+  let mid := len / 2;
+  ?_
+lemma_269.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_1041.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_8007.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_8445.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_11099.lean | PARTIAL_OR_FAILED | refine Int.le_iff_lt_or_eq.mp ?_
+lemma_3589.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_5607.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_11313.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_16573.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_9201.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_11403.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_275.lean | PARTIAL_OR_FAILED | refine Nat.add_le_of_le_sub ?_ ?_
+lemma_7391.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_6926.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_1350.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_476.lean | PARTIAL_OR_FAILED | refine let chord := chords[i]!;
+  let a := chord[0]!;
+  let b := chord[1]!;
+  ?_
+lemma_8817.lean | PARTIAL_OR_FAILED | refine List.Perm.foldl_eq' ?_ ?_ 1
+lemma_13100.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_1036.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_8954.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_1482.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_387.lean | PARTIAL_OR_FAILED | refine List.head?_eq_some_iff.mpr ?_
+lemma_5762.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_8984.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_6487.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_6383.lean | PARTIAL_OR_FAILED | refine List.subset_def.mpr ?_
+lemma_3802.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_15707.lean | PARTIAL_OR_FAILED | refine fun a b a_1 a_2 a_3 => ?_
+lemma_8612.lean | PARTIAL_OR_FAILED | refine fun c a => ?_
+lemma_4491.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_6747.lean | PARTIAL_OR_FAILED | refine let newCur := if cur + x ≥ x then cur + x else x;
+  let newMax := if maxSoFar ≥ newCur then maxSoFar else newCur;
+  ?_
+lemma_5779.lean | PARTIAL_OR_FAILED | refine ⟨?_, rfl⟩
+lemma_11517.lean | PARTIAL_OR_FAILED | refine Nat.lt_one_add_iff.mpr ?_
+lemma_15688.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_13027.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_1903.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_4372.lean | PARTIAL_OR_FAILED | refine List.ext_getElem ?_ ?_
+lemma_5825.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_5791.lean | PARTIAL_OR_FAILED | refine Nat.eq_sub_of_add_eq' ?_
+lemma_8646.lean | PARTIAL_OR_FAILED | refine fun c a => ?_
+lemma_1347.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1960.lean | PARTIAL_OR_FAILED | refine let m := List.foldl max 0 xs;
+  ?_
+lemma_6790.lean | PARTIAL_OR_FAILED | refine Nat.eq_sub_of_add_eq' ?_
+lemma_3307.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_12647.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_6330.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_11903.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_3759.lean | PARTIAL_OR_FAILED | refine List.any_eq_true.mpr ?_
+lemma_10558.lean | PARTIAL_OR_FAILED | refine fun {i j} hi hj hij hgt => ?_
+lemma_12617.lean | PARTIAL_OR_FAILED | refine Int.le_min.mp ?_
+lemma_10583.lean | PARTIAL_OR_FAILED | refine Or.symm (Or.inr ?_)
+lemma_2092.lean | PARTIAL_OR_FAILED | refine fun xs a => ?_
+lemma_4111.lean | PARTIAL_OR_FAILED | refine List.perm_cons_append_cons a ?_
+lemma_13217.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_12108.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_10408.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_2902.lean | PARTIAL_OR_FAILED | refine Int.max_le.mp ?_
+lemma_13986.lean | PARTIAL_OR_FAILED | refine List.asString_inj.mp ?_
+lemma_11138.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_eq ?_ a.toList fun a => ?_
+lemma_4681.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_8857.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_11988.lean | PARTIAL_OR_FAILED | refine fun a_1 i a_2 a => ?_
+lemma_5653.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_4088.lean | PARTIAL_OR_FAILED | refine (List.pairwise_middle ?_).mpr ?_
+lemma_12800.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2470.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_8831.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_12310.lean | PARTIAL_OR_FAILED | refine Nat.div_rec_fuel_lemma ?_ ?_ ?_
+lemma_4492.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expected := n * (n + 1) / 2;
+  let actual := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  ?_
+lemma_15424.lean | PARTIAL_OR_FAILED | refine Int.emod_nonneg (Int.ofNat i + offset) ?_
+lemma_214.lean | PARTIAL_OR_FAILED | refine fun {a b} a_1 a_2 => ?_
+lemma_2303.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_1651.lean | PARTIAL_OR_FAILED | refine ne_true_of_eq_false ?_
+lemma_2231.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_16555.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_10048.lean | PARTIAL_OR_FAILED | refine ne_true_of_eq_false ?_
+lemma_11881.lean | PARTIAL_OR_FAILED | refine Nat.add_le_of_le_sub ?_ ?_
+lemma_8885.lean | PARTIAL_OR_FAILED | refine not_exists.mpr ?_
+lemma_4500.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4620.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_11916.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_3803.lean | PARTIAL_OR_FAILED | refine List.mem_of_elem_eq_true ?_
+lemma_4547.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_299.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_11333.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1974.lean | PARTIAL_OR_FAILED | refine fun s a => ?_
+lemma_3486.lean | PARTIAL_OR_FAILED | refine List.mem_range.mpr ?_
+lemma_4070.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_6157.lean | PARTIAL_OR_FAILED | refine eq_true_of_ne_false ?_
+lemma_12394.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_5722.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_2466.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_13816.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_10567.lean | PARTIAL_OR_FAILED | refine fun {i j} a a_1 => ?_
+lemma_708.lean | PARTIAL_OR_FAILED | refine let ns := if x > first ∧ x ≤ second then x else second;
+  ?_
+lemma_6159.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_11641.lean | PARTIAL_OR_FAILED | refine List.length_lt_of_drop_ne_nil ?_
+lemma_3373.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6571.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_540.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_15924.lean | PARTIAL_OR_FAILED | refine Nat.add_le_add ?_ ?_
+lemma_2021.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_1807.lean | PARTIAL_OR_FAILED | refine Nat.max_le.mpr ?_
+lemma_7901.lean | PARTIAL_OR_FAILED | refine List.pairwise_reverse.mp ?_
+lemma_4426.lean | PARTIAL_OR_FAILED | refine List.ext_getElem ?_ ?_
+lemma_450.lean | PARTIAL_OR_FAILED | refine List.head?_eq_some_iff.mpr ?_
+lemma_6484.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_414.lean | PARTIAL_OR_FAILED | refine fun {x} a => ?_
+lemma_9595.lean | PARTIAL_OR_FAILED | refine Nat.mul_le_mul ?_ ?_
+lemma_12526.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_2014.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_6964.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_sub_of_add_eq' ?_)
+lemma_4514.lean | PARTIAL_OR_FAILED | refine Nat.add_mul_div_left a b ?_
+lemma_11276.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_13159.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_15734.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_2747.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_9175.lean | PARTIAL_OR_FAILED | refine Array.foldl_congr rfl ?_ rfl rfl rfl
+lemma_11873.lean | PARTIAL_OR_FAILED | refine Nat.mul_le_add_right.mpr ?_
+lemma_3658.lean | PARTIAL_OR_FAILED | refine Eq.symm (List.ext_getElem ?_ ?_)
+lemma_11260.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_6043.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_1213.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_3389.lean | PARTIAL_OR_FAILED | refine let pref := (mkArray (n + 1) 0).set! (i + 1) arr[i]!;
+  ?_
+lemma_11518.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_15704.lean | PARTIAL_OR_FAILED | refine List.nodup_iff_count.mpr ?_
+lemma_7735.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_10554.lean | PARTIAL_OR_FAILED | refine fun j a a_1 => ?_
+lemma_9038.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2022.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_10730.lean | PARTIAL_OR_FAILED | refine let idx := ((Int.ofNat i - Int.ofNat n + Int.ofNat len) % Int.ofNat len).toNat;
+  ?_
+lemma_6975.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14433.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4353.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_4541.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expectedSum := n * (n + 1) / 2;
+  let actualSum := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  ?_
+lemma_5709.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_12986.lean | PARTIAL_OR_FAILED | refine Iff.symm (Function.Injective.eq_iff' ?_ rfl)
+lemma_10343.lean | PARTIAL_OR_FAILED | refine List.perm_iff_count.mpr ?_
+lemma_1497.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_6097.lean | PARTIAL_OR_FAILED | refine fun {i j} hi hj a => ?_
+lemma_4431.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_13565.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_13735.lean | PARTIAL_OR_FAILED | refine (Nat.dvd_sub_iff_left ?_ ?_).mpr ?_
+lemma_14409.lean | PARTIAL_OR_FAILED | refine fun i a => ?_
+lemma_4532.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_2439.lean | PARTIAL_OR_FAILED | refine fun a a_1 => ?_
+lemma_11249.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_1313.lean | PARTIAL_OR_FAILED | refine Int.ediv_pos_of_neg_of_neg ?_ ?_
+lemma_13037.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4381.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_3633.lean | PARTIAL_OR_FAILED | refine fun x a => ?_
+lemma_303.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_198.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_10550.lean | PARTIAL_OR_FAILED | refine fun {i j} a a_1 => ?_
+lemma_8890.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_7176.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6919.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_9200.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_7740.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_14372.lean | PARTIAL_OR_FAILED | refine fun j a => ?_
+lemma_10000.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4064.lean | PARTIAL_OR_FAILED | refine fun a a_1 => ?_
+lemma_13694.lean | PARTIAL_OR_FAILED | refine Array.size_pos_iff_exists_push.mpr ?_
+lemma_2255.lean | PARTIAL_OR_FAILED | refine let res := longestIncreasingSubsequence nums h_precond;
+  ?_
+lemma_1637.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_3829.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_11878.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_7307.lean | PARTIAL_OR_FAILED | refine Nat.div_two_le_of_sub_le_div_two ?_
+lemma_4464.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_div_of_mul_eq_right ?_ ?_)
+lemma_6876.lean | PARTIAL_OR_FAILED | refine Nat.max_le.mpr ?_
+lemma_14046.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_535.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_1478.lean | NO_SUGGESTION | 
+lemma_6862.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_8905.lean | PARTIAL_OR_FAILED | refine not_exists.mpr ?_
+lemma_4025.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_10024.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_7822.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_5871.lean | PARTIAL_OR_FAILED | refine fun a a_1 i a_2 => ?_
+lemma_4531.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_7645.lean | PARTIAL_OR_FAILED | refine Int.Linear.mul_eq_kk 3 x ?_ ?_ (x + 2 * x) ?_ ?_ ?_
+lemma_9511.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_13878.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_7913.lean | PARTIAL_OR_FAILED | refine exists_comm.mp ?_
+lemma_15097.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt x ?_
+lemma_14473.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_3561.lean | PARTIAL_OR_FAILED | refine List.Sublist.length_le ?_
+lemma_8008.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_10401.lean | PARTIAL_OR_FAILED | refine List.drop_left' ?_
+lemma_4356.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_432.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_9637.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_9031.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_5729.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_5655.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_2407.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_13156.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_843.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_16553.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_4051.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_6777.lean | PARTIAL_OR_FAILED | refine let subArray := List.take len (List.drop start sequence);
+  let subArraySums :=
+    List.map (fun x => x.sum)
+      (List.filter (fun x => decide (x ≠ []))
+        (List.flatMap
+          (fun s => List.map (fun l => List.take l (List.drop s sequence)) (List.range (sequence.length - s + 1)))
+          (List.range (sequence.length + 1))));
+  ?_
+lemma_9574.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mp ?_
+lemma_14269.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_613.lean | PARTIAL_OR_FAILED | refine exists_congr ?_
+lemma_11649.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_7299.lean | PARTIAL_OR_FAILED | refine Nat.mul_pos ?_ ?_
+lemma_16297.lean | PARTIAL_OR_FAILED | refine let i_nat := i.toNat;
+  let j_nat := j.toNat;
+  let arr1 := arr.set! i_nat arr[j_nat]!;
+  let arr2 := arr1.set! j_nat arr[i_nat]!;
+  ?_
+lemma_270.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_844.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_3273.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_11265.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mpr ?_
+lemma_14969.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_10552.lean | PARTIAL_OR_FAILED | refine fun j a a_1 => ?_
+lemma_710.lean | PARTIAL_OR_FAILED | refine List.zipIdx_eq_cons_iff.mpr ?_
+lemma_13189.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_5957.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_649.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_7797.lean | PARTIAL_OR_FAILED | refine exists_comm.mp ?_
+lemma_4735.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expectedSum := n * (n + 1) / 2;
+  let actualSum := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  let r := expectedSum - actualSum;
+  ?_
+lemma_13734.lean | PARTIAL_OR_FAILED | refine (Nat.dvd_add_iff_right ?_).mp ?_
+lemma_847.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_514.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_691.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_9438.lean | PARTIAL_OR_FAILED | refine List.mem_take_iff_getElem.mpr ?_
+lemma_440.lean | PARTIAL_OR_FAILED | refine List.count_pos_iff.mpr ?_
+lemma_10809.lean | PARTIAL_OR_FAILED | refine (Int.toNat_lt ?_).mpr ?_
+lemma_11940.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_16549.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_8024.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_7118.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_of_pos_left ?_
+lemma_12113.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_533.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_11435.lean | PARTIAL_OR_FAILED | refine fun n => ?_
+lemma_5087.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_12204.lean | PARTIAL_OR_FAILED | refine dite_eq_right_iff.mpr ?_
+lemma_1004.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1970.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_2479.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_12796.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_15440.lean | PARTIAL_OR_FAILED | refine Int.emod_nonneg a ?_
+lemma_11123.lean | PARTIAL_OR_FAILED | refine ite_then_not_self.mp ?_
+lemma_9598.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6815.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7392.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_11956.lean | PARTIAL_OR_FAILED | refine Nat.div_two_le_of_sub_le_div_two ?_
+lemma_9279.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_2447.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_10235.lean | PARTIAL_OR_FAILED | refine List.mem_filter.mpr ?_
+lemma_15706.lean | PARTIAL_OR_FAILED | refine fun a a_1 => ?_
+lemma_10868.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_4624.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_5770.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_680.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_iff_eq_mul_right ?_ h
+lemma_6331.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_6580.lean | PARTIAL_OR_FAILED | refine fun a a_1 => ?_
+lemma_9345.lean | PARTIAL_OR_FAILED | refine Int.eq_ediv_of_mul_eq_right ?_ ?_
+lemma_14498.lean | PARTIAL_OR_FAILED | refine fun j a => ?_
+lemma_4782.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_add_of_sub_eq ?_ ?_)
+lemma_6361.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_11194.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6743.lean | PARTIAL_OR_FAILED | refine List.subset_def.mpr ?_
+lemma_6911.lean | PARTIAL_OR_FAILED | refine Eq.symm (List.le_antisymm ?_ ?_)
+lemma_2945.lean | PARTIAL_OR_FAILED | refine and_assoc.mpr ?_
+lemma_13877.lean | PARTIAL_OR_FAILED | refine Nat.add_mul_div_left a b ?_
+lemma_5882.lean | PARTIAL_OR_FAILED | refine (String.append_left_inj ?_).mp ?_
+lemma_6888.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_5953.lean | PARTIAL_OR_FAILED | refine eq_false_of_ne_true ?_
+lemma_13490.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ ?_
+lemma_6829.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_13926.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_2874.lean | PARTIAL_OR_FAILED | refine Int.max_le.mp ?_
+lemma_9280.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_3854.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_10741.lean | PARTIAL_OR_FAILED | refine (Int.toNat_lt ?_).mpr ?_
+lemma_10294.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_9645.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_3979.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt a ?_
+lemma_10658.lean | PARTIAL_OR_FAILED | refine fun {i j} a a_1 a_2 => ?_
+lemma_4421.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_11355.lean | PARTIAL_OR_FAILED | refine forall₂_congr ?_
+lemma_16106.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_4221.lean | PARTIAL_OR_FAILED | refine ne_true_of_eq_false ?_
+lemma_13125.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_2131.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_15840.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_11671.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_13215.lean | PARTIAL_OR_FAILED | refine (Nat.le_div_iff_mul_le ?_).mp ?_
+lemma_10593.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_11450.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_12685.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_3493.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_5708.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_7815.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_10883.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_102.lean | PARTIAL_OR_FAILED | refine List.mem_map.mp ?_
+lemma_5945.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_13736.lean | PARTIAL_OR_FAILED | refine Nat.dvd_mul_right_of_dvd ?_ (2 * n + 1)
+lemma_3999.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_5974.lean | PARTIAL_OR_FAILED | refine Nat.div_rec_fuel_lemma ?_ ?_ ?_
+lemma_4355.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_3614.lean | PARTIAL_OR_FAILED | refine List.map_eq_iff.mpr ?_
+lemma_14994.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_2742.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_10681.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_11343.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2871.lean | PARTIAL_OR_FAILED | refine Nat.max_le.mp ?_
+lemma_4432.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_16111.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_14197.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_8584.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_6390.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_1875.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_2105.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_527.lean | PARTIAL_OR_FAILED | refine Nat.dvd_of_mod_eq_zero ?_
+lemma_5879.lean | PARTIAL_OR_FAILED | refine fun i a => ?_
+lemma_3801.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ rfl
+lemma_3505.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_15036.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff ?_
+lemma_2966.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_2576.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_11654.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_11819.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6111.lean | PARTIAL_OR_FAILED | refine Int.lt_of_not_ge ?_
+lemma_14200.lean | PARTIAL_OR_FAILED | refine fun k a => ?_
+lemma_11886.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_9330.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_336.lean | PARTIAL_OR_FAILED | refine List.head?_isSome.mpr ?_
+lemma_9748.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_12015.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2497.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4126.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_4065.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_1063.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7757.lean | PARTIAL_OR_FAILED | refine (Int.ediv_eq_iff_eq_mul_left ?_ ?_).mpr ?_
+lemma_6204.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_6689.lean | PARTIAL_OR_FAILED | refine List.not_mem_cons_of_ne_of_not_mem ?_ ?_
+lemma_14373.lean | PARTIAL_OR_FAILED | refine Nat.exists_lt_succ_right.mpr ?_
+lemma_4047.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_2526.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_14949.lean | PARTIAL_OR_FAILED | refine Array.ext ?_ ?_
+lemma_11128.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_2521.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6762.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_2457.lean | PARTIAL_OR_FAILED | refine let sorted := xs.mergeSort fun a b => decide (a.fst ≤ b.fst);
+  ?_
+lemma_6752.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_683.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6827.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_12187.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1305.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_524.lean | PARTIAL_OR_FAILED | refine Nat.dvd_of_mod_eq_zero ?_
+lemma_5983.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_3984.lean | PARTIAL_OR_FAILED | refine Nat.div_le_of_le_mul ?_
+lemma_2486.lean | PARTIAL_OR_FAILED | refine Nat.le_add_right_of_le ?_
+lemma_11162.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_13680.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_13547.lean | PARTIAL_OR_FAILED | refine Option.mem_def.mp ?_
+lemma_10644.lean | PARTIAL_OR_FAILED | refine exists_or.mp ?_
+lemma_7612.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_5988.lean | PARTIAL_OR_FAILED | refine eq_true_of_ne_false ?_
+lemma_12387.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_1743.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {α} {L L'} => List.eq_iff_flatten_eq.mpr) ?_)
+lemma_10178.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_13056.lean | PARTIAL_OR_FAILED | refine Std.Rxc.size_eq_zero_iff_not_le.mp ?_
+lemma_11640.lean | PARTIAL_OR_FAILED | refine List.mk_mem_zipIdx_iff_getElem?.mpr ?_
+lemma_13021.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_15933.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_13646.lean | PARTIAL_OR_FAILED | refine Nat.not_succ_le_zero ?_ ?_
+lemma_14510.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_14319.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_3302.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_14917.lean | PARTIAL_OR_FAILED | refine Array.extract_congr ?_ ?_ ?_
+lemma_14997.lean | PARTIAL_OR_FAILED | refine Int.lt_of_not_ge ?_
+lemma_2678.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_529.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_1996.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_9343.lean | PARTIAL_OR_FAILED | refine Int.ofNat_inj.mpr ?_
+lemma_11880.lean | PARTIAL_OR_FAILED | refine Nat.le_div_two_of_div_two_lt_sub ?_
+lemma_10399.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_2300.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_11140.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_eq ?_ a.toList fun a => ?_
+lemma_14387.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_788.lean | PARTIAL_OR_FAILED | refine Bool.coe_iff_coe.mpr ?_
+lemma_6236.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_13155.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_10561.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_13091.lean | PARTIAL_OR_FAILED | refine Decidable.iff_not_comm.mp ?_
+lemma_14388.lean | PARTIAL_OR_FAILED | refine fun j a => ?_
+lemma_2940.lean | PARTIAL_OR_FAILED | refine Std.le_max.mp ?_
+lemma_6332.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_11248.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_4600.lean | PARTIAL_OR_FAILED | refine let n := l.length;
+  let m := n * (n + 1) / 2 - List.foldl (fun x1 x2 => x1 + x2) 0 l;
+  ?_
+lemma_15611.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_15427.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_10668.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_eq ?_ (c :: l) fun a => ?_
+lemma_8856.lean | PARTIAL_OR_FAILED | refine List.Perm.foldl_eq' ?_ ?_ 1
+lemma_6714.lean | PARTIAL_OR_FAILED | refine List.mem_flatMap.mpr ?_
+lemma_10892.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_12683.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_8025.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6904.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1495.lean | PARTIAL_OR_FAILED | refine fun i a => ?_
+lemma_2737.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_15419.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_4443.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_8436.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_9442.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_631.lean | PARTIAL_OR_FAILED | refine Nat.dvd_of_mod_eq_zero ?_
+lemma_4319.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_2516.lean | PARTIAL_OR_FAILED | refine let vals := List.map f (List.range n);
+  let mx := List.foldl max 0 vals;
+  ?_
+lemma_11553.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_right 1 ?_
+lemma_10322.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_576.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_4060.lean | PARTIAL_OR_FAILED | refine List.Perm.pairwise_iff ?_ ?_
+lemma_11297.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_11998.lean | PARTIAL_OR_FAILED | refine Bool.not_eq_not.mp ?_
+lemma_2464.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6284.lean | PARTIAL_OR_FAILED | refine ite_congr rfl ?_ ?_
+lemma_4805.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_1952.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_10108.lean | PARTIAL_OR_FAILED | refine fun x y a a_1 a_2 a_3 a_4 => ?_
+lemma_3321.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_3458.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_5716.lean | PARTIAL_OR_FAILED | refine List.not_mem_cons_of_ne_of_not_mem hneq ?_
+lemma_14355.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_600.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_15800.lean | PARTIAL_OR_FAILED | refine List.pairwise_reverse.mp ?_
+lemma_2476.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6329.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {b a c} => Int.sub_eq_iff_eq_add'.mp) ?_)
+lemma_13748.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_11961.lean | PARTIAL_OR_FAILED | refine Array.none_eq_getElem?_iff.mp ?_
+lemma_7335.lean | PARTIAL_OR_FAILED | refine (Nat.div_le_iff_le_mul_of_dvd ?_ ?_).mp ?_
+lemma_4466.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let diff := n * (n + 1) / 2 - List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  ?_
+lemma_8628.lean | PARTIAL_OR_FAILED | refine List.getLast?_eq_some_iff.mpr ?_
+lemma_7536.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6795.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_2704.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_1520.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_11999.lean | PARTIAL_OR_FAILED | refine Bool.not_eq_not.mp ?_
+lemma_12312.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_11893.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14996.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6148.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_2120.lean | PARTIAL_OR_FAILED | refine List.max?_eq_some_iff'.mpr ?_
+lemma_13232.lean | PARTIAL_OR_FAILED | refine Nat.not_le_of_not_ble_eq_true ?_
+lemma_3755.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_16107.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_5650.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7860.lean | PARTIAL_OR_FAILED | refine exists_comm.mp ?_
+lemma_1432.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_9173.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_541.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_3983.lean | PARTIAL_OR_FAILED | refine Nat.div_le_of_le_mul ?_
+lemma_14463.lean | PARTIAL_OR_FAILED | refine exists_and_left.mp ?_
+lemma_15835.lean | PARTIAL_OR_FAILED | refine exists_congr ?_
+lemma_11941.lean | PARTIAL_OR_FAILED | refine Nat.lt_of_le_of_ne ?_ ?_
+lemma_310.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_9539.lean | PARTIAL_OR_FAILED | refine List.mem_range'_1.mpr ?_
+lemma_13564.lean | PARTIAL_OR_FAILED | refine Nat.le_and_le_add_one_iff.mp ?_
+lemma_6866.lean | PARTIAL_OR_FAILED | refine List.getLast?_eq_some_iff.mpr ?_
+lemma_6584.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_13854.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_6695.lean | PARTIAL_OR_FAILED | refine let r := task_code seq h;
+  let subArrays :=
+    List.flatMap
+      (fun start => List.map (fun len => List.take len (List.drop start seq)) (List.range (seq.length - start + 1)))
+      (List.range (seq.length + 1));
+  let subArraySums := List.map (fun x => x.sum) (List.filter (fun x => decide (x ≠ [])) subArrays);
+  ?_
+lemma_3668.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_8592.lean | PARTIAL_OR_FAILED | refine Nat.exists_lt_succ_right.mpr ?_
+lemma_4824.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_add_of_sub_eq ?_ ?_)
+lemma_4016.lean | PARTIAL_OR_FAILED | refine Nat.div_le_of_le_mul ?_
+lemma_10695.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_2900.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_12619.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_13231.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mp ?_
+lemma_1943.lean | PARTIAL_OR_FAILED | refine List.mem_of_elem_eq_true ?_
+lemma_6419.lean | PARTIAL_OR_FAILED | refine let compare := fun a b => decide (a.length < b.length ∨ a.length = b.length ∧ isLexSmaller a b = true);
+  ?_
+lemma_543.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_11228.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_12378.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_410.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_14138.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_sub_of_add_eq' ?_)
+lemma_1077.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_9573.lean | PARTIAL_OR_FAILED | refine Nat.le_or_le_of_add_eq_add_pred ?_
+lemma_2491.lean | PARTIAL_OR_FAILED | refine let remaining := intervals.eraseIdx i;
+  let sorted := remaining.mergeSort fun a b => decide (a.fst ≤ b.fst);
+  let merged :=
+    List.foldl
+      (fun acc curr =>
+        match acc with
+        | [] => [curr]
+        | (s, e) :: rest => if curr.fst ≤ e then (s, max e curr.snd) :: rest else curr :: acc)
+      [] sorted;
+  let cov :=
+    List.foldl
+      (fun acc x =>
+        match x with
+        | (s, e) => acc + (e - s))
+      0 merged.reverse;
+  ?_
+lemma_13761.lean | PARTIAL_OR_FAILED | refine (Nat.div_left_inj ?_ ?_).mpr ?_
+lemma_2968.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_12614.lean | PARTIAL_OR_FAILED | refine and_assoc.mpr ?_
+lemma_4467.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let diff := n * (n + 1) / 2 - List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  ?_
+lemma_11308.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_6816.lean | PARTIAL_OR_FAILED | refine List.mem_take_iff_getElem.mpr ?_
+lemma_13822.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_2413.lean | PARTIAL_OR_FAILED | refine Nat.bitwise_rec_lemma ?_
+lemma_1358.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_534.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_10329.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_4216.lean | PARTIAL_OR_FAILED | refine Eq.symm (List.ext_getElem ?_ ?_)
+lemma_11158.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4473.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_15330.lean | PARTIAL_OR_FAILED | refine fun a j a_1 => ?_
+lemma_3439.lean | PARTIAL_OR_FAILED | refine or_assoc.mpr ?_
+lemma_12966.lean | PARTIAL_OR_FAILED | refine Int.toNat_of_nonpos ?_
+lemma_11653.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6185.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_16564.lean | PARTIAL_OR_FAILED | refine (Int.ediv_eq_iff_eq_mul_left ?_ ?_).mpr ?_
+lemma_12208.lean | PARTIAL_OR_FAILED | refine Int.natAbs_eq_natAbs_iff.mpr ?_
+lemma_13846.lean | PARTIAL_OR_FAILED | refine Nat.dvd_mul_right_of_dvd ?_ c
+lemma_487.lean | PARTIAL_OR_FAILED | refine List.nodup_iff_count.mpr ?_
+lemma_13886.lean | PARTIAL_OR_FAILED | refine Array.size_pos_iff_exists_push.mpr ?_
+lemma_15065.lean | PARTIAL_OR_FAILED | refine let r := Int.ofNat (x % y);
+  let q := Int.ofNat (x / y);
+  ?_
+lemma_201.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_3716.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b} => Int.neg_inj.mp) ?_)
+lemma_2984.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_16175.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_5325.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_215.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_13614.lean | PARTIAL_OR_FAILED | refine Nat.add_le_of_le_sub ?_ ?_
+lemma_10234.lean | PARTIAL_OR_FAILED | refine List.eq_toArray_iff.mp ?_
+lemma_2493.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_14472.lean | PARTIAL_OR_FAILED | refine let n := if c > a_i then a_i else c;
+  ?_
+lemma_7812.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4058.lean | PARTIAL_OR_FAILED | refine (List.pairwise_middle ?_).mpr ?_
+lemma_14992.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4685.lean | PARTIAL_OR_FAILED | refine Nat.eq_sub_of_add_eq' ?_
+lemma_13790.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_1942.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_10318.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_10018.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_1126.lean | PARTIAL_OR_FAILED | refine List.asString_inj.mp ?_
+lemma_12816.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_1306.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_3902.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_1348.lean | PARTIAL_OR_FAILED | refine Int.eq_natAbs_iff_mul_eq_zero.mpr ?_
+lemma_13030.lean | PARTIAL_OR_FAILED | refine Decidable.iff_not_comm.mp ?_
+lemma_5509.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_1951.lean | PARTIAL_OR_FAILED | refine let m := List.foldl (fun acc n => max acc n) 0 l;
+  ?_
+lemma_11044.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_13927.lean | PARTIAL_OR_FAILED | refine List.getElem?_take_eq_none ?_
+lemma_8961.lean | PARTIAL_OR_FAILED | refine Array.Perm.toList ?_
+lemma_15000.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_9035.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_15656.lean | PARTIAL_OR_FAILED | refine Array.size_eq_of_beq ?_
+lemma_11768.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_244.lean | PARTIAL_OR_FAILED | refine fun x a => ?_
+lemma_12252.lean | PARTIAL_OR_FAILED | refine let init := if a[0]! < b[0]! then (b[0]! - a[0]!).natAbs else (a[0]! - b[0]!).natAbs;
+  ?_
+lemma_1321.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_12680.lean | PARTIAL_OR_FAILED | refine and_or_right.mpr ?_
+lemma_9570.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_10387.lean | PARTIAL_OR_FAILED | refine List.perm_iff_count.mpr ?_
+lemma_3491.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_3638.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_15534.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_5723.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1964.lean | PARTIAL_OR_FAILED | refine Or.symm (Or.inr ?_)
+lemma_7517.lean | PARTIAL_OR_FAILED | refine Int.mul_nonneg ?_ ?_
+lemma_11183.lean | PARTIAL_OR_FAILED | refine List.any_eq_true.mpr ?_
+lemma_14412.lean | PARTIAL_OR_FAILED | refine and_assoc.mp ?_
+lemma_15696.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_1326.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2325.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_1876.lean | PARTIAL_OR_FAILED | refine List.mem_range.mpr ?_
+lemma_4460.lean | PARTIAL_OR_FAILED | refine fun x a a_1 => ?_
+lemma_6174.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_11289.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_6691.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_8182.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_14995.lean | PARTIAL_OR_FAILED | refine Int.lt_of_not_ge ?_
+lemma_5872.lean | PARTIAL_OR_FAILED | refine fun a i a_1 => ?_
+lemma_311.lean | PARTIAL_OR_FAILED | refine fun a =>
+    let count := fun x => (List.filter (fun y => decide (y = x)) lst).length;
+    ?_
+lemma_4049.lean | PARTIAL_OR_FAILED | refine (List.pairwise_middle ?_).mpr ?_
+lemma_11636.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_4333.lean | PARTIAL_OR_FAILED | refine List.subset_def.mpr ?_
+lemma_13920.lean | PARTIAL_OR_FAILED | refine Option.eq_of_eq_some ?_
+lemma_5604.lean | PARTIAL_OR_FAILED | refine Int.nonneg_of_neg_nonpos ?_
+lemma_1710.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7038.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_6849.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_13046.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_10673.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_13964.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_237.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_9240.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6704.lean | PARTIAL_OR_FAILED | refine List.mem_flatMap.mpr ?_
+lemma_3804.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_3901.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_4436.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_4086.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_573.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_6700.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_11474.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_12501.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_6756.lean | PARTIAL_OR_FAILED | refine List.mem_flatMap.mpr ?_
+lemma_242.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_9755.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_5562.lean | PARTIAL_OR_FAILED | refine Int.nonneg_of_neg_nonpos ?_
+lemma_7905.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_10400.lean | PARTIAL_OR_FAILED | refine List.take_left' ?_
+lemma_13122.lean | PARTIAL_OR_FAILED | refine Char.eq_of_val_eq ?_
+lemma_15516.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_5764.lean | PARTIAL_OR_FAILED | refine List.not_mem_cons_of_ne_of_not_mem ?_ ?_
+lemma_15736.lean | PARTIAL_OR_FAILED | refine let r := List.foldl (fun acc x => if acc.contains x = true then acc else acc ++ [x]) [] s;
+  ?_
+lemma_10019.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_11978.lean | PARTIAL_OR_FAILED | refine Nat.add_lt_of_lt_sub ?_
+lemma_1408.lean | PARTIAL_OR_FAILED | refine Nat.eq_div_of_mul_eq_right ?_ ?_
+lemma_4712.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_10634.lean | PARTIAL_OR_FAILED | refine fun i a => ?_
+lemma_11402.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_9174.lean | PARTIAL_OR_FAILED | refine Array.foldl_congr rfl ?_ rfl rfl rfl
+lemma_4042.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_9436.lean | PARTIAL_OR_FAILED | refine Nat.le_one_iff_eq_zero_or_eq_one.mpr ?_
+lemma_8635.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_5680.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4435.lean | PARTIAL_OR_FAILED | refine fun x a => ?_
+lemma_9042.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_15697.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_11325.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_2452.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4515.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_15695.lean | PARTIAL_OR_FAILED | refine List.subset_def.mpr ?_
+lemma_16115.lean | PARTIAL_OR_FAILED | refine UInt8.toNat_inj.mp ?_
+lemma_13214.lean | PARTIAL_OR_FAILED | refine Nat.mul_le_mul ?_ ?_
+lemma_520.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_4039.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_7150.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_add_of_sub_eq ?_ ?_)
+lemma_1020.lean | NO_SUGGESTION | 
+lemma_5646.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_5543.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_15418.lean | PARTIAL_OR_FAILED | refine (Int.emod_eq_iff ?_).mpr ?_
+lemma_6875.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_4236.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_69.lean | PARTIAL_OR_FAILED | refine List.mem_map.mp ?_
+lemma_9039.lean | PARTIAL_OR_FAILED | refine Decidable.iff_not_comm.mp ?_
+lemma_15355.lean | PARTIAL_OR_FAILED | refine let temp := arr[i]!;
+  let arr' := arr.set! i arr[j]!;
+  ?_
+lemma_7234.lean | PARTIAL_OR_FAILED | refine List.mem_range.mpr ?_
+lemma_2340.lean | PARTIAL_OR_FAILED | refine Bool.or_eq_true_iff.mpr ?_
+lemma_4449.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_div_of_mul_eq_right ?_ ?_)
+lemma_16552.lean | PARTIAL_OR_FAILED | refine (Int.ediv_eq_iff_eq_mul_left ?_ ?_).mpr ?_
+lemma_11983.lean | PARTIAL_OR_FAILED | refine let mid := (lo + hi) / 2;
+  ?_
+lemma_814.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_8645.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_538.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_7930.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_660.lean | PARTIAL_OR_FAILED | refine (Nat.div_lt_iff_lt_mul ?_).mpr ?_
+lemma_1961.lean | PARTIAL_OR_FAILED | refine let m := List.foldl max 0 xs;
+  ?_
+lemma_1704.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_249.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_2915.lean | PARTIAL_OR_FAILED | refine Nat.not_succ_le_zero ?_ ?_
+lemma_8590.lean | PARTIAL_OR_FAILED | refine Char.ne_of_val_ne ?_
+lemma_11767.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_4633.lean | PARTIAL_OR_FAILED | refine List.subset_def.mpr ?_
+lemma_3842.lean | PARTIAL_OR_FAILED | refine List.Perm.append ?_ ?_
+lemma_10864.lean | PARTIAL_OR_FAILED | refine Array.any_eq_true.mpr ?_
+lemma_15468.lean | PARTIAL_OR_FAILED | refine let idx := (Int.ofNat i + offset) % Int.ofNat len;
+  let adj := if idx < 0 then idx + Int.ofNat len else idx;
+  let n := adj.toNat;
+  ?_
+lemma_4565.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  let expectedSum := n * (n + 1) / 2;
+  let actualSum := List.foldl (fun x1 x2 => x1 + x2) 0 nums;
+  let r := expectedSum - actualSum;
+  ?_
+lemma_3110.lean | PARTIAL_OR_FAILED | refine let newMin := minSoFar.min price;
+  ?_
+lemma_6110.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_8225.lean | PARTIAL_OR_FAILED | refine List.head?_eq_some_iff.mpr ?_
+lemma_1657.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6791.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mpr ?_
+lemma_10249.lean | PARTIAL_OR_FAILED | refine fun {x} a => ?_
+lemma_3501.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_6173.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_12613.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_12031.lean | PARTIAL_OR_FAILED | refine Array.mem_extract_iff_getElem.mpr ?_
+lemma_15253.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_2807.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_9437.lean | PARTIAL_OR_FAILED | refine of_decide_eq_false ?_
+lemma_2987.lean | PARTIAL_OR_FAILED | refine Decidable.not_iff_comm.mp ?_
+lemma_7256.lean | PARTIAL_OR_FAILED | refine Nat.le_min.mp ?_
+lemma_1333.lean | PARTIAL_OR_FAILED | refine Int.natAbs_lt_natAbs_of_nonneg_of_lt ?_ ?_
+lemma_15598.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_6538.lean | PARTIAL_OR_FAILED | refine Decidable.iff_not_comm.mp ?_
+lemma_4602.lean | PARTIAL_OR_FAILED | refine And.symm ⟨?_, ?_⟩
+lemma_4629.lean | PARTIAL_OR_FAILED | refine Nat.eq_sub_of_add_eq' ?_
+lemma_14394.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_546.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6687.lean | PARTIAL_OR_FAILED | refine List.forall_mem_ne.mp ?_
+lemma_6805.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.eq_of_beq_eq_true ?_)
+lemma_555.lean | PARTIAL_OR_FAILED | refine Nat.dvd_of_mod_eq_zero ?_
+lemma_12666.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_13589.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4906.lean | PARTIAL_OR_FAILED | refine List.le_antisymm ?_ ?_
+lemma_2582.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_6757.lean | PARTIAL_OR_FAILED | refine List.mem_filter.mpr ?_
+lemma_8832.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_15921.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_7345.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_12266.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7194.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_10738.lean | PARTIAL_OR_FAILED | refine fun a =>
+    let len := l.length;
+    let idx_int := (Int.ofNat i - Int.ofNat n + Int.ofNat len) % Int.ofNat len;
+    let idx_nat := idx_int.toNat;
+    ?_
+lemma_10568.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_4050.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_11401.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_13860.lean | PARTIAL_OR_FAILED | refine or_assoc.mp ?_
+lemma_11666.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_6775.lean | PARTIAL_OR_FAILED | refine List.ne_nil_of_length_pos ?_
+lemma_1621.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ rfl
+lemma_11055.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_4796.lean | PARTIAL_OR_FAILED | refine List.length_eq_of_beq ?_
+lemma_11090.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_15012.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_2463.lean | PARTIAL_OR_FAILED | refine fun x a => ?_
+lemma_7810.lean | PARTIAL_OR_FAILED | refine Nat.add_le_of_le_sub ?_ ?_
+lemma_15523.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_2581.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_7208.lean | PARTIAL_OR_FAILED | refine Int.sub_eq_iff_eq_add'.mp ?_
+lemma_6410.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ rfl
+lemma_16597.lean | PARTIAL_OR_FAILED | refine Eq.symm (Int.eq_mul_of_fdiv_eq_left ?_ ?_)
+lemma_4465.lean | PARTIAL_OR_FAILED | refine Nat.le_div_two_of_div_two_lt_sub ?_
+lemma_6380.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_8955.lean | PARTIAL_OR_FAILED | refine Array.all_eq_true'.mpr ?_
+lemma_2450.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_200.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6381.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_
+lemma_11877.lean | PARTIAL_OR_FAILED | refine Array.ext ?_ ?_
+lemma_301.lean | PARTIAL_OR_FAILED | refine And.symm ⟨?_, ?_⟩
+lemma_27.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_1971.lean | PARTIAL_OR_FAILED | refine List.mem_of_elem_eq_true ?_
+lemma_3884.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_928.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_5062.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_11525.lean | PARTIAL_OR_FAILED | refine Nat.lt_add_right 1 ?_
+lemma_13786.lean | PARTIAL_OR_FAILED | refine Eq.symm ((fun {a b c} H H' => (Nat.div_eq_iff_eq_mul_left H H').mp) ?_ ?_ ?_)
+lemma_2545.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_4583.lean | PARTIAL_OR_FAILED | refine Nat.le_div_two_of_div_two_lt_sub ?_
+lemma_15621.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_6958.lean | PARTIAL_OR_FAILED | refine Nat.le_of_lt_succ ?_
+lemma_14360.lean | PARTIAL_OR_FAILED | refine Int.le_of_sub_nonpos ?_
+lemma_11950.lean | PARTIAL_OR_FAILED | refine Array.none_eq_getElem?_iff.mp ?_
+lemma_13126.lean | PARTIAL_OR_FAILED | refine List.all_eq_true.mpr ?_
+lemma_12862.lean | PARTIAL_OR_FAILED | refine List.zip_of_prod ?_ ?_
+lemma_3555.lean | PARTIAL_OR_FAILED | refine Int.nonneg_of_neg_nonpos ?_
+lemma_7315.lean | PARTIAL_OR_FAILED | refine fun i j a a_1 => ?_
+lemma_12920.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14397.lean | PARTIAL_OR_FAILED | refine Int.le_min.mp ?_
+lemma_8449.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_11434.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_1315.lean | PARTIAL_OR_FAILED | refine Subtype.existsOfSubtype ?_
+lemma_4533.lean | PARTIAL_OR_FAILED | refine let n := nums.length;
+  ?_
+lemma_229.lean | PARTIAL_OR_FAILED | refine fun a a_1 => ?_
+lemma_13557.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add h).mpr ?_
+lemma_12237.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_6199.lean | PARTIAL_OR_FAILED | refine fun a b ds => ?_
+lemma_13233.lean | PARTIAL_OR_FAILED | refine (Nat.le_div_iff_mul_le ?_).mp ?_
+lemma_5382.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_14084.lean | PARTIAL_OR_FAILED | refine List.append_inj' ?_ ?_
+lemma_4033.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_13731.lean | PARTIAL_OR_FAILED | refine Nat.div_eq_of_eq_mul_right ?_ ?_
+lemma_15912.lean | PARTIAL_OR_FAILED | refine Int.sub_left_le_of_le_add ?_
+lemma_4063.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_9749.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_4434.lean | PARTIAL_OR_FAILED | refine fun x a => ?_
+lemma_15808.lean | PARTIAL_OR_FAILED | refine Eq.to_iff ?_
+lemma_9267.lean | PARTIAL_OR_FAILED | refine Or.inr ?_
+lemma_9575.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_10659.lean | PARTIAL_OR_FAILED | refine fun j a a_1 => ?_
+lemma_7891.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_369.lean | PARTIAL_OR_FAILED | refine List.head?_eq_some_iff.mpr ?_
+lemma_14760.lean | PARTIAL_OR_FAILED | refine Nat.eq_sub_of_add_eq' ?_
+lemma_2309.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_12798.lean | PARTIAL_OR_FAILED | refine dite_congr ?_ ?_ (congrFun rfl)
+lemma_9566.lean | PARTIAL_OR_FAILED | refine Nat.or_exists_add_one.mp ?_
+lemma_15638.lean | PARTIAL_OR_FAILED | refine List.pairwise_of_forall_sublist ?_
+lemma_3834.lean | PARTIAL_OR_FAILED | refine List.isPerm_iff.mpr ?_
+lemma_11165.lean | PARTIAL_OR_FAILED | refine Iff.symm (Eq.to_iff ?_)
+lemma_2067.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_5622.lean | PARTIAL_OR_FAILED | refine List.getElem!_of_getElem? ?_
+lemma_15428.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_7832.lean | PARTIAL_OR_FAILED | refine iff_false_intro ?_
+lemma_5536.lean | PARTIAL_OR_FAILED | refine propext ?_
+lemma_9638.lean | PARTIAL_OR_FAILED | refine fun k a a_1 => ?_
+lemma_6809.lean | PARTIAL_OR_FAILED | refine Nat.sub_le_of_le_add ?_
+lemma_4714.lean | PARTIAL_OR_FAILED | refine Eq.symm (Nat.div_eq_of_eq_mul_right ?_ ?_)
+lemma_4004.lean | PARTIAL_OR_FAILED | refine Nat.mod_lt (a + b + c) ?_
+lemma_6175.lean | PARTIAL_OR_FAILED | refine fun a => ?_
+lemma_609.lean | PARTIAL_OR_FAILED | refine exists_congr ?_
+lemma_12235.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_8813.lean | PARTIAL_OR_FAILED | refine Int.eq_mul_of_fdiv_eq_left ?_ ?_
+lemma_5652.lean | PARTIAL_OR_FAILED | refine Nat.eq_of_beq_eq_true ?_
+lemma_13445.lean | PARTIAL_OR_FAILED | refine ⟨?_, ?_⟩
+lemma_13756.lean | PARTIAL_OR_FAILED | refine (Nat.div_eq_iff_eq_mul_left ?_ ?_).mp ?_
+lemma_14382.lean | PARTIAL_OR_FAILED | refine fun j a => ?_
+lemma_14030.lean | PARTIAL_OR_FAILED | refine List.append_inj' ?_ ?_
+lemma_8968.lean | PARTIAL_OR_FAILED | refine Array.all_congr ?_ (congrFun rfl) rfl ?_
+lemma_15951.lean | PARTIAL_OR_FAILED | refine Nat.pow_pos_iff.mp ?_
+lemma_15900.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_9481.lean | PARTIAL_OR_FAILED | refine List.replicate_sublist_iff.mp ?_
+lemma_1065.lean | PARTIAL_OR_FAILED | refine Int.max_le.mp ?_
+lemma_6026.lean | PARTIAL_OR_FAILED | refine eq_false_of_ne_true ?_
+lemma_8879.lean | PARTIAL_OR_FAILED | refine Function.Injective.eq_iff' ?_ ?_
+lemma_15422.lean | PARTIAL_OR_FAILED | refine Int.emod_nonneg (Int.ofNat i + offset) ?_
+lemma_10001.lean | PARTIAL_OR_FAILED | refine Int.neg_inj.mp ?_
+lemma_6046.lean | PARTIAL_OR_FAILED | refine eq_true_of_ne_false ?_
+lemma_15430.lean | PARTIAL_OR_FAILED | refine let idxInt := (Int.ofNat i + offset) % Int.ofNat len;
+  let idxAdj := if idxInt < 0 then idxInt + Int.ofNat len else idxInt;
+  ?_
+lemma_15423.lean | PARTIAL_OR_FAILED | refine Int.emod_nonneg (Int.ofNat i + offset) ?_
+lemma_15451.lean | PARTIAL_OR_FAILED | refine let idx_int := (Int.ofNat i + offset) % Int.ofNat len;
+  let idx_int_adj := if idx_int < 0 then idx_int + Int.ofNat len else idx_int;
+  ?_
+lemma_15446.lean | PARTIAL_OR_FAILED | refine let idxInt := (Int.ofNat i + offset) % Int.ofNat len;
+  let idxIntAdj := if idxInt < 0 then idxInt + Int.ofNat len else idxInt;
+  let idxNat := idxIntAdj.toNat;
+  ?_
+lemma_8599.lean | PARTIAL_OR_FAILED | refine (Nat.sub_eq_iff_eq_add ?_).mp ?_

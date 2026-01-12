@@ -1,0 +1,39 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_12062
+public def BubbleSort_precond (a : Array Int) : Prop :=
+  True
+
+public def swap (a : Array Int) (i j : Nat) : Array Int :=
+  let temp := a[i]!
+  let a₁ := a.set! i (a[j]!)
+  a₁.set! j temp
+
+public def bubbleInner (j i : Nat) (a : Array Int) : Array Int :=
+  if j < i then
+    let a' := if a[j]! > a[j+1]! then swap a j (j+1) else a
+    bubbleInner (j+1) i a'
+  else
+    a
+
+public def bubbleOuter (i : Nat) (a : Array Int) : Array Int :=
+  if i > 0 then
+    let a' := bubbleInner 0 i a
+    bubbleOuter (i - 1) a'
+  else
+    a
+
+public def BubbleSort (a : Array Int) (h_precond : BubbleSort_precond (a)) : Array Int :=
+  if a.size = 0 then a else bubbleOuter (a.size - 1) a
+
+public def BubbleSort_postcond (a : Array Int) (result: Array Int) (h_precond : BubbleSort_precond (a)) :=
+  List.Pairwise (· ≤ ·) result.toList ∧ List.isPerm result.toList a.toList
+
+
+public theorem bubbleInner_step_isPerm_else (a : Array Int) (j i : Nat) :
+    List.isPerm a.toList a.toList:= by 
+sorry
+
+
+end tmp_lemma_12062

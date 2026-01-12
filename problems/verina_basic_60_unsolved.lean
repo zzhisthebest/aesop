@@ -81,6 +81,8 @@ theorem FindEvenNumbers_spec_satisfied (arr: Array Int) (h_precond : FindEvenNum
   unfold FindEvenNumbers.loop
   simp
   aesop
+  unfold FindEvenNumbers.loop
+
 
 
   -- !benchmark @end proof

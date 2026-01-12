@@ -145,6 +145,10 @@ structure Options where--己
   Enable the builtin `grind` unsafe rule.
   -/
   enableGrind := true
+  /--
+  Enable the builtin `omega` unsafe rule.
+  -/
+  enableOmega := true
   deriving Inhabited, BEq, Repr
 
 /--

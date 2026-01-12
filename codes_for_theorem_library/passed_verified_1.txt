@@ -1,0 +1,164 @@
+lemma_9907.lean | SUCCESS | exact Eq.symm (Int.emod_add_mul_ediv a b)
+lemma_8117.lean | SUCCESS | exact Eq.symm (Int.mul_ediv_self x b)
+lemma_1544.lean | SUCCESS | exact Eq.symm Std.max_eq_if
+lemma_16048.lean | SUCCESS | exact Eq.symm ((fun {b a c} => Int.sub_eq_iff_eq_add'.mp) rfl)
+lemma_3485.lean | SUCCESS | exact List.length_take_le n xs
+lemma_1895.lean | SUCCESS | exact Eq.symm List.getLast!_eq_getElem!
+lemma_5427.lean | SUCCESS | exact Bool.eq_false_or_eq_true (x % 2 == 0)
+lemma_4152.lean | SUCCESS | exact List.Perm.swap b a l
+lemma_3446.lean | SUCCESS | exact Array.extract_eq_empty_of_eq_empty rfl
+lemma_9531.lean | SUCCESS | exact fun i a => Or.symm (Nat.lt_or_ge n (i * i))
+lemma_15885.lean | SUCCESS | exact Or.symm (Int.lt_or_le (Int.ofNat m) (Int.ofNat rows))
+lemma_583.lean | SUCCESS | exact Nat.eq_mul_of_div_eq_right h hq
+lemma_9864.lean | SUCCESS | exact Eq.symm (Int.mul_ediv_cancel_of_emod_eq_zero h)
+lemma_5532.lean | SUCCESS | exact Or.symm (Nat.lt_or_ge right left)
+lemma_5618.lean | SUCCESS | exact Int.le_max_left 0 (t - s)
+lemma_1095.lean | SUCCESS | exact Eq.symm (Nat.div_div_eq_div_mul m a b)
+lemma_8465.lean | SUCCESS | exact Array.any_eq_true'
+lemma_1375.lean | SUCCESS | exact Int.ediv_add_emod' k 2
+lemma_11028.lean | SUCCESS | exact Nat.zero_lt_of_lt h
+lemma_561.lean | SUCCESS | exact Nat.pow_succ'
+lemma_832.lean | SUCCESS | exact List.isPerm_iff
+lemma_11064.lean | SUCCESS | exact Nat.le_sub_one_of_lt h
+lemma_7302.lean | SUCCESS | exact List.length_eq_one_iff.mp h_len
+lemma_9422.lean | SUCCESS | exact List.Pairwise.take h
+lemma_3471.lean | SUCCESS | exact Int.le_max_right a (a + b)
+lemma_4208.lean | SUCCESS | exact List.mem_of_mem_take h
+lemma_8675.lean | SUCCESS | exact Nat.add_lt_iff_lt_sub_right
+lemma_15010.lean | SUCCESS | exact Int.zero_le_ofNat (x / y)
+lemma_13918.lean | SUCCESS | exact List.length_take_le' n l
+lemma_4052.lean | SUCCESS | exact List.merge_perm_append fun a b => decide (a ≤ b)
+lemma_1958.lean | SUCCESS | exact List.max?_mem rfl
+lemma_12822.lean | SUCCESS | exact Array.idxOf_lt_size_iff.mpr hx
+lemma_12267.lean | SUCCESS | exact if_neg h
+lemma_15876.lean | SUCCESS | exact Or.symm (Int.lt_or_le n 0)
+lemma_4020.lean | SUCCESS | exact Eq.symm (Nat.mod_add_div a b)
+lemma_3470.lean | SUCCESS | exact Int.le_max_left a (a + b)
+lemma_5210.lean | SUCCESS | exact List.length_filter_le p l
+lemma_5796.lean | SUCCESS | exact List.mk_mem_zipIdx_iff_getElem?.mp hmem
+lemma_8099.lean | SUCCESS | exact Int.mul_ediv_add_emod z 2
+lemma_13397.lean | SUCCESS | exact Eq.symm (Int.ediv_add_emod' x 2)
+lemma_503.lean | SUCCESS | exact Nat.dvd_iff_mod_eq_zero
+lemma_10931.lean | SUCCESS | exact Array.any_eq_true'.mpr hmem
+lemma_9745.lean | SUCCESS | exact Iff.symm Int.dvd_iff_emod_eq_zero
+lemma_13853.lean | SUCCESS | exact Eq.symm (Nat.add_mul a b c)
+lemma_523.lean | SUCCESS | exact Iff.symm Nat.dvd_iff_mod_eq_zero
+lemma_14254.lean | SUCCESS | exact fun k a_1 => Int.le_trans (h_le k a_1) hci
+lemma_1324.lean | SUCCESS | exact Int.ediv_mul_cancel_of_emod_eq_zero heven
+lemma_5528.lean | SUCCESS | exact Int.le_max_left 0 (min a b - c)
+lemma_9483.lean | SUCCESS | exact List.Pairwise.take h
+lemma_13256.lean | SUCCESS | exact Iff.symm Int.dvd_iff_emod_eq_zero
+lemma_12571.lean | SUCCESS | exact Int.Linear.mul_eq_kkx 2 (2 * x) 2 2 x 4 rfl rfl rfl
+lemma_519.lean | SUCCESS | exact Eq.symm (Nat.mul_div_cancel' h)
+lemma_15554.lean | SUCCESS | exact List.Pairwise.take h
+lemma_6807.lean | SUCCESS | exact List.foldl_map
+lemma_5515.lean | SUCCESS | exact Nat.lt_add_one_iff
+lemma_13227.lean | SUCCESS | exact Eq.symm (Nat.pow_two n)
+lemma_5555.lean | SUCCESS | exact Nat.lt_or_ge l.length 3
+lemma_8583.lean | SUCCESS | exact Nat.div_add_mod' n 10
+lemma_16560.lean | SUCCESS | exact Eq.symm (Int.add_mul 2 4 x)
+lemma_508.lean | SUCCESS | exact Nat.pos_of_neZero (4 ^ m)
+lemma_13762.lean | SUCCESS | exact Nat.mul_div_right_comm h b
+lemma_11283.lean | SUCCESS | exact Nat.mul_left_comm 15 a b
+lemma_11049.lean | SUCCESS | exact Nat.sub_succ_lt_self s.size i h
+lemma_2414.lean | SUCCESS | exact List.count_le_length
+lemma_3530.lean | SUCCESS | exact List.range'_succ_left
+lemma_1948.lean | SUCCESS | exact List.foldl_map
+lemma_500.lean | SUCCESS | exact Iff.symm Nat.dvd_iff_mod_eq_zero
+lemma_4331.lean | SUCCESS | exact List.mem_of_mem_take h
+lemma_6837.lean | SUCCESS | exact Nat.sub_eq_zero_iff_le
+lemma_8163.lean | SUCCESS | exact Int.emod_def n 2
+lemma_2434.lean | SUCCESS | exact Decidable.em (List.count result nums > nums.length / 2)
+lemma_9856.lean | SUCCESS | exact Int.dvd_iff_emod_eq_zero
+lemma_4017.lean | SUCCESS | exact Nat.le_of_lt_succ h
+lemma_15008.lean | SUCCESS | exact Int.zero_le_ofNat (x % y)
+lemma_3976.lean | SUCCESS | exact Nat.mod_add_div (a + b + carry) 10
+lemma_13257.lean | SUCCESS | exact Eq.to_iff rfl
+lemma_3980.lean | SUCCESS | exact Eq.symm (Nat.mod_add_div n 10)
+lemma_2292.lean | SUCCESS | exact Nat.succ_pred_eq_of_ne_zero h
+lemma_16559.lean | SUCCESS | exact Eq.symm (Int.add_mul a b c)
+lemma_8122.lean | SUCCESS | exact Int.ediv_mul_self x 2
+lemma_1447.lean | SUCCESS | exact List.length_filter_le p xs
+lemma_3533.lean | SUCCESS | exact Eq.symm List.range_eq_range'
+lemma_7814.lean | SUCCESS | exact List.Pairwise.take h
+lemma_15001.lean | SUCCESS | exact Int.zero_le_ofNat (x / y)
+lemma_13270.lean | SUCCESS | exact Eq.symm (Int.ediv_add_emod' a b)
+lemma_12101.lean | SUCCESS | exact Nat.mul_add 2 a b
+lemma_16590.lean | SUCCESS | exact Eq.symm (Int.Linear.mul_eq_kxk (3 * x) 2 3 x 2 6 rfl rfl rfl)
+lemma_10936.lean | SUCCESS | exact Array.any_eq_true'
+lemma_8493.lean | SUCCESS | exact Nat.le_one_iff_eq_zero_or_eq_one.mp h
+lemma_8750.lean | SUCCESS | exact List.min?_eq_some_iff'
+lemma_3632.lean | SUCCESS | exact Int.le_max_right a 0
+lemma_1412.lean | SUCCESS | exact Or.symm (Int.lt_or_le 0 n)
+lemma_15228.lean | SUCCESS | exact Eq.symm (Nat.add_assoc x y z)
+lemma_8098.lean | SUCCESS | exact Eq.symm (Int.mul_ediv_add_emod x 2)
+lemma_6540.lean | SUCCESS | exact Option.eq_none_or_eq_some
+    (List.foldl
+      (fun acc cur =>
+        match acc with
+        | none => some cur
+        | some best => none)
+      none l)
+lemma_13743.lean | SUCCESS | exact Nat.div_mul_cancel h
+lemma_14454.lean | SUCCESS | exact Decidable.em (i < a.size)
+lemma_4013.lean | SUCCESS | exact Nat.mod_eq_sub_mul_div
+lemma_5368.lean | SUCCESS | exact List.length_filter_le p l
+lemma_3492.lean | SUCCESS | exact List.length_take_le' n xs
+lemma_7227.lean | SUCCESS | exact Nat.mod_lt i h
+lemma_9155.lean | SUCCESS | exact Array.any_beq'
+lemma_16556.lean | SUCCESS | exact Eq.symm (Int.Linear.mul_eq_kkx 2 (3 * x) 2 3 x 6 rfl rfl rfl)
+lemma_8095.lean | SUCCESS | exact Int.mul_ediv_self x 2
+lemma_6708.lean | SUCCESS | exact List.length_filter_le (fun x => decide (x ≠ [])) l
+lemma_8108.lean | SUCCESS | exact Int.emod_add_mul_ediv x 2
+lemma_3531.lean | SUCCESS | exact List.length_take_le len (List.drop i xs)
+lemma_930.lean | SUCCESS | exact Nat.mod_add_div' n 10
+lemma_2086.lean | SUCCESS | exact List.length_filter_le (fun l => decide (List.Pairwise (fun x1 x2 => x1 < x2) l)) xs
+lemma_3279.lean | SUCCESS | exact Eq.symm (Int.sub_sub a b c)
+lemma_3109.lean | SUCCESS | exact Nat.le_max_right maxProfit (if price > minSoFar then price - minSoFar else 0)
+lemma_1574.lean | SUCCESS | exact Eq.symm Std.max_eq_if
+lemma_638.lean | SUCCESS | exact Eq.symm Nat.pow_succ'
+lemma_13821.lean | SUCCESS | exact Nat.mul_div_cancel' h
+lemma_4154.lean | SUCCESS | exact (List.perm_append_right_iff l).mpr h
+lemma_2024.lean | SUCCESS | exact List.max?_mem rfl
+lemma_2764.lean | SUCCESS | exact exists_apply_eq_apply (fun a => a) (LongestIncreasingSubsequence a h)
+lemma_6523.lean | SUCCESS | exact List.length_take_le n (List.drop i l)
+lemma_13290.lean | SUCCESS | exact Iff.symm Int.dvd_iff_emod_eq_zero
+lemma_9746.lean | SUCCESS | exact Eq.to_iff rfl
+lemma_2306.lean | SUCCESS | exact List.count_le_length
+lemma_10459.lean | SUCCESS | exact List.idxOf_eq_length fun a => h 0 a rfl
+lemma_345.lean | SUCCESS | exact List.nodup_iff_count
+lemma_8148.lean | SUCCESS | exact Eq.symm (Int.mul_ediv_add_emod a b)
+lemma_12164.lean | SUCCESS | exact Eq.symm (Nat.mul_assoc a b c)
+lemma_11277.lean | SUCCESS | exact Nat.pow_mul' a 2 2
+lemma_14167.lean | SUCCESS | exact Or.symm (Nat.eq_or_lt_of_le h)
+lemma_2267.lean | SUCCESS | exact let sub₀ := #[].push nums.head!;
+  ⟨rfl, rfl⟩
+lemma_2402.lean | SUCCESS | exact Nat.zero_lt_of_lt h
+lemma_477.lean | SUCCESS | exact Bool.or_comm (decide (c1[0]! < c2[0]!) && decide (c2[0]! < c1[1]!) && decide (c1[1]! < c2[1]!))
+    (decide (c2[0]! < c1[0]!) && decide (c1[0]! < c2[1]!) && decide (c2[1]! < c1[1]!))
+lemma_1976.lean | SUCCESS | exact Eq.symm List.foldl_map
+lemma_15911.lean | SUCCESS | exact Int.le.intro 1 rfl
+lemma_3995.lean | SUCCESS | exact Nat.mod_add_div a 10
+lemma_8699.lean | SUCCESS | exact List.min?_mem h
+lemma_3699.lean | SUCCESS | exact Int.max_eq_right hx
+lemma_11398.lean | SUCCESS | exact Int.compare_eq_lt.mp rfl
+lemma_9874.lean | SUCCESS | exact Eq.symm (Int.ediv_mul_cancel_of_emod_eq_zero h)
+lemma_2163.lean | SUCCESS | exact Nat.one_add xs.length
+lemma_294.lean | SUCCESS | exact List.length_filter_le p lst
+lemma_15005.lean | SUCCESS | exact Int.zero_le_ofNat (x % y)
+lemma_2432.lean | SUCCESS | exact Nat.div_le_div_right h
+lemma_8970.lean | SUCCESS | exact Array.all_eq_true'
+lemma_6951.lean | SUCCESS | exact Nat.le_add_right_of_le h
+lemma_274.lean | SUCCESS | exact List.length_filter_le (fun y => decide (y = a ∨ y = b)) lst
+lemma_11211.lean | SUCCESS | exact Nat.eq_zero_or_pos a.size
+lemma_2337.lean | SUCCESS | exact Nat.div_le_self n 2
+lemma_13778.lean | SUCCESS | exact Nat.dvd_of_mod_eq_zero h
+lemma_12314.lean | SUCCESS | exact Or.symm (Int.lt_or_le b[n]! a[m]!)
+lemma_13251.lean | SUCCESS | exact Nat.le_sub_one_of_lt h
+lemma_3621.lean | SUCCESS | exact Int.le_max_left 0 x
+lemma_6858.lean | SUCCESS | exact Eq.symm (Nat.sub_min_sub_right a b c)
+lemma_668.lean | SUCCESS | exact Eq.symm (Nat.mul_div_cancel' h)
+lemma_8655.lean | SUCCESS | exact Nat.div_add_mod n 10
+lemma_655.lean | SUCCESS | exact Nat.div_mul_cancel h
+lemma_8104.lean | SUCCESS | exact Int.mul_ediv_self (a + b) 2
+lemma_831.lean | SUCCESS | exact List.Perm.trans h₁ h₂

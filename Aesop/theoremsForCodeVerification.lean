@@ -5,30 +5,8 @@ Authors:
 -/
 
 module
-
+import Lean
 import Aesop.Frontend.Attribute
-
-/-!
-# Theorems for Code Verification
-
-This file contains simp theorems specifically for code verification tasks.
-These theorems are tagged with `@[aesop norm simp]` so they are only used
-when `aesop` is called, not by regular `simp`.
-
-## Usage
-
-Import this file and call:
-```lean
-aesop (options := { useDefaultSimpSet := false })
-```
-
-This will use:
-- Only the theorems tagged here with `@[aesop norm simp]`
-- Local non-recursive definitions (automatically added)
-- No default `@[simp]` theorems from Lean/Mathlib
--/
-
-namespace TheoremsForCodeVerification
 
 attribute [simp]
 Array.eraseIdx!
@@ -40,42 +18,100 @@ Array.all_iff_forall
 
 
 --以下是为了替换grind
+--Array的定理
+attribute[simp]
+Array.setIfInBounds
+Array.getElem_push
+Array.getElem?_push
+Array.getElem!_eq_getD
+Array.getElem_set_ne
+Array.getElem?_set_ne
+Array.getElem_eraseIdx_of_lt
+Array.getElem?_eraseIdx_of_lt
+Array.getElem_eraseIdx_of_ge
+Array.getElem?_eraseIdx_of_ge
+Array.all_push
+Array.getElem_set_self
+Array.getElem?_set_self
+Array.getElem_append
+Array.getElem?_append
+namespace Array
+
+@[simp]--相比于Array.getElem_set_ne，仅仅是把h从i≠j改成了j≠i。没办法,simp太笨。
+public theorem getElem_set_ne_1 {xs : Array α} {i : Nat} (h' : i < xs.size) {v : α} {j : Nat}
+    (pj : j < xs.size) (h : j ≠ i) :
+    (xs.set i v)[j]'(by simp [*]) = xs[j] := by
+  grind
+@[simp]--相比于Array.getElem?_set_ne，仅仅是把h从i≠j改成了j≠i。没办法,simp太笨。
+public theorem getElem?_set_ne_1 {xs : Array α} {i : Nat} (h : i < xs.size) {v : α} {j : Nat}
+    (ne : j ≠ i) : (xs.set i v)[j]? = xs[j]? := by
+  grind
+
+
+end Array
+
+
 --List的定理
+attribute [simp]
+List.count_cons
+List.countP_cons
+List.filter_cons
+List.count_erase
+List.length_eraseIdx
+List.take_of_length_le
+List.erase_of_not_mem
+List.getElem?_append
+List.getElem_append
+List.eraseDups_cons
+List.pairwise_cons
+List.drop_take
+List.range_succ--这个存疑
+List.idxOf_eq_length
+List.zipIdx_append
+List.take_take
+List.drop_drop
+List.idxOf_append
+List.nodup_iff_pairwise_ne
+
+namespace List
 @[simp]
-theorem get_take_eq (l : List α) (i n : Nat)
+public theorem get_take_eq (l : List α) (i n : Nat)
   (h : i < Nat.min l.length n) :
   (l.take n)[i]? = l[i]?:= by
   grind
 @[simp]
-theorem pairwise_of_forall_eq
+public theorem pairwise_of_forall_eq
   {α : Type u} (c : α) (l : List α)
   (h : ∀ a ∈ l, a = c) :
   List.Pairwise (· = ·) l := by
   sorry
 @[simp]
-theorem take_append_gen (l₁ l₂ : List α) (n : Nat) :
+public theorem take_append_gen (l₁ l₂ : List α) (n : Nat) :
     (l₁ ++ l₂).take n = (l₁.take n) ++ (l₂.take (n - l₁.length)) := by
   sorry
 -- 正确的 simp 方向：把 take/drop 往里推，把 reverse 往外拉
-@[simp] theorem reverse_take_eq (l : List α) (n : Nat) :
+@[simp]
+public theorem reverse_take_eq (l : List α) (n : Nat) :
     (List.reverse l).take n = (l.drop (l.length - n)).reverse := by
   sorry
 
-@[simp] theorem reverse_drop_eq (l : List α) (n : Nat) :
+@[simp]
+public theorem reverse_drop_eq (l : List α) (n : Nat) :
     (List.reverse l).drop n = (l.take (l.length - n)).reverse := by
   sorry
+
 @[simp]
-theorem Array.get_push_spec {α} (a : Array α) (v : α) (i : Nat) :
-    (a.push v)[i]? = if i < a.size then a[i]? else if i = a.size then some v else none := by
-  sorry
---这个要不要加则存疑
--- @[simp]
--- theorem getElem!_eq_getElem?_getD [Inhabited α] (a : Array α) (i : Nat) :
---     a[i]! = (a[i]?).getD default := by
---   sorry
-@[simp]
-theorem List.count_cons_of_ne {α} [DecidableEq α] (x a : α) (l : List α) (h : x ≠ a) :
-    (a :: l).count x = l.count x := by
+public theorem length_filter_eq_countP {α} (p : α → Bool) (l : List α) :
+    (l.filter p).length = l.countP p := by
   grind
 
-end TheoremsForCodeVerification
+
+
+
+
+end List
+
+--下面是一些放什么namespace都不太合适的
+@[simp]
+public theorem or_not_self (P : Prop) : (P ∨ ¬P) = True :=by
+  grind

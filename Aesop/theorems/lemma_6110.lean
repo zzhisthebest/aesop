@@ -1,0 +1,46 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_6110
+public def searchInsert_precond (xs : List Int) (target : Int) : Prop :=
+  List.Pairwise (· < ·) xs
+
+public def searchInsert (xs : List Int) (target : Int) (h_precond : searchInsert_precond (xs) (target)) : Nat :=
+  match xs with
+  | [] =>
+      0
+  | _ :: _ =>
+      let rec helper : List Int → Nat → Nat :=
+        fun ys idx =>
+          match ys with
+          | [] =>
+              idx
+          | y :: ys' =>
+              let isCurrent := y
+              let currentIndex := idx
+              let targetValue := target
+              let condition := targetValue ≤ isCurrent
+              if condition then
+                currentIndex
+              else
+                let incrementedIndex := currentIndex + 1
+                let rest := ys'
+                helper rest incrementedIndex
+      let startingIndex := 0
+      let result := helper xs startingIndex
+      result
+
+public def searchInsert_postcond (xs : List Int) (target : Int) (result: Nat) (h_precond : searchInsert_precond (xs) (target)) : Prop :=
+  let allBeforeLess := (List.range result).all (fun i => xs[i]! < target)
+  let inBounds := result ≤ xs.length
+  let insertedCorrectly :=
+    result < xs.length → target ≤ xs[result]!
+  inBounds ∧ allBeforeLess ∧ insertedCorrectly
+
+
+public theorem mem_takeWhile_imp_lt (xs : List Int) (target : Int) (x : Int) :
+    x ∈ xs.takeWhile (· < target) → x < target:= by 
+sorry
+
+
+end tmp_lemma_6110

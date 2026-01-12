@@ -77,16 +77,11 @@ theorem arraySum_spec_satisfied (a: Array Int) (h_precond : arraySum_precond (a)
     | cons x xs ih =>--ih在最后用到了
       unfold sumTo
       simp
-      --aesop
-
-      --aesop
-
       cases xs with
       | nil => unfold sumTo;simp
       | cons y ys =>
         --unfold sumTo
         --aesop
-
         rw [ih]
         · have h3 (x' : Int) (xs' : List Int): xs'.length ≠ 0 → sumTo ⟨x'::xs'⟩ xs'.length = x' + sumTo ⟨xs'⟩ (xs'.length - 1) := by--命名很显然，但就是必须数学归纳法证明
             --aesop
@@ -101,9 +96,7 @@ theorem arraySum_spec_satisfied (a: Array Int) (h_precond : arraySum_precond (a)
           --grind
             aesop--用到了h3
           --rw [sumTo]
-          rw [sumTo]--还真不能unfold，unfold是在两侧，而rw只在第一个地方unfold
-          simp
-          rw [h4]
+          rw [sumTo]--还真不能unfold，unfold是在两侧，而rw只在第一个地方
           aesop
         · aesop
   -- !benchmark @end proof

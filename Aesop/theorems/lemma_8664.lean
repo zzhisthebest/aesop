@@ -1,0 +1,26 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_8664
+public def sumOfDigits_precond (n : Nat) : Prop :=
+  True
+
+public def sumOfDigits (n : Nat) (h_precond : sumOfDigits_precond (n)) : Nat :=
+  let rec loop (n : Nat) (acc : Nat) : Nat :=
+    if n = 0 then acc
+    else loop (n / 10) (acc + n % 10)
+  loop n 0
+
+public def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precond (n)) :=
+  result - List.sum (List.map (fun c => Char.toNat c - Char.toNat '0') (String.toList (Nat.repr n))) = 0 ∧
+  List.sum (List.map (fun c => Char.toNat c - Char.toNat '0') (String.toList (Nat.repr n))) - result = 0
+
+
+public theorem charToNat_digit (c : Char) (h : c ∈ "0123456789".toList) :
+    Char.toNat c - Char.toNat '0' < 10 ∧
+    (c = '0' ∨ c = '1' ∨ c = '2' ∨ c = '3' ∨ c = '4' ∨
+     c = '5' ∨ c = '6' ∨ c = '7' ∨ c = '8' ∨ c = '9'):= by 
+sorry
+
+
+end tmp_lemma_8664

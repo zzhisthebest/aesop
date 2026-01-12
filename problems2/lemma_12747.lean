@@ -1,0 +1,24 @@
+import Aesop
+set_option maxHeartbeats 0
+namespace tmp
+@[reducible, simp]
+def minOfThree_precond (a : Int) (b : Int) (c : Int) : Prop :=
+  True
+
+def minOfThree (a : Int) (b : Int) (c : Int) (h_precond : minOfThree_precond (a) (b) (c)) : Int :=
+  if a <= b && a <= c then a
+  else if b <= a && b <= c then b
+  else c
+
+@[reducible, simp]
+def minOfThree_postcond (a : Int) (b : Int) (c : Int) (result: Int) (h_precond : minOfThree_precond (a) (b) (c)) :=
+  (result <= a ∧ result <= b ∧ result <= c) ∧
+  (result = a ∨ result = b ∨ result = c)
+
+
+theorem c_le_b_of_not_a_min_not_b_min (a b c : Int)
+    (h_na : ¬ (a ≤ b ∧ a ≤ c)) (h_nb : ¬ (b ≤ a ∧ b ≤ c)) : c ≤ b:= by 
+aesop(config:={enableGrind:=false,enableOmega:=false})
+
+
+end tmp

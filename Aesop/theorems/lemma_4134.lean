@@ -1,0 +1,33 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_4134
+public def mergeSorted_precond (a : List Int) (b : List Int) : Prop :=
+  List.Pairwise (· ≤ ·) a ∧ List.Pairwise (· ≤ ·) b
+
+public def mergeSortedAux : List Int → List Int → List Int
+| [], ys => ys
+| xs, [] => xs
+| x :: xs', y :: ys' =>
+  if x ≤ y then
+    let merged := mergeSortedAux xs' (y :: ys')
+    x :: merged
+  else
+    let merged := mergeSortedAux (x :: xs') ys'
+    y :: merged
+
+public def mergeSorted (a : List Int) (b : List Int) (h_precond : mergeSorted_precond (a) (b)) : List Int :=
+  let merged := mergeSortedAux a b
+  merged
+
+public def mergeSorted_postcond (a : List Int) (b : List Int) (result: List Int) (h_precond : mergeSorted_precond (a) (b)) : Prop :=
+  List.Pairwise (· ≤ ·) result ∧
+  List.isPerm result (a ++ b)
+
+
+public theorem perm_cons_append_comm (y : Int) (xs ys : List Int) :
+    List.isPerm (y :: (xs ++ ys)) (xs ++ (y :: ys)):= by 
+sorry
+
+
+end tmp_lemma_4134

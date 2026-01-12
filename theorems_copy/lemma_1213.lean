@@ -1,0 +1,54 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_1213
+public def isPeakValley_precond (lst : List Int) : Prop :=
+  True
+
+public def isPeakValley (lst : List Int) (h_precond : isPeakValley_precond (lst)) : Bool :=
+  let rec aux (l : List Int) (increasing : Bool) (startedDecreasing : Bool) : Bool :=
+    match l with
+    | x :: y :: rest =>
+      if x < y then
+        if startedDecreasing then false
+        else aux (y :: rest) true startedDecreasing
+      else if x > y then
+        if increasing then aux (y :: rest) increasing true
+        else false
+      else false
+    | _ => increasing && startedDecreasing
+  aux lst false false
+
+public def isPeakValley_postcond (lst : List Int) (result: Bool) (h_precond : isPeakValley_precond (lst)) : Prop :=
+  let len := lst.length
+  let validPeaks :=
+    List.range len |>.filter (fun p =>
+      1 ≤ p ∧ p < len - 1 ∧
+
+      (List.range p).all (fun i =>
+        lst[i]! < lst[i + 1]!
+      ) ∧
+
+      (List.range (len - 1 - p)).all (fun i =>
+        lst[p + i]! > lst[p + i + 1]!
+      )
+    )
+  (validPeaks != [] → result) ∧
+  (validPeaks.length = 0 → ¬ result)
+
+
+public theorem validPeaks_nonempty_iff (lst : List Int) :
+    (let len := lst.length
+     let validPeaks :=
+       List.range len |>.filter (fun p =>
+         1 ≤ p ∧ p < len - 1 ∧
+         (List.range p).all (fun i => lst[i]! < lst[i + 1]!) ∧
+         (List.range (len - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!))
+     validPeaks ≠ []) ↔
+    (∃ p, 1 ≤ p ∧ p < lst.length - 1 ∧
+          (List.range p).all (fun i => lst[i]! < lst[i + 1]!) ∧
+          (List.range (lst.length - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!)):= by 
+sorry
+
+
+end tmp_lemma_1213

@@ -1,0 +1,60 @@
+module
+import Lean
+set_option maxHeartbeats 0
+namespace tmp_lemma_2231
+public def longestIncreasingSubsequence_precond (nums : List Int) : Prop :=
+  True
+
+public def longestIncreasingSubsequence (nums : List Int) (h_precond : longestIncreasingSubsequence_precond (nums)) : Int :=
+  Id.run do
+    if nums.isEmpty then return 0
+    let mut sub : Array Int := Array.empty
+    sub := sub.push nums.head!
+    for num in nums.tail do
+      if num > sub[sub.size - 1]! then
+        sub := sub.push num
+      else
+        let mut left : Nat := 0
+        let mut right : Nat := sub.size - 1
+        while left < right do
+          let mid := (left + right) / 2
+          if sub[mid]! == num then
+            right := mid
+          else if sub[mid]! < num then
+            left := mid + 1
+          else
+            right := mid
+        sub := sub.set! left num
+    return Int.ofNat sub.size
+
+public def longestIncreasingSubsequence_postcond (nums : List Int) (result: Int) (h_precond : longestIncreasingSubsequence_precond (nums)) : Prop :=
+  let allSubseq := (nums.foldl fun acc x => acc ++ acc.map (fun sub => x :: sub)) [[]] |>.map List.reverse
+  let increasingSubseqLens := allSubseq.filter (fun l => List.Pairwise (· < ·) l) |>.map (·.length)
+  increasingSubseqLens.contains result ∧ increasingSubseqLens.all (· ≤ result)
+
+
+public theorem sub_size_is_length_of_some_increasing_subseq
+    (pref : List Int) (h : pref ≠ []) :
+    ∃ (inc : List Int), inc ⊆ pref ∧ List.Pairwise (· < ·) inc ∧ inc.length = (Id.run do
+      let mut sub : Array Int := Array.empty
+      sub := sub.push pref.head!
+      for num in pref.tail do
+        if num > sub[sub.size - 1]! then
+          sub := sub.push num
+        else
+          let mut left : Nat := 0
+          let mut right : Nat := sub.size - 1
+          while left < right do
+            let mid := (left + right) / 2
+            if sub[mid]! == num then
+              right := mid
+            else if sub[mid]! < num then
+              left := mid + 1
+            else
+              right := mid
+          sub := sub.set! left num
+      return sub.size):= by 
+sorry
+
+
+end tmp_lemma_2231

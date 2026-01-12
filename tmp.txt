@@ -1,0 +1,1 @@
+搞一个apply?实现。然后似乎无别的了。可以把这些lemmas手动肉眼generalize/搞成simp。

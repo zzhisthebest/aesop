@@ -68,6 +68,6 @@ def removeElement_postcond (s : Array Int) (k : Nat) (result: Array Int) (h_prec
 theorem removeElement_spec_satisfied (s: Array Int) (k: Nat) (h_precond : removeElement_precond (s) (k)) :
     removeElement_postcond (s) (k) (removeElement (s) (k) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  aesop?
   -- !benchmark @end proof
 end tmp
