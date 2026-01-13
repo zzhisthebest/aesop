@@ -1,0 +1,203 @@
+module
+
+public import Lean.Data.Options
+
+public section
+
+open Lean Lean.Meta
+
+namespace Codetic
+
+set_option linter.missingDocs true
+
+/--
+Search strategies which Codetic can use.
+-/
+inductive Strategy --己
+  /--
+  Best-first search. This is the default strategy.
+  -/
+  | bestFirst
+  /--
+  Depth-first search. Whenever a rule is applied, Codetic immediately tries to
+  solve each of its subgoals (from left to right), up to the maximum rule
+  application depth. Goal and rule priorities are ignored, except to decide
+  which rule is applied first.
+  -/
+  | depthFirst
+  /--
+  Breadth-first search. Codetic always works on the oldest unsolved goal. Goal and
+  rule priorities are ignored, except to decide which rule is applied first.
+  -/
+  | breadthFirst
+  deriving Inhabited, BEq, Repr
+
+/--
+Options which modify the behaviour of the `codetic` tactic.
+-/
+structure Options where--己
+  /--
+  The search strategy used by Codetic.
+  -/
+  strategy := Strategy.bestFirst
+  /--
+  The maximum number of rule applications in any branch of the search tree
+  (i.e., the maximum search depth). When a branch exceeds this limit, it is
+  considered unprovable, but other branches may still be explored. 0 means no
+  limit.
+  -/
+  maxRuleApplicationDepth := 30
+  /--
+  Maximum total number of rule applications in the search tree. When this limit
+  is exceeded, the search ends. 0 means no limit.
+  -/
+  maxRuleApplications := 200
+  /--
+  Maximum total number of goals in the search tree. When this limit is exceeded,
+  the search ends. 0 means no limit.
+  -/
+  maxGoals := 0
+  /--
+  Maximum number of norm rules applied to a single goal. When this limit is
+  exceeded, normalisation is likely stuck in an infinite loop, so Codetic fails. 0
+  means no limit.
+  -/
+  maxNormIterations := 100
+  /--
+  When Codetic fails to prove a goal, it reports the goals that remain after safe
+  rules have been applied exhaustively to the root goal, the safe
+  descendants of the root goal, and so on (i.e., after the "safe prefix" of the
+  search tree has been unfolded). However, it is possible for the search to fail
+  before the safe prefix has been completely generated. In this case, Codetic
+  expands the safe prefix after the fact. This option limits the number of
+  additional rule applications generated during this process. 0 means no limit.
+  -/
+  maxSafePrefixRuleApplications := 50
+  /--
+  The transparency used by the `applyHyps` builtin rule. The rule applies a
+  hypothesis `h : T` if `T ≡ ∀ (x₁ : X₁) ... (xₙ : Xₙ), Y` at the given
+  transparency and if additionally the goal's target is defeq to `Y` at the
+  given transparency.
+  -/
+  applyHypsTransparency : TransparencyMode := .default
+  /--
+  The transparency used by the `assumption` builtin rule. The rule applies a
+  hypothesis `h : T` if `T` is defeq to the goal's target at the given
+  transparency.
+  -/
+  assumptionTransparency : TransparencyMode := .default
+  /--
+  The transparency used by the `destructProducts` builtin rule. The rule splits
+  a hypothesis `h : T` if `T` is defeq to a product-like type (e.g. `T ≡ A ∧ B`
+  or `T ≡ A × B`) at the given transparency.
+
+  Note: we can index this rule only if the transparency is `.reducible`. With
+  any other transparency, the rule becomes unindexed and is applied to every
+  goal.
+  -/
+  destructProductsTransparency : TransparencyMode := .reducible
+  /--
+  If this option is not `none`, the builtin `intros` rule unfolds the goal's
+  target with the given transparency to discover `∀` binders. For example, with
+  `def T := ∀ x y : Nat, x = y`, `introsTransparency? := some .default` and goal
+  `⊢ T`, the `intros` rule produces the goal `x, y : Nat ⊢ x = y`. With
+  `introsTransparency? := some .reducible`, it produces `⊢ T`. With
+  `introsTransparency? := none`, it only introduces arguments which are
+  syntactically bound by `∀` binders, so it also produces `⊢ T`.
+  -/
+  introsTransparency? : Option TransparencyMode := none
+  /--
+  If `true`, Codetic succeeds only if it proves the goal. If `false`, Codetic always
+  succeeds and reports the goals remaining after safe rules were applied.
+  -/
+  terminal := false
+  /--
+  If `true`, print a warning when Codetic does not prove the goal.
+  This can also be turned off globally with the option `codetic.warn.nonterminal`.
+  -/
+  warnOnNonterminal := true
+  /--
+  If Codetic proves a goal and this option is `true`, Codetic prints a tactic proof
+  as a `Try this:` suggestion.
+  -/
+  traceScript := false
+  /--
+  Enable the builtin `simp` normalisation rule.
+  -/
+  enableSimp := true
+  /--
+  Use `simp_all`, rather than `simp at *`, for the builtin `simp` normalisation
+  rule.
+  -/
+  useSimpAll := true
+  /--
+  Use simp theorems from the default `simp` set, i.e. those tagged with
+  `@[simp]`. If this option is `false`, Codetic uses only Codetic-specific simp
+  theorems, i.e. those tagged with `@[codetic simp]`. Note that the congruence
+  lemmas from the default `simp` set are always used.
+  -/
+  useDefaultSimpSet := true
+  /--
+  Enable the builtin `unfold` normalisation rule.
+  -/
+  enableUnfold := true
+  /--
+  Enable the builtin `grind` unsafe rule.
+  -/
+  enableGrind := true
+  /--
+  Enable the builtin `omega` unsafe rule.
+  -/
+  enableOmega := true
+  deriving Inhabited, BEq, Repr
+
+/--
+(codetic) Only for use by Codetic developers. Enables dynamic script structuring.
+-/
+register_option codetic.dev.dynamicStructuring : Bool := {
+  descr := "(codetic) Only for use by Codetic developers. Enables dynamic script structuring."
+  defValue := true
+}
+
+/--
+(codetic) Only for use by Codetic developers. Uses static structuring instead of
+dynamic structuring if no metavariables appear in the proof.
+-/
+register_option codetic.dev.optimizedDynamicStructuring : Bool := {
+  descr := "(codetic) Only for use by Codetic developers. Uses static structuring instead of dynamic structuring if no metavariables appear in the proof."
+  defValue := true
+}
+
+/--
+(codetic) Only for use by Codetic developers. Generates a script even if none was requested.
+-/
+register_option codetic.dev.generateScript : Bool := {
+  descr := "(codetic) Only for use by Codetic developers. Generates a script even if none was requested."
+  defValue := false
+}
+
+/--
+(codetic) Only for use by Codetic developers. Enables the new stateful forward reasoning engine.
+-/
+register_option codetic.dev.statefulForward : Bool := {
+  descr := "(codetic) Only for use by Codetic developers. Enables the new stateful forward reasoning engine."
+  defValue := true
+}
+
+/--
+(codetic) Warn when apply builder is applied to a rule with conclusion of the form A ↔ B.
+-/
+register_option codetic.warn.applyIff : Bool := {
+  descr := "(codetic) Warn when apply builder is applied to a rule with conclusion of the form A ↔ B."
+  defValue := true
+}
+
+/--
+(codetic) Warn when `codetic` does not close the goal, i.e. is used as a non-terminal tactic.
+-/
+register_option codetic.warn.nonterminal : Bool := {
+  descr := "(codetic) Warn when `codetic` does not close the goal, i.e. is used as a non-terminal tactic."
+  defValue := true
+}
+
+end Codetic
