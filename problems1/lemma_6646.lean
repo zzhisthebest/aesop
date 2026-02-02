@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem singleDigitPrimeFactor_eq_two_of_mod_two_eq_zero
     (n : Nat) (h : n % 2 = 0) (h0 : n ≠ 0)
     (h_pre : singleDigitPrimeFactor_precond n) :
     singleDigitPrimeFactor n h_pre = 2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

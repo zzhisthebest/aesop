@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ def LongestCommonSubsequence_postcond (a : Array Int) (b : Array Int) (result: I
 
 theorem size_set_of_ne {α} (arr : Array α) (i j : Nat) (hij : i ≠ j) (x : α) :
     (arr.set! i x).size = arr.size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

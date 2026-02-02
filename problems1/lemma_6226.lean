@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -21,7 +21,7 @@ def binaryToDecimal_postcond (digits : List Nat) (result: Nat) (h_precond : bina
 theorem binaryToDecimal_precond_tail {hd tl : List Nat}
     (h : binaryToDecimal_precond (hd ++ tl)) :
     binaryToDecimal_precond tl:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

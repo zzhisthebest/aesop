@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -24,7 +24,7 @@ def findEvenNumbers_postcond (arr : Array Int) (result: Array Int) (h_precond : 
 theorem foldl_push_eq_filter (l : List Int) :
     (l.foldl (fun (acc : Array Int) x => if isEven x then acc.push x else acc) #[]).toList
       = l.filter (fun x => isEven x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

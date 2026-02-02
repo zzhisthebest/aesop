@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem pairwise_length_mem (l : List Int) (hl : List.Pairwise (· < ·) l) :
     (let inc :=
         (([l] : List (List Int)).filter (fun l' => List.Pairwise (· < ·) l')) |>.map (·.length)
      inc).contains l.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -48,7 +48,7 @@ theorem twoSum_correct_bundle (nums : Array Int) (target : Int)
       (twoSum nums target h_precond)[1]! ∧
     nums[(twoSum nums target h_precond)[0]!]! +
       nums[(twoSum nums target h_precond)[1]!]! = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

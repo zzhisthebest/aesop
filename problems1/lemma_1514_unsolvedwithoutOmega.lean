@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Nat) (h_precond : lengthOfLI
 
 
 theorem pairwise_singleton (a : Int) : List.Pairwise (· < ·) [a]:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

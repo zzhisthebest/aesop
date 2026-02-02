@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ def DoubleQuadruple_postcond (x : Int) (result: (Int × Int)) (h_precond : Doubl
 @[simp]
 theorem DoubleQuadruple_snd_eq (x : Int) (h : DoubleQuadruple_precond x) :
     (DoubleQuadruple x h).snd = 2 * (DoubleQuadruple x h).fst:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

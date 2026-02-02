@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem foldl_append_length (ops : List Int) :
           let last := acc.getLast? |>.getD 0
           acc.append [last + op])
         [0]).length = ops.length + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

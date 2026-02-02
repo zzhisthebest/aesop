@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ theorem dp_ne_empty (nums : List Int) (h : ¬ nums.isEmpty) :
       let n := nums.length
       let mut dp : Array Nat := Array.mkArray n 1
       pure dp).size > 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

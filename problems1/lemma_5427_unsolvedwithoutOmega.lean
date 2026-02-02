@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ def partitionEvensOdds_postcond (nums : List Nat) (result: (List Nat × List Nat
 
 theorem even_or_odd (x : Nat) :
     (x % 2 == 0) = true ∨ (x % 2 == 0) = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

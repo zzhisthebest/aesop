@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -17,7 +17,7 @@ def maxOfThree_postcond (a : Int) (b : Int) (c : Int) (result: Int) (h_precond :
 
 theorem max_eq_a_of_ge (a b c : Int) (h : a ≥ b ∧ a ≥ c) :
     max a (max b c) = a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

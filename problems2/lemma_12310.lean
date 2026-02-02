@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem measure_decreases
     a.size + b.size - m - n
       > a.size + b.size - (if a[m]! ≤ b[n]! then m+1 else m)
                            - (if a[m]! ≤ b[n]! then n else n+1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ def LongestCommonSubsequence_postcond (a : Array Int) (b : Array Int) (result: I
 
 theorem mkArray_val (n : Nat) (c : Int) :
   (Array.mkArray n c).foldl (· + ·) 0 = n * c:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

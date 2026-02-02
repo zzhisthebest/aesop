@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 
 theorem sum_digits_eq_sum (l : List Nat) :
     List.sum l = List.foldl (· + ·) 0 l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

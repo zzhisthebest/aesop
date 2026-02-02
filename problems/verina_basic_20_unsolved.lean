@@ -13,7 +13,7 @@
 -- The order in which the unique integers are multiplied does not affect the final product.
 
 -- !benchmark @start import type=solution
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end import
 

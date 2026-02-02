@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def multiply_postcond (a : Int) (b : Int) (result: Int) (h_precond : multiply_pr
 
 theorem postcond_left (a b : Int) (h : multiply_precond a b) :
     (multiply a b h) - a * b = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

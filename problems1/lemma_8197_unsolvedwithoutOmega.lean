@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ def below_zero_postcond (operations : List Int) (result: (Array Int × Bool)) (h
 
 theorem array_any_iff (a : Array Int) (p : Int → Bool) :
     a.any p = (a.toList).any p:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,7 +1,7 @@
 import re
 
 # 输入与输出路径
-log_path = '/data1/zzh/aesop/codes_for_theorem_library/failed_verified.txt'
+log_path = '/data1/zzh/codetic/codes_for_theorem_library/failed_verified.txt'
 output_path = 'referencers_list.txt'
 target_id = "tmp_lemma_"
 

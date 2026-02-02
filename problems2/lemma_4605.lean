@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -21,7 +21,7 @@ def missingNumber_postcond (nums : List Nat) (result: Nat) (h_precond : missingN
 
 theorem le_length_imp_mem_range_succ {xs : List Nat} {x : Nat}
     (hx : x ≤ xs.length) : x ∈ List.range (xs.length + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

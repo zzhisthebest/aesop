@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem perm_if_BubbleSort (a : Array Int) (h : BubbleSort_precond a) :
     List.isPerm
       (if a.size = 0 then a else bubbleOuter (a.size - 1) a).toList
       a.toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

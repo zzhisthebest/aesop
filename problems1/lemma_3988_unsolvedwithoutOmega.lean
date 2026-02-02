@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def listToNat : List Nat → Nat
@@ -38,7 +38,7 @@ def addTwoNumbers_postcond (l1 : List Nat) (l2 : List Nat) (result: List Nat) (h
 theorem digit_add (d₁ d₂ c : Nat) (h₁ : d₁ < 10) (h₂ : d₂ < 10) (hc : c < 10) :
     let s := d₁ + d₂ + c
     s % 10 + 10 * (s / 10) = s:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

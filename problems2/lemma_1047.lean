@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def LongestCommonSubsequence_postcond (a : Array Int) (b : Array Int) (result: I
 
 theorem foldl_nil (α β : Type) (f : β → α → β) (b : β) :
     (Array.empty : Array α).foldl f b = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

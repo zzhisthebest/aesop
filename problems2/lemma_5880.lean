@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem encodeAux_respects_postcond (s : String) :
     (∀ p ∈ (runLengthEncode s trivial), p.snd > 0) ∧
     (∀ i, i < (runLengthEncode s trivial).length - 1 →
           ((runLengthEncode s trivial)[i]!).fst ≠ ((runLengthEncode s trivial)[i+1]!).fst):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

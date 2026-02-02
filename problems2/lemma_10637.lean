@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem result_eq_target (arr : Array Int) (target : Int)
     (h_precond : findFirstOccurrence_precond arr target) :
     let r := findFirstOccurrence arr target h_precond
     0 ≤ r → arr[r.toNat]! = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

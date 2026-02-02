@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ def longestIncreasingSubseqLength_postcond (xs : List Int) (result: Nat) (h_prec
 
 theorem map_length (ls : List (List Int)) :
     ls.map List.length = ls.foldl (fun acc s => acc ++ [s.length]) []:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Nat) (h_precond : lengthOfLI
 
 theorem mkArray_one (n : Nat) :
     (Array.mkArray n (1 : Nat)).size = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -77,7 +77,7 @@ theorem algorithm_returns_intersection (N : Nat) (chords : List (List Nat))
         let a2 := (if c₂[0]! > c₂[1]! then c₂[1]! else c₂[0]!)
         let b2 := (if c₂[0]! > c₂[1]! then c₂[0]! else c₂[1]!)
         (a1 < a2 && a2 < b1 && b1 < b2) ∨ (a2 < a1 && a1 < b2 && b2 < b1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

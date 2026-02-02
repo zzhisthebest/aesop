@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem existence_of_max_streak (nums : List Int) (res : Nat)
         (start = 0 ∨ nums[start - 1]! ≥ nums[start]!) ∧
         (start + res = nums.length ∨
           nums[start + res - 1]! ≥ nums[start + res]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

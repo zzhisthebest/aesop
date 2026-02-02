@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem eraseDups_eq_fold (l : List Int) :
           (fun (p : Std.HashSet Int × List Int) x =>
             if p.1.contains x then p else (p.1.insert x, p.2 ++ [x]))
           (Std.HashSet.empty, [])).2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 theorem sum_of_one_digit_string (c : Char) (h : c.isDigit) :
     List.sum (List.map (fun d => Char.toNat d - Char.toNat '0')
                 [c]) = Char.toNat c - Char.toNat '0':= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

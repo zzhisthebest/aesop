@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -44,7 +44,7 @@ theorem findUnique_returns_one (l : List Int) (h : FindSingleNumber_precond l) :
     let r := FindSingleNumber l h
     (filterlist r l).length = 1 ∧
     (∀ x ∈ l, x = r ∨ (filterlist x l).length = 2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

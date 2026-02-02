@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem dropWhile_append_of_forall
     (p : Int → Bool) (l₁ l₂ : List Int)
     (h : ∀ x ∈ l₁, p x = true) :
     (l₁ ++ l₂).dropWhile p = l₂.dropWhile p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

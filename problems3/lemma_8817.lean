@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def uniqueProduct_postcond (arr : Array Int) (result: Int) (h_precond : uniquePr
 
 theorem foldl_eraseDups_of_nodup (l : List Int) (h : l.Nodup) :
     l.eraseDups.foldl (· * ·) (1 : Int) = l.foldl (· * ·) 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

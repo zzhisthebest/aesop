@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ def ifPowerOfFour_postcond (n : Nat) (result: Bool) (h_precond : ifPowerOfFour_p
 
 
 theorem dvd_of_mod_eq_zero {a b : Nat} (h : a % b = 0) : b ∣ a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

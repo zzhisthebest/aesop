@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem others_in_nums (nums : List Nat) (h_precond : missingNumber_precond nums
     let expected := (n * (n + 1)) / 2
     let actual   := nums.foldl (· + ·) 0
     ∀ x, (x ∈ List.range (n + 1)) → x ≠ (expected - actual) → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

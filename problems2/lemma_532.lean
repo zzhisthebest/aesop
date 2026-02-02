@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem dvd_of_mod_eq_zero (a : Nat) : a % 4 = 0 → 4 ∣ a :=
 
 
 @[simp] theorem pow_four_zero (a : Nat) : a = 4 ^ 0 ↔ a = 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

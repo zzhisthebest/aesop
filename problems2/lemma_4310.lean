@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -43,7 +43,7 @@ def minOperations_postcond (nums : List Nat) (k : Nat) (result: Nat) (h_precond 
 
 theorem target_is_nil_of_k_eq_zero (k : Nat) (h : k = 0) :
     (List.range k).map (· + 1) = ([] : List Nat):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

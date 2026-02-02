@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ def Triple_postcond (x : Int) (result: Int) (h_precond : Triple_precond (x)) :=
 
 theorem spec_nonzero {x : Int} (hx : x ≠ 0) (h : Triple_precond x) :
     Triple_postcond x (Triple x h) h:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

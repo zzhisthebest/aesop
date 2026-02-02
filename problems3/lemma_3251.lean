@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem maxProfitAux_is_upper_bound :
     ∀ (prices : List Nat) (minSoFar maxProfit : Nat),
       List.Pairwise (fun ⟨pi, i⟩ ⟨pj, j⟩ =>
         i < j → pj - pi ≤ maxProfitAux prices minSoFar maxProfit) prices.zipIdx:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

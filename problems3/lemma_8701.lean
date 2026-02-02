@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ def findSmallest_postcond (s : Array Nat) (result: Option Nat) (h_precond : find
 
 theorem minOption_eq_of_mem_of_le {l : List Nat} {a : Nat}
     (ha : a ∈ l) (h : ∀ x, x ∈ l → a ≤ x) : l.min? = some a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

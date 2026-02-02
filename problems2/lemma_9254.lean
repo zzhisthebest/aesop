@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -34,7 +34,7 @@ def firstEvenOddDifference_postcond (a : Array Int) (result: Int) (h_precond : f
 
 
 theorem get_mem (a : Array Int) {i : Nat} (h : i < a.size) : a[i]! ∈ a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

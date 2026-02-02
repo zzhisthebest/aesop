@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ def isPerfectSquare_postcond (n : Nat) (result : Bool) : Prop :=
 
 theorem isPerfectSquare_eq_check_of_ne_zero {n : Nat} (h : n ≠ 0) :
     isPerfectSquare n = isPerfectSquare.check n 1 n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

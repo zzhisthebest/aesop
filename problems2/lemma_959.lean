@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countDigits (n : Nat) : Nat :=
@@ -34,7 +34,7 @@ theorem sumPowers_eq_stringFold (n : Nat) :
     sumPowers n (countDigits n) =
       List.foldl (fun acc d => acc + d ^ countDigits n) 0
         (List.map (fun c => c.toNat - '0'.toNat) (toString n).toList):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

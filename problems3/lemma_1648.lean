@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -44,7 +44,7 @@ def letterCombinations_postcond (digits : String) (result: List String) (h_preco
 theorem postcond_2x :
     letterCombinations_postcond "2x" (letterCombinations "2x" (by trivial))
       (by trivial) = (["a", "b", "c"] = []):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

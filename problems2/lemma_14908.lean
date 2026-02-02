@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def only_once_postcond (a : Array Int) (key : Int) (result: Bool) (h_precond : o
 theorem count_occurrences_cons (a : Array Int) (key i : Nat) (h : i < a.size) :
     count_occurrences (a.drop i) (a[i]) =
       (if a[i] = a[i] then 1 else 0) + count_occurrences (a.drop (i+1)) (a[i]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

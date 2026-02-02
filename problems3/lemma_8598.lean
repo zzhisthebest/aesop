@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 theorem last_char_of_repr (n : Nat) (h : n ≠ 0) :
     (String.toList (Nat.repr n)).get! ((String.toList (Nat.repr n)).length - 1)
         = Char.ofNat (Char.toNat '0' + n % 10):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

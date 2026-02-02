@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isOdd (x : Int) : Bool :=
@@ -25,7 +25,7 @@ def findFirstOdd_postcond (a : Array Int) (result: Option Nat) (h_precond : find
 
 theorem zipIdx_index_lt {α : Type _} {l : List α} {x : α} {i : Nat}
     (h : (x, i) ∈ l.zipIdx) : i < l.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

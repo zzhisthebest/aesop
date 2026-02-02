@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def append_postcond (a : Array Int) (b : Int) (result: Array Int) (h_precond : a
 
 theorem get_push_last (c : Array Int) (x : Int) :
     (c.push x)[c.size]! = x:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

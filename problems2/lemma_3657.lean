@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def maxSubarraySum_postcond (numbers : List Int) (result: Int) (h_precond : maxS
 theorem take_append_of_le_length {α} (l₁ l₂ : List α) (n : Nat)
     (h : l₁.length ≤ n) :
     (l₁ ++ l₂).take n = l₁ ++ (l₂.take (n - l₁.length)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

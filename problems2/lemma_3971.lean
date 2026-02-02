@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ def mergeSortedLists_postcond (arr1 : List Int) (arr2 : List Int) (result: List 
 theorem pairwise_cons_of_le {x : Int} {xs : List Int}
     (hx : List.Pairwise (· ≤ ·) xs) (h : ∀ y ∈ xs, x ≤ y) :
     List.Pairwise (· ≤ ·) (x :: xs):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def sumOfFourthPowerOfOddNumbers_postcond (n : Nat) (result: Nat) (h_precond : s
 
 theorem odd_sq (n : Nat) :
     (2 * n + 1) ^ 2 = 4 * n ^ 2 + 4 * n + 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

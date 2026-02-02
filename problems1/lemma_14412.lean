@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem update_min (x y : Int) :
     (if x > y then y else x) ≤ x ∧
     (if x > y then y else x) ≤ y ∧
     ((if x > y then y else x) = x ∨ (if x > y then y else x) = y):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

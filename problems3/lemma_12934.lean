@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -26,7 +26,7 @@ def allDigits_postcond (s : String) (result: Bool) (h_precond : allDigits_precon
 
 theorem iter_atEnd_iff (s : String) :
     (s.iter).atEnd ↔ s = "":= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

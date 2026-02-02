@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -74,7 +74,7 @@ theorem map_preserves_length_two (chords : List (List Nat))
         let a := chord[0]!
         let b := chord[1]!
         if a > b then [b, a] else [a, b])).all (fun c => c.length = 2):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

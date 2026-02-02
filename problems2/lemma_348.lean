@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 
 theorem mem_iff_contains (a : Int) (l : List Int) :
   a ∈ l ↔ l.contains a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

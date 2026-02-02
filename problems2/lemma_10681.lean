@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def allCharactersSame_postcond (s : String) (result: Bool) (h_precond : allChara
 
 theorem pairwise_cons_of_forall_eq {α} (c : α) (tl : List α) :
     (∀ x ∈ tl, x = c) → List.Pairwise (· = ·) (c :: tl):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

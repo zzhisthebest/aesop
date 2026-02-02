@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -43,7 +43,7 @@ def letterCombinations_postcond (digits : String) (result: List String) (h_preco
 
 theorem append_singleton (c : Char) (s : String) :
     String.singleton c ++ s = (c :: s.data).asString:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

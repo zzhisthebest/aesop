@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem foldl_push_preserves_even
     (acc : Array Int) (x : Int) :
     (if isEven x then acc.push x else acc).toList
       ⊆ (if isEven x then acc.push x else acc).toList:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 
 theorem count_gt_one_of_two_mem {a : Int} {l : List Int}
     (h₁ : a ∈ l) (h₂ : a ∈ l.erase a) : 1 < l.count a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

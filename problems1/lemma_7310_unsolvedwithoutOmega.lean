@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: Array Nat) (h_pre
 
 theorem List.length_filter_true (l : List α) :
     (l.filter fun _ => True).length = l.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

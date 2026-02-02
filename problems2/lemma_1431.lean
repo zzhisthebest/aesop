@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Int) (h_precond : lengthOfLI
 
 theorem foldl_const (xs : List β) (a : α) :
     xs.foldl (fun acc _ => acc) a = a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

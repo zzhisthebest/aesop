@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -87,7 +87,7 @@ theorem result_all_vals_are_in_nums2_or_neg_one
     (h_precond : nextGreaterElement_precond nums1 nums2) :
     (nextGreaterElement nums1 nums2 h_precond).all
       (fun v => v = -1 ∨ v ∈ nums2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

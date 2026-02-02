@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ def trapRainWater_postcond (height : List Nat) (result: Nat) (h_precond : trapRa
 
 theorem List.foldl_add (l : List Nat) (a : Nat) :
     l.foldl (· + ·) a = a + l.sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

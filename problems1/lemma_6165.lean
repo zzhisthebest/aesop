@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem insertedCorrectly_cons {x : Int} {xs : List Int} {target : Int}
     (hTail : r < xs.length → target ≤ xs[r]!)
     (hRes : r+1 < (x :: xs).length) :
     (r+1) < (x :: xs).length → target ≤ (x :: xs)[r+1]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

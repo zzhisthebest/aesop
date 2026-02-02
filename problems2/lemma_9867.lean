@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def isDivisibleBy11_postcond (n : Int) (result: Bool) (h_precond : isDivisibleBy
 
 
 theorem dvd_imp_mod_eq_zero (n m : Int) (h : m ∣ n) : n % m = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

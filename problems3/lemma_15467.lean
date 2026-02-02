@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem mod_nonneg (offset : Int) (i len : Nat) (h₀ : offset ≥ 0) :
     let idx : Int := (Int.ofNat i + offset) % (Int.ofNat len)
     let adj := if idx < 0 then idx + Int.ofNat len else idx
     adj = idx:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem rotate_elem (a : Array Int) (offset : Int) (h_precond : rotate_precond a
     (hi : i < a.size) :
     (rotate a offset h_precond)[i]! =
       a[Int.toNat ((Int.ofNat i + offset) % (Int.ofNat a.size))]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

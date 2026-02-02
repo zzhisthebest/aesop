@@ -16,7 +16,7 @@
 -- !benchmark @start import type=solution
 
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start solution_aux
 def isEven (n : Int) : Bool :=
@@ -80,7 +80,7 @@ theorem FindEvenNumbers_spec_satisfied (arr: Array Int) (h_precond : FindEvenNum
   constructor
   unfold FindEvenNumbers.loop
   simp
-  aesop
+  codetic
   unfold FindEvenNumbers.loop
 
 

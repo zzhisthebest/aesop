@@ -23,7 +23,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -88,5 +88,5 @@ def maxSubarraySum_postcond (xs : List Int) (result: Int) (h_precond : maxSubarr
 theorem maxSubarraySum_spec_satisfied (xs: List Int) (h_precond : maxSubarraySum_precond (xs)) :
     maxSubarraySum_postcond (xs) (maxSubarraySum (xs) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

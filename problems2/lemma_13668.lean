@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def LinearSearch_postcond (a : Array Int) (e : Int) (result: Nat) (h_precond : L
 
 
 theorem le_lt_trans {n i m : Nat} (hni : n ≤ i) (him : i < m) : n < m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

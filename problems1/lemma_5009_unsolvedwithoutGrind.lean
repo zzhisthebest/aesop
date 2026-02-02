@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -85,7 +85,7 @@ def nextGreaterElement_postcond (nums1 : List Int) (nums2 : List Int) (result: L
 theorem map_contains_key (nums2 : List Int) (x : Int) (m : List (Int × Int)) :
     (x, (List.find? (fun y => y > x) nums2).getD (-1)) ∈ m →
     (∃ y, (x, y) ∈ m ∧ (y = -1 ∨ y ∈ nums2)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

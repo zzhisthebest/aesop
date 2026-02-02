@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -26,7 +26,7 @@ theorem first_fold_spec (a b : Array Int) :
                        if !inArray b x then acc.insert x else acc)
                      Std.HashSet.empty
     ∀ x, x ∈ s ↔ (x ∈ a) ∧ ¬ (x ∈ b):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

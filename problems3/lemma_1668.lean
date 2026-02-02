@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -47,7 +47,7 @@ theorem length_foldl (cs : List Char) (hvalid : ∀ c ∈ cs,
         (fun acc ls => acc.flatMap (fun s => ls.map (fun c => s ++ String.singleton c)))
         [""]).length =
       (cs.map (fun c => (digitToLetters c).length)).foldr (· * ·) 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

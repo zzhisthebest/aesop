@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem result_is_length_of_an_increasing_subseq
     (nums : List Int) (h_precond : longestIncreasingSubsequence_precond nums) :
     let res := longestIncreasingSubsequence nums h_precond
     ∃ (l : List Int), List.Pairwise (· < ·) l ∧ l.length = res:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

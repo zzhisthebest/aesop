@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -55,7 +55,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 
 theorem all_true_of_forall (xs : List Int) (h : ∀ x ∈ xs, x ≥ 0) :
     xs.all (fun x => x ≥ 0) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

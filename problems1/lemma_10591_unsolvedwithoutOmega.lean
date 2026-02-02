@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 
 theorem pairwise_cons_head_le {a : Int} {l : List Int}
     (h : List.Pairwise (· ≤ ·) (a :: l)) : ∀ b ∈ l, a ≤ b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

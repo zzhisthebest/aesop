@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ def majorityElement_postcond (nums : List Int) (result: Int) (h_precond : majori
 
 
 theorem le_half_of_le (n m : Nat) (h : n ≤ m) : n / 2 ≤ m / 2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

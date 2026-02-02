@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem getAt_zero (xs : List Int) :
       | [] => (0 : Int)
       | h :: _ => h;
      getAt xs 0) = xs.headD 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

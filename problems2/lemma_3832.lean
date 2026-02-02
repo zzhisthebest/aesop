@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ def mergeSortedLists_postcond (arr1 : List Int) (arr2 : List Int) (result: List 
 
 
 theorem pairwise_singleton (x : Int) : List.Pairwise (· ≤ ·) [x]:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

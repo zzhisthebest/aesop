@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def isSorted_postcond (a : Array Int) (result: Bool) (h_precond : isSorted_preco
 
 
 theorem lt_of_succ_lt {n m : Nat} (h : n.succ < m) : n < m - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

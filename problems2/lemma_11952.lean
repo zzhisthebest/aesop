@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def BinarySearch_postcond (a : Array Int) (key : Int) (result: Nat) (h_precond :
 theorem pairwise_le_prefix_suffix (a : Array Int) (h : List.Pairwise (· ≤ ·) a.toList) :
     ∀ i j, i < a.size → j < a.size → i ≤ j →
       a[i]! ≤ a[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

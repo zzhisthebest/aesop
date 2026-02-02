@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: (Nat × Nat)) (h_
 
 theorem get_mem (nums : Array Int) (i : Nat) (h : i < nums.size) :
     nums[i]! = nums.get! i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem missing_not_mem_nums
     let n := nums.length
     let m := missingNumber nums h_precond
     ¬ m ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

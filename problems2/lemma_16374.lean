@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ def SwapSimultaneous_postcond (X : Int) (Y : Int) (result: Int × Int) (h_precon
 theorem swap_imp (X Y : Int) (h : SwapSimultaneous_precond X Y) :
     X ≠ Y →
       ((SwapSimultaneous X Y h).fst ≠ X ∧ (SwapSimultaneous X Y h).snd ≠ Y):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

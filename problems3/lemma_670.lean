@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem helper_step (n : Nat) (h : True) :
         ifPowerOfFour ((n + 2) / 4) h
       else
         false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -26,7 +26,7 @@ def allDigits_postcond (s : String) (result: Bool) (h_precond : allDigits_precon
 
 theorem if_notDigit_false (b : Bool) :
     (if false then false else b) = b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

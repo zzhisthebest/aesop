@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -56,7 +56,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 theorem aux_bounds (heights : List Int) (n : Nat) (left right : Nat)
     (hleft : left ≤ n) (hright : right < n) :
     left ≤ right ∨ left > right:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

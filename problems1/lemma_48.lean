@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -44,7 +44,7 @@ theorem count_one_or_two_of_mem
     (nums : List Int) (h_precond : FindSingleNumber_precond nums) {x : Int}
     (hx : x ∈ nums) :
     nums.count x = 1 ∨ nums.count x = 2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

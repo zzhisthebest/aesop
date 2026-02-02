@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 
 theorem contains_cons_of_ne {a b : Int} {l : List Int} (h : a ≠ b) :
     List.contains (b :: l) a = List.contains l a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

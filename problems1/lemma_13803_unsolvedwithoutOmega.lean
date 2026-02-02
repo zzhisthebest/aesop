@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def sumOfSquaresOfFirstNOddNumbers_postcond (n : Nat) (result: Nat) (h_precond :
 
 theorem Nat.sub_add_cancel_of_pos {k : Nat} (h : k ≠ 0) :
     k - 1 + 1 = k:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

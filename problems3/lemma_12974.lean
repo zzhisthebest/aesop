@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem Find_not_minus_one (a : Array Int) (key : Int)
     (Find a key h_precond ≠ -1) →
       (a[(Int.toNat (Find a key h_precond))]! = key ∧
         ∀ (i : Nat), i < Int.toNat (Find a key h_precond) → a[i]! ≠ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

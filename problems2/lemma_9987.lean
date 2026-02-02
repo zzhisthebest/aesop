@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isLowerCase (c : Char) : Bool :=
@@ -31,7 +31,7 @@ theorem get_map_eq (s : String) (i : Nat) (hi : i < s.length) :
       (if isLowerCase (s.toList.get! i)
           then shiftMinus32 (s.toList.get! i)
           else s.toList.get! i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

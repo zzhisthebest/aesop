@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem waterAt_nonneg (height : List Nat) (i : Nat) (hi : i < height.length) :
     0 ≤ Nat.min
           (List.take (i+1) height |>.foldl Nat.max 0)
           (List.drop i height |>.foldl Nat.max 0) - height[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

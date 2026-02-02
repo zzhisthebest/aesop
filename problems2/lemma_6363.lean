@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -51,7 +51,7 @@ def shortestBeautifulSubstring_postcond (s : String) (k : Nat) (result: String) 
 
 theorem map_asString_eq (l : List (List Char)) :
     l.map (·.asString) = l.map (fun c => String.mk c):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ theorem canyonSearchAux_step (a b : Array Int) (m n d : Nat)
         canyonSearchAux a b (m + 1) n new_d
       else
         canyonSearchAux a b m (n + 1) new_d):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

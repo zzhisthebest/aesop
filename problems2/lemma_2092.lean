@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem max_mem_and_upper_bound :
     ∀ (xs : List Nat), xs ≠ [] →
       (∃ m ∈ xs, m = xs.foldl Nat.max 0) ∧
       (∀ k ∈ xs, k ≤ xs.foldl Nat.max 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

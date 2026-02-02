@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ def findFirstRepeatedChar_postcond (s : String) (result: Option Char) (h_precond
 
 theorem list_get_eq (l : List α) (i : Nat) (h : i < l.length) :
     l.get ⟨i, h⟩ = l[i]:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

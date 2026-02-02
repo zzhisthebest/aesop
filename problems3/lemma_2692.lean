@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def LongestIncreasingSubsequence_postcond (a : Array Int) (result: Int) (h_preco
 
 
 theorem eq_of_not_lt_not_lt {x y : Int} (h₁ : ¬ x < y) (h₂ : ¬ y < x) : x = y:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

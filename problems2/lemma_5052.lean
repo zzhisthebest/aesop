@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -88,7 +88,7 @@ theorem index_bounds
     (i : Nat) (hi : i < nums1.length) :
     let val := nums1[i]!
     (nums2.findIdx? (fun x => x == val)).isSome:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

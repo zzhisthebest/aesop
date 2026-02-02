@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ theorem longestIncreasingStreak_pos_spec
           (start + longestIncreasingStreak nums h_precond = nums.length ∨
             nums[start + longestIncreasingStreak nums h_precond - 1]! ≥
               nums[start + longestIncreasingStreak nums h_precond]!))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

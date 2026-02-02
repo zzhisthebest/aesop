@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem aux_eq_of_le
     (hi₂ : a[i]! = e)
     (hi₃ : ∀ k, k < i → a[k]! ≠ e) :
     linearSearchAux a e n = i:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

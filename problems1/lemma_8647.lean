@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 
 theorem map_id_toList (s : String) :
     List.map (fun c => c) (String.toList s) = String.toList s:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem three_mul_sum_eq (n : Nat)
     (h_precond : sumOfSquaresOfFirstNOddNumbers_precond n) :
     3 * sumOfSquaresOfFirstNOddNumbers n h_precond =
       n * (2 * n - 1) * (2 * n + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

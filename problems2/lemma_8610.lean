@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem first_conj_is_zero (n : Nat) (h : sumOfDigits_precond n) :
     (sumOfDigits n h -
         List.sum (List.map (fun c => Char.toNat c - Char.toNat '0')
                            (String.toList (Nat.repr n)))) = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

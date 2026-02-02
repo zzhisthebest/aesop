@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def kthElement_postcond (arr : Array Int) (k : Nat) (result: Int) (h_precond : k
 
 theorem any_eq_true_of_mem (arr : Array Int) (i : Nat) (h : i < arr.size) :
     arr.any (fun x : Int => x = arr[i]!) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def sumOfSquaresOfFirstNOddNumbers_postcond (n : Nat) (result: Nat) (h_precond :
 theorem induction_step_eq (n : Nat) :
     n * (2 * n - 1) * (2 * n + 1) + 3 * (2 * n + 1) * (2 * n + 1) =
     (n + 1) * (2 * n + 1) * (2 * n + 3):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

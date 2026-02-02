@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -87,7 +87,7 @@ theorem result_elem_is_valid {nums1 nums2 : List Int}
     (i : Nat) (hi : i < (nextGreaterElement nums1 nums2 h_pre).length) :
     let r := (nextGreaterElement nums1 nums2 h_pre)[i]!
     r = -1 ∨ r ∈ nums2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

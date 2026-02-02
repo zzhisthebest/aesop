@@ -22,7 +22,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def allCharactersSame_precond (s : String) : Prop :=
@@ -85,10 +85,10 @@ theorem allCharactersSame_spec_satisfied (s: String) (h_precond : allCharactersS
       apply And.intro
       · intro a' a_1
         grind
-      · clear heq--不clear导致induction不成立。这个能解决的话，aesop可以直接证明这道题
-        aesop
+      · clear heq--不clear导致induction不成立。这个能解决的话，codetic可以直接证明这道题
+        codetic
     · intro x_1 a a_1
-      apply Aesop.BuiltinRules.not_intro
+      apply Codetic.BuiltinRules.not_intro
       intro a_2
       subst a_2
       simp_all only [String.data_empty, List.nil_eq, reduceCtorEq]

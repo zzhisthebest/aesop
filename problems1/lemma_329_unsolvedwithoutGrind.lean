@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 theorem filter_count_gt_one_eq (l : List Int) :
     l.filter (fun x => l.count x > 1) =
       l.filter (fun x => (l.filter (· = x)).length > 1):= by
-aesop?
+codetic?
 
 
 

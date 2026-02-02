@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -45,7 +45,7 @@ theorem postcond_from_unique_one (nums : List Int) (r : Int)
     (h_one : (filterlist r nums).length = 1) :
     ((filterlist r nums).length = 1) ∧
     (∀ x, x ∈ nums → x = r ∨ (filterlist x nums).length = 2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

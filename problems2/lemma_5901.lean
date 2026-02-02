@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ def runLengthEncode_postcond (s : String) (result: List (Char × Nat)) (h_precon
 
 theorem String.append_data (s₁ s₂ : String) :
     (s₁ ++ s₂).data = s₁.data ++ s₂.data:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

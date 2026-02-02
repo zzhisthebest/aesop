@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ def maxProfit_postcond (prices : List Nat) (result: Nat) (h_precond : maxProfit_
 
 theorem zipIdx_cons (x : Nat) (xs : List Nat) :
     (x :: xs).zipIdx = (x, 0) :: xs.zipIdx.map (fun ⟨y,i⟩ => (y, i+1)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

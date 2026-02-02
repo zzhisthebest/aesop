@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -43,7 +43,7 @@ theorem foldl_step (xs : List Int) (init : Int × Int) :
           let nm := if m ≥ nc then m else nc
           (nc, nm))
         init:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

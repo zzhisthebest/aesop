@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isUpperAlpha (c : Char) : Bool :=
@@ -44,7 +44,7 @@ def isCleanPalindrome_postcond (s : String) (result: Bool) (h_precond : isCleanP
 theorem normalizeString_reverse (s : String) :
     normalizeString s = (normalizeString s).reverse ↔
       normalizeString s = (normalizeString s).reverse:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem swap_first_eq (arr : Array Int) (i j : Nat)
     (let arr1 := arr.set! i (arr[j]!);
      let arr2 := arr1.set! j (arr[i]!);
      arr2[i]!) = arr[j]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

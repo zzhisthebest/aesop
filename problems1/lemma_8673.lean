@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem isSorted_eq_true_iff_adjacent (a : Array Int)
     (h_precond : isSorted_precond a) (hsize : ¬ a.size ≤ 1) :
     isSorted a h_precond = true ↔
       (∀ i, (hi : i < a.size - 1) → a[i] ≤ a[i + 1]):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

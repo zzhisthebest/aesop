@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem head?_filter_firstDup {l : List Int} {a : Int}
     (h₁ : a ∈ l) (h₂ : 1 < l.count a)
     (hfirst : ∀ b ∈ l, 1 < l.count b → a ≤ b) :
     (l.filter fun x => l.count x > 1).head? = some a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

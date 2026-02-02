@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def uniqueProduct_postcond (arr : Array Int) (result: Int) (h_precond : uniquePr
 
 theorem take_succ_eq_append (l : List Int) (n : Nat) (h : n < l.length) :
     l.take (n+1) = l.take n ++ [l.get ⟨n, h⟩]:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

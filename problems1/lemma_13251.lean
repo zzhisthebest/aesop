@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def SquareRoot_postcond (N : Nat) (result: Nat) (h_precond : SquareRoot_precond 
 
 
 theorem le_of_lt_mul_self (h : a < b * b) : a ≤ b * b - 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

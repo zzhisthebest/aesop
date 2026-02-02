@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -105,7 +105,7 @@ def runLengthEncoder_postcond (input : String) (result: String) (h_precond : run
 
 
 theorem replicate_zero (c : Char) : List.replicate 0 c = ([] : List Char):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

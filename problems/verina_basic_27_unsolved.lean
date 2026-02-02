@@ -24,7 +24,7 @@ import Std.Data.HashSet
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def findFirstRepeatedChar_precond (s : String) : Prop :=
@@ -85,5 +85,5 @@ def findFirstRepeatedChar_postcond (s : String) (result: Option Char) (h_precond
 theorem findFirstRepeatedChar_spec_satisfied (s: String) (h_precond : findFirstRepeatedChar_precond (s)) :
     findFirstRepeatedChar_postcond (s) (findFirstRepeatedChar (s) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

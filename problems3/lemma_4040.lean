@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ def mergeSorted_postcond (a1 : Array Nat) (a2 : Array Nat) (result: Array Nat) :
 theorem copy_rest_a2_perm (a1 a2 : Array Nat) (j : Nat) (h : j ≤ a2.size) :
     ((Array.mk (a2.toList.drop j)).push (a2[j]!)).toList.isPerm
       (a2.toList.drop j ++ [a2[j]!]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

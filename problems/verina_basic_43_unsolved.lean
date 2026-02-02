@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def sumOfFourthPowerOfOddNumbers_precond (n : Nat) : Prop :=
@@ -69,5 +69,5 @@ def sumOfFourthPowerOfOddNumbers_postcond (n : Nat) (result: Nat) (h_precond : s
 theorem sumOfFourthPowerOfOddNumbers_spec_satisfied (n: Nat) (h_precond : sumOfFourthPowerOfOddNumbers_precond (n)) :
     sumOfFourthPowerOfOddNumbers_postcond (n) (sumOfFourthPowerOfOddNumbers (n) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

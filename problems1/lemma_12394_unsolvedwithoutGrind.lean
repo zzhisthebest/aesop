@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem array_any_of_witness
     (hi : i < a.size) (hj : j < b.size)
     (h_eq : res = (a[i]! - b[j]!).natAbs) :
     a.any (fun ai => b.any (fun bi => res = (ai - bi).natAbs)) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

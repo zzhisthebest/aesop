@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem secondSmallest_initial_choice
     (s : Array Int) (h : secondSmallest_precond s) :
     (if s[1]! < s[0]! then (1, 0) else (0, 1)).1 = (if s[1]! < s[0]! then 1 else 0) ∧
     (if s[1]! < s[0]! then (1, 0) else (0, 1)).2 = (if s[1]! < s[0]! then 0 else 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def isItEight_postcond (n : Int) (result: Bool) (h_precond : isItEight_precond (
 
 theorem nat_div_pow_succ (a b i : Nat) :
     a / (10 ^ (Nat.succ i)) = (a / 10) / (10 ^ i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

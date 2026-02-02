@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ else
 
 theorem none_eq_none {α} {o₁ o₂ : Option α}
     (h₁ : o₁ = none) (h₂ : o₂ = none) (h : o₁ = o₂) : True:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

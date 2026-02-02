@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ def mergeSorted_postcond (a : List Int) (b : List Int) (result: List Int) (h_pre
 
 theorem mem_mergeSortedAux {x : Int} {a b : List Int} :
     x ∈ mergeSortedAux a b → x ∈ a ++ b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

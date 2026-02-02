@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem match_two_elements (x y : Int) (rest : List Int) (inc dec : Bool) :
     (match (x :: y :: rest) with
      | a :: b :: c => (a, b, c)
      | _ => (0, 0, [])) = (x, y, rest):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

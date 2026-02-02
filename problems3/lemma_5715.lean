@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ def removeDuplicates_postcond (nums : List Int) (result: Nat) (h_precond : remov
 theorem sorted_imp_mem_eq_head {a b : Int} {t : List Int}
     (hpair : List.Pairwise (· ≤ ·) (a :: b :: t)) :
     (a ∈ b :: t) → a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

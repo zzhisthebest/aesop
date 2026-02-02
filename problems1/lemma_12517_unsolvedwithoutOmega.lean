@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def CountLessThan_postcond (numbers : Array Int) (threshold : Int) (result: Nat)
 theorem unfold_CountLessThan (numbers : Array Int) (threshold : Int)
     (h_precond : CountLessThan_precond numbers threshold) :
     CountLessThan numbers threshold h_precond = countLessThan numbers threshold:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

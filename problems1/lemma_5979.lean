@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -106,7 +106,7 @@ def runLengthEncoder_postcond (input : String) (result: String) (h_precond : run
 
 theorem head_of_nonempty (c : Char) (s : String) :
     ((String.mk (c :: s.data)).data).head? = some c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

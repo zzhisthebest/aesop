@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -41,7 +41,7 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 
 theorem filterlist_length_eq_count (x : Int) (xs : List Int) :
     (filterlist x xs).length = xs.count x:= by
-    aesop (config := { useDefaultSimpSet := false })
+    codetic (config := { useDefaultSimpSet := false })
     simp_all only [filterlist]
     induction xs with
     | nil =>

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem other_elem_at_most_half (x y : Int) (lst : List Int)
     (hxy : x ≠ y)
     (hx : countOccurrences x lst > lst.length / 2) :
     countOccurrences y lst ≤ lst.length / 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

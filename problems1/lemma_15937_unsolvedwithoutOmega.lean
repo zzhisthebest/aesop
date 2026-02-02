@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ def SlopeSearch_postcond (a : Array (Array Int)) (key : Int) (result: (Int × In
 
 
 theorem int_ofNat_le (n : Nat) : (Int.ofNat n : Int) ≥ 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

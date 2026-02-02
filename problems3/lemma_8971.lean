@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem result_contains_only_symmetric_difference
     (a b : Array Int) (h_precond : dissimilarElements_precond a b) :
     (dissimilarElements a b h_precond).all
       (fun x => inArray a x ≠ inArray b x) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

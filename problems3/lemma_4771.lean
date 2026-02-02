@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -29,7 +29,7 @@ theorem missing_is_the_unique_gap (nums : List Nat)
     result ∈ List.range (n + 1) ∧
     result ∉ nums ∧
     ∀ x, x ∈ List.range (n + 1) → x ≠ result → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

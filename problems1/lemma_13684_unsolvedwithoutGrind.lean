@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,10 +30,10 @@ induction n using tmp.linearSearchAux.induct a a[i]
   simp_all only [getElem!_pos, ↓reduceIte]
   rename_i x h1 h2
   by_cases x=i
-  aesop
-  have h3:x<i:=by aesop
-  have h4:¬a[x]! = a[i]:=by aesop
-  aesop
+  codetic
+  have h3:x<i:=by codetic
+  have h4:¬a[x]! = a[i]:=by codetic
+  codetic
   -- induction i with
   -- | zero =>
   --   simp_all only [Nat.zero_eq, Nat.le_zero_eq, Nat.zero_le, Nat.not_lt_zero, false_implies, imp_self, implies_true]
@@ -44,11 +44,11 @@ induction n using tmp.linearSearchAux.induct a a[i]
 
   --   --clear h2
   --   grind
-    --aesop?(config := { enableGrind := false })
+    --codetic?(config := { enableGrind := false })
 · unfold tmp.linearSearchAux
   simp_all only [getElem!_pos, ↓reduceIte]
 
-  --aesop?(config := { enableGrind := false })
+  --codetic?(config := { enableGrind := false })
 · unfold tmp.linearSearchAux
   simp_all only [Nat.not_lt, getElem!_pos, getElem!_neg, Int.default_eq_zero]
   split
@@ -59,7 +59,7 @@ induction n using tmp.linearSearchAux.induct a a[i]
   next x h h_1 =>
     simp_all only [Nat.not_lt]
     omega
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

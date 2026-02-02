@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -53,7 +53,7 @@ theorem maxSubarraySumDivisibleByK_ne_zero_imp_properties
      let subarraySums := divisibleSubarrays.map (fun subarray => subarray.sum);
      (maxSubarraySumDivisibleByK arr k) ∈ subarraySums ∧
      subarraySums.all (fun sum => sum ≤ maxSubarraySumDivisibleByK arr k)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

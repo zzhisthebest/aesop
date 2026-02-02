@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem missingNumber_completeness (nums : List Nat)
     (h_pre : missingNumber_precond nums) :
     ∀ x, x ∈ List.range (nums.length + 1) →
       x ≠ missingNumber nums h_pre → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

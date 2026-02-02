@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem copyFrom_step_true (a : Array Int) (i : Nat) (acc : Array Int)
     (h : i < a.size) :
     copyFrom a i acc =
       copyFrom a (i + 1) (acc.push (a[i]!)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

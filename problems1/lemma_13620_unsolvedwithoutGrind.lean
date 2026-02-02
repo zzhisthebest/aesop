@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def LinearSearch_postcond (a : Array Int) (e : Int) (result: Nat) (h_precond : L
 theorem linearSearchAux_le_of_exists (a : Array Int) (e : Int) (n i : Nat)
     (hni : n ≤ i) (hi : i < a.size) (hieq : a[i]! = e) :
     linearSearchAux a e n ≤ i:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem prefix_pairwise_free (nums : Array Int) (target : Int)
     (h_precond : twoSum_precond nums target) :
     let r := twoSum nums target h_precond
     List.Pairwise (fun a b => a + b ≠ target) (nums.toList.take r.1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

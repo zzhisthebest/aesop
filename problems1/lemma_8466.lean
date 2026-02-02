@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def containsConsecutiveNumbers_postcond (a : Array Int) (result: Bool) (h_precon
 
 theorem get_mapIdx (a : Array Int) (i : Nat) (h : i < a.size) :
     (a.mapIdx (fun i x => (i, x)))[i]! = (i, a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ def uniqueProduct_postcond (arr : Array Int) (result: Int) (h_precond : uniquePr
 
 
 theorem sub_self_eq_zero (a : Int) : a - a = (0 : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def isItEight_postcond (n : Int) (result: Bool) (h_precond : isItEight_precond (
 
 theorem div_div_eq_div_pow (m i : Nat) :
     (m / 10) / (10 ^ i) = m / (10 ^ (i+1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

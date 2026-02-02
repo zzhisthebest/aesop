@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ induction l with
 | @cons a_1 a_1_1 =>
   simp_all only [List.pairwise_cons, not_and, List.mem_cons, exists_eq_or_imp]
   grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 

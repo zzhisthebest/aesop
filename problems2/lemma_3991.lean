@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def listToNat : List Nat → Nat
@@ -37,7 +37,7 @@ def addTwoNumbers_postcond (l1 : List Nat) (l2 : List Nat) (result: List Nat) (h
 
 theorem listToNat_add_carry_zero (l : List Nat) :
     listToNat l = listToNat l + 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

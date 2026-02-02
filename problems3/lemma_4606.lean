@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem expectedSum_ge_actualSum (nums : List Nat) (h : missingNumber_precond nu
     let expectedSum := (n * (n + 1)) / 2
     let actualSum := nums.foldl (· + ·) 0
     actualSum ≤ expectedSum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

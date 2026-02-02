@@ -32,7 +32,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def copy_precond (src : Array Int) (sStart : Nat) (dest : Array Int) (dStart : Nat) (len : Nat) : Prop :=
@@ -83,6 +83,6 @@ def copy_postcond (src : Array Int) (sStart : Nat) (dest : Array Int) (dStart : 
 theorem copy_spec_satisfied (src: Array Int) (sStart: Nat) (dest: Array Int) (dStart: Nat) (len: Nat) (h_precond : copy_precond (src) (sStart) (dest) (dStart) (len)) :
     copy_postcond (src) (sStart) (dest) (dStart) (len) (copy (src) (sStart) (dest) (dStart) (len) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   sorry
   -- !benchmark @end proof

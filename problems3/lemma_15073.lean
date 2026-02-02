@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def DivisionFunction_postcond (x : Nat) (y : Nat) (result: Int × Int) (h_precon
 
 theorem cast_mod_lt (x y : Nat) (hy : 0 < y) :
     (Int.ofNat (x % y)) < Int.ofNat y:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -24,7 +24,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -90,5 +90,5 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: (Nat × Nat)) (h_
 theorem twoSum_spec_satisfied (nums: Array Int) (target: Int) (h_precond : twoSum_precond (nums) (target)) :
     twoSum_postcond (nums) (target) (twoSum (nums) (target) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

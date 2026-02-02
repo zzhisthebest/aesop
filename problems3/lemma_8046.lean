@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem loop_correct (a b : Array Int) (h_precond : arrayProduct_precond a b) :
     let c0  := Array.mkArray len 0
     (loop a b len 0 c0).size = a.size ∧
     (∀ i, i < a.size → a[i]! * b[i]! = (loop a b len 0 c0)[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

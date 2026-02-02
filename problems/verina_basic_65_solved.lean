@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -126,24 +126,24 @@ theorem SquareRoot_spec_satisfied (N: Nat) (h_precond : SquareRoot_precond (N)) 
   --   let n_start := 0
   --   suffices r_le : n_start * n_start ≤ N →
   --     (SquareRoot.boundedLoop N (N + 1) n_start) * (SquareRoot.boundedLoop N (N + 1) n_start) ≤ N by
-  --     aesop
+  --     codetic
 
   --   induction N+1 , n_start using SquareRoot.boundedLoop.induct N with
   --   | case1 r =>
   --     --unfold SquareRoot.boundedLoop
-  --     aesop
-  --     --aesop?
+  --     codetic
+  --     --codetic?
   --   | case2 bound r h_cond ih =>
-  --     aesop
+  --     codetic
   --   | case3 bound r h_not_cond =>
-  --     aesop
+  --     codetic
   sorry
 
 
   · --这是一个spec
     -- 这里用 suffices 构造一个带步数约束的 motive
     suffices h :forall n_start:Nat, (N - n_start < N + 1) → N < (SquareRoot.boundedLoop N (N + 1) n_start + 1)^2 by
-      aesop
+      codetic
 
     -- #check fun (zzh : Nat) => SquareRoot.boundedLoop.induct zzh _ -- 假设命题类型是 Prop
     -- _ _ _                       -- 跳过 case1, case2, case3 的具体证明
@@ -151,19 +151,19 @@ theorem SquareRoot_spec_satisfied (N: Nat) (h_precond : SquareRoot_precond (N)) 
     -- 0
     intro n_start
     simp_all only [SquareRoot_precond]
-    aesop (add unsafe 99% (by revert a))
+    codetic (add unsafe 99% (by revert a))
     --sorry
     --从这里可以看出来不能限制为变量，N+1并不是变量
     induction N + 1, n_start using tmp.SquareRoot.boundedLoop.induct N with
     | case1 r =>
       unfold SquareRoot.boundedLoop
-      aesop
+      codetic
     | case2 b r h_cond ih =>
       unfold SquareRoot.boundedLoop
-      aesop
+      codetic
     | case3 b r h_not_cond =>
       unfold SquareRoot.boundedLoop
-      aesop
+      codetic
   -- !benchmark @end proof
 
 end tmp

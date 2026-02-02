@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def cubeSurfaceArea_postcond (size : Nat) (result: Nat) (h_precond : cubeSurface
 theorem cubeSurfaceArea_second_conj
     (size : Nat) (h_precond : cubeSurfaceArea_precond size) :
     6 * size * size - (cubeSurfaceArea size h_precond) = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

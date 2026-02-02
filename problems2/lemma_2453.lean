@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def maxCoverageAfterRemovingOne_postcond (intervals : List (Prod Nat Nat)) (resu
 
 
 theorem foldl_max_ge_all (l : List Nat) : ∀ a ∈ l, List.foldl max 0 l ≥ a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

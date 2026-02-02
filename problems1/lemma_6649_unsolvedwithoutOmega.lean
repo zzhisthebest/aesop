@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem singleDigitPrimeFactor_eq_seven_of_mod_seven_eq_zero
     (h5 : n % 5 ≠ 0) (h : n % 7 = 0)
     (h_pre : singleDigitPrimeFactor_precond n) :
     singleDigitPrimeFactor n h_pre = 7:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

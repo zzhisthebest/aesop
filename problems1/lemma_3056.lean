@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ theorem not_a_not_b_implies_c_ge
     (hna : ¬ (a ≥ b && a ≥ c))
     (hnb : ¬ (b ≥ a && b ≥ c)) :
     c ≥ a ∧ c ≥ b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

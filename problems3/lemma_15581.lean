@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem prefix_sorted_after_fold (a : Array Int) (k : Nat) (hk : k ≤ a.size) :
       let minIdx := findMinIndexInRange arr i a.size
       swap arr i minIdx) a
     List.Pairwise (· ≤ ·) (arr.toList.take k):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def maxOfList_postcond (lst : List Nat) (result: Nat) (h_precond : maxOfList_pre
 
 theorem max_one_elem (x : Nat) (h : maxOfList_precond [x]) :
     maxOfList [x] h = x:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

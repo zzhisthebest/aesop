@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem remove_front_if (a : Array Int) (h : remove_front_precond a) :
       else
         panic "Precondition violation: array is empty") =
     copyFrom a 1 (Array.mkEmpty (a.size - 1)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

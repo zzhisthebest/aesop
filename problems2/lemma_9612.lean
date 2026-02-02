@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 
 theorem if_lt_iff (c t e : Bool) (h : c = false) :
     (if c then t else e) = e:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

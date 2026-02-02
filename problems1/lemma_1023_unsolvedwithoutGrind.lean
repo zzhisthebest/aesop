@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ attribute[simp]
 Array.setIfInBounds
 theorem set_eq_set! (arr : Array Int) (i : Nat) (v : Int) (h : i < arr.size) :
     arr.set i v = arr.set! i v:= by
-aesop?
+codetic?
 
 
 end tmp

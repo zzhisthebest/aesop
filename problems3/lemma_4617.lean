@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -22,7 +22,7 @@ def missingNumber_postcond (nums : List Nat) (result: Nat) (h_precond : missingN
 theorem expectedSum_eq (n : Nat) :
     let exp := (n * (n + 1)) / 2
     exp = (List.range (n + 1)).sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

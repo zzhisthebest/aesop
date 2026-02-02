@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem pred_succ (n : Nat) : Nat.pred (Nat.succ n) = n := rfl
 
 @[simp] theorem mem_range' {start len i : Nat} :
     i ∈ List.range' start len ↔ start ≤ i ∧ i < start + len:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

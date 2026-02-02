@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem sort_cons (x : Int) (xs : List Int)
             simpa [mergeSort_precond] using h_pre)) :
     mergeSort_postcond (x :: xs)
       (mergeSort (x :: xs) h_pre) h_pre:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

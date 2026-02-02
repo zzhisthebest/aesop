@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem zero_not_mem_of_pos_head
     (hxpos : 0 < x)
     (hhead : ∀ y ∈ xs, x < y) :
     (0 : Nat) ∉ x :: xs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

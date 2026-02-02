@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem only_once_loop_spec_aux
     (a : Array Int) (key : Int) (i c : Nat) :
     only_once_loop a key i c =
       ((c + (a.toList.drop i).count key) = 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

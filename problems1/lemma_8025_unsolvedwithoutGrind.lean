@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem get_set!_at_7 (a : Array Int) (h : UpdateElements_precond a) :
     (let a1 := a.set! 4 ((a[4]!) + 3);
      let a2 := a1.set! 7 516;
      a2)[7]! = 516:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

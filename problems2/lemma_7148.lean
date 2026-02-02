@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ theorem counterexample :
     ∃ (nums : List Int) (target : Int) (h : twoSum_precond nums target),
       twoSum nums target h = some (0, 1) ∧
       ¬ twoSum_postcond nums target (some (0, 1)) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

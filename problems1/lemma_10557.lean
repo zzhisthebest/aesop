@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 
 theorem lemma_gt_target (a target : Int) (h : a > target) :
     (if a > target then true else false):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

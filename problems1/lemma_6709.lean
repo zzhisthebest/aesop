@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem foldl_step (acc : Int × Int) (x : Int) :
       let newCur := if cur + x ≥ x then cur + x else x
       let newMax := if maxSoFar ≥ newCur then maxSoFar else newCur
       (newCur, newMax):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

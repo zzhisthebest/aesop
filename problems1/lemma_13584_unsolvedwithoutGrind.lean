@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ induction n using tmp.linearSearchAux.induct a a[i]
     --grind
     rename_i x h1 h2 h3
     apply eq_of_le_and_forall_ne
-    aesop?(config := { enableGrind := false })
+    codetic?(config := { enableGrind := false })
 
 
 · unfold tmp.linearSearchAux
@@ -66,7 +66,7 @@ induction n using tmp.linearSearchAux.induct a a[i]
 
     --grind
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

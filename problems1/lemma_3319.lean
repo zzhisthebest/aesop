@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ def maxSubarraySumDivisibleByK_postcond (arr : Array Int) (k : Int) (result: Int
 theorem map_sum_eq (subarrays : List (Array Int)) :
     let subarraySums := subarrays.map fun subarray => subarray.sum
     subarraySums = subarrays.map (fun a => a.sum):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

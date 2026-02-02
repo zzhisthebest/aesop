@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -52,7 +52,7 @@ theorem dp_cell_ge_up_left (a b : Array Int) (i j : Nat) (h_i : i ≤ a.size) (h
               dp := dp.set! i' (dp[i']!.set! j' newVal)
         return dp) :
     ((dp[i]!)[j]!) ≥ ((dp[i - 1]!)[j]!) ∧ ((dp[i]!)[j]!) ≥ ((dp[i]!)[j - 1]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

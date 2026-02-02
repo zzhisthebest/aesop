@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem maxSubarraySum_is_upper_bound (numbers : List Int)
       start ≤ numbers.length →
       len ≤ numbers.length - start →
       (numbers.drop start |>.take len |>.sum) ≤ maxSubarraySum numbers h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

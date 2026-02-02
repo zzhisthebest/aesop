@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ def twoSum_postcond (nums : List Int) (target : Int) (result: Prod Nat Nat) (h_p
 
 theorem sub_eq_of_eq_add_one {i k j : Nat} (h : j = i + k + 1) :
     j - i - 1 = k:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 
 theorem find?_none_iff (p : Int → Bool) (l : List Int) :
     l.find? p = none ↔ ∀ x ∈ l, p x = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

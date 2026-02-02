@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem water_level_eq_min (height : List Nat) (i : Nat) (h : i < height.length)
     Nat.min lmax rmax = Nat.min
         (List.take (i + 1) height |>.foldl Nat.max 0)
         (List.drop i height |>.foldl Nat.max 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def BubbleSort_postcond (a : Array Int) (result: Array Int) (h_precond : BubbleS
 
 theorem BubbleSort_correct (a : Array Int) (h_precond : BubbleSort_precond a) :
     BubbleSort_postcond a (BubbleSort a h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

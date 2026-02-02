@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def BinarySearch_postcond (a : Array Int) (key : Int) (result: Nat) (h_precond :
 
 theorem all_take_iff (a : Array Int) (n : Nat) (p : Int → Bool) :
   (a.take n).all p = (a.toList.take n).all p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

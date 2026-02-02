@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem selectionSort_uses_range (a : Array Int) :
     (List.range a.size).foldl (fun arr i =>
         let minIdx := findMinIndexInRange arr i a.size
         swap arr i minIdx) a = SelectionSort a (by trivial):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

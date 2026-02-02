@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ def semiOrderedPermutation_postcond (nums : List Int) (result: Int) (h_precond :
 
 theorem sub_one_if (h : Prop) [Decidable h] (k : Nat) :
     (if h then k - 1 else k) = k - (if h then 1 else 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

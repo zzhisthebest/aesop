@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_preco
 
 theorem CanyonSearch_spec (a b : Array Int) (h_precond : CanyonSearch_precond a b) :
     CanyonSearch_postcond a b (CanyonSearch a b h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

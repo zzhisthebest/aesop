@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def SquareRoot_postcond (N : Nat) (result: Nat) (h_precond : SquareRoot_precond 
 
 theorem not_guard_at_successor (N : Nat) :
     ¬ ((N + 1) * (N + 1) ≤ N):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

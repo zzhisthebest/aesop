@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem count_eq_one_of_mem_unique
     (l : List Int) (target : Int) (hmem : target ∈ l)
     (huniq : ∀ x ∈ l, x = target → x = target) :
     l.count target = 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

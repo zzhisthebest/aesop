@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ else
 
 theorem nth_map_toLower (l : List Char) (i : Nat) :
     (l.map Char.toLower)[i]? = (l[i]?).map Char.toLower:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

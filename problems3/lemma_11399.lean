@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem index_valid {arr : Array Int} {i : Nat} (h : i < arr.size) :
 
 
 @[simp] theorem toNat_eq_of_eq {a b : Int} (h : a = b) : a.toNat = b.toNat:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

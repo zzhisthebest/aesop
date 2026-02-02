@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem fold_step_preserves_perm (arr : Array Int) (i : Nat)
     (h_i : i < arr.size) :
     List.isPerm arr.toList
       (swap arr i (findMinIndexInRange arr i arr.size)).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

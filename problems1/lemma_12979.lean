@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem search_not_found (a : Array Int) (key : Int) (i : Nat) (hi : i < a.size)
             if a[j]! = key then Int.ofNat j else (0 : Int) else -1)) (i+1)
       else -1) = (fun j => (if h' : j < a.size then
             if a[j]! = key then Int.ofNat j else (0 : Int) else -1)) (i+1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

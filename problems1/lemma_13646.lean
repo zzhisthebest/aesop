@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem exists_impossible_of_ge_size
     {a : Array Int} {e : Int} {n : Nat}
     (h : ∃ i, n ≤ i ∧ i < a.size ∧ a[i]! = e)
     (hge : a.size ≤ n) : False:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

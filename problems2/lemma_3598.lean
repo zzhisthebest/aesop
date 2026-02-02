@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ theorem result_is_subarray_sum (xs : List Int) (h : maxSubarraySum_precond xs) :
       0 < len ∧
       len ≤ xs.length - start ∧
       r = ((xs.drop start).take len).sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

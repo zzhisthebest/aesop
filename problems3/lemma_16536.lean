@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def Triple_postcond (x : Int) (result: Int) (h_precond : Triple_precond (x)) :=
 
 
 theorem mul_left_cancel_int {a b c : Int} (ha : a ≠ 0) (h : a * b = a * c) : b = c:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem sumOfDigits_eq_string_sum_zero (h : sumOfDigits_precond 0) :
     sumOfDigits 0 h =
       List.sum (List.map (fun c => Char.toNat c - Char.toNat '0')
                           (String.toList (Nat.repr 0))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

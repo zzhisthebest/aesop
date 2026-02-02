@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def Find_postcond (a : Array Int) (key : Int) (result: Int) (h_precond : Find_pr
 theorem Find_result_nonneg_or_neg_one (a : Array Int) (key : Int)
     (h : Find_precond a key) :
     (Find a key h = -1) ∨ (0 ≤ Find a key h):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

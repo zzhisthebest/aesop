@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def ComputeAvg_postcond (a : Int) (b : Int) (result: Int) (h_precond : ComputeAv
 
 theorem mod_add_two_mul_div (n : Int) :
     n % 2 + 2 * (n / 2) = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

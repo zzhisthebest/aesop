@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ def semiOrderedPermutation_postcond (nums : List Int) (result: Int) (h_precond :
 
 theorem distance_last (i endPos : Int) :
     (if i ≠ endPos then endPos - i else 0) = endPos - i:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

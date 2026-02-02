@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -73,7 +73,7 @@ theorem map_chord_sorted (chords : List (List Nat)) (i : Nat) (hi : i < chords.l
     let a := chord[0]!
     let b := chord[1]!
     (if a > b then [b, a] else [a, b])[0]! ≤ (if a > b then [b, a] else [a, b])[1]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

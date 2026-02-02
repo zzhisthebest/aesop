@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -54,7 +54,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 
 
 theorem max_ge_of_nonpos (a b : Int) (hb : b ≤ 0) : max a b ≥ a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

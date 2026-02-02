@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem singleDigitPrimeFactor_eq_zero_of_no_small_prime_divides {n}
     (h0 : n ≠ 0) (h2 : n % 2 ≠ 0) (h3 : n % 3 ≠ 0) (h5 : n % 5 ≠ 0) (h7 : n % 7 ≠ 0)
     (hpre : singleDigitPrimeFactor_precond n) :
     singleDigitPrimeFactor n hpre = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

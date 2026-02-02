@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def listToNat : List Nat → Nat
@@ -39,7 +39,7 @@ theorem addAux_one_digit (d carry : Nat) (hd : d < 10) :
     let sum := d + carry
     (sum % 10) :: (if sum / 10 = 0 then [] else [sum / 10])
       = (if sum / 10 = 0 then [sum % 10] else [sum % 10, sum / 10]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

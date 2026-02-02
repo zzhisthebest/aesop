@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -51,7 +51,7 @@ def shortestBeautifulSubstring_postcond (s : String) (k : Nat) (result: String) 
 
 theorem drop_take_eq_take_drop {α} (l : List α) {i j : Nat} (h : i ≤ j) :
     (l.drop i).take (j - i) = (l.take j).drop i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

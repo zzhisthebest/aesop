@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem Array.all_insert_of_pred (as : Array Int) (x : Int)
     (h : (inArray a x) ≠ (inArray b x)) :
     (as.push x).all (fun y => (inArray a y) ≠ (inArray b y)) = true →
     as.all (fun y => (inArray a y) ≠ (inArray b y)) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ def isPeakValley_postcond (lst : List Int) (result: Bool) (h_precond : isPeakVal
 
 theorem head_two (l : List Int) (h : l.length ≥ 2) :
     ∃ x y rest, l = x :: y :: rest ∧ l.head! = x ∧ l.tail!.head! = y:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

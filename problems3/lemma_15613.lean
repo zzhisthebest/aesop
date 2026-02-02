@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def SelectionSort_postcond (a : Array Int) (result: Array Int) (h_precond : Sele
 theorem SelectionSort_correct (a : Array Int) (h : SelectionSort_precond a) :
     List.Pairwise (· ≤ ·) (SelectionSort a h).toList ∧
     List.isPerm a.toList (SelectionSort a h).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

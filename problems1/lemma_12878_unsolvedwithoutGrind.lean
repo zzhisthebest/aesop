@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -27,9 +27,9 @@ def FindEvenNumbers_postcond (arr : Array Int) (result: Array Int) (h_precond : 
 
 theorem idxOf_mem_of_mem (a : Array Int) {x : Int} (hx : x ∈ a) :
     a.idxOf x < a.size:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 theorem perm_middle (a : Int) (l r : List Int) :
     List.Perm (a :: l ++ r) (l ++ a :: r):= by
-aesop?
+codetic?
 
 end tmp

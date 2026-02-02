@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ theorem fallback_is_max
     (h₁ : (decide (a ≥ b) && decide (a ≥ c)) = false)
     (h₂ : (decide (b ≥ a) && decide (b ≥ c)) = false) :
     a ≤ c ∧ b ≤ c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

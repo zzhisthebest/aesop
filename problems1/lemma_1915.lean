@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem aux_nil (prev : Option Int) (currLen maxLen : Nat) :
     (match (List.nil : List Int) with
     | [] => max currLen maxLen
     | _::_ => (0 : Nat)) = max currLen maxLen:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

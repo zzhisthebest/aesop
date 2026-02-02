@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ theorem pred_true_on_get
     {arr : Array Int} {k : Nat}
     (h : kthElement_precond arr k) :
     (fun x : Int => x = arr[k - 1]! ∧ x = arr[k - 1]!) (arr[k - 1]!) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

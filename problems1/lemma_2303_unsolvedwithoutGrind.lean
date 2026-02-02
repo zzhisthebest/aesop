@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem sub_eq_zero_of_le {a b : Nat} (h : a ≤ b) : a - b = 0 := Nat.sub_eq_ze
 
 @[simp] theorem count_cons (a x : Nat) (xs : List Nat) :
     (x :: xs).count a = (if a = x then 1 else 0) + xs.count a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

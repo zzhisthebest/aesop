@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def only_once_postcond (a : Array Int) (key : Int) (result: Bool) (h_precond : o
 theorem only_once_loop_inv (a : Array Int) (key : Int) (i cnt : Nat) :
     only_once_loop a key i cnt =
       (cnt + (a.drop i).foldl (fun c x => if x = key then c + 1 else c) 0 = 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def IsPalindrome_postcond (x : List Char) (result: Bool) (h_precond : IsPalindro
 
 theorem isPalindromeHelper_nil (x : List Char) (i j : Nat) (h : j + 1 = i) :
     isPalindromeHelper x i j = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

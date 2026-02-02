@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def sumOfSquaresOfFirstNOddNumbers_postcond (n : Nat) (result: Nat) (h_precond :
 theorem three_dvd_of_one_factor {n : Nat}
     (h : 3 ∣ n ∨ 3 ∣ (2 * n - 1) ∨ 3 ∣ (2 * n + 1)) :
     3 ∣ n * (2 * n - 1) * (2 * n + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

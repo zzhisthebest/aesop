@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem remove_front_elem (a : Array Int) (h : a.size > 0) (i : Nat)
         simpa [remove_front_precond] using h)).size) :
     (remove_front a (by
         simpa [remove_front_precond] using h))[i]! = a[i + 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -52,7 +52,7 @@ theorem adjusted_moves_eq (pos₁ posₙ n : Nat) :
       else
         (if pos₁ ≠ 0 then pos₁ else 0) +
           (if posₙ ≠ n - 1 then n - 1 - posₙ else 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

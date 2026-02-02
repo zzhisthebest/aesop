@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem postcond_nil (target : Int) :
     searchInsert_postcond ([] : List Int) target (searchInsert [] target (by
       simp [searchInsert_precond])) (by
         simp [searchInsert_precond]):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

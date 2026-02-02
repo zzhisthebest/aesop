@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem subArray_mem_filtered {sequence : List Int} {start len : Nat}
       ((List.range (sequence.length + 1)).flatMap
         (fun s => (List.range (sequence.length - s + 1)).map (fun l => sequence.drop s |>.take l))
         ).filter (· ≠ []):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

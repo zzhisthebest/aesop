@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def arrayProduct_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h
 theorem loop_done (a b : Array Int) (len i : Nat) (c : Array Int)
     (h : ¬ i < len) :
     loop a b len i c = c:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ def partitionEvensOdds_postcond (nums : List Nat) (result: (List Nat × List Nat
 theorem filter_cons_of_true {p : Nat → Bool} {x xs}
     (h : p x = true) :
     (x :: xs).filter p = x :: xs.filter p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

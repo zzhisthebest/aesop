@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Int) (h_precond : lengthOfLI
 
 theorem any_iff_exists (xs : List (List Int)) (p : List Int → Bool) :
     xs.any p = true ↔ ∃ l ∈ xs, p l = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

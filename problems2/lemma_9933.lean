@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem get_elementWiseModulo (a b : Array Int)
     (h : elementWiseModulo_precond a b) {i : Nat}
     (hi : i < a.size) :
     (elementWiseModulo a b h)[i]! = a[i]! % b[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

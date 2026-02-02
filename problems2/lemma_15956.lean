@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem aux_out_of_cols {a : Array (Array Int)} {key : Int} {m n : Int} {fuel : 
     (if fuel = 0 then (-1, -1)
      else if m ≥ Int.ofNat a.size ∨ n < 0 then (-1, -1)
           else (0,0)) = (-1, -1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

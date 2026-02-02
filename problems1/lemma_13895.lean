@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem loop_if_true (a : Array Int) (P : Int → Bool) (n : Nat)
         if P (a[n]!) then n else (0 : Nat)
       else
         (0 : Nat)) = n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

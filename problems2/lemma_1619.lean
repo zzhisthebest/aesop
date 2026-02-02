@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -51,7 +51,7 @@ theorem spec_valid (digits : String) (h : letterCombinations_precond digits)
     result.length = expected.length ∧
     result.all (fun s => s ∈ expected) ∧
     expected.all (fun s => s ∈ result):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

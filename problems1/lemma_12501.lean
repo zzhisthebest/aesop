@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def copy_postcond (src : Array Int) (sStart : Nat) (dest : Array Int) (dStart : 
 theorem copy_precond_bounds {src dest : Array Int} {sStart dStart len i : Nat}
     (h : copy_precond src sStart dest dStart len) (hi : i < len) :
     sStart + i < src.size ∧ dStart + i < dest.size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

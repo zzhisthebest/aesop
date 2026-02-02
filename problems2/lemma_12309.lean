@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_preco
 
 theorem new_d_le_old (diff d : Nat) :
     (if diff < d then diff else d) ≤ d:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

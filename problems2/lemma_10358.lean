@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem take_up_to_first_zero (arr : Array Int) :
     (arr.toList.filter (· ≠ 0) ++ arr.toList.filter (· = 0)).take
         ((arr.toList.filter (· ≠ 0) ++ arr.toList.filter (· = 0)).idxOf 0) =
       arr.toList.filter (· ≠ 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

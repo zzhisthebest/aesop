@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ def mergeSortedLists_postcond (arr1 : List Int) (arr2 : List Int) (result: List 
 
 theorem List.isPerm.cons_right {a : Int} {l₁ l₂ : List Int}
         (h : List.isPerm l₁ l₂) : List.isPerm (l₁ ++ [a]) (l₂ ++ [a]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

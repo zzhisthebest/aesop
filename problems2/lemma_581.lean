@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -29,7 +29,7 @@ def ifPowerOfFour_postcond (n : Nat) (result: Bool) (h_precond : ifPowerOfFour_p
 theorem helper_succ_succ (k h) :
     (ifPowerOfFour (k.succ.succ) h) =
       (if (k+2) % 4 = 0 then ifPowerOfFour ((k+2) / 4) h else false):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

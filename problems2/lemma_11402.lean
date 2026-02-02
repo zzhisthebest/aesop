@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem no_elem_after_pos (arr : Array Int) (elem : Int) (pos : Int)
     (h : ∀ j, j < arr.size → arr[j]! = elem → (j : Int) ≤ pos)
     (hpos : (0 : Int) ≤ pos) :
     (arr.toList.drop (pos.toNat + 1)).all (· ≠ elem):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

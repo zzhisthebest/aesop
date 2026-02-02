@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem outer_if_true {a : Array Int} {key : Int} {idx : Nat}
     (h : idx < a.size) :
     (if idx < a.size then (if a[idx]! = key then Int.ofNat idx else (0 : Int))
      else (-1 : Int)) = (if a[idx]! = key then Int.ofNat idx else (0 : Int)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -58,7 +58,7 @@ theorem max_is_one_of_the_coverages
       ) []
       let cov := merged.reverse.foldl (fun acc (s, e) => acc + (e - s)) 0
       maxCoverageAfterRemovingOne intervals h_precond = cov:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

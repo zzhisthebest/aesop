@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem adjustedMoves_eq (pos1 posn n : Int) :
      let totalMoves := distanceOne + distanceLast;
      if pos1 > posn then totalMoves - 1 else totalMoves) =
       (if pos1 > posn then pos1 + n - 2 - posn else pos1 + n - 1 - posn):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

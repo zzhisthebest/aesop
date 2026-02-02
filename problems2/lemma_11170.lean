@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem result_true_implies_pairwise
     (a : Array Int) (h_pre : hasOnlyOneDistinctElement_precond a) :
     hasOnlyOneDistinctElement a h_pre = true →
     List.Pairwise (· = ·) a.toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

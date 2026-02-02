@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -85,7 +85,7 @@ def nextGreaterElement_postcond (nums1 : List Int) (nums2 : List Int) (result: L
 theorem List.find?_first {l : List Nat} {p : Nat → Bool}
     (h : ∃ n ∈ l, p n = true) :
     ∃ k, l.find? p = some k ∧ p k = true ∧ ∀ m ∈ l.takeWhile (fun x => p x = false), m ≠ k:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

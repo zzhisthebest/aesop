@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def arrayProduct_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h
 
 theorem size_set! (c : Array Int) (i : Nat) (v : Int) :
     (Array.set! c i v).size = c.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

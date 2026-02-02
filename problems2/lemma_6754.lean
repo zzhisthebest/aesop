@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem all_subarray_sums_le_max (seq : List Int) :
           seq.drop start |>.take len))
     let subArraySums := subArrays.filter (· ≠ []) |>.map (·.sum)
     subArraySums.all (· ≤ task_code seq (by trivial)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

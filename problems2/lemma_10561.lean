@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 theorem le_of_pairwise_of_lt_arr (arr : Array Int) (h : findFirstOccurrence_precond arr 0)
     {i j : Nat} (hi : i < arr.size) (hj : j < arr.size) (hij : i < j) :
     arr[i]! ≤ arr[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -23,7 +23,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def smallestMissingNumber_precond (s : List Nat) : Prop :=
@@ -88,7 +88,7 @@ theorem smallestMissingNumber_spec_satisfied (s: List Nat) (h_precond : smallest
 
     -- 泛化变量 v，并增加“v 是下界”的约束
     let v := 0
-    have h_lower : ∀ y ∈ s, v ≤ y := by aesop
+    have h_lower : ∀ y ∈ s, v ≤ y := by codetic
 
     -- 开始函数归纳
     induction v, s using smallestMissingNumber.findMissing.induct with
@@ -97,18 +97,18 @@ theorem smallestMissingNumber_spec_satisfied (s: List Nat) (h_precond : smallest
     | case2 v x xs h_gt =>
       -- 此时 x > v。由于列表有序且 x 是头，所以 v 必定小于列表里所有元素
       simp [smallestMissingNumber.findMissing, h_gt]
-      aesop
+      codetic
     | case3 v x xs h_le =>
       -- 此时 x = v，递归寻找 v + 1
       simp [smallestMissingNumber.findMissing]
       sorry
-      --aesop
+      --codetic
     | case4 v x xs h_le h_ne ih =>
       -- 此时 x < v。这在有序且 v 是下界的情况下其实是矛盾的
       simp [smallestMissingNumber.findMissing]
 
       sorry
-      --aesop
+      --codetic
   · sorry
 
   -- !benchmark @end proof

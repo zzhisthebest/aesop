@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isSpaceCommaDot (c : Char) : Bool :=
@@ -28,7 +28,7 @@ def replaceWithColon_postcond (s : String) (result: String) (h_precond : replace
 
 theorem length_map_eq (xs : List Char) (f : Char → Char) :
     (xs.map f).length = xs.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

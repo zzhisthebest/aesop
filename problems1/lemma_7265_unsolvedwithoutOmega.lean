@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -49,7 +49,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 
 theorem totalCost_eq_fold (cost : List Int) :
     cost.foldl (· + ·) 0 = cost.foldl (· + ·) 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def arraySum_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h_pre
 theorem arraySum_spec_aux
     (a b : Array Int) (h : arraySum_precond a b) :
     arraySum_postcond a b (arraySum a b h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

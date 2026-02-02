@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem mergeSortedAux_cons_cons_true (x : Int) (xs y : List Int) (ys : List Int
     (h : x ≤ y.head!) :
     mergeSortedAux (x :: xs) (y.head! :: ys) =
       x :: mergeSortedAux xs (y.head! :: ys):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

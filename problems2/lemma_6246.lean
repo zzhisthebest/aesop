@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ def binaryToDecimal_postcond (digits : List Nat) (result: Nat) (h_precond : bina
 
 theorem mul_pow_succ (a n : Nat) :
     a * Nat.pow 2 (Nat.succ n) = a * Nat.pow 2 n * 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

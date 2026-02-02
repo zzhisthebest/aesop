@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem removeDuplicates_eq_foldl_length {l : List Int}
     (h : removeDuplicates_precond l) :
     removeDuplicates l h =
       (l.foldl (fun (a : List Int) b => if b ∈ a then a else a ++ [b]) []).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

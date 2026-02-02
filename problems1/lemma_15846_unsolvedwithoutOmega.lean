@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def hasCommonElement_postcond (a : Array Int) (b : Array Int) (result: Bool) (h_
 
 theorem any_eq_true_iff (a : Array Int) (p : Int → Bool) :
     a.any p = true ↔ ∃ i, i < a.size ∧ p (a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

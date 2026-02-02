@@ -20,7 +20,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -66,5 +66,5 @@ def SetToSeq_postcond (s : List Int) (result: List Int) (h_precond : SetToSeq_pr
 theorem SetToSeq_spec_satisfied (s: List Int) (h_precond : SetToSeq_precond (s)) :
     SetToSeq_postcond (s) (SetToSeq (s) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

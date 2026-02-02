@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def remove_front_postcond (a : Array Int) (result: Array Int) (h_precond : remov
 
 theorem add_comm_assoc (x y z : Nat) :
     x + (y + z) = (x + y) + z:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

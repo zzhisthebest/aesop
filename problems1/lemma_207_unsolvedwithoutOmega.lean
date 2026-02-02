@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem find_some_spec
     (l : List Int) (n : Nat) (x : Int)
     (hx : countOccurrences x l > n / 2) :
     l.find? (fun y => countOccurrences y l > n / 2) = some x → x = x:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

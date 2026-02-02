@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 
 theorem check_sq_guard_true {n i fuel : Nat} (h : i * i > n) :
     (if i * i > n then true else false) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

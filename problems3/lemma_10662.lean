@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem first_occurrence_is_min
     {i j : Nat} (hi : i < arr.size) (hj : j < arr.size)
     (hieq : arr[i]! = target) (hineq : i ≤ j) :
     arr[j]! = target → i = j:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

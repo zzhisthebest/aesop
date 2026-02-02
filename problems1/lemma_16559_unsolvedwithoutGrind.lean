@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def Triple_postcond (x : Int) (result: Int) (h_precond : Triple_precond (x)) :=
 
 #check Int.mul_comm
 theorem add_mul_rev (a b c : Int) : a * c + b * c = (a + b) * c:= by
-aesop?(config := { enableGrind := false,enableOmega:=false })
+codetic?(config := { enableGrind := false,enableOmega:=false })
 grind
 
 

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem count_occurrences_take_succ (a : Array Int) (key : Int) (i : Nat)
     (h : i < a.size) :
     count_occurrences (a.take (i+1)) key =
       count_occurrences (a.take i) key + (if a[i] = key then 1 else 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -55,7 +55,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 
 theorem if_lt_succ (n m : Nat) [Decidable (n < m.succ)] :
   (if n < m.succ then true else false) = (n ≤ m):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

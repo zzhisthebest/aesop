@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def remove_front_postcond (a : Array Int) (result: Array Int) (h_precond : remov
 
 theorem remove_front_eq_copyFrom (a : Array Int) (h : remove_front_precond a) :
     remove_front a h = copyFrom a 1 (Array.mkEmpty (a.size - 1)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

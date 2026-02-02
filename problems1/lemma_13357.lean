@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def ComputeIsEven_postcond (x : Int) (result: Bool) (h_precond : ComputeIsEven_p
 
 theorem ComputeIsEven_if_true (x : Int) :
     (if x % 2 = 0 then true else false) = true ↔ x % 2 = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

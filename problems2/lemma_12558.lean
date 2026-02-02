@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem aux_spec (s : Array Int) (i : Nat) (hi : i ≤ s.size) :
     (∀ j, j < s.size →
         (double_array_elements_aux s s i)[j]! =
           if i ≤ j then 2 * s[j]! else s[j]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

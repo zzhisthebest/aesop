@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem algorithm_some_implies_pairwise_prefix
     List.Pairwise (· ≠ ·)
       (s.toList.take
         (s.toList.zipIdx.findIdx (fun x_i => x_i.1 = c && x_i.2 ≠ s.toList.idxOf c))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

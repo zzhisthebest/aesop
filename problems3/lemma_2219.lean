@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ def longestIncreasingSubsequence_postcond (nums : List Int) (result: Int) (h_pre
 
 theorem result_nat_eq (result : Int) :
     ∃ k : Nat, result = Int.ofNat k ∨ result = -Int.ofNat k:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

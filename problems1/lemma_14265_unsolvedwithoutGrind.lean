@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem maxArray_aux_step
     (h_cur : ∀ j, j < i → a[j]! ≤ current)
     (h_new : new_current = if current > a[i]! then current else a[i]!) :
     ∀ j, j < i + 1 → a[j]! ≤ new_current:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 theorem all_not_divisor_imp_no_small_divisor {n : Nat} (hn : 2 ≤ n) :
     (List.range' 2 (n - 2)).all (fun k => n % k ≠ 0) →
     ∀ d, 2 ≤ d → d < n → n % d ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

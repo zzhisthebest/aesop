@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem loop_result_bounds (a : Array Int) (key : Int) (h_pre : BinarySearch_pre
     r ≤ a.size ∧
     (a.take r).all (fun x => x < key) ∧
     (a.drop r).all (fun x => x ≥ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

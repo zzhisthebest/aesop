@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -81,7 +81,7 @@ theorem exists_imp_result
           (a1 < a2 && a2 < b1 && b1 < b2) ||
           (a2 < a1 && a1 < b2 && b2 < b1)))) →
     hasChordIntersection N chords h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

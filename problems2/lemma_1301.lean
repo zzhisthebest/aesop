@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ def isPowerOfTwo_postcond (n : Int) (result: Bool) (h_precond : isPowerOfTwo_pre
 
 
 theorem natAbs_pos_of_pos (n : Int) (h : n > 0) : n.natAbs ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

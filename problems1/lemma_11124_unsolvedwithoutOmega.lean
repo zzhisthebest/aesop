@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem aux_indices_in_bounds
     (s : Array Int) (i minIdx secondIdx : Nat)
     (hmin : minIdx < s.size) (hsec : secondIdx < s.size) :
     (i ≤ s.size) → (minIdx < s.size) ∧ (secondIdx < s.size):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

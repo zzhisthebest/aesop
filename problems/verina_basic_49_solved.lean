@@ -17,7 +17,7 @@
 -- !benchmark @start import type=solution
 
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start solution_aux
 def isOdd (x : Int) : Bool :=
@@ -103,7 +103,7 @@ theorem findFirstOdd_spec_satisfied (a: Array Int) (h_precond : findFirstOdd_pre
         exact (List.getElem?_eq_some_getElem_iff la i hi').mpr trivial
       apply List.mem_zipIdx_iff_getElem?.mpr
       simp
-    aesop
+    codetic
   | some i =>
     rw [← h_res, h_rescase]
     rw [h_res] at h_rescase
@@ -114,5 +114,5 @@ theorem findFirstOdd_spec_satisfied (a: Array Int) (h_precond : findFirstOdd_pre
       exact List.mem_of_find?_eq_some h_found'
     have ⟨_, hi, hx⟩ := List.mem_zipIdx h_mem
     have ⟨h_odd, ⟨i', hi', hii', h_prefix⟩⟩ := List.find?_eq_some_iff_getElem.mp h_found'
-    aesop
+    codetic
   -- !benchmark @end proof

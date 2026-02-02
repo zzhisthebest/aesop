@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ def SlopeSearch_postcond (a : Array (Array Int)) (key : Int) (result: (Int × In
 
 theorem all_true_on_empty (a : Array (Array Int)) :
   a = #[] → a.all (fun x => x.all (fun e => e ≠ 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

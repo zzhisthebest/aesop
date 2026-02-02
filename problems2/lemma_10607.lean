@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem sorted_gt_all_ahead {arr : Array Int} {target i : Nat}
     (hidx : i ≤ idx) (hidx_lt : idx < arr.size)
     (hi : arr[i]! > (0 : Int)) :
     arr[idx]! > (0 : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

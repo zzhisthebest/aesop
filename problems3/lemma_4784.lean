@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ def moveZeroes_postcond (xs : List Int) (result: List Int) (h_precond : moveZero
 
 theorem countVal_zero_filter (xs : List Int) :
     countVal 0 (xs.filter (· = 0)) = countVal 0 xs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

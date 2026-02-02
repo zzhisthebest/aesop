@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem loop_step_eq (a : Array Int) (e : Int) (n : Nat) (h‚ÇÅ : n < a.size) (h‚
     (if h : n < a.size then
         if a[n]! = e then n else n + 1
       else n) = n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

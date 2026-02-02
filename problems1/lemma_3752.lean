@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ def mergeIntervals_postcond (intervals : List (Prod Int Int)) (result: List (Pro
 
 
 theorem reverse_singleton {α} (x : α) : List.reverse [x] = [x]:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

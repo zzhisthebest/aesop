@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -52,7 +52,7 @@ theorem subarraySums_eq_sums_of_len_divisible (arr : Array Int) (k : Int) :
     let subarraySums := divisibleSubarrays.map (fun subarray => subarray.sum)
     subarraySums =
       (subarrays.filter (fun s => s.size % k = 0 && s.size > 0)).map (fun s => s.sum):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

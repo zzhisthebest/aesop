@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def smallestMissingNumber_postcond (s : List Nat) (result: Nat) (h_precond : sma
 
 
 theorem lt_or_eq_or_gt (a b : Nat) : a < b ∨ a = b ∨ b < a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

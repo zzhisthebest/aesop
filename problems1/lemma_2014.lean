@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ def longestIncreasingSubseqLength_postcond (xs : List Int) (result: Nat) (h_prec
 
 theorem Nat.le_of_mem_foldr_max (l : List Nat) (n : Nat) (hn : n ∈ l) :
     n ≤ l.foldr max 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

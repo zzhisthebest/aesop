@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -31,7 +31,7 @@ unfold isDigit
 simp
 simp only [Bool.not_eq_eq_eq_not, Bool.not_true, Bool.not_eq_true]
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 --提不出来定理

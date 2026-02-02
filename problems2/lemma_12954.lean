@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def Find_postcond (a : Array Int) (key : Int) (result: Int) (h_precond : Find_pr
 theorem Find_if_eq (a : Array Int) (key : Int) (index : Nat) (h₁ : index < a.size) :
     (if a[index]! = key then Int.ofNat index else Find a key trivial) =
     (if a[index]! = key then Int.ofNat index else Find a key trivial):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

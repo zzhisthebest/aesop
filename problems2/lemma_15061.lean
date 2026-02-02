@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem divMod_spec (x y : Nat) (hy : y ≠ 0) :
       (q * Int.ofNat y + r = Int.ofNat x) ∧
       (0 ≤ r ∧ r < Int.ofNat y) ∧
       (0 ≤ q):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

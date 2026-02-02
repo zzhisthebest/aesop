@@ -15,7 +15,7 @@
 -- There are no strict preconditions on the input; the method should work correctly for any array of integers. The specification ensures that the returned index is always valid: it is either within the array bounds with a matching element or equals the array’s size if the element is absent.
 
 -- !benchmark @start import type=solution
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def LinearSearch_precond (a : Array Int) (e : Int) : Prop :=
@@ -86,17 +86,17 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
   · --这是一个spec
     --是的，要证明就得数学归纳法，因为0时是最强的，相当于n时
     have aux (x : Nat) : (x ≤ a.size) → LinearSearch.loop a e x ≤ a.size := by
-      aesop
+      codetic
       -- induction x using LinearSearch.loop.induct a e with
       -- | case1 =>
       --   unfold LinearSearch.loop
-      --   aesop
+      --   codetic
       -- | case2 =>
       --   unfold LinearSearch.loop
-      --   aesop
+      --   codetic
       -- | case3 =>
       --   unfold LinearSearch.loop
-      --   aesop
+      --   codetic
       -- intro hx₀ hx₁
       -- let nx := a.size - x
       -- have hn₁ : nx = a.size - x := by rfl
@@ -107,8 +107,8 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
       -- have h2:nx<=a.size:=by grind
       -- clear hx₀ hx₁ hn₁ hn₂--这些hyp没用了
       -- revert h2 h1--因为nx是有范围的，如果不加这一句，就变成在[0,+无穷]归纳了，这显然不是等价变换
-      -- --aesop?
-      -- --aesop (config := { useSimpAll := false })
+      -- --codetic?
+      -- --codetic (config := { useSimpAll := false })
       -- induction nx with
       -- | zero=>
       --   unfold LinearSearch.loop
@@ -116,22 +116,22 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
 
       -- | succ n1 ih=>
       --   unfold LinearSearch.loop
-      --   aesop
-    aesop
+      --   codetic
+    codetic
   · constructor
     · --这是一个spec
       have aux (x : Nat) :  (x ≤ a.size) → LinearSearch.loop a e x = a.size ∨ a[LinearSearch.loop a e x]! = e:= by
-        aesop
+        codetic
         -- induction x using LinearSearch.loop.induct a e with
         -- | case1 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- | case2 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- | case3 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- intro hx₀ hx₁
         -- let nx := a.size - x
         -- have hn₁ : nx = a.size - x := by rfl
@@ -145,28 +145,28 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
         -- induction nx with
         -- | zero=>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- | succ n1 ih=>
         --   unfold LinearSearch.loop
 
-        --   aesop
+        --   codetic
 
-      aesop
+      codetic
     · --这是一个spec
       have aux (x : Nat) : (x ≤ a.size) → (∀ i, x ≤ i → i < LinearSearch.loop a e x → a[i]! ≠ e) := by
-        aesop
-        --aesop?(config:={enableSimp := false,useSimpAll:=false})
+        codetic
+        --codetic?(config:={enableSimp := false,useSimpAll:=false})
 
         -- induction x using LinearSearch.loop.induct a e with
         -- | case1 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- | case2 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
         -- | case3 =>
         --   unfold LinearSearch.loop
-        --   aesop
+        --   codetic
       --   intro hx₀ hx₁
       --   let nx := a.size - x
       --   have hn₁ : nx = a.size - x := by rfl
@@ -185,8 +185,8 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
 
       -- | succ n1 ih=>
       --   unfold LinearSearch.loop
-      --   aesop
-      aesop
+      --   codetic
+      codetic
 
   -- !benchmark @start proof
   -- unfold LinearSearch_postcond LinearSearch

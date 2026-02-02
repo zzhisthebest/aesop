@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: Array Nat) (h_pre
 
 theorem mem_of_eq_singleton {α} {l : List α} {a b : α} (h : l = [b]) :
     a ∈ l ↔ a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem rotateRight_if_neg
             ((Int.ofNat i - Int.ofNat n + Int.ofNat l.length) % Int.ofNat l.length)
           let idx_nat : Nat := Int.toNat idx_int
           l.getD idx_nat (l.headD 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

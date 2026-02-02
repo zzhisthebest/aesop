@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem maxSum_initial (default : Int) :
     (Id.run do
       let mut maxSum := default
       pure maxSum) = default:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

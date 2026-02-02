@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -40,7 +40,7 @@ theorem sub_is_increasing (nums : List Int) (h_precond : longestIncreasingSubseq
       (∀ j < i, sub.get! j < sub.get! (j+1)) →
       (∀ j < i, sub.get! j ∈ nums) →
       List.Pairwise (· < ·) (sub.toList):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

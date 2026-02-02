@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -70,7 +70,7 @@ def hasChordIntersection_postcond (N : Nat) (chords : List (List Nat)) (result: 
 
 theorem get_two_elem (a b : Nat) (i : Fin 2) :
     ([a, b] : List Nat)[i] = (if i = 0 then a else b):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 match i with
 | 0 => contradiction -- 情况 1: i = 0，与假设 h 矛盾
 | 1 => rfl           -- 情况 2: i = 1，[a, b][1] 自然等于 b

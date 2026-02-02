@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 
 theorem monotone_of_pairwise (a : Array Int) (h : findFirstOccurrence_precond a 0) :
     ∀ {i j}, i < j → j < a.size → a[i]! ≤ a[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

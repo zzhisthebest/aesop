@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem insert_size (oline : Array Char) (l p : Nat)
     (nl : Array Char) (atPos : Nat)
     (h : insert_precond oline l nl p atPos) :
     (insert oline l nl p atPos h).size = l + p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem getAt_eq_head_of_drop (xs : List Int) (i : Nat) (h : i < xs.length) :
     (match xs.drop i with
      | [] => (0 : Int)
      | h' :: _ => h') = xs.get! i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

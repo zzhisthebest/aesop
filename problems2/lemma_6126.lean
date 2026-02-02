@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ def searchInsert_postcond (xs : List Int) (target : Int) (result: Nat) (h_precon
 
 theorem searchInsert_postcond_nil (target : Int) (h : searchInsert_precond [] target) :
     searchInsert_postcond [] target (searchInsert [] target h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

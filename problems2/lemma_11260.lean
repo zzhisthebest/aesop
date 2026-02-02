@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem step_eq (n : Nat) :
       15 * (2 * n + 1) ^ 4 =
       (n + 1) * (2 * (n + 1) + 1) *
         (7 + 24 * (n + 1) ^ 3 - 12 * (n + 1) ^ 2 - 14 * (n + 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

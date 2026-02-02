@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem findMajority_is_majority (lst : List Int) (x : Int) (h :
     lst.find? (fun y => countOccurrences y lst > lst.length / 2) = some x) :
     countOccurrences x lst > lst.length / 2 ∧
     lst.all (fun z => countOccurrences z lst ≤ lst.length / 2 ∨ z = x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

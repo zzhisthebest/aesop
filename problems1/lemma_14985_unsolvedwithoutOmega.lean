@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def only_once_postcond (a : Array Int) (key : Int) (result: Bool) (h_precond : o
 
 theorem take_succ (a : Array Int) (i : Nat) (h : i < a.size) :
     a.take (i+1) = (a.take i) ++ #[a[i]]:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem le_of_mem_insertElement
     (y x : Int) (ys : List Int)
     (hy : ∀ z ∈ ys, y ≤ z) (hx : y ≤ x) :
     ∀ z ∈ insertElement x ys, y ≤ z:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 
@@ -11,11 +11,11 @@ def allSubstrings (s : List Char) : List (List Char) :=
 theorem test (s : List Char) :
     ∀ sub ∈ allSubstrings s, sub ≠ []:= by
   intro sub a
-  trace "Before first aesop:"
+  trace "Before first codetic:"
   trace_goal_target
-  aesop (config := { useDefaultSimpSet := false })
-  trace "After first aesop:"
+  codetic (config := { useDefaultSimpSet := false })
+  trace "After first codetic:"
   trace_goal_target
-  aesop (config := { useDefaultSimpSet := false })
+  codetic (config := { useDefaultSimpSet := false })
 
 end tmp

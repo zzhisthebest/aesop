@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem CanyonSearch_result_is_some_diff (a b : Array Int)
     (h_precond : CanyonSearch_precond a b) :
     ∃ ai ∈ a.toList, ∃ bi ∈ b.toList,
       CanyonSearch a b h_precond = (ai - bi).natAbs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

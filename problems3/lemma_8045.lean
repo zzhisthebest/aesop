@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem loop_final (a b : Array Int) (hpre : arrayProduct_precond a b) :
     let c   := Array.mkArray len 0
     (loop a b len 0 c).size = a.size ∧
     (∀ i, i < a.size → a[i]! * b[i]! = (loop a b len 0 c)[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -28,7 +28,7 @@ theorem partitionEvensOdds_correct (xs : List Nat) :
     partitionEvensOdds xs (by trivial : partitionEvensOdds_precond xs) =
       (xs.filter (fun n => n % 2 == 0),
        xs.filter (fun n => n % 2 == 1)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

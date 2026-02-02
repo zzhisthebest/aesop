@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def double_array_elements_postcond (s : Array Int) (result: Array Int) (h_precon
 
 theorem size_set! (s : Array Int) (i : Nat) (v : Int) (h : i < s.size) :
     (s.set! i v).size = s.size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem maxProfit_eq_aux (prices : List Nat) (h : maxProfit_precond prices) :
       match prices with
       | []      => 0
       | p :: ps => maxProfitAux ps p 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

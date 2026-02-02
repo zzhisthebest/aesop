@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -27,10 +27,10 @@ theorem zzh_imp_or_not_or
   (p q : Prop) :
   (¬ p → q) → (p ∨ q) :=
 by
-aesop
+codetic
 theorem not_isDigit_eq (c : Char) :
     !isDigit c = true ↔ isDigit c = false:= by
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 swap
 simp [zzh_imp_or_not_or]
 

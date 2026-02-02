@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -56,7 +56,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 theorem aux_step_water_nonneg (leftMax cur : Int) :
     max 0 (leftMax - cur) ≥ 0:= by
 exact tmp_lemma_5618.max_zero_sub_nonneg cur leftMax
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

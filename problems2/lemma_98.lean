@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -43,7 +43,7 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 theorem precond_exists_unique (nums : List Int)
     (h : FindSingleNumber_precond nums) :
     ∃ u, u ∈ nums ∧ (filterlist u nums).length = 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

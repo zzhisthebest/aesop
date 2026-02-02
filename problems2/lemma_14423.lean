@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem loop_of_lt (a : Array Int) (i : Nat) (curr : Int)
     loop a i curr =
       loop a (i + 1)
         (if curr > a[i]! then a[i]! else curr):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

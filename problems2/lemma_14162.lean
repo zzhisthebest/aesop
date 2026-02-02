@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def append_postcond (a : Array Int) (b : Int) (result: Array Int) (h_precond : a
 
 theorem copy_of_ge (a : Array Int) (i : Nat) (acc : Array Int)
     (h : a.size ≤ i) : copy a i acc = acc:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

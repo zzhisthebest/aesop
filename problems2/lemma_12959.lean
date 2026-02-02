@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem Find_eq_of_exists
     (i : Nat) (hi : i < a.size) (h_eq : a[i]! = key)
     (h_min : ∀ j, j < i → a[j]! ≠ key) :
     Find a key h_precond = Int.ofNat i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

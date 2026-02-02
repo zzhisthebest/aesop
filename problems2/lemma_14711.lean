@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem p_bounds (a : Array Int) (x : Nat) (h_pre : onlineMax_precond a x) :
                m)
     let p := findP a x m x
     x ≤ p ∧ p < a.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

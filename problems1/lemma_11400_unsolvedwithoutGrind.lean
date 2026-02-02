@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem no_elem_of_neg_one (arr : Array Int) (elem : Int) (pos : Int)
     (h : ∀ j, j < arr.size → arr[j]! = elem → (j : Int) ≤ pos)
     (hpos : pos = -1) :
     arr.toList.all (· ≠ elem):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

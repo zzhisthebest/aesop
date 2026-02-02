@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def hasOnlyOneDistinctElement_postcond (a : Array Int) (result: Bool) (h_precond
 theorem if_branch_eliminated {a : Array Int}
     (h : hasOnlyOneDistinctElement_precond a) :
     (if a.size = 0 then true else false) = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

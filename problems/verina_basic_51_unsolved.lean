@@ -27,7 +27,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def BinarySearch_precond (a : Array Int) (key : Int) : Prop :=
@@ -75,6 +75,6 @@ def BinarySearch_postcond (a : Array Int) (key : Int) (result: Nat) (h_precond :
 theorem BinarySearch_spec_satisfied (a: Array Int) (key: Int) (h_precond : BinarySearch_precond (a) (key)) :
     BinarySearch_postcond (a) (key) (BinarySearch (a) (key) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   sorry
   -- !benchmark @end proof

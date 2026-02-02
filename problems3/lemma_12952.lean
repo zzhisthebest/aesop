@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem Find_result_cases (a : Array Int) (key : Int) (h : Find_precond a key) :
          ∀ i : Nat, i < Int.toNat r → a[i]! ≠ key)) ∧
     ((r = -1) →
         ∀ i : Nat, i < a.size → a[i]! ≠ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

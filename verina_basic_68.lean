@@ -15,8 +15,8 @@
 -- There are no strict preconditions on the input; the method should work correctly for any array of integers. The specification ensures that the returned index is always valid: it is either within the array bounds with a matching element or equals the array’s size if the element is absent.
 
 -- !benchmark @start import type=solution
-import Aesop
-set_option trace.aesop.zzh_custom true
+import Codetic
+set_option trace.codetic.zzh_custom true
 --namespace tmp
 @[reducible, simp]
 def LinearSearch_precond (a : Array Int) (e : Int) : Prop :=
@@ -55,13 +55,13 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
       clear hx₀ hx₁ hn₁ hn₂--这些hyp没用了
       revert h2 h1--因为nx是有范围的，如果不加这一句，就变成在[0,+无穷]归纳了，这显然不是等价变换
       clear h_precond
-      aesop
+      codetic
       induction nx with
       | zero=>
-        aesop
+        codetic
 
       | succ n1 ih=>
-        aesop
+        codetic
         unfold LinearSearch.loop
 
         simp

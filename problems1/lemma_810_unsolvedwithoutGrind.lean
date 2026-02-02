@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem pairwise_cons_of_le
     {a b : Int} {l : List Int}
     (hab : a ≤ b) (hb : List.Pairwise (· ≤ ·) (b :: l)) :
     List.Pairwise (· ≤ ·) (a :: b :: l):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

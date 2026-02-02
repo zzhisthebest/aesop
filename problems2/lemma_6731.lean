@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 
 theorem max_of_two (a b : Int) :
     max a b = if a ≥ b then a else b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

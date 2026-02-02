@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def SquareRoot_postcond (N : Nat) (result: Nat) (h_precond : SquareRoot_precond 
 
 theorem SquareRoot_spec_aux (N : Nat) (h_precond : SquareRoot_precond N) :
     SquareRoot_postcond N (SquareRoot N h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

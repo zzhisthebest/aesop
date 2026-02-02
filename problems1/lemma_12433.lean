@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def Compare_postcond (a : Int) (b : Int) (result: Bool) (h_precond : Compare_pre
 
 theorem compare_eq_true (a b : Int) (h_eq : a = b) :
     Compare a b (by trivial : Compare_precond a b) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

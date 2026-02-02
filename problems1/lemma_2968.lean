@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -19,7 +19,7 @@ theorem max_eq_c_of_ge (a b c : Int)
     (h₁ : ¬(a ≥ b ∧ a ≥ c))
     (h₂ : ¬(b ≥ a ∧ b ≥ c)) :
     max a (max b c) = c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

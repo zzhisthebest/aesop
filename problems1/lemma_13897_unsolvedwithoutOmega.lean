@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem loop_never_returns_bad (a : Array Int) (P : Int → Bool) :
                  0;
             r = loop n) →
             (r < a.size → P (a[r]!)) → True:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

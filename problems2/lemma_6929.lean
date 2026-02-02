@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ def trapRainWater_postcond (height : List Nat) (result: Nat) (h_precond : trapRa
 theorem trapRainWater_returns_nat (height : List Nat)
     (h_precond : trapRainWater_precond height) :
     (trapRainWater height h_precond) ≥ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -24,7 +24,7 @@
 
 -- !benchmark @end precond_aux
 --import Mathlib
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def arraySum_precond (a : Array Int) : Prop :=
@@ -67,13 +67,13 @@ theorem eq_of_sub_zero_and_ge (a b : Int) : a = b → a - b = 0 ∧ a ≥ b := b
 theorem arraySum_spec_satisfied (a: Array Int) (h_precond : arraySum_precond (a)) :
     arraySum_postcond (a) (arraySum (a) h_precond) h_precond := by
   -- !benchmark @start proof
-  --aesop
+  --codetic
   unfold arraySum arraySum_postcond
   apply eq_of_sub_zero_and_ge a.toList.sum (sumTo a a.size)--这个定理很有用
   cases a with | mk d =>--还是把Array转为List
     simp
     induction d with--数学归纳法
-    | nil => unfold sumTo;aesop
+    | nil => unfold sumTo;codetic
     | cons x xs ih =>--ih在最后用到了
       unfold sumTo
       simp
@@ -81,24 +81,24 @@ theorem arraySum_spec_satisfied (a: Array Int) (h_precond : arraySum_precond (a)
       | nil => unfold sumTo;simp
       | cons y ys =>
         --unfold sumTo
-        --aesop
+        --codetic
         rw [ih]
         · have h3 (x' : Int) (xs' : List Int): xs'.length ≠ 0 → sumTo ⟨x'::xs'⟩ xs'.length = x' + sumTo ⟨xs'⟩ (xs'.length - 1) := by--命名很显然，但就是必须数学归纳法证明
-            --aesop
+            --codetic
             --竟然还能对List.length归纳
             induction xs'.length with
-            | zero => unfold sumTo;aesop
+            | zero => unfold sumTo;codetic
             | succ n ih_len =>
               unfold sumTo
-              aesop
+              codetic
 
           have h4 : sumTo ⟨x::y::ys⟩ (ys.length + 1) = x + sumTo ⟨y::ys⟩ ys.length := by
           --grind
-            aesop--用到了h3
+            codetic--用到了h3
           --rw [sumTo]
           rw [sumTo]--还真不能unfold，unfold是在两侧，而rw只在第一个地方
-          aesop
-        · aesop
+          codetic
+        · codetic
   -- !benchmark @end proof
 --己
 #check Int.add_assoc

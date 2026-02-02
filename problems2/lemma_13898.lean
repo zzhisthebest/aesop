@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def LinearSearch3_postcond (a : Array Int) (P : Int -> Bool) (result: Nat) (h_pr
 
 
 theorem lt_of_if_true {n a : Nat} (h : n < a) : (if h' : n < a then True else False):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

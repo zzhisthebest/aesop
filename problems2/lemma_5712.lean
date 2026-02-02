@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem eraseDups_length_rec (l : List Int) (h : List.Pairwise (· ≤ ·) l) :
       | a :: t => Nat.succ (t.eraseDups.length -
                           (if t.head? = some a then 1 else 0))) =
     (l.eraseDups).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ def longestIncreasingSubsequence_postcond (nums : List Int) (result: Nat) (h_pre
 theorem canTake_some_notlt (prev h : Int) (h_notlt : ¬ prev < h) :
     (if (some prev : Option Int) = none then true
         else if (some prev).get! < h then true else false) = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

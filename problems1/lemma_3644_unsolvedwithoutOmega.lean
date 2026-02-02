@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ def maxSubarraySum_postcond (numbers : List Int) (result: Int) (h_precond : maxS
 
 theorem length_map_int_ofNat (xs : List Nat) :
     (xs.map (fun n : Nat => (n : Int))).length = xs.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

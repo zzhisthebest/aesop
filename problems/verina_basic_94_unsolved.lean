@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 @[reducible, simp]
 def iter_copy_precond (s : Array Int) : Prop :=
   -- !benchmark @start precond
@@ -74,7 +74,7 @@ theorem iter_copy_spec_satisfied (s: Array Int) (h_precond : iter_copy_precond (
   constructor
   · --这是一个spec
     cases s with | mk d =>--还是把Array转为List
-      aesop
+      codetic
       simp
       induction d with--数学归纳法,对列表进行数学归纳
       | nil=>
@@ -84,7 +84,7 @@ theorem iter_copy_spec_satisfied (s: Array Int) (h_precond : iter_copy_precond (
       | cons x xs ih =>
         unfold iter_copy.loop
         simp
-        --aesop
+        --codetic
         sorry
 
   · --这是一个spec
@@ -97,6 +97,6 @@ theorem iter_copy_spec_satisfied (s: Array Int) (h_precond : iter_copy_precond (
       | cons x xs ih =>
         unfold iter_copy.loop
         simp
-        aesop
+        codetic
         sorry
   -- !benchmark @end proof

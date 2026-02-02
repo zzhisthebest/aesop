@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -54,7 +54,7 @@ theorem minOperations_postcond_eq (nums : List Nat) (k result : Nat)
         else
           k == 0
       collected_all ∧ is_minimal:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

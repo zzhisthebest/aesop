@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem secondIdx_lt_length {l : List Char} {c : Char}
     (h : l.count c ≥ 2) :
     let secondIdx := l.zipIdx.findIdx (fun (x, i) => x = c && i ≠ l.idxOf c)
     secondIdx < l.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

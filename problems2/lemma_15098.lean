@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def DivisionFunction_postcond (x : Nat) (y : Nat) (result: Int × Int) (h_precon
 
 
 theorem add_comm_nat (a b : Nat) : a + b = b + a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem minOfThree_eq_c
     (h_not_a : ¬ (a ≤ b ∧ a ≤ c))
     (h_not_b : ¬ (b ≤ a ∧ b ≤ c)) :
     minOfThree a b c h_precond = c:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

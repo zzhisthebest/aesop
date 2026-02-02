@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem nthLe_map_eq (cs : List Char) (oldChar newChar : Char) (i : Nat)
     (h : i < cs.length) :
     (cs.map (fun c => if c = oldChar then newChar else c))[i]! =
       if cs[i]! = oldChar then newChar else cs[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

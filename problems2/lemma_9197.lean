@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def differenceMinMax_postcond (a : Array Int) (result: Int) (h_precond : differe
 
 theorem max_update_if (x maxVal : Int) :
     (if x > maxVal then x else maxVal) = max x maxVal:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

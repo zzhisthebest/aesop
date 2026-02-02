@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem mergeSortedAux_spec
     (h : mergeSorted_precond a b) :
     List.Pairwise (· ≤ ·) (mergeSortedAux a b) ∧
     List.isPerm (mergeSortedAux a b) (a ++ b):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

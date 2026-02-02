@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def isEven_postcond (n : Int) (result: Bool) (h_precond : isEven_precond (n)) :=
 
 
 theorem isEven_eq_true (n : Int) : (n % 2 == 0) = true ↔ n % 2 = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

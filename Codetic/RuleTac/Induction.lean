@@ -280,7 +280,7 @@ def parseFunctionInductType (inductType : Expr) : MetaM (Nat × Nat) := do
   let numInductVars := currentIdx - finalInductVarsStart
 
   -- codetic_trace![zzh_custom] m!"motiveIdx:{finalMotiveIdx}, inductVarsStart:{finalInductVarsStart}"
-  codetic_trace![zzh_custom] m!"numFixedVars:{numFixedVars}, numInductVars:{numInductVars}"
+  -- codetic_trace![zzh_custom] m!"numFixedVars:{numFixedVars}, numInductVars:{numInductVars}"
   return (numFixedVars, numInductVars)
 
 --己。
@@ -342,7 +342,7 @@ def inductionOnSpecificVar (targetFVarId : FVarId) (declName : Name)
       -- 先执行归纳
       let some subgoals ← tryInductionS input.goal targetFVarId ctorNames recursorName
         | return none
-      -- codetic_trace![zzh_custom] m!"Induction on {ldecl.userName} succeeded✅"
+      codetic_trace![zzh_custom] m!"Induction on {ldecl.userName} succeeded✅"
 
       -- 在 ScriptM 里对每个子目标做 unfold（会生成 script steps）
       let subgoals ← subgoals.mapM fun (isg : InductionSubgoal) => do

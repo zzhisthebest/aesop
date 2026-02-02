@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -48,7 +48,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 
 
 theorem ofNat_nonneg (n : Nat) : (Int.ofNat n : Int) ≥ 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

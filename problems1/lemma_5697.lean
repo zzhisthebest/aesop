@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem pairwise_of_dup_removed {a b : Int} {l : List Int}
     (h : List.Pairwise (· ≤ ·) (a :: b :: l))
     (hb : b = a) :
     List.Pairwise (· ≤ ·) (a :: l):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

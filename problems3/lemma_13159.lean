@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ def insert_postcond (oline : Array Char) (l : Nat) (nl : Array Char) (p : Nat) (
 
 theorem size_mkArray (n : Nat) (c : Char) :
     (Array.mkArray n c).size = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

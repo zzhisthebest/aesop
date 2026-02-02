@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -77,7 +77,7 @@ apply Iff.intro
     obtain ⟨left, right_1⟩ := left
     obtain ⟨left_1, right⟩ := right
     grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

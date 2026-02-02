@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def SelectionSort_postcond (a : Array Int) (result: Array Int) (h_precond : Sele
 theorem swap_eq_of_bounds (a : Array Int) {i j : Nat}
     (h₁ : i < a.size) (h₂ : j < a.size) (h₃ : i ≠ j) :
     swap a i j = (a.set! i a[j]!).set! j a[i]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

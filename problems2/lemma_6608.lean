@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem not_mod_two_of_zero_result
     (n : Nat) (h : singleDigitPrimeFactor_precond n) (hnz : n ≠ 0)
     (hz : singleDigitPrimeFactor n h = 0) :
     n % 2 ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -49,7 +49,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 
 theorem zip_right_nil (as : List α) (bs : List β) :
   List.zip as ([] : List β) = []:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

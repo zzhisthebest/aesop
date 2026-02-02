@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -71,7 +71,7 @@ theorem exists_max_coverage (intervals : List (Prod Nat Nat))
           []
         let cov_j := merged_j.reverse.foldl (fun a (s, e) => a + (e - s)) 0
         cov ≥ cov_j:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

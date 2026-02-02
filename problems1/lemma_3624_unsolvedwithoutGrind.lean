@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem subArraySums_contains_all_sums (numbers : List Int) :
           numbers.drop start |>.take len |>.sum
     ∀ (i j) (hstart : i ≤ numbers.length) (hlen : j ≤ numbers.length - i),
       (numbers.drop i |>.take j |>.sum) ∈ subArraySums:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def Match_postcond (s : String) (p : String) (result: Bool) (h_precond : Match_p
 theorem inner_if {a b : Char} :
     (if (a ≠ b) ∧ (b ≠ '?') then false else true) = true
       ↔ (a = b ∨ b = '?'):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

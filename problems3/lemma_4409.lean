@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -57,7 +57,7 @@ theorem minimumRightShifts_correct_for_long_list
     (nums : List Int) (h : minimumRightShifts_precond nums)
     (hlen : ¬ nums.length ≤ 1) :
     minimumRightShifts_postcond nums (minimumRightShifts nums h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

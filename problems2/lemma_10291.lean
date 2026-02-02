@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -27,7 +27,7 @@ theorem idxOf_le_of_filter {l : List Int} {x y : Int}
     (horder : l.idxOf x ≤ l.idxOf y) :
     (l.filter (fun z => isEven z)).idxOf x ≤
       (l.filter (fun z => isEven z)).idxOf y:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

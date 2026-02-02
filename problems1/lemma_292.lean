@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem result_eq_some_of_ne_neg_one {lst : List Int} {h_precond}
     (h : findMajorityElement lst h_precond ≠ -1) :
     ∃ x, lst.find? (fun y => countOccurrences y lst > lst.length / 2) = some x ∧
          findMajorityElement lst h_precond = x:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

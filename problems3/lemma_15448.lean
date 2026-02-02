@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def rotate_postcond (a : Array Int) (offset : Int) (result: Array Int) (h_precon
 
 theorem idx_int_nonneg (i len : Nat) (off : Int) (h_off : off ≥ 0) :
     ((Int.ofNat i + off) % (Int.ofNat len)) ≥ (0 : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

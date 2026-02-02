@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem pairwise_imp_later_gt (l : List Int) (target : Int)
     ∀ {i j} (hi : i < l.length) (hj : j < l.length) (hij : i ≤ j)
       (hgt : l.get ⟨i, hi⟩ > target),
       l.get ⟨j, hj⟩ > target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

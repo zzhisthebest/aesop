@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ theorem le_of_not_two_ands
     (h₁ : ¬(a ≥ b ∧ a ≥ c))
     (h₂ : ¬(b ≥ a ∧ b ≥ c)) :
     c ≥ a ∧ c ≥ b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

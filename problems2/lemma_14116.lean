@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def append_postcond (a : Array Int) (b : Int) (result: Array Int) (h_precond : a
 
 theorem append_preserves_original (a : Array Int) (b : Int) (h : append_precond a b) :
     (List.range' 0 a.size |>.all (fun i => (append a b h)[i]! = a[i]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def hasOppositeSign_postcond (a : Int) (b : Int) (result: Bool) (h_precond : has
 
 theorem decide_lt_zero_false (a b : Int) (h : ¬ a * b < 0) :
     decide (a * b < 0) = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

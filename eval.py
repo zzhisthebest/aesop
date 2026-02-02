@@ -105,7 +105,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "directory",
         nargs="?",
-        default="/data1/zzh/aesop/Aesop/theorems",
+        default="/data1/zzh/codetic/Codetic/theorems",
         help="包含 .lean 文件的目录"
     )
     parser.add_argument(

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 theorem two_distinct_cannot_be_majorities (a b : Int) (lst : List Int) (h : a ≠ b) :
     ¬ (countOccurrences a lst > lst.length / 2 ∧
         countOccurrences b lst > lst.length / 2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

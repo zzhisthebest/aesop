@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem maxArray_aux_step (a : Array Int) (i : Nat) (cur : Int)
     (h : i < a.size) :
     maxArray_aux a i cur =
       maxArray_aux a (i+1) (if cur > a[i]! then cur else a[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

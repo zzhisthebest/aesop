@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -51,7 +51,7 @@ theorem result_is_minus_one_when_not_enough_gas
   (gas cost : List Int) (h_precond : canCompleteCircuit_precond gas cost) :
     gas.foldl (· + ·) 0 < cost.foldl (· + ·) 0 →
     canCompleteCircuit gas cost h_precond = -1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

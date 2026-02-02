@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 theorem le_of_pairwise {l : List Int} (h : List.Pairwise (· ≤ ·) l) {i j}
     (hi : i < l.length) (hj : j < l.length) (hij : i ≤ j) :
     l.get ⟨i, hi⟩ ≤ l.get ⟨j, hj⟩:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

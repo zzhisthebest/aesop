@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Nat) (h_precond : lengthOfLI
 theorem maxInArray_le_of_forall_le (arr : Array Nat) (M : Nat)
     (h : ∀ k, k < arr.size → arr.get! k ≤ M) :
     maxInArray arr ≤ M:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

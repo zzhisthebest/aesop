@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem postcond_of_eq_c
     (h_not_a : ¬ (a ≤ b ∧ a ≤ c))
     (h_not_b : ¬ (b ≤ a ∧ b ≤ c)) :
     minOfThree_postcond a b c c h_precond:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

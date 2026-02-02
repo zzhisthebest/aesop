@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem result_mem_symdiff (a b : Array Int) (h_precond : dissimilarElements_pre
     ∀ x, x ∈ (dissimilarElements a b h_precond) →
       (inArray a x = true ∧ inArray b x = false) ∨
       (inArray a x = false ∧ inArray b x = true):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

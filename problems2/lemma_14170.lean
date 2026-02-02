@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem test_eq_true_iff {sList pList : List Char} {i : Nat}
     (hi : i < sList.length) (hlen : sList.length = pList.length) :
     (if (sList[i]! ≠ pList[i]!) ∧ (pList[i]! ≠ '?') then false else true) = true
       ↔ (sList[i]! = pList[i]!) ∨ (pList[i]! = '?'):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

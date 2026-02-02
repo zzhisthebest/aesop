@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ def isPerfectSquare_postcond (n : Nat) (result : Bool) : Prop :=
 
 theorem i_lt_one_add_n_of_square_eq {i n : Nat} (h : i * i = n) (hn : n ≠ 0) :
     i < 1 + n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

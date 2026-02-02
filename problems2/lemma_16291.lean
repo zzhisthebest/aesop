@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem get_two_set_other (a : Array Int) (i j k : Nat)
     (hk : k < a.size) (hi : i < a.size) (hj : j < a.size)
     (hki : k ≠ i) (hkj : k ≠ j) :
     ((a.set! i (a[j]!)).set! j (a[i]!))[k]! = a[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

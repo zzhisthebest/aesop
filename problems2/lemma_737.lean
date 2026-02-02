@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -63,7 +63,7 @@ theorem incTriplet_eq_loop (l : List Int) (h_pre : increasingTriplet_precond l) 
     increasingTriplet l h_pre =
       (if l.length < 3 then false else
         increasingTriplet.loop l 2147483647 2147483647):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

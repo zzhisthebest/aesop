@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -40,7 +40,7 @@ theorem check_step_true {cleaned : List Char} {l r : Nat}
     (h : l < r) (h₁ : cleaned[l]? = cleaned[r]?) :
     (if l ≥ r then true
      else if cleaned[l]? = cleaned[r]? then true else false) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

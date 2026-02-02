@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem twoSumAux_found
   (x : Int) (xs : List Int) (target : Int) (i : Nat) (j : Nat)
   (hComp : findComplement xs target i x = some j) :
     twoSumAux (x :: xs) target i = (i, j):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

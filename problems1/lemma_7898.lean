@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: (Nat × Nat)) (h_
 theorem some_pair_is_good (nums : Array Int) (target : Int) (i j : Nat)
     (hij : i < j) (hjn : j < nums.size) (hsum : nums[i]! + nums[j]! = target) :
     i < j ∧ j < nums.size ∧ nums[i]! + nums[j]! = target:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

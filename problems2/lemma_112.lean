@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -44,7 +44,7 @@ theorem FindSingleNumber_other_twice
     (nums : List Int) (h : FindSingleNumber_precond nums) :
     ∀ x ∈ nums,
       x = FindSingleNumber nums h ∨ (filterlist x nums).length = 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

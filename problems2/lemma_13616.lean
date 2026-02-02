@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem linearSearchAux_spec (a : Array Int) (e : Int) :
         (let r := linearSearchAux a e n;
           (r < a.size) ∧ (a[r]! = e) ∧
           (∀ k, n ≤ k → k < r → a[k]! ≠ e)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

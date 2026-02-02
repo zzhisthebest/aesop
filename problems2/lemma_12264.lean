@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem canyon_aux_correct (a b : Array Int) (h_pre : CanyonSearch_precond a b) 
        (a.all (fun ai => b.all (fun bi => cur ≤ (ai - bi).natAbs)))) →
       let res := canyonSearchAux a b m n d
       (a.all (fun ai => b.all (fun bi => res ≤ (ai - bi).natAbs))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

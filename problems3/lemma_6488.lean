@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -59,7 +59,7 @@ theorem best_is_beautiful (s : String) (k : Nat) (h_pre : shortestBeautifulSubst
       | none => some cur
       | some best => if compare cur best then some cur else some best) none
     best = none ∨ ∃ b, b ∈ candidates ∧ best = some b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

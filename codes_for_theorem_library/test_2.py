@@ -18,7 +18,7 @@ def extract_and_verify(file_path):
             content = f.read()
         
         # 替换 sorry 为 apply? 并升级 import
-        test_content = content.replace("sorry", "apply?").replace("import Lean\n", "import Aesop\nset_option linter.all false\n").replace("module\n","")
+        test_content = content.replace("sorry", "apply?").replace("import Lean\n", "import Codetic\nset_option linter.all false\n").replace("module\n","")
         
         with open(temp_file, 'w', encoding='utf-8') as f:
             f.write(test_content)
@@ -34,7 +34,7 @@ def extract_and_verify(file_path):
         output = proc1.stdout + proc1.stderr
         
         # 精准正则提取 [apply] 之后的内容
-        match = re.search(r"\[apply\]\s+(.*?)(?=\s+-- Remaining subgoals:|$|/data1/zzh/aesop/theorems_copy/)", output, re.DOTALL)
+        match = re.search(r"\[apply\]\s+(.*?)(?=\s+-- Remaining subgoals:|$|/data1/zzh/codetic/theorems_copy/)", output, re.DOTALL)
         if not match:
             if os.path.exists(temp_file): 1+1==2
             return filename, False, "NO_SUGGESTION", ""
@@ -118,9 +118,9 @@ def parallel_verify(directory, max_workers=96):
 
     print("\n\n✨ 验证任务完成！")
     # 按照你的风格保存结果
-    with open("/data1/zzh/aesop/codes_for_theorem_library/passed_verified_1.txt", "w", encoding="utf-8") as f:
+    with open("/data1/zzh/codetic/codes_for_theorem_library/passed_verified_1.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(passed_entries))
-    with open("/data1/zzh/aesop/codes_for_theorem_library/failed_verified_1.txt", "w", encoding="utf-8") as f:
+    with open("/data1/zzh/codetic/codes_for_theorem_library/failed_verified_1.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(failed_entries))
     
     print(f"✅ 成功闭合证明数: {len(passed_entries)}")
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "directory",
         nargs="?",
-        default="/data1/zzh/aesop/theorems_copy",
+        default="/data1/zzh/codetic/theorems_copy",
         help="包含待测 .lean 文件的目录"
     )
     parser.add_argument(

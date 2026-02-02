@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ def findFirstRepeatedChar_postcond (s : String) (result: Option Char) (h_precond
 
 theorem pairwise_count_le_one (l : List Char) (h : List.Pairwise (· ≠ ·) l) (c : Char) :
     l.count c ≤ 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

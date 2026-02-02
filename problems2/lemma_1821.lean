@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem spec_second_conj (nums : List Int) (h : longestIncreasingStreak_precond 
           (start + longestIncreasingStreak nums h = nums.length ∨
             nums[start + longestIncreasingStreak nums h - 1]! ≥
               nums[start + longestIncreasingStreak nums h]!)))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

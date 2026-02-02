@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem loop_inv (a : Array Int) (key : Int) (i keyCount : Nat)
       | some v => let newCount := if v = key then keyCount + 1 else keyCount
                   newCount
       | none   => keyCount) = (a.take (i+1)).foldl (fun cnt x => if x = key then cnt + 1 else cnt) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

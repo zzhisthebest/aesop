@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem sorted_result
     (a b : Array Int)
     (h_precond : dissimilarElements_precond a b) :
     (dissimilarElements a b h_precond).toList.Pairwise (· ≤ ·):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

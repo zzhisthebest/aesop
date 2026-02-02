@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ else
 theorem palindromeIgnoreNonAlnum_spec_aux (s : String)
     (h_precond : palindromeIgnoreNonAlnum_precond s) :
     palindromeIgnoreNonAlnum_postcond s (palindromeIgnoreNonAlnum s h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

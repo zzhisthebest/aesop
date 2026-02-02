@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ def SetToSeq_postcond (s : List Int) (result: List Int) (h_precond : SetToSeq_pr
 
 theorem count_append_new (l : List Int) (x : Int) (hx : x ∉ l) :
     (l ++ [x]).count x = 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

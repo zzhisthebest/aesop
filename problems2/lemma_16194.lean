@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def iter_copy_postcond (s : Array Int) (result: Array Int) (h_precond : iter_cop
 @[simp]
 theorem iter_copy_nil :
     iter_copy (Array.empty : Array Int) (by trivial) = (Array.empty : Array Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ def below_zero_postcond (operations : List Int) (result: (Array Int × Bool)) (h
 theorem below_zero_result_false_imp (ops : List Int) (s : Array Int) (b : Bool)
     (h : b = false) (hs : (s, b) = below_zero ops trivial) :
     s.all (· ≥ 0) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

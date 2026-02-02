@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def minArray_postcond (a : Array Int) (result: Int) (h_precond : minArray_precon
 theorem le_of_forall_lt_succ {a : Array Int} {i : Nat} {cur : Int}
     (h : ∀ j, j < i → a[j]! ≥ cur) :
     ∀ j, j < i+1 → a[j]! ≥ cur:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

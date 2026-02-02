@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isOdd (n : Int) : Bool :=
@@ -20,7 +20,7 @@ def isOddAtIndexOdd_postcond (a : Array Int) (result: Bool) (h_precond : isOddAt
 
 theorem not_or_imp_eq (i : Int) (x : Int) :
     (!(isOdd i) || isOdd x) = true ↔ (isOdd i → isOdd x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

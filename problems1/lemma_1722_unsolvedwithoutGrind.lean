@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem array_set_set (arr : Array Int) (i j : Nat) (v₁ v₂ : Int)
     ((arr.set! i v₁).set! j v₂)[i]! = if i = j then v₂ else v₁:= by
 
 
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def swapFirstAndLast_precond (a : Array Int) : Prop :=
@@ -19,7 +19,7 @@ def swapFirstAndLast_postcond (a : Array Int) (result : Array Int) (h_precond: s
 
 theorem get_swap_last (a : Array Int) (first last : Int) (h₁ : a.size > 0) :
     (a.set! 0 last |>.set! (a.size - 1) first)[a.size - 1]! = first:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

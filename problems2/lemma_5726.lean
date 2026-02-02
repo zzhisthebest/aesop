@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem removeDuplicates_cons_eq {a b : Int} {t : List Int}
     removeDuplicates (a :: b :: t) hpre = removeDuplicates (b :: t) (by
       rcases List.pairwise_cons.1 hpre with ⟨_, hpair⟩
       exact hpair):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

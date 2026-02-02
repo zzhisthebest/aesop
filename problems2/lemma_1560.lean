@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem lengthOfLIS_returns_max (nums : List Int) (h : lengthOfLIS_precond nums)
           maxInArray dp)
       =
       lengthOfLIS nums h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

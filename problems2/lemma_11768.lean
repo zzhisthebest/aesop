@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def Abs_postcond (x : Int) (result: Int) (h_precond : Abs_precond (x)) :=
 theorem post_right_of_lt {x result : Int}
     (hx : x < 0) (h_eq : result = -x) :
     (x < 0 → x + result = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

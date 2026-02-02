@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -28,7 +28,7 @@ theorem merge_preserves_pairwise :
       (hxs : List.Pairwise (· ≤ ·) xs) (hys : List.Pairwise (· ≤ ·) ys),
       List.Pairwise (· ≤ ·) (mergeSortedLists xs ys
         (And.intro hxs hys)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

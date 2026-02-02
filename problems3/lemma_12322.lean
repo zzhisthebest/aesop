@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem result_is_some_pair
     (a b : Array Int) (h_pre : CanyonSearch_precond a b) :
     ∃ i j, i < a.size ∧ j < b.size ∧
       CanyonSearch a b h_pre = (a[i]! - b[j]!).natAbs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

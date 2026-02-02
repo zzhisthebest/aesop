@@ -11,7 +11,7 @@
 -- Returns false if no integer squared equals the input n.
 
 -- !benchmark @start import type=solution
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end import
 
@@ -84,12 +84,12 @@ theorem check_correct (n : Nat) (x fuel : Nat) :
     if hgt : x * x > n then
       -- If x*x > n, check returns false, contradiction
       simp_all
-      aesop
+      codetic
     else if heq : x * x = n then
       -- If x*x = n, we found our witness
       simp_all
       exists x
-      aesop
+      codetic
     else
       -- Otherwise, we need to apply the induction hypothesis
       simp_all
@@ -98,7 +98,7 @@ theorem check_correct (n : Nat) (x fuel : Nat) :
       intro h
       have ⟨i, hi, heqi⟩ := h_rec h--这种写法第一次见
       --exists i
-      aesop?
+      codetic?
 
 theorem check_complete (n : Nat) (x fuel : Nat) (i : Nat)
     (hx : x ≤ i) (hi : i * i = n) (hfuel : i < x + fuel) :
@@ -108,7 +108,7 @@ theorem check_complete (n : Nat) (x fuel : Nat) (i : Nat)
     -- In the zero fuel case, we have a contradiction:
     -- i < x + 0 implies i < x, which contradicts x ≤ i
     unfold isPerfectSquare.check
-    aesop
+    codetic
 
   | succ fuel ih =>
     -- For the successor case, unfold the definition

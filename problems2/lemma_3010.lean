@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ theorem maxOfThree_eq_c
     (h₂ : ¬ (b ≥ a ∧ b ≥ c))
     (hp : maxOfThree_precond a b c) :
     maxOfThree a b c hp = c:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

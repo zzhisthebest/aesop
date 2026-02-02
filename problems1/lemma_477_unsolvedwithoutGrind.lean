@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -82,7 +82,7 @@ theorem hasIntersection_sym (c1 c2 : List Nat) :
      let b1 := c1[1]!
      (a2 < a1 && a1 < b2 && b2 < b1) ||
      (a1 < a2 && a2 < b1 && b1 < b2)):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 rw [Bool.or_comm]
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem loop_spec (nums : List Nat) (k : Nat)
         ¬ ((List.range k).map (· + 1)).all
             (fun n => List.elem n ((nums.reverse).take (result - 1)))
      else k = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

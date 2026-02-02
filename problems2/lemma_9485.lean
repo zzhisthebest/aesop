@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem some_implies_spec (s : String) (h_precond : findFirstRepeatedChar_precon
     let secondIdx :=
       cs.zipIdx.findIdx (fun x_i => x_i.1 = c ∧ x_i.2 ≠ cs.idxOf c)
     cs.count c ≥ 2 ∧ List.Pairwise (· ≠ ·) (cs.take secondIdx):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

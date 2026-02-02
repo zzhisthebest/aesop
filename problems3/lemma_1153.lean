@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem algorithm_true_of_peak
     (hinc : (List.range p).all (fun i => lst[i]! < lst[i+1]!))
     (hdec : (List.range (lst.length - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!)) :
     isPeakValley lst (by trivial) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

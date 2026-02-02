@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem get_eq (a : Array Int) (i : Nat) (h : i < a.size) :
     a[i]! = a[i]! := rfl
 
 @[simp] theorem intMax_self (x : Int) : intMax x x = x:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -54,7 +54,7 @@ theorem exists_min_of_nonempty
     : ∃ m ∈ targets,
         ∀ r ∈ targets,
           r.length ≥ m.length ∨ (r.length = m.length ∧ m ≤ r):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

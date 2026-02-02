@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem idxOf_zero_eq_length
     (hNZ : ∀ x ∈ nonZeros, x ≠ (0 : Int))
     (hZ  : ∀ x ∈ zeros, x = (0 : Int)) :
     (nonZeros ++ zeros).idxOf 0 = nonZeros.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

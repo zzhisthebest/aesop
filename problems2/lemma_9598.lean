@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 
 theorem exists_dvd_le_sqrt {n : Nat} (h : ∃ d, 2 ≤ d ∧ d ≤ n ∧ n % d = 0) :
     ∃ d, 2 ≤ d ∧ d * d ≤ n ∧ n % d = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

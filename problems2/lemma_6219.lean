@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -22,7 +22,7 @@ theorem foldl_cons_eq (h : Nat) (t : List Nat) :
     h * Nat.pow 2 t.length +
       List.foldl (fun acc bit => acc * 2 + bit) 0 t =
     List.foldl (fun acc bit => acc * 2 + bit) h t:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

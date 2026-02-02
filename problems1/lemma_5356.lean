@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ else
 
 
 theorem rev_eq_of_eq {α} {l₁ l₂ : List α} (h : l₁ = l₂) : l₁.reverse = l₂.reverse:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

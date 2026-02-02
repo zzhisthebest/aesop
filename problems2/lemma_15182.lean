@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem copyFrom_elem (a : Array Int) (i n : Nat) (acc : Array Int)
     ∀ j, j < (copyFrom a i acc).size →
       (copyFrom a i acc)[j]! =
         if h : j < acc.size then acc[j]! else a[(i + (j - acc.size))]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

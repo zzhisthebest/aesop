@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem CanyonSearch_init_is_a_distance (a b : Array Int) (h_pre : CanyonSearch_
   let init :=
     if a[0]! < b[0]! then (b[0]! - a[0]!).natAbs else (a[0]! - b[0]!).natAbs
   init = (a[0]! - b[0]!).natAbs ∨ init = (b[0]! - a[0]!).natAbs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -28,7 +28,7 @@ theorem filter_cons_even (x : Nat) (xs : List Nat) :
     (x :: xs).filter (fun n => n % 2 == 0) =
       if x % 2 == 0 then x :: xs.filter (fun n => n % 2 == 0)
       else xs.filter (fun n => n % 2 == 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def singleDigitPrimeFactor_postcond (n : Nat) (result: Nat) (h_precond : singleD
 theorem singleDigitPrimeFactor_eq_zero_of_eq_zero
     (n : Nat) (h : n = 0) (hp : singleDigitPrimeFactor_precond n) :
     singleDigitPrimeFactor n hp = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

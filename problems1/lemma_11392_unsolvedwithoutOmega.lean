@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def lastPosition_postcond (arr : Array Int) (elem : Int) (result: Int) (h_precon
 
 
 theorem eq_of_nonneg (z : Int) (hz : 0 ≤ z) : (z : Int) = (z.toNat : Int):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

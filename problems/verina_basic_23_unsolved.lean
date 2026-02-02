@@ -23,7 +23,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def differenceMinMax_precond (a : Array Int) : Prop :=

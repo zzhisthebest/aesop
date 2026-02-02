@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem maxProfitAux_monotone (prices : List Nat) (minSoFar maxProfit : Nat)
     (hij : i < j) :
     (prices.get? j).getD 0 - (prices.get? i).getD 0 ≤
       maxProfitAux prices minSoFar maxProfit:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

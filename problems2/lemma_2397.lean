@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -49,7 +49,7 @@ theorem findCandidate_preserves_majority {xs : List Nat} {maj : Nat}
           else if cnt = 0 then (some x, 1)
           else (some c, cnt - 1)
         | (none, _) => (some x, 1)) (none, 0)).1 = some maj:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

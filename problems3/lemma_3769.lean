@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def mergeIntervals_postcond (intervals : List (Prod Int Int)) (result: List (Pro
 theorem mergeIntervals_spec (intervals : List (Prod Int Int))
     (h_precond : mergeIntervals_precond intervals) :
     mergeIntervals_postcond intervals (mergeIntervals intervals h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

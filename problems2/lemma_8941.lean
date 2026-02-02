@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def isSublist_postcond (sub : List Int) (main : List Int) (result: Bool) (h_prec
 theorem next_step_iff
     {subLen mainLen i : Nat} :
     (if i + 1 ≤ mainLen then true else false) = true ↔ i + 1 ≤ mainLen:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

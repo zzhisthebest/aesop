@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem postcond_of_eq_length (nums : List Int) (res : Nat)
     (hpair : removeDuplicates_precond nums)
     (h : res = nums.eraseDups.length) :
     removeDuplicates_postcond nums res hpair:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

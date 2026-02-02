@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem never_updated_implies_not_mem
     (arr : Array Int) (elem : Int) :
     (∀ i, i < arr.size → arr[i]! ≠ elem) →
     arr.toList.all (· ≠ elem):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 set_option maxHeartbeats 0
 @[reducible, simp]
@@ -80,7 +80,7 @@ theorem IsPalindrome_spec_satisfied (x: List Char) (h_precond : IsPalindrome_pre
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.length) → a = [] ∨ isPalindromeHelper a x (a.length - 1-x) = true →
       ∀ (i : Nat), x<=i∧i<a.length-x → a[i]?.getD 'A' = a[a.length - i - 1]?.getD 'A'
       := by
-      --aesop?
+      --codetic?
       sorry
       -- intro hx₀ hx₁
       -- let nx := a.length - x
@@ -157,23 +157,23 @@ theorem IsPalindrome_spec_satisfied (x: List Char) (h_precond : IsPalindrome_pre
       --       · rcases hi with hi|hi
       --         · grind
       --         · grind
-    --aesop
+    --codetic
     sorry
 
   · --这是一个spec
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.length)  →
       (∀ (i : Nat), x<=i∧i<a.length-x → a[i]?.getD 'A' = a[a.length - i - 1]?.getD 'A')→ a = [] ∨ isPalindromeHelper a x (a.length - 1-x) = true
       := by
-      --aesop
+      --codetic
       -- induction x,(a.length - 1 - x) using isPalindromeHelper.induct a
       -- unfold isPalindromeHelper
       -- sorry
-      -- --aesop
+      -- --codetic
       -- unfold isPalindromeHelper
       -- sorry
-      -- --aesop
+      -- --codetic
       -- unfold isPalindromeHelper
-      -- --aesop
+      -- --codetic
       intro hx₀ hx₁
       let nx := a.length - x
       have hn₁ : nx = a.length - x := by rfl
@@ -225,7 +225,7 @@ theorem IsPalindrome_spec_satisfied (x: List Char) (h_precond : IsPalindrome_pre
         · simp
           rename_i x1 x2 h_c1c2
           --simp at h_c1c2
-          --aesop
+          --codetic
           --grind
           by_contra
           revert h_c1c2

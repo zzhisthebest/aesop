@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem extend_le {a : Array Int} {x : Int}
     (hpref : ∀ j, j < i → x ≤ a[j]!)
     (hwhole : ∀ j, i ≤ j → j < a.size → x ≤ a[j]!)
     : ∀ j, j < a.size → x ≤ a[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

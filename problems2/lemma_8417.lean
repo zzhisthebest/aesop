@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ def containsZ_postcond (s : String) (result: Bool) (h_precond : containsZ_precon
 theorem any_containsZ_eq_true (s : String) :
     (s.toList.any (fun c => c = 'z' || c = 'Z')) = true ↔
       ∃ x ∈ s.toList, (x = 'z' ∨ x = 'Z'):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

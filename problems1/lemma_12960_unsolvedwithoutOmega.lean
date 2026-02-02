@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem Find_eq_neg_one_of_not_exists
     (a : Array Int) (key : Int) (h_precond : Find_precond a key)
     (h_not : ∀ i, i < a.size → a[i]! ≠ key) :
     Find a key h_precond = -1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

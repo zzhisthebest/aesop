@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 theorem filter_cons_of_true {p : Int → Bool} {x : Int} {xs : List Int}
     (h : p x = true) :
     (x :: xs).filter p = x :: (xs.filter p):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def minArray_postcond (a : Array Int) (result: Int) (h_precond : minArray_precon
 
 theorem loop_terminate (a : Array Int) (i : Nat) (cur : Int) :
     (¬ i < a.size) → loop a i cur = cur:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

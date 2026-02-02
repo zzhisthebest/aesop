@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem loop_bound_true {a : Array Int} {e : Int} {n : Nat}
     (if h' : n < a.size then
         if a[n]! = e then n else Nat.succ n
      else n) = (if a[n]! = e then n else Nat.succ n):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

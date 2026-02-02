@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -48,7 +48,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 
 
 theorem natCast_succ (n : Nat) : (Nat.succ n : Int) = (n : Int) + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

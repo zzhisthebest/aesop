@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def hasOnlyOneDistinctElement_postcond (a : Array Int) (result: Bool) (h_precond
 
 theorem pairwise_of_all_eq (l : List Int) (h : ∀ x ∈ l, x = l.head! ) :
     l.Pairwise (· = ·):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

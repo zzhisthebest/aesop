@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem spec_from_loop
     (arr : Array Int) (target : Int)
     (h : findFirstOccurrence_precond arr target) :
     findFirstOccurrence_postcond arr target (findFirstOccurrence arr target h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

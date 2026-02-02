@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem all_eq_implies_pairwise
     (a : Array Int) (first : Int)
     (h : ∀ i, i < a.size → a[i]! = first) :
     List.Pairwise (· = ·) a.toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

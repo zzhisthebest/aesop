@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem array_all_of_minimal
     (h_min : ∀ i j, i < a.size → j < b.size →
                 res ≤ (a[i]! - b[j]!).natAbs) :
     a.all (fun ai => b.all (fun bi => res ≤ (ai - bi).natAbs)) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

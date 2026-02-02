@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ def removeDuplicates_postcond (nums : List Int) (result: Nat) (h_precond : remov
 theorem removeDuplicates_singleton (x : Int) :
     removeDuplicates [x] (by
       simp [removeDuplicates_precond]) = 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ def isPowerOfTwo_postcond (n : Int) (result: Bool) (h_precond : isPowerOfTwo_pre
 
 
 theorem pow_two_zero : pow 2 0 = 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

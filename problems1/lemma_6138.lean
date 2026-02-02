@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem helper_step_true (target y : Int) (ys : List Int) (idx : Nat)
     (fun ys idx => (match ys with
                      | [] => idx
                      | y :: ys' => if target ≤ y then idx else (fun _ _ => 0) ys' (idx+1))) (y :: ys) idx = idx:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem rotate_eq_rotateAux (a : Array Int) (offset : Int)
     rotate a offset hpre =
       rotateAux a offset 0 a.size
         (Array.mkArray a.size (if a.size > 0 then a[0]! else 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

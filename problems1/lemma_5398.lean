@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def toLower (c : Char) : Char :=
@@ -28,7 +28,7 @@ def allVowels_postcond (s : String) (result: Bool) (h_precond : allVowels_precon
 theorem allVowels_postcond_eq (s : String) (r : Bool) (h : allVowels_precond s) :
     allVowels_postcond s r h =
       ((r ↔ List.all ['a', 'e', 'i', 'o', 'u'] (fun v => (normalize_str s).contains v))):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

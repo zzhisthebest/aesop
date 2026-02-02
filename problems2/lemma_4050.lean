@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem pairwise_push_of_ge {as : Array Nat} {x : Nat}
     (h : List.Pairwise (· ≤ ·) as.toList)
     (hx : as.size = 0 ∨ as.back! ≤ x) :
     List.Pairwise (· ≤ ·) ((as.push x).toList):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

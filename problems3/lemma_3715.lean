@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem max_is_subArraySum (numbers : List Int) (h_precond : maxSubarraySum_prec
           List.range (numbers.length - start + 1) |>.map (fun len =>
             numbers.drop start |>.take len |>.sum));
       subArraySums.contains (maxSubarraySum numbers h_precond)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem nonempty_spec (c : Char) (cs : List Char) :
     (cs.all (· = c) = true → List.Pairwise (· = ·) (c :: cs)) ∧
     (cs.all (· = c) = false →
         (c :: cs ≠ [] ∧ (c :: cs).any (· ≠ (c :: cs)[0]!))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

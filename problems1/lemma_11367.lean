@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -37,7 +37,7 @@ theorem unfold_findProduct (lst : List Int) (h : findProduct_precond lst) :
       match firstEvenOddIndices lst with
       | some (ei, oi) => lst[ei]! * lst[oi]!
       | none => 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

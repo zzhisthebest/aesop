@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 theorem take_append_of_le {l₁ l₂ : List α} {n : Nat}
     (h : n ≤ l₁.length) :
     (l₁ ++ l₂).take n = l₁.take n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

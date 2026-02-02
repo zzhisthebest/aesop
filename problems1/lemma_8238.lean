@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def lastDigit_postcond (n : Nat) (result: Nat) (h_precond : lastDigit_precond (n
 
 theorem sub_self_left (n : Nat) (h : lastDigit_precond n) :
     n % 10 - lastDigit n h = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem inv_order_of_step {l : List Int} {x : Int} (h : l.contains x = false) :
     ∀ a b, a ∈ l → b ∈ l →
       (List.idxOf a (l ++ [x]) < List.idxOf b (l ++ [x]))
         → List.idxOf a l < List.idxOf b l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

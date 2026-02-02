@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -85,7 +85,7 @@ def nextGreaterElement_postcond (nums1 : List Int) (nums2 : List Int) (result: L
 theorem nextGreaterElement_result_all (nums1 nums2 : List Int)
     (h_precond : nextGreaterElement_precond (nums1) (nums2)) :
     (nextGreaterElement nums1 nums2 h_precond).all (fun v => v = -1 ∨ v ∈ nums2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

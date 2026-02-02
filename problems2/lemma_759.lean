@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -66,7 +66,7 @@ theorem increasingTriplet_correct_if_false
       (nums.zipIdx).all (fun (y, j) =>
         (nums.zipIdx).all (fun (z, k) =>
           i ≥ j ∨ j ≥ k ∨ x ≥ y ∨ y ≥ z))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

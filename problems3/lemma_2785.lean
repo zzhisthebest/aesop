@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem maxOfList_mem_cons_cons
     (x y : Nat) (ys : List Nat)
     (h : maxOfList_precond (x :: y :: ys)) :
     maxOfList (x :: y :: ys) h ∈ x :: y :: ys:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

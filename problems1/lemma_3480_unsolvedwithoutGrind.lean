@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ List.take_of_length_le
 #check List.take_of_length_le
 theorem take_of_shorter (xs : List Int) (n : Nat) (h : xs.length ≤ n) :
     xs.take n = xs:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

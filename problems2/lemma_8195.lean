@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem below_zero_result_false {ops : List Int} {s : Array Int} {b : Bool}
     (hdef : (s, b) = below_zero ops (by trivial)) :
     b = false →
       s.all (· ≥ 0) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

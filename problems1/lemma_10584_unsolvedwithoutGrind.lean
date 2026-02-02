@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem loop_result_in_bounds (arr : Array Int) (target : Int)
     (h_pre : findFirstOccurrence_precond arr target) :
     ∀ r, (findFirstOccurrence arr target h_pre) = r →
       (r = -1) ∨ (0 ≤ r ∧ r.toNat < arr.size):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

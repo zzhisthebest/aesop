@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem any_consecutive_iff (a : Array Int) (h : ¬ a.size ≤ 1) :
       (let withIndices := a.mapIdx (fun i x => (i, x));
        withIndices.any (fun (i, x) =>
          i < a.size - 1 && x + 1 == a[i + 1]!)) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

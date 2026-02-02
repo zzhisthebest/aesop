@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem head_of_filter_eq_first_duplicate
     (l : List Int) (h : ∃ x, l.count x > 1) :
     (l.filter (fun x ↦ l.count x > 1)).head? =
       (l.find? (fun x ↦ l.count x > 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

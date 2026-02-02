@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -62,7 +62,7 @@ theorem maxCoverage_eq_max_of_coverages (intervals : List (Prod Nat Nat))
           let coverage := merged.reverse.foldl (fun a (s, e) => a + (e - s)) 0
           max acc coverage)
         0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

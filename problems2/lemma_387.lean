@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ theorem filter_head_of_first_duplicate
     (hdup : l.count d > 1)
     (hfirst : ∀ x ∈ l.takeWhile (fun x => l.count x ≤ 1), l.count x = 1) :
     (l.filter (fun x => l.count x > 1)).head? = some d:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

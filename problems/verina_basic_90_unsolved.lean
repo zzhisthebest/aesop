@@ -18,7 +18,7 @@
 -- !benchmark @start import type=solution
 
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start solution_aux
 @[reducible, simp]
@@ -89,5 +89,5 @@ def SlopeSearch_postcond (a : Array (Array Int)) (key : Int) (result: (Int × In
 theorem SlopeSearch_spec_satisfied (a: Array (Array Int)) (key: Int) (h_precond : SlopeSearch_precond (a) (key)) :
     SlopeSearch_postcond (a) (key) (SlopeSearch (a) (key) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

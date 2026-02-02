@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def findFirstRepeatedChar_postcond (s : String) (result: Option Char) (h_precond
 
 
 theorem empty_hashset_contains (c : Char) : ¬Std.HashSet.empty.contains c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

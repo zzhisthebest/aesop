@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -107,7 +107,7 @@ def runLengthEncoder_postcond (input : String) (result: String) (h_precond : run
 theorem nonEmptyValid_of_encoder (inp : String) (h : runLengthEncoder_precond inp) :
     (let result := runLengthEncoder inp h
      inp.isEmpty = result.isEmpty) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

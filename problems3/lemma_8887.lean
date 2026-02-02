@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def isSublist_postcond (sub : List Int) (main : List Int) (result: Bool) (h_prec
 theorem exists_implies_true (sub main : List Int) (hpre : isSublist_precond sub main)
     (h : ∃ i, i + sub.length ≤ main.length ∧ sub = (main.drop i).take sub.length) :
     isSublist sub main hpre = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem exists_of_any (a : Array Int) (h : 1 < a.size) :
     (∃ i, i < a.size - 1 ∧ a[i]! + 1 = a[i+1]!) →
       (a.mapIdx (fun i x ↦ (i, x))).any
         (fun p ↦ p.1 < a.size - 1 && p.2 + 1 == a[p.1 + 1]!) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

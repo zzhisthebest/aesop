@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem lcp_mismatch (str1 str2 : List Char)
     let r := LongestCommonPrefix str1 str2 h_precond;
     (r.length = str1.length ∨ r.length = str2.length ∨
       str1[r.length]? ≠ str2[r.length]?):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -61,7 +61,7 @@ def increasingTriplet_postcond (nums : List Int) (result: Bool) (h_precond : inc
 
 theorem zipIdx_def (l : List α) :
     l.zipIdx = (l.enum.map fun ⟨i, a⟩ => (a, i)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

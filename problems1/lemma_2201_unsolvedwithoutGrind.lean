@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -40,6 +40,6 @@ List.countP_cons
 theorem filter_len_le (p : List Int → Bool) (xs : List (List Int)) :
     (xs.filter p).length ≤ xs.length:= by
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 end tmp

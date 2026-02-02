@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -27,7 +27,7 @@ def FindEvenNumbers_postcond (arr : Array Int) (result: Array Int) (h_precond : 
 
 theorem all_push (p : Int → Bool) (a : Array Int) (x : Int) (hx : p x = true) :
     (a.push x).all p = (a.all p && p x):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

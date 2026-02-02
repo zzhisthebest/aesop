@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem takeWhile_append_ne_zero (l₁ l₂ : List Int)
     (h₁ : ∀ x ∈ l₁, x ≠ (0 : Int))
     (h₂ : ∀ x ∈ l₂, x = (0 : Int)) :
     (l₁ ++ l₂).takeWhile (· ≠ 0) = l₁:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

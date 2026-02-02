@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem le_of_pairwise {arr : Array Int}
     (h : List.Pairwise (· ≤ ·) arr.toList) {i j : Nat}
     (hi : i < arr.size) (hij : i < j) (hj : j < arr.size) :
     arr[i]! ≤ arr[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

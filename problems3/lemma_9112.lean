@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -24,7 +24,7 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 theorem mem_symmDiff_of_left {a b : Array Int} {x : Int}
     (h : x ∈ a) (hx : !(inArray b x)) :
     x ∈ dissimilarElements a b (by trivial):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem outer_get_inner_eq
     (arr : Array (Array Nat)) (i₁ i₂ : Nat) (v : Nat)
     (h₁ : i₁ < arr.size) (h₂ : i₂ < (arr[i₁]!).size) :
     ((arr.set! i₁ (arr[i₁]!.set! i₂ v))[i₁]!)[i₂]! = v:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

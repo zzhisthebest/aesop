@@ -1,808 +1,808 @@
-[aesop] ✅️ (G0) [100.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R0 [100.0000%] safe|tactic|global|Aesop.BuiltinRule.preprocess ▶
-[aesop] 🆕 ❓️ G1 [100.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R1 [50.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G2 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G3 [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R2 [50.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G4 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G5 [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R3 [50.0000%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G6 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G7 [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R4 [25.0000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G8 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G9 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G10 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G7) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R5 [50.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G11 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G12 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G13 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G13) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R6 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G14 [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G15 [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R7 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G16 [37.5000%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] ✅️ (G11) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R8 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G17 [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G18 [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] ✅️ (G5) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R9 [50.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G19 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G20 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G21 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G21) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R10 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G22 [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 ❓️ G23 [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ G24 [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R11 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G25 [37.5000%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] ✅️ (G19) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R12 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G26 [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 ❓️ G27 [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ G28 [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🏁 (G4) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G6) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R13 [50.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G29 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G30 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G31 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G31) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R14 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G32 [37.5000%] ⋯ ⊢ a[x] = a[0] ▶
-[aesop] 🏁 (G29) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R15 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G3) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R16 [50.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G33 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G34 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G35 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G35) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R17 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G36 [37.5000%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🏁 (G33) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R18 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G2) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R19 [50.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G37 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G38 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G39 [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G39) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R20 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G40 [37.5000%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🏁 (G37) [50.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R21 [25.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G41 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G42 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G11) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R22 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R23 [25.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G43 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G44 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G19) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R24 [37.5000%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R25 [25.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G45 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G46 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R26 [25.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G47 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G48 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R27 [25.0000%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G49 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G50 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R28 [25.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G51 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G52 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R29 [25.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G53 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G54 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R30 [25.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G55 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G56 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R31 [25.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G57 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G58 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R32 [25.0000%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G59 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G60 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R33 [25.0000%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G61 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G62 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R34 [25.0000%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G63 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G64 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R35 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G65 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G66 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G67 [12.5000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R36 [25.0000%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G68 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G69 [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R37 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G70 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G71 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G72 [12.5000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R38 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G73 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G74 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G75 [12.5000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R39 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G76 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G77 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G78 [12.5000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R40 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G79 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G80 [12.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G81 [12.5000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G36) [37.5000%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R41 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G82 [28.1250%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] ✅️ (G40) [37.5000%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🆕 ❓️ R42 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G83 [28.1250%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🏁 (G22) [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 🏁 R43 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G16) [37.5000%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R44 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G84 [22.5000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G85 [22.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R45 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G86 [28.1250%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] ✅️ (G25) [37.5000%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] 🆕 ❓️ R46 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G87 [28.1250%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 ❓️ G88 [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ G89 [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R47 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G90 [28.1250%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R48 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G91 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G92 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R49 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G93 [18.7500%] ⋯ ⊢ a_5 <
+[codetic] ✅️ (G0) [100.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R0 [100.0000%] safe|tactic|global|Codetic.BuiltinRule.preprocess ▶
+[codetic] 🆕 ❓️ G1 [100.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R1 [50.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G2 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G3 [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R2 [50.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G4 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G5 [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R3 [50.0000%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G6 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G7 [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R4 [25.0000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G8 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G9 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G10 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R5 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G11 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G12 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G13 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G13) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R6 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G14 [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G15 [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R7 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G16 [37.5000%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] ✅️ (G11) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R8 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G17 [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G18 [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] ✅️ (G5) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R9 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G19 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G20 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G21 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G21) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R10 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G22 [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 ❓️ G23 [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ G24 [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R11 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G25 [37.5000%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] ✅️ (G19) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R12 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G26 [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 ❓️ G27 [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ G28 [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🏁 (G4) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G6) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R13 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G29 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G30 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G31 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G31) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R14 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G32 [37.5000%] ⋯ ⊢ a[x] = a[0] ▶
+[codetic] 🏁 (G29) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R15 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G3) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R16 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G33 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G34 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G35 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G35) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R17 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G36 [37.5000%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🏁 (G33) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R18 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G2) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R19 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G37 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G38 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G39 [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G39) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R20 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G40 [37.5000%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🏁 (G37) [50.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R21 [25.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G41 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G42 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G11) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R22 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R23 [25.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G43 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G44 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G19) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R24 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R25 [25.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G45 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G46 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R26 [25.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G47 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G48 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R27 [25.0000%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G49 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G50 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R28 [25.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G51 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G52 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R29 [25.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G53 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G54 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R30 [25.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G55 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G56 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R31 [25.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G57 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G58 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R32 [25.0000%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G59 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G60 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R33 [25.0000%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G61 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G62 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R34 [25.0000%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G63 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G64 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R35 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G65 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G66 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G67 [12.5000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R36 [25.0000%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G68 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G69 [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G38) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R37 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G70 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G71 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G72 [12.5000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G12) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R38 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G73 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G74 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G75 [12.5000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G20) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R39 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G76 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G77 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G78 [12.5000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G34) [50.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R40 [12.5000%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G79 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G80 [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G81 [12.5000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G36) [37.5000%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R41 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G82 [28.1250%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] ✅️ (G40) [37.5000%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🆕 ❓️ R42 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G83 [28.1250%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🏁 (G22) [37.5000%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 🏁 R43 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G16) [37.5000%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R44 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G84 [22.5000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G85 [22.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R45 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G86 [28.1250%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] ✅️ (G25) [37.5000%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] 🆕 ❓️ R46 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G87 [28.1250%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 ❓️ G88 [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ G89 [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R47 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G90 [28.1250%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R48 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G91 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G92 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R49 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G93 [18.7500%] ⋯ ⊢ a_5 <
       if Nat.zero < a.size then if a[Nat.zero]! = a[w] then Nat.zero else linearSearchAux a a[w] (Nat.zero + 1) else 0 ▶
-[aesop] 🆕 ❓️ G94 [18.7500%] ⋯ ⊢ a_5 <
+[codetic] 🆕 ❓️ G94 [18.7500%] ⋯ ⊢ a_5 <
       if a_6.succ < a.size then if a[a_6.succ]! = a[w] then a_6.succ else linearSearchAux a a[w] (a_6.succ + 1) else 0 ▶
-[aesop] ✅️ (G32) [37.5000%] ⋯ ⊢ a[x] = a[0] ▶
-[aesop] 🆕 ❓️ R50 [28.1250%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G95 [28.1250%] ⋯ ⊢ a[x] = a[0] ▶
-[aesop] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R51 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G96 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G97 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R52 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G98 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G99 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R53 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G100 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G101 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R54 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G102 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G103 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R55 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G104 [18.7500%] ⋯ ⊢ a[a_5]! = a[Nat.zero] ▶
-[aesop] 🆕 ❓️ G105 [18.7500%] ⋯ ⊢ a[a_5]! = a[a_6.succ] ▶
-[aesop] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R56 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G106 [18.7500%] ⋯ ⊢ a_5 <
+[codetic] ✅️ (G32) [37.5000%] ⋯ ⊢ a[x] = a[0] ▶
+[codetic] 🆕 ❓️ R50 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G95 [28.1250%] ⋯ ⊢ a[x] = a[0] ▶
+[codetic] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R51 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G96 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G97 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R52 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G98 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G99 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R53 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G100 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G101 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R54 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G102 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G103 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R55 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G104 [18.7500%] ⋯ ⊢ a[a_5]! = a[Nat.zero] ▶
+[codetic] 🆕 ❓️ G105 [18.7500%] ⋯ ⊢ a[a_5]! = a[a_6.succ] ▶
+[codetic] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R56 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G106 [18.7500%] ⋯ ⊢ a_5 <
       if x < a.size then if a[x]! = a[Nat.zero] then x else linearSearchAux a a[Nat.zero] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G107 [18.7500%] ⋯ ⊢ a_5 <
+[codetic] 🆕 ❓️ G107 [18.7500%] ⋯ ⊢ a_5 <
       if x < a.size then if a[x]! = a[a_6.succ] then x else linearSearchAux a a[a_6.succ] (x + 1) else 0 ▶
-[aesop] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R57 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G108 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G109 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R58 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G110 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G111 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R59 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G112 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G113 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R60 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G114 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G115 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R61 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G116 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G117 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R62 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G118 [18.7500%] ⋯ ⊢ a[Nat.zero]! = a[w] ▶
-[aesop] 🆕 ❓️ G119 [18.7500%] ⋯ ⊢ a[a_6.succ]! = a[w] ▶
-[aesop] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R63 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G120 [18.7500%] ⋯ ⊢ Nat.zero < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G121 [18.7500%] ⋯ ⊢ a_6.succ < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
-[aesop] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R64 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G122 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G123 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R65 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G124 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G125 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R66 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G126 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G127 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G128 [9.3750%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R67 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G129 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G130 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R68 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G131 [18.7500%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G132 [18.7500%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R69 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G133 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G134 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G135 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R70 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G136 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G137 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G138 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R71 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G139 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G140 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G141 [9.3750%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R72 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G142 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G143 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G144 [9.3750%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R73 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G145 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G146 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G147 [9.3750%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R74 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G148 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G149 [9.3750%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G150 [9.3750%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ R75 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G151 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G152 [15.0000%] ⋯ ⊢ i <
+[codetic] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R57 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G108 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G109 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R58 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G110 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G111 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R59 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G112 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G113 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R60 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G114 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G115 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R61 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G116 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G117 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R62 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G118 [18.7500%] ⋯ ⊢ a[Nat.zero]! = a[w] ▶
+[codetic] 🆕 ❓️ G119 [18.7500%] ⋯ ⊢ a[a_6.succ]! = a[w] ▶
+[codetic] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R63 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G120 [18.7500%] ⋯ ⊢ Nat.zero < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
+[codetic] 🆕 ❓️ G121 [18.7500%] ⋯ ⊢ a_6.succ < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
+[codetic] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R64 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G122 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G123 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R65 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G124 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G125 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G40) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R66 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G126 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G127 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G128 [9.3750%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R67 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G129 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G130 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R68 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G131 [18.7500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G132 [18.7500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G24) [37.5000%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R69 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G133 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G134 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G135 [9.3750%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] ✅️ (G23) [37.5000%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R70 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G136 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G137 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G138 [9.3750%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] ✅️ (G32) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R71 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G139 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G140 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G141 [9.3750%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G36) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R72 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G142 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G143 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G144 [9.3750%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G16) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R73 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G145 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G146 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G147 [9.3750%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G25) [37.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R74 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G148 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G149 [9.3750%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G150 [9.3750%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ R75 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G151 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G152 [15.0000%] ⋯ ⊢ i <
       if Nat.zero < a.size then if a[Nat.zero]! = a[a_5] then Nat.zero else linearSearchAux a a[a_5] (Nat.zero + 1)
       else 0 ▶
-[aesop] 🆕 ❓️ G153 [15.0000%] ⋯ ⊢ i <
+[codetic] 🆕 ❓️ G153 [15.0000%] ⋯ ⊢ i <
       if a_6.succ < a.size then if a[a_6.succ]! = a[a_5] then a_6.succ else linearSearchAux a a[a_5] (a_6.succ + 1)
       else 0 ▶
-[aesop] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R76 [18.7500%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G154 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G155 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G156 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ R77 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G157 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G158 [15.0000%] ⋯ ⊢ Nat.zero <
+[codetic] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R76 [18.7500%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G154 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G155 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G156 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ R77 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G157 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G158 [15.0000%] ⋯ ⊢ Nat.zero <
       if x < a.size then if a[x]! = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G159 [15.0000%] ⋯ ⊢ a_6.succ <
+[codetic] 🆕 ❓️ G159 [15.0000%] ⋯ ⊢ a_6.succ <
       if x < a.size then if a[x]! = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) else 0 ▶
-[aesop] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R78 [18.7500%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G160 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G161 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G162 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ R79 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G163 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G164 [15.0000%] ⋯ ⊢ i <
+[codetic] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R78 [18.7500%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G160 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G161 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G162 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ R79 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G163 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G164 [15.0000%] ⋯ ⊢ i <
       if x < a.size then if a[x]! = a[Nat.zero] then x else linearSearchAux a a[Nat.zero] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G165 [15.0000%] ⋯ ⊢ i <
+[codetic] 🆕 ❓️ G165 [15.0000%] ⋯ ⊢ i <
       if x < a.size then if a[x]! = a[a_6.succ] then x else linearSearchAux a a[a_6.succ] (x + 1) else 0 ▶
-[aesop] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R80 [18.7500%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G166 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G167 [15.0000%] ⋯ ⊢ a[Nat.zero + 1] = a[Nat.zero] ▶
-[aesop] 🆕 ❓️ G168 [15.0000%] ⋯ ⊢ a[a_6.succ + 1] = a[a_6.succ] ▶
-[aesop] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ R81 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G169 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G170 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G171 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G172 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
-[aesop] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R82 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G176 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G173 [7.5000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G174 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ G175 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🏁 (G87) [28.1250%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 🏁 R83 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R84 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G177 [14.0625%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G178 [14.0625%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R85 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G179 [14.0625%] ⋯ ⊢ a_5 <
+[codetic] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R80 [18.7500%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G166 [15.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G167 [15.0000%] ⋯ ⊢ a[Nat.zero + 1] = a[Nat.zero] ▶
+[codetic] 🆕 ❓️ G168 [15.0000%] ⋯ ⊢ a[a_6.succ + 1] = a[a_6.succ] ▶
+[codetic] ✅️ (G14) [30.0000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ R81 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G169 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G170 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G171 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G172 [7.5000%] ⋯ ⊢ i < if x✝ < a.size then if a[x✝]! = a[a_5] then x✝ else linearSearchAux a a[a_5] (x✝ + 1) else 0 ▶
+[codetic] ✅️ (G15) [30.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R82 [9.3750%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G176 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G173 [7.5000%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G174 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ G175 [7.5000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🏁 (G87) [28.1250%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 🏁 R83 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R84 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G177 [14.0625%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G178 [14.0625%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R85 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G179 [14.0625%] ⋯ ⊢ a_5 <
       if Nat.zero < a.size then if a[Nat.zero]! = a[w] then Nat.zero else linearSearchAux a a[w] (Nat.zero + 1) else 0 ▶
-[aesop] 🆕 ❓️ G180 [14.0625%] ⋯ ⊢ a_5 <
+[codetic] 🆕 ❓️ G180 [14.0625%] ⋯ ⊢ a_5 <
       if a_6.succ < a.size then if a[a_6.succ]! = a[w] then a_6.succ else linearSearchAux a a[w] (a_6.succ + 1) else 0 ▶
-[aesop] ✅️ (G90) [28.1250%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] 🆕 ❓️ R86 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G181 [21.0937%] ⋯ ⊢ x ≤ a_5 ▶
-[aesop] 🆕 ❓️ G182 [21.0937%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ G183 [21.0937%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R87 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G184 [21.0937%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] ✅️ (G95) [28.1250%] ⋯ ⊢ a[x] = a[0] ▶
-[aesop] 🆕 ❓️ R88 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G185 [21.0937%] ⋯ ⊢ a[x] = a[0] ▶
-[aesop] ✅️ (G82) [28.1250%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R89 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G186 [21.0937%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] ✅️ (G86) [28.1250%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R90 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G187 [16.8750%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
-[aesop] 🆕 ❓️ G188 [16.8750%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R91 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G189 [21.0937%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] ✅️ (G83) [28.1250%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🆕 ❓️ R92 [21.0937%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G190 [21.0937%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R93 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G191 [14.0625%] ⋯ ⊢ a[a_5]! = a[Nat.zero] ▶
-[aesop] 🆕 ❓️ G192 [14.0625%] ⋯ ⊢ a[a_5]! = a[a_6.succ] ▶
-[aesop] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R94 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G193 [14.0625%] ⋯ ⊢ a_5 <
+[codetic] ✅️ (G90) [28.1250%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] 🆕 ❓️ R86 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G181 [21.0937%] ⋯ ⊢ x ≤ a_5 ▶
+[codetic] 🆕 ❓️ G182 [21.0937%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ G183 [21.0937%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R87 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G184 [21.0937%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] ✅️ (G95) [28.1250%] ⋯ ⊢ a[x] = a[0] ▶
+[codetic] 🆕 ❓️ R88 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G185 [21.0937%] ⋯ ⊢ a[x] = a[0] ▶
+[codetic] ✅️ (G82) [28.1250%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R89 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G186 [21.0937%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] ✅️ (G86) [28.1250%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R90 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G187 [16.8750%] ⋯ ⊢ i < linearSearchAux a a[a_5] x ▶
+[codetic] 🆕 ❓️ G188 [16.8750%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R91 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G189 [21.0937%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] ✅️ (G83) [28.1250%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🆕 ❓️ R92 [21.0937%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G190 [21.0937%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R93 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G191 [14.0625%] ⋯ ⊢ a[a_5]! = a[Nat.zero] ▶
+[codetic] 🆕 ❓️ G192 [14.0625%] ⋯ ⊢ a[a_5]! = a[a_6.succ] ▶
+[codetic] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R94 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G193 [14.0625%] ⋯ ⊢ a_5 <
       if x < a.size then if a[x]! = a[Nat.zero] then x else linearSearchAux a a[Nat.zero] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G194 [14.0625%] ⋯ ⊢ a_5 <
+[codetic] 🆕 ❓️ G194 [14.0625%] ⋯ ⊢ a_5 <
       if x < a.size then if a[x]! = a[a_6.succ] then x else linearSearchAux a a[a_6.succ] (x + 1) else 0 ▶
-[aesop] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R95 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G195 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G196 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R96 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G197 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G198 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R97 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G199 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G200 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R98 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G201 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G202 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R99 [14.0625%] unsafe|induction|global|Nat.«1» ▶
-[aesop] 🆕 ❓️ G203 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G204 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R100 [14.0625%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G205 [14.0625%] ⋯ ⊢ a[Nat.zero]! = a[w] ▶
-[aesop] 🆕 ❓️ G206 [14.0625%] ⋯ ⊢ a[a_6.succ]! = a[w] ▶
-[aesop] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R101 [14.0625%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G207 [14.0625%] ⋯ ⊢ Nat.zero < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
-[aesop] 🆕 ❓️ G208 [14.0625%] ⋯ ⊢ a_6.succ < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
-[aesop] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R102 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G209 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G210 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R103 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G211 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G212 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R104 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G213 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G214 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R105 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G215 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G216 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R106 [14.0625%] unsafe|induction|global|Nat.«2» ▶
-[aesop] 🆕 ❓️ G217 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G218 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R107 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G219 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G220 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ G221 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
-[aesop] 🆕 ❓️ R108 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G222 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G223 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] 🆕 ❓️ G224 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
-[aesop] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R109 [14.0625%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G225 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G226 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R110 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G227 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G228 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G229 [7.0312%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R111 [14.0625%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G230 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G231 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R112 [14.0625%] unsafe|induction|global|Nat.«3» ▶
-[aesop] 🆕 ❓️ G232 [14.0625%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G233 [14.0625%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R113 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G234 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G235 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G236 [7.0312%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R114 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G237 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G238 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G239 [7.0312%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R115 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G240 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G241 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G242 [7.0312%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R116 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
-[aesop] 🆕 ❓️ G243 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G244 [7.0312%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G245 [7.0312%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G52) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R117 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G246 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G247 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G248 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G248) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G247) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R118 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G249 [18.7500%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R119 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G250 [15.0000%] ⋯ ⊢ a_6 + 1 < if a[x] = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) ▶
-[aesop] 🆕 ❓️ G251 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R120 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G252 [18.7500%] ⋯ ⊢ a[x + 1] = a[a_5 + 1] ▶
-[aesop] ✅️ (G246) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R121 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G253 [18.7500%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R122 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G254 [15.0000%] ⋯ ⊢ a_6 + 1 < if a[x] = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) ▶
-[aesop] 🆕 ❓️ G255 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🏁 (G51) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G43) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R123 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G256 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G257 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G258 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G258) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G257) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R124 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G259 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🆕 ❓️ R125 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G260 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] 1 ▶
-[aesop] 🆕 ❓️ G261 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R126 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G262 [18.7500%] ⋯ ⊢ a[1] = a[w] ▶
-[aesop] 🏁 (G256) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G50) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R127 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G263 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G264 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G265 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G265) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G264) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R128 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G266 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🆕 ❓️ R129 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G267 [18.7500%] ⋯ ⊢ a[1] = a[w] ▶
-[aesop] 🏁 (G263) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G49) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G58) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R130 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G268 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G269 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G270 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G271 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G272 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G273 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G274 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G275 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G276 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G276) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G275) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R131 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G277 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] 🆕 ❓️ R132 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G278 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
-[aesop] ✅️ (G274) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R133 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G279 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] 🏁 (G273) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G272) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G270) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R134 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G280 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] 🆕 ❓️ R135 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G281 [18.7500%] ⋯ ⊢ a[a_5] = a[a_6 + 1] ▶
-[aesop] ✅️ (G269) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R136 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G282 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] 🆕 ❓️ R137 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G283 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
-[aesop] ✅️ (G271) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R138 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G284 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] 🆕 ❓️ R139 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G285 [18.7500%] ⋯ ⊢ a[a_5] = a[a_6 + 1] ▶
-[aesop] 🆕 ❓️ R140 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G286 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
-[aesop] ✅️ (G268) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R141 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G287 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
-[aesop] ✅️ (G57) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R142 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G288 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G289 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G290 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G291 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G292 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G293 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G294 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G295 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G296 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G296) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G295) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R143 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G297 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🆕 ❓️ R144 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G298 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
-[aesop] ✅️ (G294) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R145 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G299 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🏁 (G293) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G292) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G290) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R146 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G300 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🆕 ❓️ R147 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G301 [18.7500%] ⋯ ⊢ a[a_5] = a[0] ▶
-[aesop] ✅️ (G289) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R148 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G302 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🆕 ❓️ R149 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G303 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
-[aesop] ✅️ (G291) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R150 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G304 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🆕 ❓️ R151 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G305 [18.7500%] ⋯ ⊢ a[a_5] = a[0] ▶
-[aesop] 🆕 ❓️ R152 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G306 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
-[aesop] ✅️ (G288) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R153 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G307 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] ✅️ (G44) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R154 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G308 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G309 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G310 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G310) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G309) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R155 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G311 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R156 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G312 [18.7500%] ⋯ ⊢ a_6 + 1 ≤ a_5 ▶
-[aesop] 🆕 ❓️ G313 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] (a_6 + 1 + 1) ▶
-[aesop] 🆕 ❓️ G314 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] 🆕 ❓️ R157 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G315 [18.7500%] ⋯ ⊢ a[a_6 + 1 + 1] = a[w] ▶
-[aesop] ✅️ (G308) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R158 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G316 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R159 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G317 [18.7500%] ⋯ ⊢ a_6 + 1 ≤ a_5 ▶
-[aesop] 🆕 ❓️ G318 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] (a_6 + 1 + 1) ▶
-[aesop] 🆕 ❓️ G319 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
-[aesop] ✅️ (G48) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R160 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G320 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G321 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G322 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G323 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G324 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G325 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G326 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G327 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G328 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G328) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G327) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R161 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G329 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R162 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G330 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
-[aesop] ✅️ (G326) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R163 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G331 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🏁 (G325) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G324) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G323) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R164 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G332 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R165 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G333 [18.7500%] ⋯ ⊢ a[a_5] = a[w] ▶
-[aesop] 🆕 ❓️ R166 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G334 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
-[aesop] ✅️ (G322) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R167 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G335 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R168 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G336 [18.7500%] ⋯ ⊢ a[a_5] = a[w] ▶
-[aesop] ✅️ (G320) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R169 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G337 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🏁 (G47) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G321) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R170 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G338 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
-[aesop] 🆕 ❓️ R171 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G339 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
-[aesop] ✅️ (G9) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R172 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G340 [18.7500%] ⋯ ⊢ a[x✝] = a[w] ▶
-[aesop] ✅️ (G42) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R173 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G341 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G342 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G343 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G343) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G342) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R174 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G344 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R175 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G345 [15.0000%] ⋯ ⊢ i < if a[a_6 + 1] = a[a_5] then a_6 + 1 else linearSearchAux a a[a_5] (a_6 + 1 + 1) ▶
-[aesop] 🆕 ❓️ G346 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R176 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G347 [18.7500%] ⋯ ⊢ a[a_6 + 1 + 1] = a[a_5 + 1] ▶
-[aesop] ✅️ (G341) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R177 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G348 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R178 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G349 [15.0000%] ⋯ ⊢ i < if a[a_6 + 1] = a[a_5] then a_6 + 1 else linearSearchAux a a[a_5] (a_6 + 1 + 1) ▶
-[aesop] 🆕 ❓️ G350 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] ✅️ (G41) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R179 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G351 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G352 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G353 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G353) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G352) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R180 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G354 [18.7500%] ⋯ ⊢ a[0] = a[a_5 + 1] ▶
-[aesop] 🆕 ❓️ R181 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G355 [15.0000%] ⋯ ⊢ i < if a[0] = a[a_5] then 0 else linearSearchAux a a[a_5] 1 ▶
-[aesop] 🆕 ❓️ G356 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
-[aesop] 🆕 ❓️ R182 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G357 [18.7500%] ⋯ ⊢ a[1] = a[a_5 + 1] ▶
-[aesop] 🏁 (G351) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G8) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R183 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G46) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R184 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G358 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G359 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G360 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G360) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G359) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R185 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G361 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🆕 ❓️ R186 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G362 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
-[aesop] ✅️ (G358) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R187 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G363 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
-[aesop] 🏁 (G45) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G10) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R188 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G364 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G365 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G366 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G366) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G365) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R189 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G367 [18.7500%] ⋯ ⊢ 0 = a[w] ▶
-[aesop] 🏁 (G364) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 🏁 R190 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.grind ▶
-[aesop] ✅️ (G64) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R191 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G368 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G369 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G370 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G370) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G369) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R192 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G371 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] 🆕 ❓️ R193 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G372 [18.7500%] ⋯ ⊢ x ≤ a_6 + 1 ▶
-[aesop] 🆕 ❓️ G373 [18.7500%] ⋯ ⊢ a_6 + 1 < linearSearchAux a a[w] (x + 1) ▶
-[aesop] 🆕 ❓️ G374 [18.7500%] ⋯ ⊢ a[a_6 + 1]! = a[w] ▶
-[aesop] 🆕 ❓️ R194 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G375 [18.7500%] ⋯ ⊢ a[x + 1] = a[w] ▶
-[aesop] ✅️ (G368) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R195 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G376 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] 🆕 ❓️ R196 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G377 [18.7500%] ⋯ ⊢ x ≤ a_6 + 1 ▶
-[aesop] 🆕 ❓️ G378 [18.7500%] ⋯ ⊢ a_6 + 1 < linearSearchAux a a[w] (x + 1) ▶
-[aesop] 🆕 ❓️ G379 [18.7500%] ⋯ ⊢ a[a_6 + 1]! = a[w] ▶
-[aesop] ✅️ (G63) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R197 [25.0000%] safe|tactic|global|Aesop.BuiltinRules.splitHypotheses ▶
-[aesop] 🆕 ❓️ G380 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G381 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G382 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G383 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G384 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G385 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G386 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G387 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ G388 [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G388) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G387) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G386) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G385) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🏁 (G384) [25.0000%] ⋯ ⊢ False ▶
-[aesop] ✅️ (G383) [25.0000%] ⋯ ⊢ False ▶
-[aesop] 🆕 ❓️ R198 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G389 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
-[aesop] 🆕 ❓️ R199 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G390 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
-[aesop] 🆕 ❓️ R200 [18.7500%] unsafe|tactic|global|Aesop.BuiltinRules.applyHyps ▶
-[aesop] 🆕 ❓️ G391 [18.7500%] ⋯ ⊢ a[x + 1] = a[w] ▶
-[aesop] Expanding safe subtree of the root goal. 
-[aesop] Skipping safe rule expansion of goal 0 since safe rules have already been applied. 
-[aesop] Skipping safe rule expansion of goal 1 since safe rules have already been applied. 
+[codetic] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R95 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G195 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G196 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R96 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G197 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G198 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R97 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G199 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G200 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R98 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G201 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G202 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R99 [14.0625%] unsafe|induction|global|Nat.«1» ▶
+[codetic] 🆕 ❓️ G203 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G204 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R100 [14.0625%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G205 [14.0625%] ⋯ ⊢ a[Nat.zero]! = a[w] ▶
+[codetic] 🆕 ❓️ G206 [14.0625%] ⋯ ⊢ a[a_6.succ]! = a[w] ▶
+[codetic] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R101 [14.0625%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G207 [14.0625%] ⋯ ⊢ Nat.zero < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
+[codetic] 🆕 ❓️ G208 [14.0625%] ⋯ ⊢ a_6.succ < if x < a.size then if a[x]! = a[w] then x else linearSearchAux a a[w] (x + 1) else 0 ▶
+[codetic] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R102 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G209 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G210 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R103 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G211 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G212 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R104 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G213 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G214 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R105 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G215 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G216 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R106 [14.0625%] unsafe|induction|global|Nat.«2» ▶
+[codetic] 🆕 ❓️ G217 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G218 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G89) [28.1250%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R107 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G219 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G220 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ G221 [7.0312%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] ✅️ (G88) [28.1250%] ⋯ ⊢ a_5 < linearSearchAux a a[w] x ▶
+[codetic] 🆕 ❓️ R108 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G222 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G223 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] 🆕 ❓️ G224 [7.0312%] ⋯ ⊢ a_5 < if x✝ < a.size then if a[x✝]! = a[w] then x✝ else linearSearchAux a a[w] (x✝ + 1) else 0 ▶
+[codetic] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R109 [14.0625%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G225 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G226 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G95) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R110 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G227 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G228 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G229 [7.0312%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R111 [14.0625%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G230 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G231 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R112 [14.0625%] unsafe|induction|global|Nat.«3» ▶
+[codetic] 🆕 ❓️ G232 [14.0625%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G233 [14.0625%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G83) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R113 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G234 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G235 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G236 [7.0312%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G90) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R114 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G237 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G238 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G239 [7.0312%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G82) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R115 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G240 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G241 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G242 [7.0312%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G86) [28.1250%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R116 [7.0312%] unsafe|induction|global|tmp.linearSearchAux.induct.«1» ▶
+[codetic] 🆕 ❓️ G243 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G244 [7.0312%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G245 [7.0312%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G52) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R117 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G246 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G247 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G248 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G248) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G247) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R118 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G249 [18.7500%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R119 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G250 [15.0000%] ⋯ ⊢ a_6 + 1 < if a[x] = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) ▶
+[codetic] 🆕 ❓️ G251 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R120 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G252 [18.7500%] ⋯ ⊢ a[x + 1] = a[a_5 + 1] ▶
+[codetic] ✅️ (G246) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R121 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G253 [18.7500%] ⋯ ⊢ a[x] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R122 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G254 [15.0000%] ⋯ ⊢ a_6 + 1 < if a[x] = a[a_5] then x else linearSearchAux a a[a_5] (x + 1) ▶
+[codetic] 🆕 ❓️ G255 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🏁 (G51) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G43) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R123 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G256 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G257 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G258 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G258) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G257) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R124 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G259 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🆕 ❓️ R125 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G260 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] 1 ▶
+[codetic] 🆕 ❓️ G261 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R126 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G262 [18.7500%] ⋯ ⊢ a[1] = a[w] ▶
+[codetic] 🏁 (G256) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G50) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R127 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G263 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G264 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G265 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G265) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G264) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R128 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G266 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🆕 ❓️ R129 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G267 [18.7500%] ⋯ ⊢ a[1] = a[w] ▶
+[codetic] 🏁 (G263) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G49) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G58) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R130 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G268 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G269 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G270 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G271 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G272 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G273 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G274 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G275 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G276 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G276) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G275) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R131 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G277 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] 🆕 ❓️ R132 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G278 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
+[codetic] ✅️ (G274) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R133 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G279 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] 🏁 (G273) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G272) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G270) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R134 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G280 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] 🆕 ❓️ R135 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G281 [18.7500%] ⋯ ⊢ a[a_5] = a[a_6 + 1] ▶
+[codetic] ✅️ (G269) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R136 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G282 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] 🆕 ❓️ R137 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G283 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
+[codetic] ✅️ (G271) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R138 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G284 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] 🆕 ❓️ R139 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G285 [18.7500%] ⋯ ⊢ a[a_5] = a[a_6 + 1] ▶
+[codetic] 🆕 ❓️ R140 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G286 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[a_6 + 1] ▶
+[codetic] ✅️ (G268) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R141 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G287 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[a_6 + 1] ▶
+[codetic] ✅️ (G57) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R142 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G288 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G289 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G290 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G291 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G292 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G293 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G294 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G295 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G296 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G296) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G295) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R143 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G297 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🆕 ❓️ R144 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G298 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
+[codetic] ✅️ (G294) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R145 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G299 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🏁 (G293) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G292) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G290) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R146 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G300 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🆕 ❓️ R147 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G301 [18.7500%] ⋯ ⊢ a[a_5] = a[0] ▶
+[codetic] ✅️ (G289) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R148 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G302 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🆕 ❓️ R149 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G303 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
+[codetic] ✅️ (G291) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R150 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G304 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🆕 ❓️ R151 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G305 [18.7500%] ⋯ ⊢ a[a_5] = a[0] ▶
+[codetic] 🆕 ❓️ R152 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G306 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
+[codetic] ✅️ (G288) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R153 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G307 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] ✅️ (G44) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R154 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G308 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G309 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G310 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G310) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G309) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R155 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G311 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R156 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G312 [18.7500%] ⋯ ⊢ a_6 + 1 ≤ a_5 ▶
+[codetic] 🆕 ❓️ G313 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] (a_6 + 1 + 1) ▶
+[codetic] 🆕 ❓️ G314 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] 🆕 ❓️ R157 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G315 [18.7500%] ⋯ ⊢ a[a_6 + 1 + 1] = a[w] ▶
+[codetic] ✅️ (G308) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R158 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G316 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R159 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G317 [18.7500%] ⋯ ⊢ a_6 + 1 ≤ a_5 ▶
+[codetic] 🆕 ❓️ G318 [18.7500%] ⋯ ⊢ a_5 < linearSearchAux a a[w] (a_6 + 1 + 1) ▶
+[codetic] 🆕 ❓️ G319 [18.7500%] ⋯ ⊢ a[a_5]! = a[w] ▶
+[codetic] ✅️ (G48) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R160 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G320 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G321 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G322 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G323 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G324 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G325 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G326 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G327 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G328 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G328) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G327) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R161 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G329 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R162 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G330 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
+[codetic] ✅️ (G326) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R163 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G331 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🏁 (G325) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G324) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G323) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R164 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G332 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R165 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G333 [18.7500%] ⋯ ⊢ a[a_5] = a[w] ▶
+[codetic] 🆕 ❓️ R166 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G334 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
+[codetic] ✅️ (G322) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R167 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G335 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R168 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G336 [18.7500%] ⋯ ⊢ a[a_5] = a[w] ▶
+[codetic] ✅️ (G320) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R169 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G337 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🏁 (G47) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G321) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R170 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G338 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[w] ▶
+[codetic] 🆕 ❓️ R171 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G339 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[w] ▶
+[codetic] ✅️ (G9) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R172 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G340 [18.7500%] ⋯ ⊢ a[x✝] = a[w] ▶
+[codetic] ✅️ (G42) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R173 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G341 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G342 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G343 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G343) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G342) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R174 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G344 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R175 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G345 [15.0000%] ⋯ ⊢ i < if a[a_6 + 1] = a[a_5] then a_6 + 1 else linearSearchAux a a[a_5] (a_6 + 1 + 1) ▶
+[codetic] 🆕 ❓️ G346 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R176 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G347 [18.7500%] ⋯ ⊢ a[a_6 + 1 + 1] = a[a_5 + 1] ▶
+[codetic] ✅️ (G341) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R177 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G348 [18.7500%] ⋯ ⊢ a[a_6 + 1] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R178 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G349 [15.0000%] ⋯ ⊢ i < if a[a_6 + 1] = a[a_5] then a_6 + 1 else linearSearchAux a a[a_5] (a_6 + 1 + 1) ▶
+[codetic] 🆕 ❓️ G350 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] ✅️ (G41) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R179 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G351 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G352 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G353 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G353) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G352) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R180 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G354 [18.7500%] ⋯ ⊢ a[0] = a[a_5 + 1] ▶
+[codetic] 🆕 ❓️ R181 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G355 [15.0000%] ⋯ ⊢ i < if a[0] = a[a_5] then 0 else linearSearchAux a a[a_5] 1 ▶
+[codetic] 🆕 ❓️ G356 [15.0000%] ⋯ ⊢ a[a_5 + 1] = a[a_5] ▶
+[codetic] 🆕 ❓️ R182 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G357 [18.7500%] ⋯ ⊢ a[1] = a[a_5 + 1] ▶
+[codetic] 🏁 (G351) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G8) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R183 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G46) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R184 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G358 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G359 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G360 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G360) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G359) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R185 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G361 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🆕 ❓️ R186 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G362 [18.7500%] ⋯ ⊢ a[a_5 + 1 + 1] = a[0] ▶
+[codetic] ✅️ (G358) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R187 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G363 [18.7500%] ⋯ ⊢ a[a_5 + 1] = a[0] ▶
+[codetic] 🏁 (G45) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G10) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R188 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G364 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G365 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G366 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G366) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G365) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R189 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G367 [18.7500%] ⋯ ⊢ 0 = a[w] ▶
+[codetic] 🏁 (G364) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 🏁 R190 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G64) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R191 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G368 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G369 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G370 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G370) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G369) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R192 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G371 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] 🆕 ❓️ R193 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G372 [18.7500%] ⋯ ⊢ x ≤ a_6 + 1 ▶
+[codetic] 🆕 ❓️ G373 [18.7500%] ⋯ ⊢ a_6 + 1 < linearSearchAux a a[w] (x + 1) ▶
+[codetic] 🆕 ❓️ G374 [18.7500%] ⋯ ⊢ a[a_6 + 1]! = a[w] ▶
+[codetic] 🆕 ❓️ R194 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G375 [18.7500%] ⋯ ⊢ a[x + 1] = a[w] ▶
+[codetic] ✅️ (G368) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R195 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G376 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] 🆕 ❓️ R196 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G377 [18.7500%] ⋯ ⊢ x ≤ a_6 + 1 ▶
+[codetic] 🆕 ❓️ G378 [18.7500%] ⋯ ⊢ a_6 + 1 < linearSearchAux a a[w] (x + 1) ▶
+[codetic] 🆕 ❓️ G379 [18.7500%] ⋯ ⊢ a[a_6 + 1]! = a[w] ▶
+[codetic] ✅️ (G63) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R197 [25.0000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G380 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G381 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G382 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G383 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G384 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G385 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G386 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G387 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G388 [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G388) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G387) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G386) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G385) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🏁 (G384) [25.0000%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G383) [25.0000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R198 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G389 [18.7500%] ⋯ ⊢ a[x] = a[w] ▶
+[codetic] 🆕 ❓️ R199 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G390 [18.7500%] ⋯ ⊢ a[0] = a[w] ▶
+[codetic] 🆕 ❓️ R200 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G391 [18.7500%] ⋯ ⊢ a[x + 1] = a[w] ▶
+[codetic] Expanding safe subtree of the root goal. 
+[codetic] Skipping safe rule expansion of goal 0 since safe rules have already been applied. 
+[codetic] Skipping safe rule expansion of goal 1 since safe rules have already been applied. 

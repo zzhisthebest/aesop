@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -38,7 +38,7 @@ theorem firstOdd_update_none_isOdd
     (hOdd : isOdd (a[i]!)) :
     (if (none : Option Nat).isNone && isOdd (a[i]!) then some i else (none : Option Nat))
       = some i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

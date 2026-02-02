@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ def LongestCommonPrefix_postcond (str1 : List Char) (str2 : List Char) (result: 
 theorem get_ne_of_some_ne {l₁ l₂ : List Char} {i : Nat}
     (h₁ : l₁[i]? = some c₁) (h₂ : l₂[i]? = some c₂) (hneq : c₁ ≠ c₂) :
     l₁[i]? ≠ l₂[i]?:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

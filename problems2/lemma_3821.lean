@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def mergeSort_postcond (list : List Int) (result: List Int) (h_precond : mergeSo
 
 theorem mem_insert_iff {x y : Int} {l : List Int} :
     y ∈ mergeSort.insert x l ↔ y = x ∨ y ∈ l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

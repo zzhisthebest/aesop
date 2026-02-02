@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem loop_invariant (a : Array Int) (i : Nat) (curr : Int) :
     (∃ j, j < a.size ∧ curr = a[j]!) →
     (∀ k, k < a.size → (loop a i curr) ≤ a[k]!) ∧
     (∃ k, k < a.size ∧ (loop a i curr) = a[k]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

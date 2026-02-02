@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem any_consecutive_iff_exists (a : Array Int) :
         (fun (i, x) => i < a.size - 1 && x + 1 == a[i + 1]!)
       = true
       ↔ ∃ i, i < a.size - 1 ∧ a[i]! + 1 = a[i + 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 
 
 theorem range_succ_contains (n : Nat) : (List.range (n+1)).contains 0 ∧ (List.range (n+1)).contains n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ def lastPosition_postcond (arr : Array Int) (elem : Int) (result: Int) (h_precon
 theorem le_of_pairwise (arr : Array Int) (h : lastPosition_precond arr elem)
     {i j : Nat} (hi : i < arr.size) (hj : j < arr.size) (hij : i ≤ j) :
     arr[i]! ≤ arr[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

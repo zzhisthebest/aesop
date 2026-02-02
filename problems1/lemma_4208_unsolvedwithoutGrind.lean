@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem elem_of_take {l : List Nat} {x : Nat} {n : Nat}
     (h : x ∈ l.take n) : x ∈ l:= by
 
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

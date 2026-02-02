@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem pairwise_monotone {l : List (Nat × Nat)} {b₁ b₂ : Nat}
     (h : b₁ ≤ b₂) :
     List.Pairwise (fun ⟨pi,i⟩ ⟨pj,j⟩ => i < j → pj - pi ≤ b₁) l →
     List.Pairwise (fun ⟨pi,i⟩ ⟨pj,j⟩ => i < j → pj - pi ≤ b₂) l:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

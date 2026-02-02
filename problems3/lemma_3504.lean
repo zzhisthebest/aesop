@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem maxSubarraySum_correct_aux_aux (x : Int) (xs : List Int)
     (h_precond : maxSubarraySum_precond (x :: xs)) :
     maxSubarraySum_postcond (x :: xs)
       (maxSubarraySum (x :: xs) h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

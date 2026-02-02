@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def iter_copy_postcond (s : Array Int) (result: Array Int) (h_precond : iter_cop
 #check Array.getElem?_append_left
 theorem get_append_left (a b : Array Int) (i : Nat) (hi : i < a.size) :
     (a ++ b)[i]! = a[i]!:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

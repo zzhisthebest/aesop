@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -108,7 +108,7 @@ induction ys using tmp.insertionSort.insert.induct x
             subst h_2
             simp_all only
           | inr h_3 => grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

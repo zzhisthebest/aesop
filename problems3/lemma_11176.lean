@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem exists_neq_of_false
     (a : Array Int) (h_precond : a.size > 0) :
     hasOnlyOneDistinctElement a h_precond = false →
     (a.toList).any (fun x => x ≠ a[0]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

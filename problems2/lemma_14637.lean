@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def MultipleReturns_postcond (x : Int) (y : Int) (result: (Int × Int)) (h_preco
 
 
 theorem sub_add_cancel_int (a b : Int) : a - b + b = a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

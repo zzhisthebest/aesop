@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem trapRainWater_postcond_eq (height : List Nat) (h_precond : trapRainWater
           let rmax := List.drop i height |>.foldl Nat.max 0
           Nat.min lmax rmax - height[i]!)).foldl (· + ·) 0
       sum - sum = 0 ∧ sum ≤ sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

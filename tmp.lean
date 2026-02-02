@@ -1,6 +1,6 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
-set_option trace.aesop.zzh_custom true
+set_option trace.codetic.zzh_custom true
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
   let rec aux (lst : List Int) : List Int :=
@@ -42,10 +42,10 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 
 theorem length_if_cons (b : Bool) (a : α) (l : List α) :
     (if b then a :: l else l).length = if b then l.length.succ else l.length:= by
-  aesop?
+  codetic?
 
 example {a b:Nat}:a+b=b+a:=by
   simp
-  aesop? (add safe Nat.add_comm)
+  codetic? (add safe Nat.add_comm)
 end tmp
 #check Nat.add_comm

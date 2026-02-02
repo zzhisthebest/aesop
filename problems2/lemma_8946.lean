@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -30,7 +30,7 @@ theorem all_insertionSort (a b : Array Int) :
               if !inArray a y then s.insert y else s) res₁
       (res₂.toArray.insertionSort).all
         (fun x => inArray a x ≠ inArray b x)) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

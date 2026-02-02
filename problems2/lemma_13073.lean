@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def absDiff (a b : Float) : Float :=
@@ -36,7 +36,7 @@ theorem not_result_iff_pairwise
     (¬ (has_close_elements numbers threshold (by
           simpa [has_close_elements_precond] using hthr))) ↔
     List.Pairwise (fun a b => absDiff a b ≥ threshold) numbers:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

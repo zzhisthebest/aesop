@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -50,7 +50,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 theorem foldl_zip_sub (l₁ l₂ : List Int) (h : l₁.length = l₂.length) :
     (List.zip l₁ l₂).foldl (fun a p => a + p.1 - p.2) 0 =
       l₁.foldl (· + ·) 0 - l₂.foldl (· + ·) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ def longestIncreasingStreak_postcond (nums : List Int) (result: Nat) (h_precond 
 theorem longestIncreasingStreak_spec_aux (nums : List Int)
     (h_precond : longestIncreasingStreak_precond (nums)) :
     longestIncreasingStreak_postcond (nums) (longestIncreasingStreak nums h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

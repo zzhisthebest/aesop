@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem twoSum_take_pairwise {nums : Array Int} {target : Int}
     let p := twoSum nums target h_pre
     let (i, _) := p
     List.Pairwise (fun a b => a + b ≠ target) (nums.toList.take i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

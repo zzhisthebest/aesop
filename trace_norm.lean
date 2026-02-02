@@ -1,5 +1,5 @@
-import Aesop
-set_option trace.aesop.steps true
+import Codetic
+set_option trace.codetic.steps true
 set_option maxHeartbeats 0
 namespace tmp
 
@@ -13,8 +13,8 @@ theorem test (s : List Char) :
     ∀ sub ∈ allSubstrings s, sub ≠ []:= by
   intro sub a
   trace "===== CALL 1 ====="
-  aesop (config := { useDefaultSimpSet := false })
+  codetic (config := { useDefaultSimpSet := false })
   trace "===== CALL 2 ====="
-  aesop (config := { useDefaultSimpSet := false })
+  codetic (config := { useDefaultSimpSet := false })
 
 end tmp

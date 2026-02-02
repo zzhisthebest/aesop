@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem check_step_next {sub main : List Int} {subLen mainLen i : Nat}
     (if i + subLen > mainLen then false
      else if sub = (main.drop i).take subLen then true
      else if i + 1 ≤ mainLen then false else false) = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

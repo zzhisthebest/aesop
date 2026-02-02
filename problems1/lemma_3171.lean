@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ def maxProfit_postcond (prices : List Nat) (result: Nat) (h_precond : maxProfit_
 
 theorem maxProfit_cons_eq (p : Nat) (ps : List Nat) (h_pre : maxProfit_precond (p :: ps)) :
     maxProfit (p :: ps) h_pre = maxProfitAux ps p 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

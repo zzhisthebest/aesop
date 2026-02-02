@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem Find_first_disj (a : Array Int) (key : Int)
     (h_precond : Find_precond a key) :
     (Find a key h_precond = -1 ∨
       (Find a key h_precond ≥ 0 ∧ Find a key h_precond < Int.ofNat a.size)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

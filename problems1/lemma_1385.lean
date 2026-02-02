@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem aux_mod_odd (m : Int) (fuel : Nat) (h1 : fuel ≠ 0) (h2 : m ≠ 1)
      else if m = 1 then true
      else if m % 2 ≠ 0 then false
      else true) = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

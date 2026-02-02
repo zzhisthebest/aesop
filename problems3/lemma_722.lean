@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -62,7 +62,7 @@ def increasingTriplet_postcond (nums : List Int) (result: Bool) (h_precond : inc
 theorem increasingTriplet_spec_satisfied_aux
     (nums : List Int) (h_precond : increasingTriplet_precond (nums)) :
     increasingTriplet_postcond (nums) (increasingTriplet (nums) h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem all_before_less (xs : List Int) (target : Int)
     (h_precond : searchInsert_precond xs target) :
     (List.range (searchInsert xs target h_precond)).all
       (fun i => xs[i]! < target):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

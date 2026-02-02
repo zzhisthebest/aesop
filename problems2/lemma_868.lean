@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ def insertionSort_postcond (l : List Int) (result: List Int) (h_precond : insert
 
 theorem insertElement_nil_perm (x : Int) :
     List.isPerm (x :: ([] : List Int)) (insertElement x []):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

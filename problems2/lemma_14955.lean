@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem only_once_loop_inv (a : Array Int) (key : Int) :
       (keyCount = (a.toList.take i).count key) →
       only_once_loop a key i keyCount =
         ((a.toList.drop i).count key + keyCount = 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

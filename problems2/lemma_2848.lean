@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem helper_cons_spec (h m : Nat) (xs : List Nat)
     (hm : m ∈ xs ∧ ∀ x ∈ xs, x ≤ m) :
     (if h > m then h else m) ∈ h :: xs ∧
     ∀ x ∈ h :: xs, x ≤ (if h > m then h else m):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

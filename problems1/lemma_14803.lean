@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def myMin_postcond (a : Int) (b : Int) (result: Int) (h_precond : myMin_precond 
 
 theorem myMin_le_right_of_not_le (a b : Int) (h : ¬ a ≤ b) :
     myMin a b (by trivial) ≤ b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

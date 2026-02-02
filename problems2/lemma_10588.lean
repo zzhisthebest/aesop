@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem loop_correct (arr : Array Int) (target : Int)
     (i : Nat) (hi : i ≤ arr.size) :
     (∃ k, k ≥ i ∧ k < arr.size ∧ arr[k]! = target) ∨
     (∀ j, j < arr.size → arr[j]! ≠ target):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

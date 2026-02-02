@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem Array.le_of_index_le_index {arr : Array Int}
     (h : findFirstOccurrence_precond arr target) {i j : Nat}
     (hi : i < arr.size) (hj : j < arr.size) (hij : i ≤ j) :
     arr[i]! ≤ arr[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

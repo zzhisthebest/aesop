@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem maxOfList_cons_cons (x y : Nat) (ys : List Nat)
     (h : (x :: y :: ys).length > 0) :
     maxOfList_postcond (x :: y :: ys)
       (maxOfList (x :: y :: ys) h) h:= by
-aesop
+codetic
 
 
 end tmp

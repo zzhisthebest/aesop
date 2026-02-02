@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem actualSum_eq_foldl (nums : List Nat) :
     nums.foldl (· + ·) 0 = (List.range (nums.length + 1)).foldl (· + ·) 0
       - (List.range (nums.length + 1)).foldl (· + ·) 0
       + nums.foldl (· + ·) 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 theorem all_true_iff {n : Nat} (hpre : isPrime_precond n) :
     (List.range' 2 (n-2)).all (fun k => n % k ≠ 0) = true ↔
     ∀ k ∈ List.range' 2 (n-2), n % k ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

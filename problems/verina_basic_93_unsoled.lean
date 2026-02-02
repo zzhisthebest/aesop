@@ -25,7 +25,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def SwapBitvectors_precond (X : UInt8) (Y : UInt8) : Prop :=
@@ -69,7 +69,7 @@ def SwapBitvectors_postcond (X : UInt8) (Y : UInt8) (result: UInt8 × UInt8) (h_
 theorem SwapBitvectors_spec_satisfied (X: UInt8) (Y: UInt8) (h_precond : SwapBitvectors_precond (X) (Y)) :
     SwapBitvectors_postcond (X) (Y) (SwapBitvectors (X) (Y) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
 
   -- !benchmark @end proof
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -49,7 +49,7 @@ simp_all only [↓Char.isValue, List.mem_cons, List.not_mem_nil, or_false, not_o
   Decidable.not_not, digitToLetters, ne_eq]
 apply Iff.intro
 · intro a c a_1
-  apply Aesop.BuiltinRules.not_intro
+  apply Codetic.BuiltinRules.not_intro
   intro a_2
   split at a_2
   next c => simp_all only [↓Char.isValue, reduceCtorEq]
@@ -77,7 +77,7 @@ apply Iff.intro
   simp_all
 
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem first_fold_correct (oline : Array Char) (l atPos : Nat)
           if i < atPos then acc.set! i (oline[i]!) else acc)
         (Array.mkArray l ' ')
         (Array.range l)).size = l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

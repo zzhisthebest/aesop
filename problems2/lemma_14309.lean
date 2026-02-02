@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def maxArray_postcond (a : Array Int) (result: Int) (h_precond : maxArray_precon
 theorem maxArray_aux_new_current (cur new : Int) (x : Int) :
     (if cur > x then cur else x) = new →
     (new = cur ∨ new = x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

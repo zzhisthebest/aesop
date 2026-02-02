@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def TestArrayElements_postcond (a : Array Int) (j : Nat) (result: Array Int) (h_
 theorem get_set_ne (a : Array Int) (i j : Nat) (h_i : i < a.size) (h_j : j < a.size)
     (v : Int) (hneq : j ≠ i) :
     (a.set! i v)[j]! = a[j]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def replace_postcond (arr : Array Int) (k : Int) (result: Array Int) (h_precond 
 theorem replace_correct (arr : Array Int) (k : Int) :
     (∀ i, i < arr.size → (arr[i]! > k → (replace arr k (by trivial))[i]! = -1)) ∧
     (∀ i, i < arr.size → (arr[i]! ≤ k → (replace arr k (by trivial))[i]! = arr[i]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

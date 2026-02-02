@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem loop_step_left
     (hnew : newC = c)
     (hprop : ∀ j, j < i → a[j]! ≥ c) :
     (∀ j, j < i + 1 → a[j]! ≥ newC):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

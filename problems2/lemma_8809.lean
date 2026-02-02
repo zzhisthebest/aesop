@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem postcondition_from_eq (arr : Array Int) (h_precond : uniqueProduct_preco
         (arr.toList.eraseDups.foldl (· * ·) 1) = 0) ∧
       ((arr.toList.eraseDups.foldl (· * ·) 1) -
         uniqueProduct arr h_precond = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

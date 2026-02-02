@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -51,7 +51,7 @@ theorem minElem_correct (arr : Array Int) (k : Int) :
           minElem := min minElem elem
         minElem
     True:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

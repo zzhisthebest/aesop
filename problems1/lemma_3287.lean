@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem maxSubarraySumDivisibleByK_default
     (arr : Array Int) (k : Int) (minElem : Int) :
     let default : Int := minElem - 1
     (default = minElem - 1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

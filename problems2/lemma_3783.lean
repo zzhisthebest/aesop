@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem covered_by_merge
       (fun (s, e) =>
         (mergeIntervals intervals h_precond).any
           (fun (rs, re) => rs ≤ s ∧ e ≤ re)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

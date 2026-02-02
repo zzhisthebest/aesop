@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def ComputeIsEven_postcond (x : Int) (result: Bool) (h_precond : ComputeIsEven_p
 
 
 theorem dvd_eq_exists_mul (a x : Int) : a ∣ x ↔ ∃ k : Int, x = a * k:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

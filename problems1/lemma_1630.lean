@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -45,7 +45,7 @@ theorem mem_allowed_digits (c : Char) :
     (c ∈ ['2','3','4','5','6','7','8','9']) ↔
       c = '2' ∨ c = '3' ∨ c = '4' ∨ c = '5' ∨ c = '6' ∨
       c = '7' ∨ c = '8' ∨ c = '9':= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem firstZeroIdx_eq_length_nonZeros (arr : Array Int)
     (h_pre : MoveZeroesToEnd_precond arr) :
     (MoveZeroesToEnd arr h_pre).toList.idxOf 0 =
       (arr.toList.filter (· ≠ 0)).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

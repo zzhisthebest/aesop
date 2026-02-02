@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem charToNat_digit (c : Char) (h : c ∈ "0123456789".toList) :
     Char.toNat c - Char.toNat '0' < 10 ∧
     (c = '0' ∨ c = '1' ∨ c = '2' ∨ c = '3' ∨ c = '4' ∨
      c = '5' ∨ c = '6' ∨ c = '7' ∨ c = '8' ∨ c = '9'):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

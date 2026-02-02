@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ def maxCoverageAfterRemovingOne_postcond (intervals : List (Prod Nat Nat)) (resu
 
 theorem max_mem_of_nonempty {l : List Nat} (h : l ≠ []) :
     ∃ a ∈ l, l.foldl Nat.max 0 = a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

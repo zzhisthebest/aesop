@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ def removeElement_postcond (s : Array Int) (k : Nat) (result: Array Int) (h_prec
 theorem eraseIdx!_get_lt (s : Array Int) (k i : Nat)
     (h₁ : i < k) (h₂ : k < s.size) :
     (s.eraseIdx! k)[i]! = s[i]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

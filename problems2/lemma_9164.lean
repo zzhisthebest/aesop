@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem loop_returns_max_minus_min (a : Array Int) (h_pre : a.size > 0) :
     differenceMinMax a h_pre =
       (a.foldl (fun acc x => if x > acc then x else acc) (a[0]!)) -
       (a.foldl (fun acc x => if x < acc then x else acc) (a[0]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

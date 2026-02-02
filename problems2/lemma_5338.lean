@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -40,7 +40,7 @@ theorem result_false_iff_neq (s : String) (h : palindromeIgnoreNonAlnum_precond 
     palindromeIgnoreNonAlnum s h = false ↔
       (let cleaned := s.data.filter (fun c => c.isAlpha || c.isDigit) |>.map Char.toLower;
        cleaned ≠ cleaned.reverse):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

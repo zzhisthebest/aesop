@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem findComplement_eq_some_iff (xs : List Int) (target : Int) (i x j : Nat) 
     findComplement xs target i x = some j ↔
       ∃ (k : Nat) (hk : k < xs.length), xs.get? k = some (xs.get ⟨k, hk⟩) ∧
         x + xs.get ⟨k, hk⟩ = target ∧ j = i + k + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem findMinIndex_of_sorted (arr : Array Int) (i : Nat)
     (hpair : List.Pairwise (· ≤ ·) arr.toList)
     (h_i : i < arr.size) :
     findMinIndexInRange arr i arr.size = i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

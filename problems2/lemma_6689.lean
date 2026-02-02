@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ def smallestMissing_postcond (l : List Nat) (result: Nat) (h_precond : smallestM
 
 theorem not_mem_of_lt_head {x y : Nat} {l : List Nat}
     (h : List.Pairwise (· < ·) (y :: l)) (hy : x < y) : x ∉ y :: l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

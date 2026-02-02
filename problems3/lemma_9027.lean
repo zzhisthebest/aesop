@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -23,7 +23,7 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 
 theorem foldl_const (α β : Type) (f : β → α → β) (init : β) (xs : Array α) :
     xs.foldl (fun acc _ => acc) init = init:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -37,7 +37,7 @@ theorem findFirstEvenOdd_if (a : Array Int) (i : Nat) (fe fo : Option Nat) :
     (if h : i < a.size then (by
       have : i < a.size := h; exact ()
     ) else ()) = (if h : i < a.size then () else ()):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

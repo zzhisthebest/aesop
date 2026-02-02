@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem rotateRight_elem (l : List Int) (n i : Nat) (h : rotateRight_precond l n
       let idx :=
         ((Int.ofNat i - Int.ofNat n + Int.ofNat l.length) % Int.ofNat l.length).toNat
       l.getD idx (l.headD 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem sumOfDigits_postcond_of_eq {n : Nat} {r : Nat}
     (h : r = List.sum (List.map (fun c => Char.toNat c - Char.toNat '0')
                                  (String.toList (Nat.repr n)))) :
     sumOfDigits_postcond n r (by trivial):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

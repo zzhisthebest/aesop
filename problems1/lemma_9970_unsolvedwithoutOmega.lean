@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isLowerCase (c : Char) : Bool :=
@@ -32,7 +32,7 @@ theorem nth_toUppercase
     let cs' := cs.map (fun c => if isLowerCase c then shiftMinus32 c else c)
     (isLowerCase cs[i]! → cs'[i]! = shiftMinus32 cs[i]!) ∧
     (¬isLowerCase cs[i]! → cs'[i]! = cs[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

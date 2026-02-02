@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -77,7 +77,7 @@ theorem algorithm_result_iff_exists (N : Nat) (chords : List (List Nat))
     let result := hasChordIntersection N chords h_precond
     result = (sortedChords.any (fun x => chords.any (fun y => (x[0]! < y[0]! && y[0]! < x[1]! && x[1]! < y[1]!)
                                             ∨ (y[0]! < x[0]! && x[0]! < y[1]! && y[1]! < x[1]!)))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

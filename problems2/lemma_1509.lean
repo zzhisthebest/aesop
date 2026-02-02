@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Nat) (h_precond : lengthOfLI
 theorem empty_mem_of_mem {α} (acc : List (List α)) (x : α)
     (h : ([] : List α) ∈ acc) :
     ([] : List α) ∈ acc ++ acc.map (fun sub => x :: sub):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

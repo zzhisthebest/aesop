@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def Find_postcond (a : Array Int) (key : Int) (result: Int) (h_precond : Find_pr
 
 theorem Int.ofNat_lt_ofNat {m n : Nat} (h : m < n) :
     (Int.ofNat m : Int) < Int.ofNat n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

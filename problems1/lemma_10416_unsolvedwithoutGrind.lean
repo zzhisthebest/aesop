@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem idxOf_zero_eq_len_nonZeros (l : List Int) :
     let nonZeros := l.filter (· ≠ 0)
     let zeros    := l.filter (· = 0)
     (nonZeros ++ zeros).idxOf 0 = nonZeros.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

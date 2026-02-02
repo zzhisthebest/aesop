@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem dp_entries_ge_one (nums : List Int) (i : Nat) (h : i < nums.length) :
     (Id.run (do
         let mut dp : Array Nat := Array.mkArray nums.length 1
         pure dp)).get! i = 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

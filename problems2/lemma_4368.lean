@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -59,7 +59,7 @@ theorem checkShifts_correct_positive
     minimumRightShifts nums h_pre = (c : Int) →
     List.Pairwise (· ≤ ·) (nums.rotateRight c) ∧
     (List.range c).all (fun j => ¬ List.Pairwise (· ≤ ·) (nums.rotateRight j)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

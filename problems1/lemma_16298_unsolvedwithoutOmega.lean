@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ def swap_postcond (arr : Array Int) (i : Int) (j : Int) (result: Array Int) (h_p
 
 theorem get_set_i (arr : Array Int) (i j : Nat) (v : Int) (hi : i < arr.size) :
     (arr.set! i v)[i]! = v:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isUpperCase (c : Char) : Bool :=
@@ -28,7 +28,7 @@ def toLowercase_postcond (s : String) (result: String) (h_precond : toLowercase_
 
 theorem length_toLowercase (s : String) (h : toLowercase_precond s) :
     (toLowercase s h).length = s.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem lastPosition_correct (arr : Array Int) (elem : Int)
     (r ≥ 0 →
       arr[r.toNat]! = elem ∧ (arr.toList.drop (r.toNat + 1)).all (· ≠ elem)) ∧
     (r = -1 → arr.toList.all (· ≠ elem)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

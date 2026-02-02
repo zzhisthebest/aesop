@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -71,7 +71,7 @@ def hasChordIntersection_postcond (N : Nat) (chords : List (List Nat)) (result: 
 theorem nodup_flatMap_id_of_one (xs : List (List Nat))
     (h : ∀ l ∈ xs, l.length = 1) :
     List.Nodup (xs.flatMap id) ↔ List.Nodup xs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

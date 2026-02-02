@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -57,7 +57,7 @@ theorem foldl_none_of_empty (l : List (List Char)) :
         | some best => if (cur.length < best.length ∨
                          (cur.length = best.length ∧ isLexSmaller cur best))
                          then some cur else some best) none) = none ↔ l = []:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

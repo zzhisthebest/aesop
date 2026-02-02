@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def rotateRight_postcond (l : List Int) (n : Nat) (result: List Int) (h_precond 
 
 theorem idx_nat_lt_len (i n len : Nat) (hlen : len ≠ 0) :
     Int.toNat ((Int.ofNat i - Int.ofNat n + Int.ofNat len) % Int.ofNat len) < len:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

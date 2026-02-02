@@ -22,7 +22,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -85,5 +85,5 @@ def maxProfit_postcond (prices : List Nat) (result: Nat) (h_precond : maxProfit_
 theorem maxProfit_spec_satisfied (prices: List Nat) (h_precond : maxProfit_precond (prices)) :
     maxProfit_postcond (prices) (maxProfit (prices) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ theorem findComplement_spec (nums : List Int) (target : Int) (i : Nat) (x : Int)
     (k : Nat) :
     (findComplement xs target i x = some (i + k + 1)) ↔
       (∃ y ∈ xs, x + y = target ∧ k = xs.indexOf y):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

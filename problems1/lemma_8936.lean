@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def isSublist_postcond (sub : List Int) (main : List Int) (result: Bool) (h_prec
 
 theorem le_of_add_le (i subLen mainLen : Nat) (h : i + subLen ≤ mainLen) :
     i ≤ mainLen - subLen:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

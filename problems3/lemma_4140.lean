@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem perm_cons_cons_le (x y : Int) (xs ys : List Int) (hxy : x ≤ y) :
     List.isPerm
       (mergeSortedAux (x :: xs) (y :: ys))
       ((x :: xs) ++ (y :: ys)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

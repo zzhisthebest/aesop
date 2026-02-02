@@ -17,7 +17,7 @@
 -- !benchmark @end import
 
 -- !benchmark @start solution_aux
-import Aesop
+import Codetic
 --返回nums中等于x的元素的列表
 def filterlist (x : Int) (nums : List Int) : List Int :=
   let rec aux (lst : List Int) : List Int :=
@@ -111,15 +111,15 @@ theorem FindSingleNumber_spec_satisfied (nums: List Int) (h_precond : FindSingle
       -- 对应 count ≠ 1，继续找下一个
       -- ih 是归纳假设：如果剩下的列表中有那个唯一数，那么结果正确
       unfold FindSingleNumber.findUnique
-      aesop
-      --aesop
+      codetic
+      --codetic
     | case3 y ys filtered count h ih =>
       unfold FindSingleNumber.findUnique
-      --aesop
+      --codetic
       -- 对应 count = 1，函数返回 x
       -- 此时 res = x，目标变为 (filterlist x nums).length = 1
       -- 这正好就是 h_count_one 这个条件！
-      --aesop
+      --codetic
 
 
 

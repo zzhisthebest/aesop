@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem maxProfitAux_step (price : Nat) (minSoFar maxProfit : Nat) (rest : List 
     maxProfitAux (price :: rest) minSoFar maxProfit =
       maxProfitAux rest (Nat.min minSoFar price)
         (Nat.max maxProfit (if price > minSoFar then price - minSoFar else 0)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

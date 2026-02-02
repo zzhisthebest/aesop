@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem final_water_is_waterAt_sum (height : List Nat) (h_precond : trapRainWate
         let rmax := List.drop i height |>.foldl Nat.max 0
         Nat.min lmax rmax - height[i]!)
     result = waterAt.foldl (· + ·) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

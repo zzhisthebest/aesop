@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem buildS_step (ops : List Int) (i : Nat)
     (hi : i < (buildS ops).size - 1) :
     (buildS ops)[i+1]? =
       some ((buildS ops)[i]! + ops[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 theorem len_mem_inner_range {sequence : List Int} {start len : Nat}
     (h_len : len ≤ sequence.length - start) :
     len ∈ List.range (sequence.length - start + 1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

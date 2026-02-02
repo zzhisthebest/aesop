@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countDigits (n : Nat) : Nat :=
@@ -33,7 +33,7 @@ def isArmstrong_postcond (n : Nat) (result: Bool) (h_precond : isArmstrong_preco
 theorem result_imp_eq (n : Nat) (h : isArmstrong_precond n) :
     (isArmstrong n h) → n = List.foldl (fun acc d => acc + d ^ countDigits n) 0
       (List.map (fun c => c.toNat - '0'.toNat) (toString n).toList):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

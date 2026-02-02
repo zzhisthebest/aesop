@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem result_nonneg_is_index (arr : Array Int) (target : Int)
     (hpos : 0 ≤ findFirstOccurrence arr target h_precond) :
     (findFirstOccurrence arr target h_precond).toNat < arr.size ∨
     (∀ i : Nat, i < (findFirstOccurrence arr target h_precond).toNat → arr[i]! ≠ target):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

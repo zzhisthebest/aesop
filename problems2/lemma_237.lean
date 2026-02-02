@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 theorem pred_eq_count (n : Int) (lst : List Int) (len : Nat) :
     (countOccurrences n lst > len / 2) ↔
       ((lst.filter (fun y => y = n)).length > len / 2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

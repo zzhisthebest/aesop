@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -52,7 +52,7 @@ theorem prefixSums_correct (arr : Array Int) (k : Int) :
           prefixSums := prefixSums.set! (i+1) (prefixSums[i]! + arr[i]!)
         prefixSums
     True:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem unfold_postcond (s : String) (res : Option Char)
            List.Pairwise (· ≠ ·) (cs.take secondIdx)
        | none =>
            List.Pairwise (· ≠ ·) cs):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

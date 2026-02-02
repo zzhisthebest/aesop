@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem isSublist_true_implies_exists
     {sub main : List Int} (h_precond : isSublist_precond sub main) :
     isSublist sub main h_precond = true →
     ∃ i, i + sub.length ≤ main.length ∧ sub = (main.drop i).take sub.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

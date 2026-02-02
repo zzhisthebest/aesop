@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -40,7 +40,7 @@ theorem spec_three (nums : List Int) (h_precond : longestIncreasingStreak_precon
       List.range result |>.any fun i =>
         start + i + 1 ≥ nums.length ∨
         nums[start + i]! ≥ nums[start + i + 1]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

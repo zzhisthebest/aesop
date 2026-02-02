@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ theorem missing_is_difference (nums : List Nat)
     expected - actual ∈ List.range (n + 1) ∧
     ¬ (expected - actual ∈ nums) ∧
     ∀ x, x ∈ List.range (n + 1) → x ≠ expected - actual → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

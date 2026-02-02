@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -46,7 +46,7 @@ theorem go_eq_foldl_of_valid (cs : List Char) (hnon : cs ≠ []) :
     letterCombinations.go cs =
       (cs.map digitToLetters).foldl
         (λ acc ls => acc.flatMap (λ s => ls.map (λ c => s ++ String.singleton c))) [""]:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

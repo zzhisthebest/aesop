@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem postcond_of_len_takeWhile (xs : List Int) (target : Int) (len : Nat)
     (len ≤ xs.length) ∧
     ((List.range len).all fun i => xs[i]! < target) ∧
     (len < xs.length → target ≤ xs[len]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

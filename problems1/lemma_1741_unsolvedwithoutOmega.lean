@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem dp_initialised (m n : Nat) :
       let mut dp := Array.mkArray (m + 1) (Array.mkArray (n + 1) 0)
       pure dp) =
     Array.mkArray (m + 1) (Array.mkArray (n + 1) 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

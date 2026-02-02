@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -31,7 +31,7 @@ theorem inv_termination (arr : Array Int) (res : Array Int) :
     List.Pairwise (fun (x,i₁) (y,i₂) =>
         if i₁ < i₂ then arr.idxOf x ≤ arr.idxOf y else true)
       (res.toList.zipIdx):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

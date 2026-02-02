@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem some_result_implies_count_ge_two
     (s : String) (h_precond : findFirstRepeatedChar_precond s) {c : Char}
     (h : findFirstRepeatedChar s h_precond = some c) :
     (s.toList).count c ≥ 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

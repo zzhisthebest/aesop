@@ -2,8 +2,8 @@ import os
 import re
 
 # 配置路径
-log_path = '/data1/zzh/aesop/codes_for_theorem_library/passed_verified_1.txt'
-library_dir = '/data1/zzh/aesop/theorems_copy' # 请确认这是你要删除文件所在的库目录
+log_path = '/data1/zzh/codetic/codes_for_theorem_library/passed_verified_1.txt'
+library_dir = '/data1/zzh/codetic/theorems_copy' # 请确认这是你要删除文件所在的库目录
 
 def cleanup_passed_theorems():
     if not os.path.exists(log_path):

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem isPalindromeHelper_false_of_diff
   (x : List Char) {i j : Nat} (h₁ : i < j) (ci cj : Char)
   (hi : x[i]? = some ci) (hj : x[j]? = some cj) (hdiff : ci ≠ cj) :
     isPalindromeHelper x i j = false:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

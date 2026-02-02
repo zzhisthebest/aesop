@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem postcond_iff_eq (numbers : Array Int) (threshold : Int) (result : Nat) :
           trivial) ↔
       result =
         numbers.foldl (fun c n => if n < threshold then c + 1 else c) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

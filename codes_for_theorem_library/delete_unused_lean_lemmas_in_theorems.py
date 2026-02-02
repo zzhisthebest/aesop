@@ -2,8 +2,8 @@
 import re
 import os
 
-log_path = '/data1/zzh/aesop/codes_for_theorem_library/passed_verified.txt'
-theorems_dir = '/data1/zzh/aesop/Aesop/theorems/'
+log_path = '/data1/zzh/codetic/codes_for_theorem_library/passed_verified.txt'
+theorems_dir = '/data1/zzh/codetic/Codetic/theorems/'
 
 # 1. 扫描全文，提取所有出现的 tmp_lemma 编号作为白名单
 with open(log_path, 'r') as f:

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -30,7 +30,7 @@ theorem findEvenNumbers_induction (arr : Array Int) :
         isEven x → isEven y →
         arr.toList.idxOf x ≤ arr.toList.idxOf y →
         res.toList.idxOf x ≤ res.toList.idxOf y):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

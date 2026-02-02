@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ def isPalindrome_postcond (s : String) (result: Bool) (h_precond : isPalindrome_
 
 
 theorem string_length_eq_zero_iff (s : String) : s.length = 0 ↔ s = "":= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

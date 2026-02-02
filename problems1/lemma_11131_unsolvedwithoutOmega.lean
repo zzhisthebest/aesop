@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem aux_preserves_bounds
     (h_min : minIdx < s.size) (h_sec : secondIdx < s.size) :
     (match secondSmallestAux s i minIdx secondIdx, i with
       | _, _ => True):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

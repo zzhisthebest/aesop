@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem Find_result_in_range_or_neg_one
     (a : Array Int) (key : Int) (h : Find_precond a key) :
     let r := Find a key h
     (r = -1 ∨ (r ≥ 0 ∧ r < Int.ofNat a.size)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

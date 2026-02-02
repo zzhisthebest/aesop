@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem unfold_majorityElement_postcond (nums : List Int) (r : Int)
     majorityElement_postcond nums r h_precond
       = ((List.count r nums > nums.length / 2) ∧
          nums.all (fun x => x = r ∨ List.count x nums ≤ nums.length / 2)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem result_eq_div (n : Nat)
     (h : sumOfSquaresOfFirstNOddNumbers_precond n) :
     sumOfSquaresOfFirstNOddNumbers n h =
       (n * (2 * n - 1) * (2 * n + 1)) / 3:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

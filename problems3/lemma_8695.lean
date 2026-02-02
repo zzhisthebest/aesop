@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem List.min?_spec (l : List Nat) :
     (match l.min? with
      | none   => l = []
      | some r => r ∈ l ∧ (∀ x, x ∈ l → r ≤ x)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

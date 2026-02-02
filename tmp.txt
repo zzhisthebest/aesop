@@ -1,1 +1,1350 @@
-搞一个apply?实现。然后似乎无别的了。可以把这些lemmas手动肉眼generalize/搞成simp。
+Try this:
+
+  [apply]   sorry
+tactic 'codetic' failed, made no progress
+Initial goal:
+  
+arr : List ℤ
+h_precond : uniqueSorted_precond arr
+h_perm : arr.eraseDups.Perm (uniqueSorted arr h_precond)
+h_insert_sorted : ∀ (x : ℤ) (sorted : List ℤ),
+  List.Pairwise (fun x1 x2 => x1 ≤ x2) sorted → List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert x sorted)
+xs : List ℤ
+⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs)
+[codetic] ✅️ (G0) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R0 [100.0000%] safe|tactic|global|Codetic.BuiltinRule.preprocess ▶
+[codetic] 🆕 ❓️ G1 [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R1 [50.0000%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G2 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ G3 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R2 [50.0000%] unsafe|induction|global|List.arr.reverse ▶
+[codetic] 🆕 ❓️ G4 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ G5 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R3 [50.0000%] unsafe|induction|global|List.xs ▶
+[codetic] 🆕 ❓️ G6 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G7 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (have sortedTail := uniqueSorted.insertionSort a_1;
+      uniqueSorted.insert a sortedTail) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R4 [50.0000%] unsafe|induction|global|List.xs.reverse ▶
+[codetic] 🆕 ❓️ G8 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G9 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match l ++ [a] with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insertionSort xs) ▶
+[codetic] 🆕 ❓️ R5 [75.0000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G10 [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G11 [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (have sortedTail := uniqueSorted.insertionSort tail✝;
+      uniqueSorted.insert head✝ sortedTail) ▶
+[codetic] ✅️ (G11) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (have sortedTail := uniqueSorted.insertionSort tail✝;
+      uniqueSorted.insert head✝ sortedTail) ▶
+[codetic] 🆕 ❓️ R6 [37.5000%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G12 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail✝ with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🆕 ❓️ G13 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail✝ with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🏁 (G10) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G11) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head✝ (uniqueSorted.insertionSort tail✝)) ▶
+[codetic] 🆕 ❓️ R7 [37.5000%] unsafe|induction|global|List.arr.reverse ▶
+[codetic] 🆕 ❓️ G14 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail✝ with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🆕 ❓️ G15 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail✝ with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] ✅️ (G11) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head✝ (uniqueSorted.insertionSort tail✝)) ▶
+[codetic] 🆕 ❓️ R8 [37.5000%] unsafe|induction|global|List.tail._@.problems.verina_advanced_81.1236783011._hygCtx._hyg.889 ▶
+[codetic] 🆕 ❓️ G16 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🆕 ❓️ G17 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a :: a_1) with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] ✅️ (G11) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head✝ (uniqueSorted.insertionSort tail✝)) ▶
+[codetic] 🆕 ❓️ R9 [37.5000%] unsafe|induction|global|List.tail.reverse._@.problems.verina_advanced_81.1236783011._hygCtx._hyg.889 ▶
+[codetic] 🆕 ❓️ G18 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🆕 ❓️ G19 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l ++ [a]) with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] ❌️ (G11) [75.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head✝ (uniqueSorted.insertionSort tail✝)) ▶
+[codetic] ✅️ (G9) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match l ++ [a] with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ R10 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G20 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G21 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R11 [25.0000%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G22 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G23 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🏁 (G20) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🏁 (G8) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G5) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ R12 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G24 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G25 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R13 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G26 [37.5000%] ⋯ ⊢ l.eraseDups.Perm (uniqueSorted l True.intro) ▶
+[codetic] 🏁 (G24) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (have sortedTail := uniqueSorted.insertionSort a_1;
+      uniqueSorted.insert a sortedTail) ▶
+[codetic] 🆕 ❓️ R14 [25.0000%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G27 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort a_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ G28 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort a_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🏁 (G6) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G3) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ R15 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G29 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G30 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R16 [37.5000%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G31 [37.5000%] ⋯ ⊢ a_1.eraseDups.Perm (uniqueSorted a_1 True.intro) ▶
+[codetic] 🏁 (G29) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G2) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ R17 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G32 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G33 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R18 [25.0000%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G34 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G35 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🏁 (G32) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G4) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match xs with
+      | [] => []
+      | h :: t =>
+        have sortedTail := uniqueSorted.insertionSort t;
+        uniqueSorted.insert h sortedTail) ▶
+[codetic] 🆕 ❓️ R19 [50.0000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G36 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] 🆕 ❓️ G37 [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R20 [25.0000%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G38 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G39 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🏁 (G36) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [] ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R21 [25.0000%] unsafe|induction|global|List.arr.reverse ▶
+[codetic] 🆕 ❓️ G40 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G41 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R22 [25.0000%] unsafe|induction|global|List.l ▶
+[codetic] 🆕 ❓️ G42 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G43 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a (uniqueSorted.insertionSort a_1)) ▶
+[codetic] 🆕 ❓️ R23 [25.0000%] unsafe|induction|global|List.arr.reverse ▶
+[codetic] 🆕 ❓️ G44 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort a_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ G45 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort a_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R24 [25.0000%] unsafe|induction|global|List.a_1 ▶
+[codetic] 🆕 ❓️ G46 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G47 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R25 [25.0000%] unsafe|induction|global|List.sorted.reverse ▶
+[codetic] 🆕 ❓️ G48 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G49 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R26 [25.0000%] unsafe|induction|global|List.sorted.reverse ▶
+[codetic] 🆕 ❓️ G50 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G51 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R27 [25.0000%] unsafe|induction|global|List.l ▶
+[codetic] 🆕 ❓️ G52 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G53 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R28 [25.0000%] unsafe|induction|global|List.l.reverse ▶
+[codetic] 🆕 ❓️ G54 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G55 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a (uniqueSorted.insertionSort a_1)) ▶
+[codetic] 🆕 ❓️ R29 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«1» ▶
+[codetic] 🆕 ❓️ G56 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] 🆕 ❓️ G57 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head✝ then a :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert a tail✝) ▶
+[codetic] 🆕 ❓️ G58 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head✝ then a :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert a tail✝) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R30 [25.0000%] unsafe|induction|global|List.a_1.reverse ▶
+[codetic] 🆕 ❓️ G59 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G60 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R31 [25.0000%] unsafe|induction|global|List.tail ▶
+[codetic] 🆕 ❓️ G61 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G62 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a :: a_1) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R32 [25.0000%] unsafe|induction|global|List.tail ▶
+[codetic] 🆕 ❓️ G63 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G64 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a :: a_1) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R33 [25.0000%] unsafe|induction|global|List.l.reverse ▶
+[codetic] 🆕 ❓️ G65 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G66 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R34 [25.0000%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G67 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G68 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a (uniqueSorted.insertionSort a_1)) ▶
+[codetic] 🆕 ❓️ R35 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G69 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ G70 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R36 [25.0000%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G71 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G72 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R37 [25.0000%] unsafe|induction|global|List.tail.reverse ▶
+[codetic] 🆕 ❓️ G73 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G74 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l ++ [a]) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R38 [25.0000%] unsafe|induction|global|List.tail.reverse ▶
+[codetic] 🆕 ❓️ G75 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G76 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l ++ [a]) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R39 [25.0000%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G77 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G78 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R40 [25.0000%] unsafe|induction|global|List.sorted.reverse ▶
+[codetic] 🆕 ❓️ G79 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G80 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R41 [25.0000%] unsafe|induction|global|List.sorted.reverse ▶
+[codetic] 🆕 ❓️ G81 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G82 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R42 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«1» ▶
+[codetic] 🆕 ❓️ G83 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G84 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ G85 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R43 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«1» ▶
+[codetic] 🆕 ❓️ G86 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G87 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ G88 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R44 [25.0000%] unsafe|induction|global|List.sorted.reverse ▶
+[codetic] 🆕 ❓️ G89 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G90 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort tail with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R45 [25.0000%] unsafe|induction|global|List.tail ▶
+[codetic] 🆕 ❓️ G91 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G92 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a_1 :: a_1_1) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R46 [25.0000%] unsafe|induction|global|List.tail ▶
+[codetic] 🆕 ❓️ G93 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G94 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a_2 :: a_1_1) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G33) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R47 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G95 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G96 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G37) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R48 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G97 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G98 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R49 [25.0000%] unsafe|induction|global|List.tail ▶
+[codetic] 🆕 ❓️ G99 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G100 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (a_1 :: a_1_1) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R50 [25.0000%] unsafe|induction|global|List.tail.reverse ▶
+[codetic] 🆕 ❓️ G101 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G102 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l_1 ++ [a_1]) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R51 [25.0000%] unsafe|induction|global|List.tail.reverse ▶
+[codetic] 🆕 ❓️ G103 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G104 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l ++ [a_2]) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R52 [25.0000%] unsafe|induction|global|List.tail.reverse ▶
+[codetic] 🆕 ❓️ G105 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G106 [25.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l_1 ++ [a_1]) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R53 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«1» ▶
+[codetic] 🆕 ❓️ G107 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G108 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ G109 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R54 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«2» ▶
+[codetic] 🆕 ❓️ G110 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G111 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ G112 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R55 [37.5000%] unsafe|induction|global|uniqueSorted.insert.induct.«1» ▶
+[codetic] 🆕 ❓️ G113 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G114 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ G115 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] ✅️ (G25) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R56 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G116 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G117 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G30) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R57 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«3» ▶
+[codetic] 🆕 ❓️ G118 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G119 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G21) [50.0000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (uniqueSorted.insert head (uniqueSorted.insertionSort tail)) ▶
+[codetic] 🆕 ❓️ R58 [37.5000%] unsafe|induction|global|uniqueSorted.insertionSort.induct.«2» ▶
+[codetic] 🆕 ❓️ G120 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G121 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G121) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R59 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G122 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G123 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G123) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R60 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G124 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ G125 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G125) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R61 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G126 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G127 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G127) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R62 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G128 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ G129 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G129) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R63 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G130 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head_3]
+      | head :: tail => if head_3 ≤ head then head_3 :: head :: tail else head :: uniqueSorted.insert head_3 tail) ▶
+[codetic] 🆕 ❓️ G131 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head_3]
+      | head :: tail => if head_3 ≤ head then head_3 :: head :: tail else head :: uniqueSorted.insert head_3 tail) ▶
+[codetic] 🏁 (G128) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🏁 (G122) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G126) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R64 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G132 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G133 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G133) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R65 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G134 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G135 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🏁 (G132) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G124) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ R66 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G136 [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ G137 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G137) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R67 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G138 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G139 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G139) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R68 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G140 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ G141 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G141) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R69 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G142 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ G143 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🏁 (G140) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G138) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R70 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G144 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G145 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G145) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R71 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G146 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G147 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🏁 (G144) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G119) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R72 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G148 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G149 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G149) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R73 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G150 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ G151 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G151) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R74 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G152 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G153 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G153) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R75 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G154 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ G155 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ G156 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G156) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R76 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G157 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G158 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G155) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R77 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G159 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G160 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G154) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R78 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G161 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G162 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G152) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R79 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G163 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G164 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G165 [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G165) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R80 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G166 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G167 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G164) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R81 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G168 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G169 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G163) [37.5000%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R82 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G170 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G171 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G70) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R83 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G172 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] 🆕 ❓️ G173 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head_1 then a :: head_1 :: tail_1 else head_1 :: uniqueSorted.insert a tail_1) ▶
+[codetic] ✅️ (G173) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head_1 then a :: head_1 :: tail_1 else head_1 :: uniqueSorted.insert a tail_1) ▶
+[codetic] 🆕 ❓️ R84 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G174 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head_1 :: tail_1) ▶
+[codetic] 🆕 ❓️ G175 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert a tail_1) ▶
+[codetic] ✅️ (G175) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert a tail_1) ▶
+[codetic] 🆕 ❓️ R85 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G176 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert a tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G177 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a tail_1) ▶
+[codetic] ✅️ (G177) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a tail_1) ▶
+[codetic] 🆕 ❓️ R86 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G178 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ G179 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G176) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert a tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R87 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G180 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G181 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G174) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head_1 :: tail_1) ▶
+[codetic] 🆕 ❓️ R88 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G182 [37.5000%] ⋯ ⊢ ∀ a_1 ∈ tail_1, a ≤ a_1 ▶
+[codetic] 🆕 ❓️ G183 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G183) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R89 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G184 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G185 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G185) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R90 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G186 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ G187 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G184) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R91 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G188 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G189 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G182) [37.5000%] ⋯ ⊢ ∀ a_1 ∈ tail_1, a ≤ a_1 ▶
+[codetic] 🆕 ❓️ R92 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G190 [18.7500%] ⋯ ⊢ a ≤ a_1 ▶
+[codetic] 🆕 ❓️ G191 [18.7500%] ⋯ ⊢ a ≤ a_1 ▶
+[codetic] 🏁 (G172) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] ✅️ (G69) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R93 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G192 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] 🆕 ❓️ G193 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G193) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R94 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G194 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head :: tail) ▶
+[codetic] 🆕 ❓️ G195 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G195) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R95 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G196 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert a tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ G197 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G197) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R96 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G198 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ G199 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [a]
+      | head :: tail => if a ≤ head then a :: head :: tail else head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G196) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert a tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ R97 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G200 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G201 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G194) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head :: tail) ▶
+[codetic] 🆕 ❓️ R98 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G202 [37.5000%] ⋯ ⊢ ∀ a_1 ∈ tail, a ≤ a_1 ▶
+[codetic] 🆕 ❓️ G203 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G203) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R99 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G204 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ G205 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G205) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R100 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G206 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G207 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G204) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ R101 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G208 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G209 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G202) [37.5000%] ⋯ ⊢ ∀ a_1 ∈ tail, a ≤ a_1 ▶
+[codetic] 🆕 ❓️ R102 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G210 [18.7500%] ⋯ ⊢ a ≤ a_1 ▶
+[codetic] 🆕 ❓️ G211 [18.7500%] ⋯ ⊢ a ≤ a_1 ▶
+[codetic] 🏁 (G192) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] ✅️ (G98) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R103 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G212 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G213 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G213) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R104 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G214 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ G215 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G215) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R105 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G216 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G217 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G217) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R106 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G218 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G219 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G216) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R107 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G220 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G221 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G214) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ R108 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G222 [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ G223 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G223) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R109 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G224 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G225 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G225) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R110 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G226 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ G227 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G224) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R111 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G228 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G229 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G97) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R112 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G230 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G231 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G231) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R113 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G232 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ G233 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G233) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R114 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G234 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G235 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G235) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R115 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G236 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_2 :: tail => if head ≤ head_2 then head :: head_2 :: tail else head_2 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G237 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_2 :: tail => if head ≤ head_2 then head :: head_2 :: tail else head_2 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G234) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R116 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G238 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G239 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G222) [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ R117 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G240 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🆕 ❓️ G241 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🏁 (G212) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🏁 (G230) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G232) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ R118 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G242 [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ G243 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G243) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R119 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G244 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G245 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G245) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R120 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G246 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G247 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G244) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R121 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G248 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G249 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G242) [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ R122 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G250 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🆕 ❓️ G251 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🏁 (G107) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G26) [37.5000%] ⋯ ⊢ l.eraseDups.Perm (uniqueSorted l True.intro) ▶
+[codetic] 🆕 ❓️ R123 [18.7500%] unsafe|induction|global|List.l ▶
+[codetic] 🆕 ❓️ G252 [18.7500%] ⋯ ⊢ [].eraseDups.Perm (uniqueSorted [] True.intro) ▶
+[codetic] 🆕 ❓️ G253 [18.7500%] ⋯ ⊢ (a_1 :: a_1_1).eraseDups.Perm (uniqueSorted (a_1 :: a_1_1) True.intro) ▶
+[codetic] ✅️ (G87) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ R124 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G254 [37.5000%] ⋯ ⊢ ∀ a ∈ tail✝, head ≤ a ▶
+[codetic] 🆕 ❓️ G255 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail✝, head✝ ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] ✅️ (G255) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail✝, head✝ ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] 🆕 ❓️ R125 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G256 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail✝, head✝ ≤ a' ▶
+[codetic] 🆕 ❓️ G257 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] ✅️ (G257) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] 🆕 ❓️ R126 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G258 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] 🆕 ❓️ G259 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] ✅️ (G256) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail✝, head✝ ≤ a' ▶
+[codetic] 🆕 ❓️ R127 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G260 [18.7500%] ⋯ ⊢ head✝ ≤ a' ▶
+[codetic] 🆕 ❓️ G261 [18.7500%] ⋯ ⊢ head✝ ≤ a' ▶
+[codetic] ✅️ (G254) [37.5000%] ⋯ ⊢ ∀ a ∈ tail✝, head ≤ a ▶
+[codetic] 🆕 ❓️ R128 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G262 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🆕 ❓️ G263 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🏁 (G86) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G88) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head✝ then head :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert head tail✝) ▶
+[codetic] 🆕 ❓️ R129 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G264 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail_1) ▶
+[codetic] 🆕 ❓️ G265 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G265) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R130 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G266 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G267 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G264) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail_1) ▶
+[codetic] 🆕 ❓️ R131 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G268 [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ G269 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G269) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R132 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G270 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G271 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🏁 (G271) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 🏁 R133 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] 🏁 (G270) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_1 ≤ a' ▶
+[codetic] 🆕 🏁 R134 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] 🏁 (G268) [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 🏁 R135 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G96) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (head✝ :: tail✝) with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R136 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G272 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G273 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G273) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_2 then head :: head_2 :: tail_1 else head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R137 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G274 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ G275 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G275) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_2 :: uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R138 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G276 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G277 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] ✅️ (G277) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail_1) ▶
+[codetic] 🆕 ❓️ R139 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G278 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G279 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail_1 with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G276) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R140 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G280 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G281 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G274) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_2 :: tail_1) ▶
+[codetic] 🆕 ❓️ R141 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G282 [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ G283 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G283) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail_1, head_2 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R142 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G284 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G285 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G285) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ R143 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G286 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] 🆕 ❓️ G287 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail_1 ▶
+[codetic] ✅️ (G284) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail_1, head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ R144 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G288 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] 🆕 ❓️ G289 [18.7500%] ⋯ ⊢ head_2 ≤ a' ▶
+[codetic] ✅️ (G282) [37.5000%] ⋯ ⊢ ∀ a ∈ tail_1, head ≤ a ▶
+[codetic] 🆕 ❓️ R145 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G290 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🆕 ❓️ G291 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🏁 (G272) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G95) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R146 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G292 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G293 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G293) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R147 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G294 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ G295 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G295) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R148 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G296 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G297 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G297) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R149 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G298 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_2 :: tail => if head ≤ head_2 then head :: head_2 :: tail else head_2 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G299 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_2 :: tail => if head ≤ head_2 then head :: head_2 :: tail else head_2 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G296) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R150 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G300 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G301 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G294) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ R151 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G302 [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ G303 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G303) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R152 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G304 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G305 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G305) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R153 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G306 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G307 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G304) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R154 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G308 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G309 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G302) [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ R155 [18.7500%] unsafe|induction|global|List.sorted ▶
+[codetic] 🆕 ❓️ G310 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🆕 ❓️ G311 [18.7500%] ⋯ ⊢ head ≤ a ▶
+[codetic] 🏁 (G292) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G19) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort (l ++ [a]) with
+      | [] => [head✝]
+      | head :: tail => if head✝ ≤ head then head✝ :: head :: tail else head :: uniqueSorted.insert head✝ tail) ▶
+[codetic] 🆕 ❓️ R156 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G312 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G313 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G313) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R157 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G314 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ G315 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G315) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R158 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G316 [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G317 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G317) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R159 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G318 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G319 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G319) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R160 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G320 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ G321 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match tail with
+      | [] => [head]
+      | head_3 :: tail => if head ≤ head_3 then head :: head_3 :: tail else head_3 :: uniqueSorted.insert head tail) ▶
+[codetic] 🏁 (G318) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G316) [37.5000%] ⋯ ⊢ ∀ a' ∈ uniqueSorted.insert head tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R161 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G322 [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G323 [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G323) [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R162 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G324 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G325 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🏁 (G322) [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G314) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ R163 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G326 [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ G327 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G327) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head_1 ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R164 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G328 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G329 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G329) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R165 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G330 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G331 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G331) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R166 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G332 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G333 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🏁 (G330) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G328) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R167 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G334 [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G335 [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G335) [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ R168 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G336 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🆕 ❓️ G337 [18.7500%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] 🏁 (G334) [37.5000%] ⋯ ⊢ head_1 ≤ a' ▶
+[codetic] ✅️ (G326) [37.5000%] ⋯ ⊢ ∀ a ∈ tail, head ≤ a ▶
+[codetic] 🆕 ❓️ R169 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G338 [37.5000%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] 🆕 ❓️ G339 [37.5000%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] ✅️ (G339) [37.5000%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] 🆕 ❓️ R170 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G340 [18.7500%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] 🆕 ❓️ G341 [18.7500%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] 🏁 (G338) [37.5000%] ⋯ ⊢ head ≤ a_1 ▶
+[codetic] 🏁 (G312) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🏁 (G56) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [a] ▶
+[codetic] ✅️ (G31) [37.5000%] ⋯ ⊢ a_1.eraseDups.Perm (uniqueSorted a_1 True.intro) ▶
+[codetic] 🆕 ❓️ R171 [18.7500%] unsafe|induction|global|List.a_1 ▶
+[codetic] 🆕 ❓️ G342 [18.7500%] ⋯ ⊢ [].eraseDups.Perm (uniqueSorted [] True.intro) ▶
+[codetic] 🆕 ❓️ G343 [18.7500%] ⋯ ⊢ (a_2 :: a_1_1).eraseDups.Perm (uniqueSorted (a_2 :: a_1_1) True.intro) ▶
+[codetic] ✅️ (G58) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head✝ then a :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert a tail✝) ▶
+[codetic] 🆕 ❓️ R172 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G344 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head :: tail) ▶
+[codetic] 🆕 ❓️ G345 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: uniqueSorted.insert a tail) ▶
+[codetic] ✅️ (G345) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: uniqueSorted.insert a tail) ▶
+[codetic] 🆕 ❓️ R173 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G346 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G347 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G347) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ R174 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G348 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G349 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G346) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ R175 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G350 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G351 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G344) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (a :: head :: tail) ▶
+[codetic] 🆕 ❓️ R176 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G352 [37.5000%] ⋯ ⊢ ∀ a_2 ∈ tail, a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G353 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G353) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail, head ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R177 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G354 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ G355 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G355) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R178 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G356 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G357 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🏁 (G357) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 🏁 R179 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] 🏁 (G356) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 🏁 R180 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G354) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail, head ≤ a' ▶
+[codetic] 🆕 ❓️ R181 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G358 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G359 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🏁 (G359) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 🏁 R182 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] 🏁 (G358) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 🏁 R183 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G352) [37.5000%] ⋯ ⊢ ∀ a_2 ∈ tail, a ≤ a_2 ▶
+[codetic] 🆕 ❓️ R184 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G360 [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G361 [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🏁 (G361) [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 🏁 R185 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] 🏁 (G360) [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 🏁 R186 [28.1250%] unsafe|tactic|global|Codetic.BuiltinRules.grind ▶
+[codetic] ✅️ (G57) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if a ≤ head✝ then a :: head✝ :: tail✝ else head✝ :: uniqueSorted.insert a tail✝) ▶
+[codetic] 🆕 ❓️ R187 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G362 [37.5000%] ⋯ ⊢ ∀ a_2 ∈ tail✝, a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G363 [37.5000%] ⋯ ⊢ (∀ a' ∈ tail✝, head✝ ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] ✅️ (G363) [37.5000%] ⋯ ⊢ (∀ a' ∈ tail✝, head✝ ≤ a') ∧ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] 🆕 ❓️ R188 [37.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G364 [37.5000%] ⋯ ⊢ ∀ a' ∈ tail✝, head✝ ≤ a' ▶
+[codetic] 🆕 ❓️ G365 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] ✅️ (G365) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail✝ ▶
+[codetic] 🆕 ❓️ R189 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G366 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G367 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G367) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R190 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G368 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G369 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G366) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ R191 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G370 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] 🆕 ❓️ G371 [18.7500%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) tail ▶
+[codetic] ✅️ (G364) [37.5000%] ⋯ ⊢ ∀ a' ∈ tail✝, head✝ ≤ a' ▶
+[codetic] 🆕 ❓️ R192 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G372 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G373 [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G373) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ R193 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G374 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G375 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G372) [37.5000%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ R194 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G376 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] 🆕 ❓️ G377 [18.7500%] ⋯ ⊢ head ≤ a' ▶
+[codetic] ✅️ (G362) [37.5000%] ⋯ ⊢ ∀ a_2 ∈ tail✝, a ≤ a_2 ▶
+[codetic] 🆕 ❓️ R195 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitHypotheses ▶
+[codetic] 🆕 ❓️ G378 [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G379 [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] ✅️ (G379) [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ R196 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G380 [18.7500%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G381 [18.7500%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] ✅️ (G378) [37.5000%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ R197 [18.7500%] unsafe|induction|global|List.arr ▶
+[codetic] 🆕 ❓️ G382 [18.7500%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🆕 ❓️ G383 [18.7500%] ⋯ ⊢ a ≤ a_2 ▶
+[codetic] 🏁 (G148) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] ✅️ (G120) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (match uniqueSorted.insertionSort [] with
+      | [] => [head]
+      | head_1 :: tail => if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R198 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G384 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) [head] ▶
+[codetic] 🆕 ❓️ G385 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] ✅️ (G385) [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2)
+      (if head ≤ head_1 then head :: head_1 :: tail else head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] 🆕 ❓️ R199 [37.5000%] safe|tactic|global|Codetic.BuiltinRules.splitTarget ▶
+[codetic] 🆕 ❓️ G386 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head :: head_1 :: tail) ▶
+[codetic] 🆕 ❓️ G387 [37.5000%] ⋯ ⊢ List.Pairwise (fun x1 x2 => x1 ≤ x2) (head_1 :: uniqueSorted.insert head tail) ▶
+[codetic] Expanding safe subtree of the root goal. 
+[codetic] Skipping safe rule expansion of goal 0 since safe rules have already been applied. 
+[codetic] Skipping safe rule expansion of goal 1 since safe rules have already been applied. 
+This simp argument is unused:
+  List.eraseDups_cons
+
+Hint: Omit it from the simp argument list.
+  simp +decide [ hx, List.eraseDups_cons ][hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp +decide [ hx, List.eraseDups_cons ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+This simp argument is unused:
+  List.filter_cons
+
+Hint: Omit it from the simp argument list.
+  simp_all +decide [ List.filter_cons ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+This simp argument is unused:
+  List.eraseDups_cons
+
+Hint: Omit it from the simp argument list.
+  simp_all +decide [ List.eraseDups_cons ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+`LT.lt.not_le` has been deprecated: Use `LT.lt.not_ge` instead
+unused variable `h_precond`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+unused variable `h_precond`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+unused variable `arr`
+
+Note: This linter can be disabled with `set_option linter

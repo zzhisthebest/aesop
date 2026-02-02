@@ -5,9 +5,9 @@ import glob
 from pathlib import Path
 
 # 文件路径
-jsonl_file = "/data1/zzh/verina/my_aesop_eval_partial_results_on_16627.jsonl"
+jsonl_file = "/data1/zzh/verina/my_codetic_eval_partial_results_on_16627.jsonl"
 json_file = "/data1/zzh/verina/verina_lemmas_quickchecked.json"
-output_dir = "/data1/zzh/aesop/problems1"
+output_dir = "/data1/zzh/codetic/problems1"
 os.makedirs(output_dir, exist_ok=True)
 # 读取评估结果
 print("Reading evaluation results...")
@@ -35,7 +35,7 @@ print(f"Failed problems: {len(failed_indices)}")
 # # 获取 problems1 目录中已有的问题编号
 # existing_numbers = set()
 # for f in os.listdir(output_dir):
-#     if f.startswith('lemma_') and f.endswith('.lean') and not f.endswith('_newaesop.lean'):
+#     if f.startswith('lemma_') and f.endswith('.lean') and not f.endswith('_newcodetic.lean'):
         
 #         # 提取数字部分，例如 lemma_123.lean -> 123, lemma_123_studied.lean -> 123
 #         parts = f.replace('lemma_', '').replace('.lean', '').split('_')
@@ -62,13 +62,13 @@ for idx in failed_indices:
     
     # 创建文件内容
     header = problem.get('header', '')
-    header=header.replace('import Mathlib', 'import Aesop')
+    header=header.replace('import Mathlib', 'import Codetic')
     statements = problem.get('lemma_formal_statements', '')
-    statements=statements.replace('sorry', '\n  aesop?')
+    statements=statements.replace('sorry', '\n  codetic?')
     content = header + '\n' + statements
     
     # 写入文件
-    target_file = os.path.join(output_dir, f"lemma_{problem_num}_newaesop.lean")
+    target_file = os.path.join(output_dir, f"lemma_{problem_num}_newcodetic.lean")
     
     try:
         with open(target_file, 'w') as tf:
@@ -84,6 +84,6 @@ print(f"\nSummary:")
 print(f"  Total failed: {len(failed_indices)}")
 print(f"  Copied: {copied_count}")
 print(f"  Skipped (already exists): {skipped_count}")
-print(f"\nFiles are named as: lemma_<index>_newaesop.lean")
+print(f"\nFiles are named as: lemma_<index>_newcodetic.lean")
 print(f"  where <index> is the position in verina_lemmas_quickchecked.json (0-based)")
 

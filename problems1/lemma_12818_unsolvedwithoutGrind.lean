@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -29,7 +29,7 @@ Array.all_push
 theorem all_cons (a : Array Int) (x : Int) (p : Int → Bool) :
     (a.push x).all p = (p x && a.all p):= by
 --simp_all only [Array.all_push]
-aesop?
+codetic?
 
 
 

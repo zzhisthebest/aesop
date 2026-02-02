@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem mul_div_cancel_of_dvd {a b : Nat} (h : b ∣ a) : b * (a / b) = a :=
 
 @[simp] theorem four_dvd_iff_mod_eq_zero (l : Nat) :
     4 ∣ l + 2 ↔ (l + 2) % 4 = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

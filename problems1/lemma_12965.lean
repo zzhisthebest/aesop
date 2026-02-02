@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def Find_postcond (a : Array Int) (key : Int) (result: Int) (h_precond : Find_pr
 
 
 theorem toNat_ofNat (n : Nat) : Int.toNat (Int.ofNat n) = n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

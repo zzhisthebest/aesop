@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ def maxSubarraySumDivisibleByK_postcond (arr : Array Int) (k : Int) (result: Int
 
 theorem extract_toList (arr : Array α) (i j : Nat) (h₁ : i ≤ j) (h₂ : j ≤ arr.size) :
     (arr.extract i j).toList = (arr.toList.drop i).take (j - i):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

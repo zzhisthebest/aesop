@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem gt_implies_no_target_ahead
     (hi : i < arr.size) (hk : i ≤ k) (hksz : k < arr.size)
     (hgt : arr[i]! > target) :
     arr[k]! ≠ target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

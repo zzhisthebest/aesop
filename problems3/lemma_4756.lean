@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -28,7 +28,7 @@ theorem result_is_missing {nums : List Nat}
     r ∈ List.range (n + 1) ∧
     ¬ r ∈ nums ∧
     ∀ x, x ∈ List.range (n + 1) → x ≠ r → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

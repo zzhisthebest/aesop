@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem removeElement_spec_aux (lst : List Nat) (target : Nat) :
         | some y => x = y
         | none   => False) ∧
     (removeElement lst target (by trivial)).length = lst'.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

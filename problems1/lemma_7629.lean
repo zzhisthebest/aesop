@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -15,7 +15,7 @@ def isGreater_postcond (n : Int) (a : Array Int) (result: Bool) (h_precond : isG
 
 theorem array_all_iff_forall (a : Array Int) (p : Int → Bool) :
     a.all p = true ↔ ∀ i, (hi : i < a.size) → p (a[i]) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem Find_result_correct_when_not_neg_one
     (r ≠ -1) →
       (a[(Int.toNat r)]! = key ∧
         ∀ i : Nat, i < Int.toNat r → a[i]! ≠ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

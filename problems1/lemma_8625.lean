@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 theorem sumDigits_cons (n d : Nat) (hd : d < 10) :
     (n / 10) % 10 = d → (n % 10) = d →
     (n / 10) % 10 + (n % 10) = d + d:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

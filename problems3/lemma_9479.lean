@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem loop_correct (s : String) (h_precond : findFirstRepeatedChar_precond s) 
         cs.count c ≥ 2 ∧ List.Pairwise (· ≠ ·) (cs.take secondIdx)
     | none =>
         List.Pairwise (· ≠ ·) cs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

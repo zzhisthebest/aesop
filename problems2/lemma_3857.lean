@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem merge_step_left {x xt y yt : List Int} {a b : Int}
     let recM := mergeSortedLists (a :: x) (b :: y) hpre
     List.Pairwise (· ≤ ·) recM ∧
     List.isPerm ((a :: x) ++ (b :: y)) recM:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

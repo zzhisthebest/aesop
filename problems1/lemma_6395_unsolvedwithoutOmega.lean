@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -52,7 +52,7 @@ def shortestBeautifulSubstring_postcond (s : String) (k : Nat) (result: String) 
 theorem compare_true_of_equal_and_lex {a b : List Char}
     (hlen : a.length = b.length) (hlex : isLexSmaller a b = true) :
     (a.length < b.length ∨ (a.length = b.length ∧ isLexSmaller a b)) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

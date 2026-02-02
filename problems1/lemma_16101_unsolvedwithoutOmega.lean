@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def SwapArithmetic_postcond (X : Int) (Y : Int) (result: (Int × Int)) (h_precon
 
 
 theorem add_sub_cancel' (y1 x2 : Int) : x2 + (y1 - x2) = y1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -45,7 +45,7 @@ theorem go_cons_nil (d : Char) (ds : List Char) :
     letterCombinations.go ds = [] →
     letterCombinations.go (d :: ds) =
       (digitToLetters d).map (λ c => String.singleton c):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

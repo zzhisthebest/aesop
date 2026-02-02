@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,13 +25,13 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 @[simp]
 theorem length_filter_add_length_filter_not {α : Type} (p : α → Bool) (lst : List α) :
   List.Sublist (List.filter p lst) lst:=by
-  aesop
+  codetic
 
 theorem length_filter_or_le (a b : Int) (lst : List Int) :
     (lst.filter (fun y => y = a ∨ y = b)).length ≤ lst.length:= by
-aesop?(config := { enableGrind := false })
-have h1: List.Sublist (List.filter (fun y => decide (y = a) || decide (y = b)) lst) lst:=by aesop
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
+have h1: List.Sublist (List.filter (fun y => decide (y = a) || decide (y = b)) lst) lst:=by codetic
+codetic?(config := { enableGrind := false })
 
 end tmp
 --搞不出来simp定理

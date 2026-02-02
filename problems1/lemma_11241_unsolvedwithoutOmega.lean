@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -20,7 +20,7 @@ def countDigits_postcond (s : String) (result: Nat) (h_precond : countDigits_pre
 theorem countDigits_eq_length_filter
     (s : String) (h : countDigits_precond s) :
     countDigits s h = List.length (List.filter isDigit s.toList):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

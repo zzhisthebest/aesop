@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem init_indices_correct (s : Array Int) (h : secondSmallest_precond s) :
     let (minIdx, secondIdx) :=
       if s[1]! < s[0]! then (1, 0) else (0, 1)
     minIdx ≠ secondIdx ∧ minIdx < s.size ∧ secondIdx < s.size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

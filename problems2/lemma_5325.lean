@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ else
 
 theorem get?_eq_some_iff {xs : List α} {i : Nat} {a : α} :
     xs[i]? = some a ↔ ∃ h : i < xs.length, a = xs.get ⟨i, h⟩:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

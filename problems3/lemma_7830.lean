@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: (Nat × Nat)) (h_
 theorem twoSum_prefix_cross (nums : Array Int) (target : Int) (h : twoSum_precond nums target) :
   List.all (nums.toList.take (twoSum nums target h).1)
     (fun a => List.all (nums.toList.drop (twoSum nums target h).1) (fun b => a + b ≠ target)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

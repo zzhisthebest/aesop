@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def arraySum_postcond (a : Array Int) (result: Int) (h_precond : arraySum_precon
 
 theorem take_succ (a : Array Int) (n : Nat) (h : n < a.size) :
     (a.take (n.succ)).toList = (a.take n).toList ++ [a[n]!]:= by
---aesop?(config := { enableGrind := false })
+--codetic?(config := { enableGrind := false })
 
 
 end tmp

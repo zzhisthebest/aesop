@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def BinarySearch_postcond (a : Array Int) (key : Int) (result: Nat) (h_precond :
 theorem pairwise_imp_monotone {l : List Int}
     (h : List.Pairwise (· ≤ ·) l) : ∀ {i j} (hi : i < l.length) (hj : j < l.length),
       i ≤ j → l.get ⟨i, hi⟩ ≤ l.get ⟨j, hj⟩:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

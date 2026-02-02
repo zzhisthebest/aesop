@@ -8,6 +8,7 @@ Authors: Jannis Limperg
 -- these files are registered.
 module
 
+public import Codetic.BuiltinRules.ApplyQuestion
 public import Codetic.BuiltinRules.Assumption
 public import Codetic.BuiltinRules.ApplyHyps
 public import Codetic.BuiltinRules.DestructProducts

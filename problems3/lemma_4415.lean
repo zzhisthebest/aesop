@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -57,7 +57,7 @@ theorem algorithm_returns_zero_on_sorted
     (nums : List Int) (h_precond : minimumRightShifts_precond nums) :
     List.Pairwise (· ≤ ·) nums →
     minimumRightShifts nums h_precond = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

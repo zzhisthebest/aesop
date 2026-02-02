@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem updateSegment_spec (r src : Array Int) (sStart dStart len : Nat)
     (∀ i, i < dStart → res[i]! = r[i]!) ∧
     (∀ i, dStart + len ≤ i → i < res.size → res[i]! = r[i]!) ∧
     (∀ i, i < len → res[dStart + i]! = src[sStart + i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

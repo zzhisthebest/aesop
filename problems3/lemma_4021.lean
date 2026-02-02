@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def listToNat : List Nat → Nat
@@ -39,7 +39,7 @@ theorem last_digit_ne_zero_of_canonical
     (l : List Nat) (hpos : listToNat l ≠ 0)
     (hbound : ∀ d ∈ l, d < 10) :
     l.getLast! ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -69,7 +69,7 @@ simp_all only [increasingTriplet_postcond, Bool.false_eq_true, Bool.decide_and, 
 intro a_1 b a_2 a_3 b_1 a_4 a_5 b_2 a_6
 simp_all only [increasingTriplet_precond]
 grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem no_pair_before
   (nums : Array Int) (target : Int) (i j : Nat) (h_outer : ∀ k < i,
         ∀ ℓ, k < ℓ → ℓ < nums.size → nums[k]! + nums[ℓ]! ≠ target) :
     List.Pairwise (fun a b => a + b ≠ target) (nums.toList.take i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

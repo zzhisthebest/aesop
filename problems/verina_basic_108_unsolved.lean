@@ -22,7 +22,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -81,6 +81,6 @@ def below_zero_postcond (operations : List Int) (result: (Array Int × Bool)) (h
 theorem below_zero_spec_satisfied (operations: List Int) (h_precond : below_zero_precond (operations)) :
     below_zero_postcond (operations) (below_zero (operations) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   sorry
   -- !benchmark @end proof

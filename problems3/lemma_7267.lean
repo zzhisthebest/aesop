@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -54,7 +54,7 @@ theorem canCompleteCircuit_cases
         gas.foldl (· + ·) 0 < cost.foldl (· + ·) 0) ∨
     (canCompleteCircuit gas cost h_precond ≥ 0 ∧
         gas.foldl (· + ·) 0 ≥ cost.foldl (· + ·) 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

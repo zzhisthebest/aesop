@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem double_array_elements_aux_inv (s_old s : Array Int) (i : Nat)
     (double_array_elements_aux s_old s i).size = s_old.size ∧
     (∀ j, j < s_old.size →
         (double_array_elements_aux s_old s i)[j]! = 2 * s_old[j]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

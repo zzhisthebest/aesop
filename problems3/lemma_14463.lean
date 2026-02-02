@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem invariant_step
     (h₂ : ∃ j, j < i ∧ cur = a[j]!) :
     (∀ j, j < i+1 → newCur ≤ a[j]!) ∧
     (∃ j, j < i+1 ∧ newCur = a[j]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

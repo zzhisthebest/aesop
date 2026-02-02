@@ -21,7 +21,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def multiply_precond (a : Int) (b : Int) : Prop :=
@@ -61,6 +61,6 @@ def multiply_postcond (a : Int) (b : Int) (result: Int) (h_precond : multiply_pr
 theorem multiply_spec_satisfied (a: Int) (b: Int) (h_precond : multiply_precond (a) (b)) :
     multiply_postcond (a) (b) (multiply (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof
 --己

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -45,7 +45,7 @@ theorem not_any_invalid_of_valid
     (digits : String)
     (hvalid : ∀ c ∈ digits.toList, c ∈ ['2','3','4','5','6','7','8','9']) :
     ¬ digits.toList.any (λ c => ¬ c ∈ ['2','3','4','5','6','7','8','9']):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

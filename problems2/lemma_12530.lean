@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem count_step_eq_foldl_step (numbers : Array Int) (threshold : Int)
     (i : Nat) (acc : Nat) (h : i < numbers.size) :
     (if numbers[i]! < threshold then acc + 1 else acc) =
       (fun count n => if n < threshold then count + 1 else count) acc (numbers[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem length_filter_partition (xs : List Int) :
     xs.length =
       (xs.filter (fun x => x ≠ 0)).length +
       (xs.filter (fun x => x = 0)).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

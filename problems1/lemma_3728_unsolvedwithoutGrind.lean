@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem subArraySums_mem_iff (numbers : List Int) (s : Int) :
           numbers.drop start |>.take len |>.sum))) ↔
     ∃ start len, start ≤ numbers.length ∧ len ≤ numbers.length - start ∧
                 s = (numbers.drop start |>.take len).sum:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

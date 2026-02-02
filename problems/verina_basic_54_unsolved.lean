@@ -22,7 +22,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -77,6 +77,6 @@ def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_preco
 theorem CanyonSearch_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : CanyonSearch_precond (a) (b)) :
     CanyonSearch_postcond (a) (b) (CanyonSearch (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   sorry
   -- !benchmark @end proof

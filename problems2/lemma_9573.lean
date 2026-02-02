@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 
 theorem divisor_le_sqrt_or_complement_le_sqrt (n d : Nat) (hd : 2 ≤ d) (hdiv : n % d = 0) :
     d * d ≤ n ∨ (n / d) * (n / d) ≤ n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

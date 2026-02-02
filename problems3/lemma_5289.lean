@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -54,7 +54,7 @@ theorem isUgly_correct (x : Nat) :
     isUgly x = true ↔
       (x ≠ 0 ∧
         (∃ a b c, x = (2 ^ a) * (3 ^ b) * (5 ^ c))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

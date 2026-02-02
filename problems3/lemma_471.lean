@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -80,7 +80,7 @@ theorem pairwise_imp_not_result
         let b := chord[1]!
         if a > b then [b, a] else [a, b])) →
     ¬ hasChordIntersection N chords h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

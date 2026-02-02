@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem size_if_branch (arr : Array Int) (i : Nat) (h : i < arr.size / 2) :
      let arr₁ := arr.set! i (arr[j]!)
      let arr₂ := arr₁.set! j t
      reverse_core arr₂ (i+1)).size = arr.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -14,7 +14,7 @@
 -- !benchmark @start import type=solution
 
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start solution_aux
 -- Check if a character is an uppercase alphabet letter
@@ -93,7 +93,7 @@ theorem isCleanPalindrome_spec_satisfied (s: String) (h_precond : isCleanPalindr
     isCleanPalindrome_postcond (s) (isCleanPalindrome (s) h_precond) h_precond := by
   -- !benchmark @start proof
   --simp [isCleanPalindrome_postcond ,isCleanPalindrome] at *
-  aesop?--(config:={useSimpAll:=false})
+  codetic?--(config:={useSimpAll:=false})
   unfold isCleanPalindrome_postcond isCleanPalindrome
   simp
   constructor

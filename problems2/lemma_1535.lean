@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem lengthOfLIS_eq_some_dp (nums : List Int) (h_precond : lengthOfLIS_precon
               if nums[j]! < nums[i]! && dp[j]! + 1 > dp[i]! then
                 dp := dp.set! i (dp[j]! + 1)
           pure dp)).get! i = lengthOfLIS nums h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

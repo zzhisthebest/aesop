@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -29,7 +29,7 @@ theorem getD_in_range (arr : Array Int) (i : Nat) (h : i < arr.size) (d : Int) :
   arr.getD i d = arr[i]'(by
     have : i < arr.size := h
     exact this):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

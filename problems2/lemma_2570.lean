@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -70,7 +70,7 @@ theorem coverage_of_index (intervals : List (Prod Nat Nat)) (i : Nat) :
             []
         let cov := merged.reverse.foldl (fun acc (s, e) => acc + (e - s)) 0
         cov):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

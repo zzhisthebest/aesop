@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem subArrays_contains_all_subarrays (xs : List Int) :
       (List.range (xs.length + 1) |>.flatMap (fun start =>
         List.range (xs.length - start + 1) |>.map (fun len =>
           xs.drop start |>.take len))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def minOfThree_postcond (a : Int) (b : Int) (c : Int) (result: Int) (h_precond :
 theorem minOfThree_spec_a (a b c : Int) (h_pre : minOfThree_precond a b c)
     (h : a ≤ b ∧ a ≤ c) :
     minOfThree_postcond a b c (minOfThree a b c h_pre) h_pre:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

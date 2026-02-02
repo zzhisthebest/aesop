@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,14 +24,14 @@ def firstDuplicate_postcond (lst : List Int) (result: Int) (h_precond : firstDup
 @[simp]
 theorem nodup_iff_forall_count_le_one {α} [DecidableEq α] (l : List α) :
     l.Nodup ↔ ∀ x, l.count x ≤ 1 := by
-  aesop
+  codetic
 theorem filter_dup_nonempty {l : List Int} (h : ¬ List.Nodup l) :
     (l.filter fun x => l.count x > 1).head?.isSome:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
   --grind
--- aesop?(config := { enableGrind := false })
+-- codetic?(config := { enableGrind := false })
 
 
 end tmp

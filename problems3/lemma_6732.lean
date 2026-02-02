@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem kadane_correct (seq : List Int) (h : task_code_precond seq) :
       maxSum = task_code seq h ∧
       (∃ sub : List Int, sub ≠ [] ∧ sub ⊆ seq ∧ sub.sum = maxSum) ∧
       ∀ s, s ≠ [] → s ⊆ seq → s.sum ≤ maxSum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

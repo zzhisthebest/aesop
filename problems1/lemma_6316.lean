@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem dist_last_eq (nums : List Int) :
     let endPos := nums.length - 1
     (if posn ≠ endPos then (Int.ofNat nums.length - 1) - posn else 0) =
       if posn = endPos then (0 : Int) else (Int.ofNat nums.length - 1) - posn:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

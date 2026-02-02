@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -23,7 +23,7 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 
 theorem filter_a_pred (a b : Array Int) :
     (a.filter fun x => !(inArray b x)).all (fun x => inArray a x ≠ inArray b x) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

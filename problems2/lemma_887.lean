@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem forall_insertElement
     (x y : Int) (ys : List Int)
     (hyAll : ∀ z ∈ ys, y ≤ z) (hxy : y ≤ x) :
     ∀ z ∈ insertElement x ys, y ≤ z:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

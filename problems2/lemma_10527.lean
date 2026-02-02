@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isSpaceCommaDot (c : Char) : Bool :=
@@ -32,7 +32,7 @@ theorem replaceWithColon_char_at (s : String)
     let cs' := (replaceWithColon s h).toList
     (isSpaceCommaDot (cs[i]!) → cs'[i]! = ':') ∧
     (¬ isSpaceCommaDot (cs[i]!) → cs'[i]! = cs[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

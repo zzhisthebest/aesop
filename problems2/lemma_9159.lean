@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -23,7 +23,7 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 
 theorem symmDiff_satisfies_postcond (a b : Array Int) (h : dissimilarElements_precond a b) :
     dissimilarElements_postcond a b (dissimilarElements a b h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -34,7 +34,7 @@ theorem count_eq_length_filter (n d : Nat) (h_precond : d > 0) :
       simpa [countSumDivisibleBy_precond] using h_precond) =
       List.length
         ((List.range n).filter (fun x => x < n ∧ (sumOfDigits x) % d = 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

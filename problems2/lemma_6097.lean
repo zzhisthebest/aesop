@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem nthLe_strict_mono {xs : List Int}
     (h : List.Pairwise (· < ·) xs) :
     ∀ {i j} (hi : i < xs.length) (hj : j < xs.length),
       i < j → xs[i]! < xs[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

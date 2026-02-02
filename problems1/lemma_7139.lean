@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -51,7 +51,7 @@ theorem result_some_unpack (i j : Nat) (h₁ : i < j) (h₂ : j < List.length ([
     List.all ((List.nil : List Int).take i)
       (fun a => List.all ((List.nil : List Int).drop i) (fun b => a + b ≠ (0 : Int))) ∧
     List.all ((List.nil : List Int).drop (j + 1)) (fun a => a + (List.nil : List Int)[j]! ≠ (0 : Int)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

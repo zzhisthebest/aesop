@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem exists_unique_i_of_flatMap_eq_singleton
             (fun i => (List.range i).filter
               (fun j' => nums[i]! + nums[j']! = target))) = [j]) :
     ∃ i, i < j ∧ nums[i]! + nums[j]! = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

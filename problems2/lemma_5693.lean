@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem spec_from_eq (nums : List Int) (h : removeDuplicates_precond nums) :
     let r := removeDuplicates nums h
     r - nums.eraseDups.length = 0 ∧
     nums.eraseDups.length ≤ r:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

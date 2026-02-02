@@ -21,7 +21,7 @@
 -- !benchmark @start import type=solution
 
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start task_aux
 structure Map (K V : Type) [BEq K] [BEq V] where
@@ -101,5 +101,5 @@ def update_map_postcond (m1 : Map Int Int) (m2 : Map Int Int) (result: Map Int I
 theorem update_map_spec_satisfied (m1: Map Int Int) (m2: Map Int Int) (h_precond : update_map_precond (m1) (m2)) :
     update_map_postcond (m1) (m2) (update_map (m1) (m2) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -26,7 +26,7 @@ def allDigits_postcond (s : String) (result: Bool) (h_precond : allDigits_precon
 
 theorem list_fold_and_eq_true {α : Type} (p : α → Bool) (l : List α) :
     (l.foldr (fun a b => p a && b) true = true) ↔ ∀ a ∈ l, p a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

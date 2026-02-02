@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem dropWhile_append_eq_zero_part (xs : List Int) :
     List.dropWhile (fun x : Int => x ≠ 0)
         (xs.filter (fun x => x ≠ 0) ++ xs.filter (fun x => x = 0))
       = xs.filter (fun x => x = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

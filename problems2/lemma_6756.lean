@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem subArray_is_sublist (sequence : List Int) (start len : Nat)
       (List.range (sequence.length + 1)).flatMap
         (fun s => (List.range (sequence.length - s + 1)).map
           (fun l => sequence.drop s |>.take l)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

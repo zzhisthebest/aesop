@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem sList_step (ops : List Int) (i : Nat) (hi : i < ops.length) :
           let last := acc.getLast? |>.getD 0
           acc.append [last + op]) [0]
     sList.get? (i+1) = some (sList.get! i + ops.get! i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

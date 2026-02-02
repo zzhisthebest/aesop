@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ def minOperations_postcond (nums : List Nat) (k : Nat) (result: Nat) (h_precond 
 theorem take_reverse_eq_drop (l : List α) (n : Nat) :
     (l.reverse).take 100 = (l.drop (l.length - 100)).reverse := by
 
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem searchInsert_eq_takeWhile_len (xs : List Int) (target : Int)
     (h : List.Pairwise (· < ·) xs) :
     searchInsert xs target h =
       (xs.takeWhile (fun y => target > y)).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

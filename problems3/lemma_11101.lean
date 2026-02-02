@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem secondSmallest_all_nonminimums_are_not_smaller
     ∀ k, k < s.size →
       (∀ j, j < s.size → s[j]! < secondSmallest s h → s[k]! = s[j]!) →
       secondSmallest s h ≤ s[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

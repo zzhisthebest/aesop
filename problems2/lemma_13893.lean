@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem loop_spec (a : Array Int) (P : Int → Bool) (n : Nat)
     (h_ex : ∃ i, i < a.size ∧ P (a[i]!) ∧ n ≤ i)
     (h_no : ∀ k, k < n → ¬ P (a[k]!)) :
     ∃ r, r < a.size ∧ P (a[r]!) ∧ ∀ k, k < r → ¬ P (a[k]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

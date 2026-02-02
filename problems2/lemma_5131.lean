@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -95,7 +95,7 @@ theorem next_greater_correct {nums1 nums2 : List Int}
                   nums2[pos]! > val) with
           | none        => rVal = -1
           | some offset => rVal = nums2[idx + offset + 1]!) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

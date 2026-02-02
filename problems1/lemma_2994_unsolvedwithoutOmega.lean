@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -20,7 +20,7 @@ theorem max_max_spec (a b c : Int) :
      max (max a b) c ≥ b ∧
      max (max a b) c ≥ c) ∧
     (max (max a b) c = a ∨ max (max a b) c = b ∨ max (max a b) c = c):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem fuel_sufficient (a : Array (Array Int)) (key : Int) (rows cols : Nat) :
         fuel = rows + cols →
         (∃ p q, get2d a p q = key ∧ 0 ≤ p ∧ p < Int.ofNat rows ∧ 0 ≤ q ∧ q < Int.ofNat cols) ∨
         (m = -1 ∧ n = -1)) → True:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

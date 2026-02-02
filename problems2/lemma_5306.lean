@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -53,7 +53,7 @@ def nthUglyNumber_postcond (n : Nat) (result: Nat) (h_precond : nthUglyNumber_pr
 theorem nthUglyNumber_spec (n : Nat) (h : nthUglyNumber_precond n) :
     isUgly (nthUglyNumber n h) = true ∧
     ((List.range (nthUglyNumber n h)).filter (fun i => isUgly i)).length = n - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,51 +1,51 @@
-# Aesop
+# Codetic
 
-Aesop (Automated Extensible Search for Obvious Proofs) is a proof search tactic
-for Lean 4. It is broadly similar to Isabelle's `auto`. In essence, Aesop works
+Codetic (Automated Extensible Search for Obvious Proofs) is a proof search tactic
+for Lean 4. It is broadly similar to Isabelle's `auto`. In essence, Codetic works
 like this:
 
 - As with `simp`, you tag a (large) collection of definitions with the
-  `@[aesop]` attribute, registering them as Aesop _rules_. Rules can be
+  `@[codetic]` attribute, registering them as Codetic _rules_. Rules can be
   arbitrary tactics. We provide convenient ways to create common types of rules,
   e.g. rules which apply a lemma.
-- Aesop takes these rules and tries to apply each of them to the initial goal.
-  If a rule succeeds and generates subgoals, Aesop recursively applies the rules
+- Codetic takes these rules and tries to apply each of them to the initial goal.
+  If a rule succeeds and generates subgoals, Codetic recursively applies the rules
   to these subgoals, building a _search tree_.
 - The search tree is explored in a _best-first_ manner. You can mark rules as
-  more or less likely to be useful. Based on this information, Aesop prioritises
+  more or less likely to be useful. Based on this information, Codetic prioritises
   the goals in the search tree, visiting more promising goals before less
   promising ones.
 - Before any rules are applied to a goal, it is _normalised_, using a special
   (customisable) set of _normalisation rules_. An important built-in
   normalisation rule runs `simp_all`, so your `@[simp]` lemmas are taken into
-  account by Aesop.
-- Rules can be marked as _safe_ to optimise Aesop's performance. A safe rule is
-  applied eagerly and is never backtracked. For example, Aesop's built-in rules
+  account by Codetic.
+- Rules can be marked as _safe_ to optimise Codetic's performance. A safe rule is
+  applied eagerly and is never backtracked. For example, Codetic's built-in rules
   safely split a goal `P ∧ Q` into goals for `P` and `Q`. After this split, the
   original goal `P ∧ Q` is never revisited.
-- Aesop provides a set of built-in rules which perform logical operations (e.g.
+- Codetic provides a set of built-in rules which perform logical operations (e.g.
   case-split on hypotheses `P ∨ Q`) and some other straightforward deductions.
-- Aesop uses indexing methods similar to those of `simp` and other Lean tactics.
+- Codetic uses indexing methods similar to those of `simp` and other Lean tactics.
   This means it should remain reasonably fast even with a large rule set.
-- When called as `aesop?`, Aesop prints a tactic script that proves the goal,
+- When called as `codetic?`, Codetic prints a tactic script that proves the goal,
   similar to `simp?`. This way you can avoid the performance penalty of running
-  Aesop all the time. However, the script generation is currently not fully
+  Codetic all the time. However, the script generation is currently not fully
   reliable, so you may have to adjust the generated script.
 
-Aesop is suitable for two main use cases:
+Codetic is suitable for two main use cases:
 
-- General-purpose automation, where Aesop is used to dispatch 'trivial' goals.
-  By registering enough lemmas as Aesop rules, you can turn Aesop into a much
+- General-purpose automation, where Codetic is used to dispatch 'trivial' goals.
+  By registering enough lemmas as Codetic rules, you can turn Codetic into a much
   more powerful `simp`.
-- Special-purpose automation, where specific Aesop rule sets are built to
+- Special-purpose automation, where specific Codetic rule sets are built to
   address a certain class of goals. Mathlib tactics such as `measurability`
-  and `continuity` are implemented by Aesop.
+  and `continuity` are implemented by Codetic.
 
 I only occasionally update this README, so details may be out of date. If you
 have questions, please create an issue or ping me (Jannis Limperg) on the [Lean
 Zulip](https://leanprover.zulipchat.com). Pull requests are very welcome!
 
-There's also [a paper about Aesop](https://zenodo.org/record/7430233) which
+There's also [a paper about Codetic](https://zenodo.org/record/7430233) which
 covers many of the topics discussed here, sometimes in more detail.
 
 ## Building
@@ -53,32 +53,32 @@ covers many of the topics discussed here, sometimes in more detail.
 With [elan](https://github.com/leanprover/elan) installed, `lake build`
 should suffice.
 
-## Adding Aesop to Your Project
+## Adding Codetic to Your Project
 
-To use Aesop in a Lean 4 project, first add this package as a dependency. In
+To use Codetic in a Lean 4 project, first add this package as a dependency. In
 your `lakefile.lean`, add
 
 ```lean
-require aesop from git "https://github.com/leanprover-community/aesop"
+require codetic from git "https://github.com/leanprover-community/codetic"
 ```
 
 You also need to make sure that your `lean-toolchain` file contains the same
-version of Lean 4 as Aesop's, and that your versions of Aesop's dependencies
+version of Lean 4 as Codetic's, and that your versions of Codetic's dependencies
 (currently only `std4`) match. We unfortunately can't support version ranges at
 the moment.
 
 Now the following test file should compile:
 
 ```lean
-import Aesop
+import Codetic
 
 example : α → α :=
-  by aesop
+  by codetic
 ```
 
 ## Quickstart
 
-To get you started, I'll explain Aesop's major concepts with a series of
+To get you started, I'll explain Codetic's major concepts with a series of
 examples. A more thorough, reference-style discussion follows in the next
 section.
 
@@ -110,27 +110,27 @@ theorem nil_append : nil ++ xs = xs := rfl
 theorem cons_append : cons x xs ++ ys = cons x (xs ++ ys) := rfl
 ```
 
-When Aesop first encounters a goal, it normalises it by running a customisable
+When Codetic first encounters a goal, it normalises it by running a customisable
 set of normalisation rules. One such normalisation rule effectively runs
-`simp_all`, so Aesop automatically takes `simp` lemmas into account.
+`simp_all`, so Codetic automatically takes `simp` lemmas into account.
 
 Now we define the `NonEmpty` predicate on `MyList`:
 
 ``` lean
-@[aesop safe [constructors, cases]]
+@[codetic safe [constructors, cases]]
 inductive NonEmpty : MyList α → Prop
   | cons : NonEmpty (cons x xs)
 ```
 
-Here we see the first proper Aesop feature: we use the **`@[aesop]`** attribute
-to construct two Aesop rules related to the `NonEmpty` type. These rules are
-added to a global rule set. When Aesop searches for a proof, it systematically
+Here we see the first proper Codetic feature: we use the **`@[codetic]`** attribute
+to construct two Codetic rules related to the `NonEmpty` type. These rules are
+added to a global rule set. When Codetic searches for a proof, it systematically
 applies each available rule, then recursively searches for proofs of the
 subgoals generated by the rule, and so on, building a search tree. A goal is
-proved when Aesop applies a rule that generates no subgoals.
+proved when Codetic applies a rule that generates no subgoals.
 
 In general, rules can be arbitrary tactics. But since you probably don't want to
-write a tactic for every rule, the `aesop` attribute provides several **rule
+write a tactic for every rule, the `codetic` attribute provides several **rule
 builders** which construct common sorts of rules. In our example, we construct:
 
 - A **`constructors`** rule. This rule tries to apply each constructor of
@@ -146,16 +146,16 @@ later see **unsafe** rules, which can backtrack.
 With these rules, we can prove a theorem about `NonEmpty` and `append`:
 
 ``` lean
-@[aesop unsafe 50% apply]
+@[codetic unsafe 50% apply]
 theorem nonEmpty_append₁ {xs : MyList α} ys :
     NonEmpty xs → NonEmpty (xs ++ ys) := by
-  aesop
+  codetic
 ```
 
-Aesop finds this proof in four steps:
+Codetic finds this proof in four steps:
 
 - A built-in rule introduces the hypothesis `h : NonEmpty xs`. By default,
-  Aesop's rule set contains a number of straightforward rules for handling the
+  Codetic's rule set contains a number of straightforward rules for handling the
   logical connectives `→`, `∧`, `∨` and `¬` as well as the quantifiers `∀` and
   `∃` and some other basic types.
 - The `cases` rule for `NonEmpty` performs case analysis on `h`.
@@ -163,19 +163,19 @@ Aesop finds this proof in four steps:
   operation.
 - The `constructor` rule for `NonEmpty` applies `NonEmpty.cons`.
 
-If you want to see how Aesop proves your goal (or why it doesn't prove your
+If you want to see how Codetic proves your goal (or why it doesn't prove your
 goal, or why it takes too long to prove your goal), you can enable tracing:
 
 ``` lean
-set_option trace.aesop true
+set_option trace.codetic true
 ```
 
-This makes Aesop print out the steps it takes while searching for a proof. You
-can also look at the search tree Aesop constructed by enabling the
-`trace.aesop.tree` option. For more tracing options, type `set_option
-trace.aesop` and see what auto-completion suggests.
+This makes Codetic print out the steps it takes while searching for a proof. You
+can also look at the search tree Codetic constructed by enabling the
+`trace.codetic.tree` option. For more tracing options, type `set_option
+trace.codetic` and see what auto-completion suggests.
 
-If, in the example above, you call `aesop?` instead, then Aesop prints a proof
+If, in the example above, you call `codetic?` instead, then Codetic prints a proof
 script. At time of writing, it looks like this:
 
 ``` lean
@@ -185,18 +185,18 @@ simp_all only [cons_append]
 apply MyList.NonEmpty.cons
 ```
 
-With a bit of post-processing, you can use this script instead of the Aesop
-call. This way you avoid the performance penalty of making Aesop search for a
+With a bit of post-processing, you can use this script instead of the Codetic
+call. This way you avoid the performance penalty of making Codetic search for a
 proof over and over again. The proof script generation currently has some known
 bugs, but it produces usable scripts most of the time.
 
-The `@[aesop]` attribute on `nonEmpty_append₁` adds this lemma as an **unsafe**
+The `@[codetic]` attribute on `nonEmpty_append₁` adds this lemma as an **unsafe**
 rule to the default rule set. For this rule we use the **`apply`** rule builder,
 which generates a rule that tries to apply `nonEmpty_append₁` whenever the
 target is of the form `NonEmpty (_ ++ _)`.
 
 Unsafe rules are rules which can backtrack, so after they have been applied to a
-goal, Aesop may still try other rules to solve the same goal. This makes sense
+goal, Codetic may still try other rules to solve the same goal. This makes sense
 for `nonEmpty_append₁`: if we have a goal `NonEmpty (xs ++ ys)`, we may prove it
 either by showing `NonEmpty xs` (i.e., by applying `nonEmpty_append₁`) or by
 showing `NonEmpty ys`. If `nonEmpty_append₁` were registered as a safe rule, we
@@ -208,65 +208,65 @@ successful proof. It is used to prioritise goals: the initial goal starts with a
 priority of 100% and whenever we apply an unsafe rule, the priority of its
 subgoals is the priority of its parent goal multiplied with the success
 probability of the applied rule. So applying `nonEmpty_append₁` repeatedly would
-give us goals with priority 50%, 25%, etc. Aesop always considers the
+give us goals with priority 50%, 25%, etc. Codetic always considers the
 highest-priority unsolved goal first, so it prefers proof attempts involving few
-and high-probability rules. Additionally, when Aesop has a choice between
+and high-probability rules. Additionally, when Codetic has a choice between
 multiple unsafe rules, it prefers the one with the highest success probability.
 (Ties are broken arbitrarily but deterministically.)
 
-After adding `nonEmpty_append`, Aesop can prove some consequences of this
+After adding `nonEmpty_append`, Codetic can prove some consequences of this
 lemma:
 
 ``` lean
 example {α : Type u} {xs : MyList α} ys zs :
     NonEmpty xs → NonEmpty (xs ++ ys ++ zs) := by
-  aesop
+  codetic
 ```
 
 Next, we prove another simple theorem about `NonEmpty`:
 
 ``` lean
 theorem nil_not_nonEmpty (xs : MyList α) : xs = nil → ¬ NonEmpty xs := by
-  aesop (add 10% cases MyList)
+  codetic (add 10% cases MyList)
 ```
 
 Here we use an **`add`** clause to add a rule which is only used in this
-specific Aesop call. The rule is an unsafe `cases` rule for `MyList`. (As you
+specific Codetic call. The rule is an unsafe `cases` rule for `MyList`. (As you
 can see, you can leave out the `unsafe` keyword and specify only a success
 probability.) This rule is dangerous: when we apply it to a hypothesis `xs :
 MyList α`, we get `x : α` and `ys : MyList α`, so we can apply the `cases` rule
 again to `ys`, and so on. We therefore give this rule a very low success
-probability, to make sure that Aesop applies other rules if possible.
+probability, to make sure that Codetic applies other rules if possible.
 
-Here are some examples where Aesop's normalisation phase is particularly useful:
+Here are some examples where Codetic's normalisation phase is particularly useful:
 
 ``` lean
 @[simp]
 theorem append_nil {xs : MyList α} :
     xs ++ nil = xs := by
-  induction xs <;> aesop
+  induction xs <;> codetic
 
 theorem append_assoc {xs ys zs : MyList α} :
     (xs ++ ys) ++ zs = xs ++ (ys ++ zs) := by
-  induction xs <;> aesop
+  induction xs <;> codetic
 ```
 
 Since we previously added unfolding lemmas for `append` to the global `simp`
-set, Aesop can prove theorems about this function more or less by itself (though
+set, Codetic can prove theorems about this function more or less by itself (though
 in fact `simp_all` would already suffice.) However, we still need to perform
 induction explicitly. This is a deliberate design choice: techniques for
 automating induction exist, but they are complex, somewhat slow and not entirely
 reliable, so we prefer to do it manually.
 
-Many more examples can be found in the `AesopTest` folder of this repository. In
-particular, the file `AesopTest/List.lean` contains an Aesop-ified port of 200
+Many more examples can be found in the `CodeticTest` folder of this repository. In
+particular, the file `CodeticTest/List.lean` contains an Codetic-ified port of 200
 basic list lemmas from the Lean 3 version of mathlib, and the file
-`AesopTest/SeqCalcProver.lean` shows how Aesop can help with the formalisation
+`CodeticTest/SeqCalcProver.lean` shows how Codetic can help with the formalisation
 of a simple sequent calculus prover.
 
 ## Reference
 
-This section contains a systematic and fairly comprehensive account of how Aesop
+This section contains a systematic and fairly comprehensive account of how Codetic
 operates.
 
 ### Rules
@@ -293,7 +293,7 @@ A rule is a tactic plus some associated metadata. Rules come in three flavours:
   Safe rules should be provability-preserving, meaning that if a goal is
   provable and we apply a safe rule to it, the generated subgoals should still
   be provable. This is a less precise notion than it may appear since
-  what is provable depends on the entire Aesop rule set.
+  what is provable depends on the entire Codetic rule set.
 
 - **Unsafe rules** (keyword `unsafe`) are tried only if all available safe rules
   have failed on a goal. When an unsafe rule is applied to a goal, the goal is
@@ -317,7 +317,7 @@ both slightly more efficient and slightly more natural.
 
 ### Search Tree
 
-Aesop's central data structure is a search tree. This tree alternates between
+Codetic's central data structure is a search tree. This tree alternates between
 two kinds of nodes:
 
 - **Goal nodes**: these nodes store a goal, plus metadata relevant to the
@@ -336,9 +336,9 @@ goals must be proved; to prove a goal, *any* of its child rapps must be proved.
 ### Search
 
 We start with a search tree containing a single goal node. This node's goal is
-the goal which Aesop is supposed to solve. Then we perform the following steps
+the goal which Codetic is supposed to solve. Then we perform the following steps
 in a loop, stopping if (a) the root goal has been proved; (b) the root goal
-becomes unprovable; or (c) one of Aesop's rule limits has been reached. (There
+becomes unprovable; or (c) one of Codetic's rule limits has been reached. (There
 are configurable limits on, e.g., the total number of rules applied or the
 search depth.)
 
@@ -351,7 +351,7 @@ search depth.)
     any of these rules is successful, restart the normalisation loop with the
     goal produced by the rule.
   - Run `simp` on all hypotheses and the target, using the global simp set (i.e.
-    lemmas tagged `@[simp]`) plus Aesop's `simp` rules.
+    lemmas tagged `@[simp]`) plus Codetic's `simp` rules.
   - Run the normalisation rules with positive penalty (lowest penalty first).
     If any of these rules is successful, restart the normalisation loop.
 
@@ -385,8 +385,8 @@ proved its goal already or which can never prove its goal. More formally:
 
 ### Rule Builders
 
-A **rule builder** is a metaprogram that turns an expression into an Aesop rule.
-When you tag a declaration with the `@[aesop]` attribute, the builder is applied
+A **rule builder** is a metaprogram that turns an expression into an Codetic rule.
+When you tag a declaration with the `@[codetic]` attribute, the builder is applied
 to the declared constant. When you use the `add` clause, as in `(add <phase>
 <builder> (<term>))`, the builder is applied to the given term, which may
 involve hypotheses from the goal. However, some builders only support global
@@ -430,11 +430,11 @@ Currently available builders are:
   ```
 
   The immediate names, here `n`, refer to the arguments of `even_or_odd`. When
-  Aesop applies a forward rule with explicit immediate names, it only matches
+  Codetic applies a forward rule with explicit immediate names, it only matches
   the corresponding arguments to hypotheses. (Here, `even_or_odd` has only one
   argument, so there is no difference.)
 
-  When no immediate names are given, Aesop considers every argument immediate,
+  When no immediate names are given, Codetic considers every argument immediate,
   except for instance arguments and dependent arguments (i.e. those that can be
   inferred from the types of later arguments).
 
@@ -445,7 +445,7 @@ Currently available builders are:
   used as immediate arguments are cleared. This is useful when you want to
   eliminate a hypothesis. E.g. the rule
   ```
-  @[aesop norm destruct]
+  @[codetic norm destruct]
   theorem and_elim_right : α ∧ β → α := ...
   ```
   will cause the goal
@@ -499,12 +499,12 @@ Currently available builders are:
   builder is used in an `add` clause, you can use e.g. `(add safe (by
   norm_num))` to register `norm_num` as a safe rule. The `by` block can also
   contain multiple tactics as well as references to the hypotheses. When you
-  use `(by ...)` in an `add` clause, Aesop automatically uses the tactic
+  use `(by ...)` in an `add` clause, Codetic automatically uses the tactic
   builder, unless you specify a different builder.
 
-  When this builder is used in the `@[aesop]` attribute, the declaration tagged
-  with the attribute must have type `TacticM Unit`, `Aesop.SingleRuleTac` or
-  `Aesop.RuleTac`. The latter are Aesop data types which associate a tactic with
+  When this builder is used in the `@[codetic]` attribute, the declaration tagged
+  with the attribute must have type `TacticM Unit`, `Codetic.SingleRuleTac` or
+  `Codetic.RuleTac`. The latter are Codetic data types which associate a tactic with
   additional metadata; using them may allow the rule to operate somewhat more
   efficiently.
 
@@ -550,7 +550,7 @@ To override this behaviour, you can write `apply (transparency! := default)`
 Rule sets are declared with the command
 
 ``` lean
-declare_aesop_rule_sets [r₁, ..., rₙ] (default := <bool>)
+declare_codetic_rule_sets [r₁, ..., rₙ] (default := <bool>)
 ```
 
 where the `rᵢ` are arbitrary names. To avoid clashes, pick names in the
@@ -564,18 +564,18 @@ priorities or different builder options (if the rule's builder has any options).
 
 Rules can appear in multiple rule sets, but in this case you should make sure
 that they have the same priority and use the same builder options. Otherwise,
-Aesop will consider these rules the same and arbitrarily pick one.
+Codetic will consider these rules the same and arbitrarily pick one.
 
-Out of the box, Aesop uses the default rule sets `builtin` and `default`. The
+Out of the box, Codetic uses the default rule sets `builtin` and `default`. The
 `builtin` set contains built-in rules for handling various constructions (see
-below). The `default` set contains rules which were added by Aesop users without
+below). The `default` set contains rules which were added by Codetic users without
 specifying a rule set.
 
-### The `@[aesop]` Attribute
+### The `@[codetic]` Attribute
 
-Declarations can be added to rule sets by annotating them with the `@[aesop]`
-attribute. As with other attributes, you can use `@[local aesop]` to add a rule
-only within the current section or namespace and `@[scoped aesop]` to add a rule
+Declarations can be added to rule sets by annotating them with the `@[codetic]`
+attribute. As with other attributes, you can use `@[local codetic]` to add a rule
+only within the current section or namespace and `@[scoped codetic]` to add a rule
 only when the current namespace is open.
 
 #### Single Rule
@@ -584,7 +584,7 @@ In most cases, you'll want to add one rule for the declaration. The syntax for
 this is
 
 ``` lean
-@[aesop <phase>? <priority>? <builder>? <builder_option>* <rule_sets>?]
+@[codetic <phase>? <priority>? <builder>? <builder_option>* <rule_sets>?]
 ```
 
 where
@@ -629,13 +629,13 @@ a `cases` and a `constructors` rule for the same inductive type. In this case,
 you can write for example
 
 ``` lean
-@[aesop unsafe [constructors 75%, cases 90%]]
+@[codetic unsafe [constructors 75%, cases 90%]]
 inductive T ...
 
-@[aesop apply [safe (rule_sets := [A]), 70% (rule_sets := [B])]]
+@[codetic apply [safe (rule_sets := [A]), 70% (rule_sets := [B])]]
 def foo ...
 
-@[aesop [80% apply, safe 5 forward (immediate := x)]]
+@[codetic [80% apply, safe 5 forward (immediate := x)]]
 def bar (x : T) ...
 ```
 
@@ -651,11 +651,11 @@ In the third example, two rules are registered for `bar`: an `unsafe` rule with
 80% success probability using the `apply` builder and a `safe` rule with penalty
 5 using the `forward` builder.
 
-In general, the grammar for the `@[aesop]` attribute is
+In general, the grammar for the `@[codetic]` attribute is
 
 ``` lean
-attr      ::= @[aesop <rule_expr>]
-            | @[aesop [<rule_expr,+>]]
+attr      ::= @[codetic <rule_expr>]
+            | @[codetic [<rule_expr,+>]]
 
 rule_expr ::= feature
             | feature <rule_expr>
@@ -672,26 +672,26 @@ You can use the `attribute` command to add rules for constants which were
 declared previously, either in your own development or in a package you import:
 
 ```lean
-attribute [aesop norm unfold] List.all -- List.all is from Init
+attribute [codetic norm unfold] List.all -- List.all is from Init
 ```
 
-You can also use the `add_aesop_rules` command:
+You can also use the `add_codetic_rules` command:
 
 ``` lean
-add_aesop_rules safe [(by linarith), Nat.add_comm 0]
+add_codetic_rules safe [(by linarith), Nat.add_comm 0]
 ```
 
 As you can see, this command can be used to add tactics and composite terms as
-well. Use `local add_aesop_rules` and `scoped add_aesop_rules` to obtain the
-equivalent of `@[local aesop]` and `@[scoped aesop]`.
+well. Use `local add_codetic_rules` and `scoped add_codetic_rules` to obtain the
+equivalent of `@[local codetic]` and `@[scoped codetic]`.
 
 ### Erasing Rules
 
-There are two ways to erase rules. Usually it suffices to remove the `@[aesop]`
+There are two ways to erase rules. Usually it suffices to remove the `@[codetic]`
 attribute:
 
 ``` lean
-attribute [-aesop] foo
+attribute [-codetic] foo
 ```
 
 This will remove all rules associated with the declaration `foo` from all rule
@@ -700,11 +700,11 @@ end of the file. This is a fundamental limitation of Lean's attribute system:
 once a declaration is tagged with an attribute, it cannot be permanently
 untagged.
 
-If you want to remove only certain rules, you can use the `erase_aesop_rules`
+If you want to remove only certain rules, you can use the `erase_codetic_rules`
 command:
 
 ``` lean
-erase_aesop_rules [safe apply foo, bar (rule_sets := [A])]
+erase_codetic_rules [safe apply foo, bar (rule_sets := [A])]
 ```
 
 This will remove:
@@ -716,10 +716,10 @@ other, for example, unsafe rules or `forward` rules);
 In general, the syntax is
 
 ``` lean
-erase_aesop_rules [<rule_expr,+>]
+erase_codetic_rules [<rule_expr,+>]
 ```
 
-i.e. rules are specified in the same way as for the `@[aesop]` attribute.
+i.e. rules are specified in the same way as for the `@[codetic]` attribute.
 However, each rule must also specify the name of the declaration whose rules
 should be erased. The `rule_expr` grammar is therefore extended such that a
 `feature` can also be the name of a declaration.
@@ -730,26 +730,26 @@ builder that is ultimately used, e.g. `apply` or `simp`. So if you want to erase
 such a rule, you may have to specify that builder instead of the default
 builder.
 
-### The `aesop` Tactic
+### The `codetic` Tactic
 
-In its most basic form, you can call the Aesop tactic just by writing
+In its most basic form, you can call the Codetic tactic just by writing
 
 ``` lean
 example : α → α := by
-  aesop
+  codetic
 ```
 
 This will use the rules in the default rule sets. Out of the box, these are the
-`default` rule set, containing rules tagged with the `@[aesop]` attribute
+`default` rule set, containing rules tagged with the `@[codetic]` attribute
 without mentioning a specific rule set, and the `builtin` rule set, containing
-rules built into Aesop. However, other rule sets can also be enabled by default;
-see the `declare_aesop_rule_sets` command.
+rules built into Codetic. However, other rule sets can also be enabled by default;
+see the `declare_codetic_rule_sets` command.
 
 The tactic's behaviour can also be customised with various options. A more
-involved Aesop call might look like this:
+involved Codetic call might look like this:
 
 ``` text
-aesop
+codetic
   (add safe foo, 10% cases Or, safe cases Empty)
   (erase A, baz)
   (rule_sets := [A, B])
@@ -760,17 +760,17 @@ Here we add some rules with an `add` clause, erase other rules with an `erase`
 clause, limit the used rule sets and set some options. Each of these clauses
 is discussed in more detail below.
 
-#### Adding Rules to an Aesop Call
+#### Adding Rules to an Codetic Call
 
-Rules can be added to an Aesop call with an `add` clause. This won't affect any
+Rules can be added to an Codetic call with an `add` clause. This won't affect any
 declared rule sets. The syntax of the `add` clause is
 
 ``` text
 (add <rule_expr,+>)
 ```
 
-i.e. rules can be specified in the same way as for the `@[aesop]` attribute.
-As with the `erase_aesop_rules` command, each rule must specify the name of
+i.e. rules can be specified in the same way as for the `@[codetic]` attribute.
+As with the `erase_codetic_rules` command, each rule must specify the name of
 declaration from which the rule should be built; for example
 
 ``` text
@@ -783,17 +783,17 @@ rule with penalty 5.
 The rule names can also refer to hypotheses in the goal context, but not all
 builders support this.
 
-#### Erasing Rules From an Aesop Call
+#### Erasing Rules From an Codetic Call
 
-Rules can be removed from an Aesop call with an `erase` clause. Again, this
-affects only the current Aesop call and not the declared rule sets. The syntax
+Rules can be removed from an Codetic call with an `erase` clause. Again, this
+affects only the current Codetic call and not the declared rule sets. The syntax
 of the `erase` clause is
 
 ``` text
 (erase <rule_expr,+>)
 ```
 
-and it works exactly like the `erase_aesop_rules` command. To erase all rules
+and it works exactly like the `erase_codetic_rules` command. To erase all rules
 associated with `x` and `y`, write
 
 ``` lean
@@ -802,7 +802,7 @@ associated with `x` and `y`, write
 
 #### Selecting Rule Sets
 
-By default, Aesop uses the `default` and `builtin` rule sets, as well as rule
+By default, Codetic uses the `default` and `builtin` rule sets, as well as rule
 sets which are declared as default rule sets. A `rule_sets` clause can be given
 to include additional rule sets, e.g.
 
@@ -822,7 +822,7 @@ Various options can be set with a `config` clause, whose syntax is:
 (config := <term>)
 ```
 
-The term is an arbitrary Lean expression of type `Aesop.Options`; see there for
+The term is an arbitrary Lean expression of type `Codetic.Options`; see there for
 details. Notable options include:
 
 - `strategy` selects a best-first, depth-first or breadth-first search strategy.
@@ -842,82 +842,82 @@ You can give the same options here as in `simp (config := ...)`.
 ### Built-In Rules
 
 The set of built-in rules (those in the `builtin` rule set) is a bit unstable,
-so for now I won't document them in detail. See `Aesop/BuiltinRules.lean` and
-`Aesop/BuiltinRules/*.lean`
+so for now I won't document them in detail. See `Codetic/BuiltinRules.lean` and
+`Codetic/BuiltinRules/*.lean`
 
 ### Proof Scripts
 
-By calling `aesop?` instead of `aesop`, you can instruct Aesop to generate a
-tactic script which proves the goal (if Aesop succeeds). The script is printed
+By calling `codetic?` instead of `codetic`, you can instruct Codetic to generate a
+tactic script which proves the goal (if Codetic succeeds). The script is printed
 as a `Try this:` suggestion, similar to `simp?`.
 
-The scripts generated by Aesop are currently a bit idiosyncratic. For example,
-they may contain the `aesop_cases` tactic, which is a slight variation of the
-standard `cases`. Additionally, Aesop occasionally generates buggy scripts which
+The scripts generated by Codetic are currently a bit idiosyncratic. For example,
+they may contain the `codetic_cases` tactic, which is a slight variation of the
+standard `cases`. Additionally, Codetic occasionally generates buggy scripts which
 do not solve the goal. We hope to eventually fix these issues; until then, you
 may have to lightly adjust the proof scripts by hand.
 
 ### Tracing
 
-To see how Aesop proves a goal -- or why it doesn't prove a goal, or why it's
+To see how Codetic proves a goal -- or why it doesn't prove a goal, or why it's
 slow to prove a goal -- it is useful to see what it's doing. To that end, you
 can enable various tracing options. These use the usual syntax, e.g.
 
 ``` lean
-set_option trace.aesop true
+set_option trace.codetic true
 ```
 
 The main options are:
 
-- `trace.aesop`: print a step-by-step log of which goals Aesop tried to
+- `trace.codetic`: print a step-by-step log of which goals Codetic tried to
   solve, which rules it tried to apply (successfully or unsuccessfully), etc.
-- `trace.aesop.ruleSet`: print the rule set used for an Aesop call.
-- `trace.aesop.proof`: if Aesop is successful, print the proof that was
+- `trace.codetic.ruleSet`: print the rule set used for an Codetic call.
+- `trace.codetic.proof`: if Codetic is successful, print the proof that was
   generated (as a Lean term). You should be able to copy-and-paste this proof
-  to replace Aesop.
+  to replace Codetic.
   
 ### Profiling
 
-To get an idea of where Aesop spends its time, use
+To get an idea of where Codetic spends its time, use
 
 ``` lean
-set_option trace.aesop.stats true
+set_option trace.codetic.stats true
 ```
 
-Aesop then prints some statistics about this particular Aesop run.
+Codetic then prints some statistics about this particular Codetic run.
 
-To get statistics for multiple Aesop invocations, activate the option
-`aesop.collectStats` for the relevant files (or for certain invocations) and run
-the command `#aesop_stats` in a file which imports all relevant files. E.g. to
-evaluate Aesop's performance in Mathlib, set the option `aesop.collectStats` in
+To get statistics for multiple Codetic invocations, activate the option
+`codetic.collectStats` for the relevant files (or for certain invocations) and run
+the command `#codetic_stats` in a file which imports all relevant files. E.g. to
+evaluate Codetic's performance in Mathlib, set the option `codetic.collectStats` in
 Mathlib's `lakefile.lean`, recompile Mathlib from scratch and create a new Lean
 file with contents
 
 ``` lean
 import Mathlib
 
-#aesop_stats
+#codetic_stats
 ```
 
 
 You can also activate the `profiler` option, which augments the trace produced
-by `trace.aesop` with information about how much time each step took. Note that
+by `trace.codetic` with information about how much time each step took. Note that
 only the timing information pertaining to goal expansions and rule applications
 is relevant. Other timings, such as those attached to new rapps and goals, are
 just artefacts of the Lean tracing API.
 
 ### Checking Internal Invariants
 
-If you encounter behaviour that looks like an internal error in Aesop, it may
-help to set the option `aesop.check.all` (or the more fine-grained
-`aesop.check.*` options). This makes Aesop check various invariants while the
+If you encounter behaviour that looks like an internal error in Codetic, it may
+help to set the option `codetic.check.all` (or the more fine-grained
+`codetic.check.*` options). This makes Codetic check various invariants while the
 tactic is running. These checks are somewhat expensive, so remember to unset the
 option after you've reported the bug.
 
 ### Handling Metavariables
 
-Rules which create metavariables must be handled specially by Aesop. For
-example, suppose we register transitivity of `<` as an Aesop rule. Then we may
+Rules which create metavariables must be handled specially by Codetic. For
+example, suppose we register transitivity of `<` as an Codetic rule. Then we may
 get a goal state of this form:
 
 ``` lean
@@ -935,12 +935,12 @@ goal: in the first case, it becomes `n + 1 < k`; in the second case, `a < k`.
 And of course one of these could be provable while the other is not. In other
 words, the second subgoal now depends on the *proof* of the first subgoal
 (whereas usually we don't care *how* a goal was proven, only *that* it was
-proven). Aesop could also decide to work on the second subgoal first, in which
+proven). Codetic could also decide to work on the second subgoal first, in which
 case the situation is symmetric.
 
-Due to this dependency, Aesop in effect treats the instantiations of the second
+Due to this dependency, Codetic in effect treats the instantiations of the second
 subgoal as *additional goals*. Thus, when we apply the theorem `∀ n, n < n + 1`,
-which closes the first goal, Aesop realises that because this theorem was
+which closes the first goal, Codetic realises that because this theorem was
 applied, we must now prove `n + 1 < k` as well. So it adds this goal as an
 additional subgoal of the rule application `∀ n, n < n + 1` (which otherwise
 would not have any subgoals). Similarly, when the assumption `n < a` is applied,
@@ -948,11 +948,11 @@ its rule application gains an additional subgoal `a < k`.
 
 This mechanism makes sure that we consider all potential proofs. The downside is
 that it's quite explosive: when there are multiple metavariables in multiple
-goals, which Aesop may visit in any order, Aesop may spend a lot of time copying
+goals, which Codetic may visit in any order, Codetic may spend a lot of time copying
 goals with shared metavariables. It may even try to prove the same goal more
 than once since different rules may yield the same metavariable instantiations.
 For these reasons, rules which create metavariables are best kept out of the
-global rule set and added to individual Aesop calls on an ad-hoc basis.
+global rule set and added to individual Codetic calls on an ad-hoc basis.
 
 It is also worth noting that when a safe rule assigns a metavariable, it is
 treated as an unsafe rule (with success probability 90%). This is because
@@ -960,5 +960,5 @@ assigning metavariables is almost never safe, for the same reason as above: the
 usually perfectly safe rule `∀ n, n < n + 1` would, if treated as safe, force us
 to commit to one particular instantiation of the metavariable `?m`.
 
-For more details on the handling of metavariables, see the [Aesop
+For more details on the handling of metavariables, see the [Codetic
 paper](https://zenodo.org/record/7430233).

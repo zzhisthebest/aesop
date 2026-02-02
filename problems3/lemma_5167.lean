@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -53,7 +53,7 @@ def nthUglyNumber_postcond (n : Nat) (result: Nat) (h_precond : nthUglyNumber_pr
 theorem isUgly_iff (x : Nat) :
     isUgly x = true ↔
       (∃ k₂ k₃ k₅, x = 2 ^ k₂ * 3 ^ k₃ * 5 ^ k₅) ∧ x ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

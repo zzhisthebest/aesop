@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem second_fold_preserves (a b : Array Int) :
     (b.foldl (fun acc x => if !inArray a x then acc.insert x else acc)
       (a.foldl (fun acc x => if !inArray b x then acc.insert x else acc)
         Std.HashSet.empty)).toArray.all (fun y => inArray a y ≠ inArray b y):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

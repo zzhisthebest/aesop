@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def double_array_elements_postcond (s : Array Int) (result: Array Int) (h_precon
 theorem aux_doubles_all (s : Array Int) :
     (double_array_elements_aux s s 0).size = s.size ∧
       ∀ i, i < s.size → (double_array_elements_aux s s 0)[i]! = 2 * s[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

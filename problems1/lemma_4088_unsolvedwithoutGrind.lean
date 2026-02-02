@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ def mergeSorted_postcond (a1 : Array Nat) (a2 : Array Nat) (result: Array Nat) :
 theorem pairwise_push_right {xs : List Nat} {x : Nat}
     (hxs : List.Pairwise (· ≤ ·) xs) (hx : xs.getLastD 0 ≤ x) :
     List.Pairwise (· ≤ ·) (xs ++ [x]):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

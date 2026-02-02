@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countDigits (n : Nat) : Nat :=
@@ -32,7 +32,7 @@ def isArmstrong_postcond (n : Nat) (result: Bool) (h_precond : isArmstrong_preco
 
 theorem sumPowers_succ (n k : Nat) (h : n ≠ 0) :
     sumPowers n k = (n % 10) ^ k + sumPowers (n / 10) k:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

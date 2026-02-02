@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem foldl_preserves_isPerm
     (hf : ∀ a i, List.isPerm a.toList (f a i).toList)
     (a0 : Array Int) :
     List.isPerm a0.toList ((l.foldl f a0).toList):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

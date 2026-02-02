@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem total_moves (firstIndex lastIndex n : Nat) :
     (if firstIndex ≠ 0 then firstIndex else 0) +
       (if lastIndex ≠ n - 1 then n - 1 - lastIndex else 0) =
         firstIndex + (n - 1 - lastIndex):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

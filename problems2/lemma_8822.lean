@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem prod_eq_of_nodup_mem_iff {l₁ l₂ : List Int}
     (h₁ : l₁.Nodup) (h₂ : l₂.Nodup)
     (hmem : ∀ x, x ∈ l₁ ↔ x ∈ l₂) :
     l₁.foldl (· * ·) 1 = l₂.foldl (· * ·) 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

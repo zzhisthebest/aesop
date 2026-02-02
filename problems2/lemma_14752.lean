@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem findBest_spec (a : Array Int) (x i : Nat) (best : Int) (hsize : a.size >
     (∀ j, j < i → a[j]! ≤ best) →
     let r := findBest a x i best;
     (∀ j, j < x → a[j]! ≤ r) ∧ (∃ j, j < x ∧ a[j]! = r):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

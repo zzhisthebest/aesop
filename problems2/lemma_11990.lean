@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem binarySearch_correct_index
     (a : Array Int) (key : Int) (h_precond : BinarySearch_precond a key) :
     let r := BinarySearch a key h_precond
     (∀ i < r, a[i]! < key) ∧ (∀ i, r ≤ i → i < a.size → a[i]! ≥ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

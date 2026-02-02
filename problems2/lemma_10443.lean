@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem take_drop_at_idx (l : List Int) :
     let zs := l.filter (· = 0)
     let i  := (nz ++ zs).idxOf 0
     (nz ++ zs).take i = nz ∧ (nz ++ zs).drop i = zs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ theorem hasOppositeSign_postcond_left {a b : Int}
     (h_precond : hasOppositeSign_precond a b) :
     ((a < 0 ∧ b > 0) ∨ (a > 0 ∧ b < 0)) →
       hasOppositeSign a b h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

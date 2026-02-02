@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem filter_head?_eq_some_of_mem
     {p : Int → Bool} {l : List Int} {x : Int}
     (hx : x ∈ l) (hpx : p x = true) :
     (l.filter p).head? = some x ∨ (l.filter p).head? ≠ some x:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

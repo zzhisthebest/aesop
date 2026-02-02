@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem order_preserved (s : List Int) (a b : Int) :
     b ∈ SetToSeq s (by trivial) →
     (SetToSeq s (by trivial)).idxOf a < (SetToSeq s (by trivial)).idxOf b →
     s.idxOf a < s.idxOf b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

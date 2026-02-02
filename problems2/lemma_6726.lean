@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 
 
 theorem take_one_ne_nil_of_pos_len {α} (l : List α) (hpos : 0 < l.length) : l.take 1 ≠ []:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

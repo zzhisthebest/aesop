@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Int) (h_precond : lengthOfLI
 theorem exists_max_length (allInc : List (List Int)) :
     (∀ l ∈ allInc, ∀ l' ∈ allInc, l.length ≤ l'.length) →
     ∃ l ∈ allInc, ∀ l' ∈ allInc, l'.length ≤ l.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

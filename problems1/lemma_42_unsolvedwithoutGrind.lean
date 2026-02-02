@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -43,8 +43,8 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
 theorem FindSingleNumber_postcond_aux (nums : List Int)
     (h : FindSingleNumber_precond nums) :
     FindSingleNumber_postcond nums (FindSingleNumber nums h) h:= by
-aesop?
-aesop?(config := { enableGrind := false })
+codetic?
+codetic?(config := { enableGrind := false })
 
 
 end tmp

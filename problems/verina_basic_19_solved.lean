@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def isSorted_precond (a : Array Int) : Prop :=
@@ -71,7 +71,7 @@ def isSorted_postcond (a : Array Int) (result: Bool) (h_precond : isSorted_preco
 theorem isSorted_spec_satisfied (a: Array Int) (h_precond : isSorted_precond (a)) :
     isSorted_postcond (a) (isSorted (a) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
 
   -- !benchmark @end proof
 --己

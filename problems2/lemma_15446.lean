@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem idxNat_lt_len (i len : Nat) (offset : Int) (h : i < len) :
     let idxIntAdj := if idxInt < 0 then idxInt + Int.ofNat len else idxInt
     let idxNat : Nat := Int.toNat idxIntAdj
     idxNat < len:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

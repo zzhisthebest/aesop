@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem swap_get_other (arr : Array Int) (i j : Int) (k : Nat)
     (h_precond : swap_precond arr i j)
     (hk_i : k ≠ Int.toNat i) (hk_j : k ≠ Int.toNat j) :
     (swap arr i j h_precond)[k]! = arr[k]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

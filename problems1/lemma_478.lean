@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -72,7 +72,7 @@ theorem hasIntersection_def (c1 c2 : List Nat) :
     hasChordIntersection_postcond.hasIntersection c1 c2 = true ↔
       (c1[0]! < c2[0]! ∧ c2[0]! < c1[1]! ∧ c1[1]! < c2[1]!) ∨
       (c2[0]! < c1[0]! ∧ c1[0]! < c2[1]! ∧ c2[1]! < c1[1]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

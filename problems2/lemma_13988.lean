@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem result_is_prefix_of_str2 (str1 str2 : List Char)
     (h : LongestCommonPrefix_precond str1 str2) :
     (LongestCommonPrefix str1 str2 h).length ≤ str2.length ∧
     (LongestCommonPrefix str1 str2 h) = str2.take (LongestCommonPrefix str1 str2 h).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

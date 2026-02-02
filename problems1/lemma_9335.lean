@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -44,7 +44,7 @@ theorem if_lt_eq (a : Array Int) (i : Nat) (fe fo : Option Nat) :
           | some e, some o => a[e]! - a[o]!
           | _, _ => 0)
        else 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

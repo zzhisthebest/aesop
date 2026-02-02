@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -86,7 +86,7 @@ theorem length_result_eq_length_nums1
     (nums1 nums2 : List Int)
     (h_pre : nextGreaterElement_precond nums1 nums2) :
     (nextGreaterElement nums1 nums2 h_pre).length = nums1.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

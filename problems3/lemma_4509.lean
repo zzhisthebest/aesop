@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem nodup_all_le_of_length_eq (nums : List Nat) (h_all : nums.all (· ≤ nu
     ∃ missing, missing ∈ List.range (nums.length + 1) ∧
       (missing ∉ nums) ∧
       ∀ x, x ∈ List.range (nums.length + 1) → x ≠ missing → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

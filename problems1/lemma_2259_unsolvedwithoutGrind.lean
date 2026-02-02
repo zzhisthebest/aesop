@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ simp_all only [List.pairwise_cons, List.mem_cons, forall_eq_or_imp, true_and, im
 intro a_1 a_2
 obtain ⟨left, right⟩ := h₂
 grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

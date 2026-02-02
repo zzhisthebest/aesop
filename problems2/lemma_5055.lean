@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -92,7 +92,7 @@ theorem nextGreaterElement_correct_at (nums1 nums2 : List Int)
         let pos := j + k + 1
         nums2[pos]! > val) = some offset ∧
       resultVal = nums2[j + offset + 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

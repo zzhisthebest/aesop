@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ theorem kadane_upper_bound (xs : List Int) (h_pre : maxSubarraySum_precond xs) :
          List.range' 1 (xs.length - start) |>.map (fun len =>
            ((xs.drop start).take len).sum));
      subarray_sums.all (· ≤ res)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ theorem sum_eq_expected_minus_missing {l : List Nat}
          m ∈ List.range (l.length + 1) ∧
          m ∉ l ∧
          ∀ x, x ∈ List.range (l.length + 1) → x ≠ m → x ∈ l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem count_occurrences_drop_succ (a : Array Int) (key : Int) (i : Nat)
     count_occurrences (a.drop i) key =
       (if (a[i]? = some key) then 1 else 0) +
         count_occurrences (a.drop (i+1)) key:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

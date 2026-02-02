@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem alg_true_implies_peak {lst : List Int} (h : isPeakValley lst trivial = t
     (∃ p, 1 ≤ p ∧ p < lst.length - 1 ∧
           (List.range p).all (fun i => lst[i]! < lst[i+1]!) ∧
           (List.range (lst.length - 1 - p)).all (fun i => lst[p+i]! > lst[p+i+1]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem IsPalindrome_iff
     (x : List Char) (h_precond : IsPalindrome_precond x) :
     IsPalindrome x h_precond = true ↔
       ∀ i, i < x.length → x[i]! = x[x.length - i - 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

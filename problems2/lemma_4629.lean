@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ theorem sum_of_list_eq_expected_minus_missing
     (h_subset : ∀ x ∈ nums, x ∈ List.range (n + 1))
     (h_missing : m ∈ List.range (n + 1) ∧ m ∉ nums) :
     (nums.foldl (· + ·) 0) = ((n * (n + 1)) / 2) - m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

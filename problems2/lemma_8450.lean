@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem result_of_small (a : Array Int) (h : a.size ≤ 1) :
     (if a.size ≤ 1 then false else
         (a.mapIdx (fun i x => (i, x))).any
           (fun (i, x) => i < a.size - 1 && x + 1 == a[i + 1]!)) = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

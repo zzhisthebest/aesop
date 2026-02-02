@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem postcond_all_parts (s : List Int) :
     (r.all (fun a => a ∈ s)) ∧
     (s.all (fun a => a ∈ r)) ∧
     (r.all (fun a => r.count a = 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

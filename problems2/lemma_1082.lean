@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -22,7 +22,7 @@ def isItEight_postcond (n : Int) (result: Bool) (h_precond : isItEight_precond (
 
 
 theorem Nat.mod_lt_self (m d : Nat) (h : 0 < d) (h' : m < d) : m % d = m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 theorem exists_divisor_mem_range' {n : Nat} (hn : 2 ≤ n) :
     (∃ d, 2 ≤ d ∧ d < n ∧ n % d = 0) →
     (∃ d ∈ List.range' 2 (n - 2), n % d = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

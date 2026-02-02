@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -36,7 +36,7 @@ theorem findProduct_eq_of_none
     (lst : List Int) (h_precond : findProduct_precond lst)
     (h_none : firstEvenOddIndices lst = none) :
     findProduct lst h_precond = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

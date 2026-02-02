@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem any_of_flatMap_filter_eq_one
     (nums : Array Int) (target : Int)
     (h : ((List.range nums.size).flatMap (fun i => (List.range i).filter (fun j => nums[i]! + nums[j]! = target))).length = 1) :
     (List.range nums.size).any (fun i => (List.range i).any (fun j => nums[i]! + nums[j]! = target)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

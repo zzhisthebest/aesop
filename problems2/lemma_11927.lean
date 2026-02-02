@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem precond_sublist (a : Array Int) (key : Int)
     (h : BinarySearch_precond a key) :
     BinarySearch_precond (a.take (a.size)) key ∧
     BinarySearch_precond (a.drop (a.size)) key:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

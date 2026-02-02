@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem foldl_idx_preserve (l : List Int) :
       (l.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []).idxOf a <
       (l.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []).idxOf b →
       l.idxOf a < l.idxOf b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem all_before_i_safe
     (i j : Nat) (hpair : twoSum nums target h_precond = (i, j)) :
     List.all (nums.toList.take i) (fun a =>
       List.all (nums.toList.drop i) (fun b => a + b ≠ target)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

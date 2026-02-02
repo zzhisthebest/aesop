@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem mod_eq_mod_if_nonneg (i : Nat) (offset : Int) (len : Nat) (hpos : 0 < le
       if ((Int.ofNat i + offset) % (Int.ofNat len)) < 0
         then ((Int.ofNat i + offset) % (Int.ofNat len)) + Int.ofNat len
         else ((Int.ofNat i + offset) % (Int.ofNat len)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem minOperations_precond_eq (nums : List Nat) (k : Nat) :
     minOperations_precond nums k =
       let target_nums := (List.range k).map (· + 1)
       target_nums.all (fun n => List.elem n nums):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

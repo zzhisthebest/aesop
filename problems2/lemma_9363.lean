@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def sumAndAverage_postcond (n : Nat) (result: Int × Float) (h_precond : sumAndA
 
 theorem List.sum_range_eq (k : Nat) :
     (List.range k).sum = k * (k - 1) / 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

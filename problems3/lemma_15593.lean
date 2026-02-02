@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem findMinIndex_mem (arr : Array Int) (start finish : Nat)
     (hstart : start < arr.size) (hfinish : finish ≤ arr.size) (hlt : start < finish) :
     start ≤ findMinIndexInRange arr start finish ∧
       findMinIndexInRange arr start finish < finish:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

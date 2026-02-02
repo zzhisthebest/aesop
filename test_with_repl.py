@@ -3,11 +3,11 @@ sys.path.insert(0, '/data1/zzh/Lean-Mutation')
 from utils.commands import *
 
 # 读取文件
-with open('/data1/zzh/aesop/lemmas_quickchecked_148.lean', 'r') as f:
+with open('/data1/zzh/codetic/lemmas_quickchecked_148.lean', 'r') as f:
     code = f.read()
 
 # 启动 repl
-process = run_env_build('/data1/zzh/aesop', '/data1/zzh/repl_v4.25.0', None)
+process = run_env_build('/data1/zzh/codetic', '/data1/zzh/repl_v4.25.0', None)
 
 # 发送代码
 result = send_input_to_process(process,  {"cmd": code})

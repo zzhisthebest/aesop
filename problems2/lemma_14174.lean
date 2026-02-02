@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def Match_postcond (s : String) (p : String) (result: Bool) (h_precond : Match_p
 
 theorem not_and_iff_or {a b : Prop} :
     ¬ (a ∧ b) ↔ (¬ a ∨ ¬ b):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

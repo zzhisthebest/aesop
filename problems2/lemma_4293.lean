@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem loop_terminates_at_collection (nums : List Nat) (k : Nat)
     ∃ ops,
       minOperations nums k hpre = ops ∧
       ((nums.reverse).take ops).all (fun n => List.elem n ((List.range k).map (· + 1))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

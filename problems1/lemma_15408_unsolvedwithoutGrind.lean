@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem swap_correct_left (arr : Array Int) {i : Nat} (h : i < arr.size / 2) :
     let arr' := arr.set! i (arr[j]!)
     let arr'' := arr'.set! j temp
     (arr''[i]! = arr[j]!) ∧ (arr''[j]! = temp):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

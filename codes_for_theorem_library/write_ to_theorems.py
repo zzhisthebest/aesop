@@ -4,8 +4,8 @@ import re
 
 # 路径配置
 JSON_FILE = "/data1/zzh/verina/verina_lemmas_quickchecked.json"
-IDS_TXT = "/data1/zzh/aesop/theorems_ids.txt"
-DST_DIR = "/data1/zzh/aesop/theorems_copy"
+IDS_TXT = "/data1/zzh/codetic/theorems_ids.txt"
+DST_DIR = "/data1/zzh/codetic/theorems_copy"
 
 def load_target_ids(path):
     """读取 IDs 文件，支持 'lemma_123' 或 '123' 格式，返回整数集合"""
@@ -45,7 +45,7 @@ def main():
 
         # 获取原始内容
         # 假设 JSON 中 header 包含 import，lemma_formal_statements 包含定义和证明
-        header = obj.get("header", "").replace("import Mathlib\n", "import Aesop\n")
+        header = obj.get("header", "").replace("import Mathlib\n", "import Codetic\n")
         body = obj.get("lemma_formal_statements", "")
 
         # 拼接并处理内容

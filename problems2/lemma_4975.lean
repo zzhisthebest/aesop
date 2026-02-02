@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -100,7 +100,7 @@ theorem result_pairwise_condition (nums1 nums2 : List Int)
         | none => resultVal = -1
         | some offset => resultVal = nums2[idx + offset + 1]!
     )) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

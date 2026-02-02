@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ def majorityElement_postcond (nums : List Int) (result: Int) (h_precond : majori
 theorem majorityElement_returns_int (nums : List Int)
     (h_precond : majorityElement_precond nums) :
     ∃ r : Int, r = majorityElement nums h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

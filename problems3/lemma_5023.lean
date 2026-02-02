@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -99,7 +99,7 @@ theorem nextGreaterElement_all_elem_spec (nums1 nums2 : List Int)
           match nextG? with
           | none => resV = -1
           | some offset => resV = nums2[idx + offset + 1]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

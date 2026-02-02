@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem step_preserves_upper (a : Array Int) (i : Nat) (cur : Int)
     (h_i : i < a.size)
     (hUB : ∀ k, k < i → a[k]! ≤ cur) :
     ∀ k, k < i+1 → a[k]! ≤ (if cur > a[i]! then cur else a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

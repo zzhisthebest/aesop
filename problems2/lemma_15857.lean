@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -16,7 +16,7 @@ def hasCommonElement_postcond (a : Array Int) (b : Array Int) (result: Bool) (h_
 theorem any_eq_true_outer_rev (a : Array Int) (b : Array Int)
     (h : ∃ i, i < a.size ∧ b.any (fun y ↦ a[i]! = y)) :
     a.any (fun x ↦ b.any fun y ↦ x = y) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

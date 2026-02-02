@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countDigits (n : Nat) : Nat :=
@@ -32,7 +32,7 @@ def isArmstrong_postcond (n : Nat) (result: Bool) (h_precond : isArmstrong_preco
 
 theorem isArmstrong_bool_eq (n : Nat) (h : isArmstrong_precond n) :
     (isArmstrong n h = false) ↔ (sumPowers n (countDigits n) ≠ n):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

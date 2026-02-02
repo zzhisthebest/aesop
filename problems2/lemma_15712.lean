@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem SetToSeq_order_respects (s : List Int) (h : SetToSeq_precond s) :
     ∀ a b, a ∈ SetToSeq s h → b ∈ SetToSeq s h →
       (SetToSeq s h).idxOf a < (SetToSeq s h).idxOf b →
       s.idxOf a < s.idxOf b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

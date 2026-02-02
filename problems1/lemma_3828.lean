@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ def mergeSortedLists_postcond (arr1 : List Int) (arr2 : List Int) (result: List 
 theorem mergeSortedLists_eq_merge (arr1 arr2 : List Int)
     (h : mergeSortedLists_precond arr1 arr2) :
     mergeSortedLists arr1 arr2 h = List.merge arr1 arr2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

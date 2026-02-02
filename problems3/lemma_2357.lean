@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ def majorityElement_postcond (xs : List Nat) (result: Nat) (h_precond : majority
 theorem count_gt_half_unique {xs : List Nat} {a b : Nat}
     (ha : xs.count a > xs.length / 2) (hb : xs.count b > xs.length / 2) :
     a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem aux_idx_le_minLength {str1 str2 : List Char} {minLength idx : Nat} {acc 
     (match str1[idx]?, str2[idx]? with
      | some c1, some c2 => True
      | _, _ => True):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

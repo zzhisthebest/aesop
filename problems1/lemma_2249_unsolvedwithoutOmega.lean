@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ def longestIncreasingSubsequence_postcond (nums : List Int) (result: Int) (h_pre
 theorem filter_pairwise_increasing (xs : List (List Int)) :
     xs.filter (fun l => List.Pairwise (· < ·) l) =
       xs.filter (fun l => List.Pairwise (· < ·) l):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

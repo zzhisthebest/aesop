@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem filter_postcond (l : List Nat) (t : Nat) :
           | some y => x = y
           | none   => False)) ∧
     (l.filter fun x => x ≠ t).length = (l.filter fun x => x ≠ t).length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

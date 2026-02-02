@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem singleDigitPrimeFactor_eq_five_of_mod_five_eq_zero
     (n : Nat) (h0 : n ≠ 0) (h2 : n % 2 ≠ 0) (h3 : n % 3 ≠ 0)
     (h : n % 5 = 0) (h_pre : singleDigitPrimeFactor_precond n) :
     singleDigitPrimeFactor n h_pre = 5:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

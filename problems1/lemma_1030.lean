@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem allSubseq_def (arr : Array Int) :
     (let allSubseq (arr : Array Int) :=
         (arr.foldl (fun acc x => acc ++ acc.map (fun sub => x :: sub)) [[]]).map List.reverse;
      True):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

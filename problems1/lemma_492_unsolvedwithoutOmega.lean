@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -70,7 +70,7 @@ def hasChordIntersection_postcond (N : Nat) (chords : List (List Nat)) (result: 
 
 theorem pairwise_of_nodup {xs : List (List Nat)} (h : List.Nodup (xs.flatMap id)) :
     List.Pairwise (fun x y : List Nat => True) xs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem lastPosition_noLater (arr : Array Int) (elem : Int)
     let r := lastPosition arr elem h_precond
     (0 ≤ r) →
     (arr.toList.drop (r.toNat + 1)).all (· ≠ elem):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

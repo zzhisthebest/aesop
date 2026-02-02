@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -49,7 +49,7 @@ simp_all only [FindSingleNumber_precond, Bool.decide_or, List.all_map, List.all_
 obtain ⟨left, right⟩ := h
 
 sorry
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

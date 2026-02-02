@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem add_one_preserves_adjacent {lst : List (Char × Nat)} {c : Char}
     (h_adj : ∀ i, i < lst.length - 1 → (lst[i]!).fst ≠ (lst[i+1]!).fst) :
     ∀ i, i < ([(c, 1)] ++ lst).length - 1 →
           (([(c, 1)] ++ lst)[i]!).fst ≠ (([(c, 1)] ++ lst)[i+1]!).fst:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

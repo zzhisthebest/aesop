@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def reverse_postcond (a : Array Int) (result: Array Int) (h_precond : reverse_pr
 theorem reverse_core_correct (a : Array Int) :
     (reverse_core a 0).size = a.size ∧
     (∀ i, i < a.size → (reverse_core a 0)[i]! = a[a.size - 1 - i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

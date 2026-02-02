@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem result_eq_false_of_no_peak
               (List.range (len - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!))
           validPeaks).length = 0) :
     isPeakValley lst h_precond = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

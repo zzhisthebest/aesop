@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem minElem_start (arr : Array Int) (h : arr.size > 0) :
     (Id.run do
       let mut minElem := arr[0]!
       pure minElem) = arr[0]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

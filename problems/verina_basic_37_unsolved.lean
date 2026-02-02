@@ -26,7 +26,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def findFirstOccurrence_precond (arr : Array Int) (target : Int) : Prop :=
@@ -84,7 +84,7 @@ theorem findFirstOccurrence_spec_satisfied (arr: Array Int) (target: Int) (h_pre
     constructor
     · sorry
     · let i := 0
-      aesop
+      codetic
       induction i using findFirstOccurrence.loop.induct arr target with
       | case1 i h_bound =>
         sorry

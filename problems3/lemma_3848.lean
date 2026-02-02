@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ theorem mergeSortedLists_spec_nil_right (arr1 : List Int)
     (h : mergeSortedLists_precond arr1 ([] : List Int)) :
     mergeSortedLists_postcond arr1 ([] : List Int)
       (mergeSortedLists arr1 ([] : List Int) h) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

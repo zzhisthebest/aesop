@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -43,7 +43,7 @@ def letterCombinations_postcond (digits : String) (result: List String) (h_preco
 
 theorem isEmpty_iff_toList_eq_nil (s : String) :
   s.isEmpty ↔ s.toList = []:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

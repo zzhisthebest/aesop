@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ def moveZeroes_postcond (xs : List Int) (result: List Int) (h_precond : moveZero
 theorem subsequence_nonzero_of_moveZeroes (xs : List Int)
     (h : moveZeroes_precond xs) :
     isSubsequence (xs.filter (fun x => x ≠ 0)) (moveZeroes xs h) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

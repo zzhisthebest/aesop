@@ -22,9 +22,9 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
---import Aesop
+--import Codetic
 import Lean
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def double_array_elements_precond (s : Array Int) : Prop :=
@@ -110,7 +110,7 @@ elab "funInduct" : tactic => do
     | Except.ok stx => evalTactic stx
     | Except.error err => throwError "Failed to parse tactic: {err}"
 
--- attribute [aesop safe constructors cases] Array
+-- attribute [codetic safe constructors cases] Array
 #check tmp.double_array_elements_aux.induct
 theorem double_array_elements_spec_satisfied (s: Array Int) (h_precond : double_array_elements_precond (s)) :
     double_array_elements_postcond (s) (double_array_elements (s) h_precond) h_precond := by
@@ -124,20 +124,20 @@ theorem double_array_elements_spec_satisfied (s: Array Int) (h_precond : double_
     have aux : ∀ (s_old s : Array Int) (i : Nat),
     s.size = s_old.size → (double_array_elements_aux s_old s i).size = s_old.size := by
       intro s_old s i
-      aesop
+      codetic
       -- induction s,i using double_array_elements_aux.induct s_old  with
       -- | case1 s i h new_s ih=>
       --   -- 递归分支：i < s.size
       --   unfold double_array_elements_aux
-      --   aesop
+      --   codetic
       -- | case2 s_old s i  =>
       --   unfold double_array_elements_aux
-      --   aesop
+      --   codetic
     sorry
-    --aesop
+    --codetic
     --rw [size_eq_length]
-    --aesop
-    --aesop
+    --codetic
+    --codetic
   · intro i a
     --sorry
     have aux : ∀ (s_old s : Array Int) (j : Nat),
@@ -146,13 +146,13 @@ theorem double_array_elements_spec_satisfied (s: Array Int) (h_precond : double_
     (double_array_elements_aux s_old s j)[i]! = 2 * s_old[i]! := by
       intro s_old s j h1 h2
       --funInduct
-      aesop
+      codetic
 
       -- induction s,j using double_array_elements_aux.induct s_old  with
       -- | case1 s_old i h new_s ih=>
       --   unfold double_array_elements_aux
-      --   aesop
-      --   --aesop
+      --   codetic
+      --   --codetic
       -- | case2 s_old s i  =>
       --   unfold double_array_elements_aux
       --   rename_i s_1 i_1 s_old_1
@@ -171,7 +171,7 @@ theorem double_array_elements_spec_satisfied (s: Array Int) (h_precond : double_
       --     simp_all only [Nat.not_lt, List.getElem!_toArray, List.getElem!_eq_getElem?_getD, Int.default_eq_zero]
       --     grind
 
-    -- aesop?
+    -- codetic?
 
 
   -- !benchmark @end proof

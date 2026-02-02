@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ def isItEight_postcond (n : Int) (result: Bool) (h_precond : isItEight_precond (
 
 theorem int_mod_eq_zero_coe (x : Int) :
     (x % 8 == 0 : Prop) ↔ x % 8 = 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

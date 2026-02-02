@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem unfold_isSublist_postcond (sub main : List Int)
     (∃ i, i + sub.length ≤ main.length ∧
           sub = (main.drop i).take sub.length) ↔
       (isSublist sub main h_precond):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

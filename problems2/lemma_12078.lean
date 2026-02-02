@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem BubbleSort_preserves_pairwise (a : Array Int)
     (h_precond : BubbleSort_precond a) :
     List.Pairwise (· ≤ ·) a.toList →
     List.Pairwise (· ≤ ·) (BubbleSort a h_precond).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

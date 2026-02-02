@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem sum_nums_eq_sum_range_sub_missing (nums : List Nat)
     (h : missingNumber_precond nums) :
     nums.foldl (· + ·) 0 =
       (List.range (nums.length + 1)).foldl (· + ·) 0 - missingNumber nums h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

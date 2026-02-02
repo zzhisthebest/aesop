@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem loop_returns_first_index
     (h_ex : ∃ k, k < arr.size ∧ arr[k]! = target)
     (h_min : ∀ m, m < arr.size → arr[m]! = target → k ≤ m) :
     findFirstOccurrence arr target h_precond = k:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

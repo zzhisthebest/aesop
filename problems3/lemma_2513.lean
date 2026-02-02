@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -53,7 +53,7 @@ theorem length_merge_foldl (xs : List (Nat × Nat)) :
           | (s, e) :: rest =>
               if curr.1 ≤ e then (s, max e curr.2) :: rest else curr :: acc)
         []).length ≤ xs.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

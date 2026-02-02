@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def CountLessThan_postcond (numbers : Array Int) (threshold : Int) (result: Nat)
 theorem foldl_eq_countLessThan (numbers : Array Int) (threshold : Int) :
     numbers.foldl (fun cnt n => if n < threshold then cnt + 1 else cnt) 0 =
       countLessThan numbers threshold:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

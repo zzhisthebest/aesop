@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem cleaned_length (s : String) :
         s.data.filter (fun c => c.isAlpha || c.isDigit) |>.map Char.toLower;
       cleaned.length) =
       ((s.data.filter (fun c => c.isAlpha || c.isDigit)).map Char.toLower).length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

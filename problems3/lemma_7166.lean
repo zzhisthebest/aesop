@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ def twoSum_postcond (nums : List Int) (target : Int) (result: Option (Nat × Nat
 theorem twoSum_none_implies_pairwise (nums : List Int) (target : Int) :
     twoSum nums target (by trivial) = none →
     List.Pairwise (· + · ≠ target) nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

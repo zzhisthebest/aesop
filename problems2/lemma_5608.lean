@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -57,7 +57,7 @@ theorem rain_eq_zero_of_len_lt_3
     (heights : List Int) (h_precond : rain_precond heights)
     (hlen : heights.length < 3) :
     rain heights h_precond = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

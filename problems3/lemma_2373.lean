@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem majority_unique (xs : List Nat) {a b : Nat}
     (ha : a ∈ xs) (hb : b ∈ xs)
     (hca : xs.count a > xs.length / 2)
     (hcb : xs.count b > xs.length / 2) : a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

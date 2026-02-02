@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ theorem pairwiseSum_contains (nums : List Int) (i j : Nat) (hij : i < j)
     nums[i]! + nums[j]! ∈
       (List.range nums.length).flatMap
         (fun i => (nums.drop (i+1)).map (fun y => nums[i]! + y)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

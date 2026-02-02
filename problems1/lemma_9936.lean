@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ def elementWiseModulo_postcond (a : Array Int) (b : Array Int) (result: Array In
 theorem get_mapIdx (a : Array Int) (f : Nat → Int → Int) (i : Nat)
     (h : i < (a.mapIdx f).size) :
     (a.mapIdx f)[i]! = f i (a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

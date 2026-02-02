@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem check_if_gt_false
     {sub main : List Int} {subLen mainLen i : Nat}
     (h : i + subLen > mainLen) :
     (if i + subLen > mainLen then false else true) = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem isPrime_false_exists_divisor
     {n : Nat} (hpre : isPrime_precond n) :
     isPrime n hpre = false →
     ∃ k, 2 ≤ k ∧ k ≤ n-1 ∧ n % k = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

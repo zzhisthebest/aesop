@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem get_set!_swap {a : Array Int} {i j k : Nat}
     (hi : i < a.size) (hj : j < a.size) (hk : k < a.size) (hij : i ≠ j) (hik : k ≠ i)
     (hjk : k ≠ j) :
     ((a.set! i (a[j]!)).set! j (a[i]!))[k]! = a[k]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

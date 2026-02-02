@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -34,7 +34,7 @@ theorem isSumDivisibleBy_eq (x d : Nat) :
 
 @[simp] theorem isSumDivisibleBy_true {x d} (h : (sumOfDigits x) % d = 0) :
     isSumDivisibleBy x d = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

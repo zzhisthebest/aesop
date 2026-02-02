@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem foldl_insert_cond (arr : Array Int) (cond : Int → Bool) (y : Int) :
     let hs :=
       arr.foldl (fun acc x => if cond x then acc.insert x else acc) Std.HashSet.empty
     y ∈ hs ↔ arr.any (fun z => cond z ∧ z = y):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

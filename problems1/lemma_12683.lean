@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem le_of_branch_c (a b c : Int)
     (if a ≤ b && a ≤ c then a else if b ≤ a && b ≤ c then b else c) ≤ a ∧
     (if a ≤ b && a ≤ c then a else if b ≤ a && b ≤ c then b else c) ≤ b ∧
     (if a ≤ b && a ≤ c then a else if b ≤ a && b ≤ c then b else c) ≤ c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

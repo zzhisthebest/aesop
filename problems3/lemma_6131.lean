@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem searchInsert_inserted_correctly (xs : List Int) (target : Int)
     (h_pre : searchInsert_precond xs target) :
     (searchInsert xs target h_pre < xs.length →
        target ≤ xs[searchInsert xs target h_pre]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

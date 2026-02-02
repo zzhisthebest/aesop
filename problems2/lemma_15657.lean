@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def ToArray_postcond (xs : List Int) (result: Array Int) (h_precond : ToArray_pr
 
 
 theorem size_toArray_eq (xs : List Int) : (xs.toArray).size = xs.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

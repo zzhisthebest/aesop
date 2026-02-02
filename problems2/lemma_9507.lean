@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem pairwise_take_until_second
   (cs : List Char) (c : Char) (secondIdx : Nat) (hSecond : cs.get? secondIdx = some c)
   (hPrev : ∀ i < secondIdx, cs.get? i ≠ some c) :
     List.Pairwise (· ≠ ·) (cs.take secondIdx):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

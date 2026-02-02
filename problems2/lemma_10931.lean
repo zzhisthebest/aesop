@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ theorem any_of_exists
     {arr : Array Int} {p : Int → Bool}
     (hmem : ∃ x, x ∈ arr ∧ p x = true) :
     arr.any p = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

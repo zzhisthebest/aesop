@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem exists_pair_of_not_pairwise
     (l : List Int) (t : Int) (h : ¬ List.Pairwise (fun a b => a + b ≠ t) l) :
     ∃ i j, i < j ∧ i < l.length ∧ j < l.length ∧ l.get? i = some (l.getD i 0) ∧
           l.get? j = some (l.getD j 0) ∧ l.getD i 0 + l.getD j 0 = t:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

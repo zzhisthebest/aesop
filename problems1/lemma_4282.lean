@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem ops_eq_collected_when_done
     {collected : List Nat} {collected_count ops k : Nat}
     (hcol : collected_count = k) (hops : ops = collected_count) :
     ops = k:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

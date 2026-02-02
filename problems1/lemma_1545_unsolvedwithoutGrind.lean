@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,6 +35,6 @@ theorem maxInArray_eq_foldl (arr : Array Nat) :
 simp_all only [maxInArray, ge_iff_le]
 congr
 funext
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 
 --ext不适合搞成simp定理

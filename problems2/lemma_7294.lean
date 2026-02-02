@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem twoSum_indices_in_bounds (nums : Array Int) (target : Int)
     (h_precond : twoSum_precond nums target) :
     (twoSum nums target h_precond)[0]! < nums.size ∧
     (twoSum nums target h_precond)[1]! < nums.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

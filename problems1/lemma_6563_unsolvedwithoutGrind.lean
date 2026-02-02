@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem nonzero_result_info (n : Nat) (h : singleDigitPrimeFactor_precond n) :
     r ≠ 0 →
       n ≠ 0 ∧ n % r == 0 ∧
         (List.range r).all (fun x => x ∈ [2, 3, 5, 7] → n % x ≠ 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

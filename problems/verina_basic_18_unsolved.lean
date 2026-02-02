@@ -23,7 +23,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 
 @[reducible, simp]
@@ -68,12 +68,12 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 theorem sumOfDigits_loop_acc (n y x: Nat) :
     sumOfDigits.loop n (x+y) = sumOfDigits.loop n x + y := by
   induction n, y using sumOfDigits.loop.induct generalizing x with
-  | case1 acc => aesop
+  | case1 acc => codetic
   | case2 n acc h_ne ih =>
     unfold sumOfDigits.loop
-    aesop
+    codetic
 
-    --aesop
+    --codetic
 
 theorem sumOfDigits_spec_satisfied (n: Nat) (h_precond : sumOfDigits_precond (n)) :
     sumOfDigits_postcond (n) (sumOfDigits (n) h_precond) h_precond := by

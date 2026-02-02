@@ -1,5 +1,5 @@
-import Aesop
-set_option trace.aesop.zzh_custom true
+import Codetic
+set_option trace.codetic.zzh_custom true
 set_option maxHeartbeats 100000
 
 namespace test
@@ -14,7 +14,7 @@ def double_aux (s : Array Int) (i : Nat) : Array Int :=
 -- 测试：函数归纳应该被自动检测和应用一次
 theorem test_func_induction (s : Array Int) (i : Nat) :
     (double_aux s i).size = s.size := by
-  aesop?
+  codetic?
 
 end test
 

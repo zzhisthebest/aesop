@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem length_range_succ_sub_one {xs : List Nat}
     (h_all : xs.all (fun x ↦ x ≤ xs.length))
     (h_nodup : List.Nodup xs) :
     xs.length = (List.range (xs.length + 1)).length - 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

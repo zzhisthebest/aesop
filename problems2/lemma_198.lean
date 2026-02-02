@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem all_le_or_eq_of_majority
     {lst : List Int} {r : Int}
     (hr : countOccurrences r lst > lst.length / 2) :
     lst.all (fun x => (lst.filter fun y => y = x).length ≤ lst.length / 2 ∨ x = r):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -55,7 +55,7 @@ theorem succ_pos (n : Nat) : 0 < Nat.succ n := Nat.succ_pos _
 
 @[simp] theorem length_append_one (l : List Nat) (x : Nat) :
     (l ++ [x]).length = l.length + 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

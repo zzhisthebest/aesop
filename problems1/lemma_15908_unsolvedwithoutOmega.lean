@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ def SlopeSearch_postcond (a : Array (Array Int)) (key : Int) (result: (Int × In
 theorem cols_def (a : Array (Array Int)) :
   let rows := a.size; let cols := if rows > 0 then (a[0]!).size else 0;
   cols = if a.size > 0 then (a[0]!).size else 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

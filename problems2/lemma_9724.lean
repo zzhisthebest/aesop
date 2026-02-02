@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem eraseIdx!_get_ge (s : Array Int) {k i : Nat}
     (hk : k < s.size)
     (hi : i < (s.eraseIdx! k).size) (hge : k ≤ i) :
     (s.eraseIdx! k)[i]! = s[i + 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

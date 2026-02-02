@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem sumOfFourthPowerOfOddNumbers_succ (n : Nat)
     (h : sumOfFourthPowerOfOddNumbers_precond n) :
     sumOfFourthPowerOfOddNumbers (n + 1) h =
       sumOfFourthPowerOfOddNumbers n h + (2 * n + 1) ^ 4:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

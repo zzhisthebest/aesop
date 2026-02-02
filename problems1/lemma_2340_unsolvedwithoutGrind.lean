@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem any_cons (p : Nat → Bool) (x : Nat) (xs : List Nat) :
 simp_all only [List.any_cons, Bool.or_eq_left_iff_imp, List.any_eq_true, forall_exists_index, and_imp,
   Bool.or_eq_true, decide_eq_true_eq]
 grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

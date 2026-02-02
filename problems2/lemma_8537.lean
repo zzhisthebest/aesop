@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem replaceChars_nth (s : String) (oldChar newChar : Char)
           (replaceChars s oldChar newChar h).toList[i]! = newChar) ∧
       (s.toList[i]! ≠ oldChar →
           (replaceChars s oldChar newChar h).toList[i]! = s.toList[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

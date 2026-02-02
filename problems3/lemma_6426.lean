@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -60,7 +60,7 @@ theorem algorithm_result_in_targets
                         then some cur else some best) none
     let result := match best with | some b => listToString b | none => ""
     result ∈ (candidates.map (·.asString)).filter (fun s => s ≠ ""):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

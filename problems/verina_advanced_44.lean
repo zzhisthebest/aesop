@@ -25,7 +25,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible]
@@ -98,5 +98,5 @@ def maxSubarraySumDivisibleByK_postcond (arr : Array Int) (k : Int) (result: Int
 theorem maxSubarraySumDivisibleByK_spec_satisfied (arr: Array Int) (k: Int) :
     maxSubarraySumDivisibleByK_postcond (arr) (k) (maxSubarraySumDivisibleByK (arr) (k)) := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

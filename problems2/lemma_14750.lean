@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem findBest_preserves_upper
     (a : Array Int) (x i : Nat) (best : Int) (hix : i ≤ x)
     (hbound : ∀ j, j < i → a[j]! ≤ best) :
     ∀ j, j < x → a[j]! ≤ findBest a x i best:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -29,7 +29,7 @@ theorem mem_symmDiff_iff (a b : Array Int) (x : Int) :
             b.foldl (fun acc y => if !inArray a y then acc.insert y else acc) res₁
           res₂) ↔
       (inArray a x) ≠ (inArray b x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

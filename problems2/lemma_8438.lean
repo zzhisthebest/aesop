@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def containsConsecutiveNumbers_postcond (a : Array Int) (result: Bool) (h_precon
 theorem algorithm_returns_false_of_size_le_one (a : Array Int) (hpre : containsConsecutiveNumbers_precond a)
     (hsz : a.size ≤ 1) :
     containsConsecutiveNumbers a hpre = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

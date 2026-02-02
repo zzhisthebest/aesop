@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -28,7 +28,7 @@ theorem partitionEvensOdds_eq_filter (nums : List Nat) :
     partitionEvensOdds nums (by trivial) =
       ( nums.filter (fun n => n % 2 == 0)
       , nums.filter (fun n => n % 2 == 1) ):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

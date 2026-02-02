@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ def onlineMax_postcond (a : Array Int) (x : Nat) (result: Int × Nat) (h_precond
 theorem strict_before_p (a : Array Int) (x : Nat) (hpre : onlineMax_precond a x) :
     let (m, p) := onlineMax a x hpre
     (p < a.size - 1) → (∀ i, i < p → a[i]! < a[p]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

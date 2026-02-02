@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem inner_unchanged (arr : Array (Array Nat)) (index1 index2 : Nat) (val : N
     (j : Nat) (hj : j < (arr[index1]!).size) (hne : j ≠ index2) :
     ((arr.set! index1 (updateInner (arr[index1]!) index2 val))[index1]!)[j]! =
       (arr[index1]!)[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

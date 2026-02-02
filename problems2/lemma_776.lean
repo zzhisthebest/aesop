@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -66,7 +66,7 @@ theorem algorithm_true_implies_exists
       (nums.zipIdx).any (fun (y, j) =>
         (nums.zipIdx).any (fun (z, k) =>
           i < j ∧ j < k ∧ x < y ∧ y < z))) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

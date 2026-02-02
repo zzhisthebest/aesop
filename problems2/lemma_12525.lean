@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem foldl_take_succ (numbers : Array Int) (threshold : Int) (i : Nat)
       (numbers.take i).foldl
         (fun c n => if n < threshold then c + 1 else c) 0
       + (if numbers[i]! < threshold then 1 else 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

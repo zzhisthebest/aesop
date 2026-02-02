@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 
 theorem foldl_const (α β) (c : β) (l : List α) :
     l.foldl (fun _ _ => c) c = c:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

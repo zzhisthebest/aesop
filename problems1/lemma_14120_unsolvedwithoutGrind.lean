@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,18 +24,18 @@ def append_postcond (a : Array Int) (b : Int) (result: Array Int) (h_precond : a
 @[simp]
 theorem Array.get_push_spec {α} (a : Array α) (v : α) (i : Nat) :
     (a.push v)[i]? = if i < a.size then a[i]? else if i = a.size then some v else none := by
-  aesop
+  codetic
 @[simp] theorem getElem!_eq_getElem?_getD [Inhabited α] (a : Array α) (i : Nat) :
     a[i]! = (a[i]?).getD default := by
   -- 证明部分
-  aesop
+  codetic
 
 #check getElem?_pos
 #check getElem!_pos
 
 theorem push_preserves_get (a : Array Int) (b : Int) (i : Nat) (h : i < a.size) :
     (a.push b)[i]! = a[i]!:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

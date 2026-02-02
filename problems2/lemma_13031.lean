@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def absDiff (a b : Float) : Float :=
@@ -36,7 +36,7 @@ theorem inner_finds_pair (numbers : List Float) (threshold : Float) (idx idx2 : 
      let d := absDiff a b
      if d < threshold then true else false) = true
       ↔ absDiff (numbers.getD idx2 0.0) (numbers.getD idx 0.0) < threshold:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

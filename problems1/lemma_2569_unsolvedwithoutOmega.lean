@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -64,7 +64,7 @@ theorem maxCoverageAfterRemovingOne_fold (intervals : List (Prod Nat Nat))
           let coverage := merged.reverse.foldl (fun acc (s, e) => acc + (e - s)) 0
           max acc coverage)
         0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

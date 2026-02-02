@@ -25,7 +25,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def lastPosition_precond (arr : Array Int) (elem : Int) : Prop :=
@@ -72,6 +72,6 @@ def lastPosition_postcond (arr : Array Int) (elem : Int) (result: Int) (h_precon
 theorem lastPosition_spec_satisfied (arr: Array Int) (elem: Int) (h_precond : lastPosition_precond (arr) (elem)) :
     lastPosition_postcond (arr) (elem) (lastPosition (arr) (elem) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   sorry
   -- !benchmark @end proof

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -71,7 +71,7 @@ def hasChordIntersection_postcond (N : Nat) (chords : List (List Nat)) (result: 
 theorem map_length_two (chords : List (List Nat))
     (h : chords.all (fun chord => chord.length = 2)) :
     (chords.map (fun chord => chord)) = chords:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

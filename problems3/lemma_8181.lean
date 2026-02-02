@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ def below_zero_postcond (operations : List Int) (result: (Array Int × Bool)) (h
 
 theorem recurrence_buildS (operations : List Int) (i : Nat) (hi : i < operations.length) :
     (buildS operations)[i+1]? = some ((buildS operations)[i]! + operations[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

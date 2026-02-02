@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem aux_stop_on_mismatch (str1 str2 : List Char) (minLength idx : Nat) (acc 
     (h1 : str1[idx]? = some c1) (h2 : str2[idx]? = some c2)
     (hneq : c1 ≠ c2) :
     (str1[idx]? ≠ str2[idx]?):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

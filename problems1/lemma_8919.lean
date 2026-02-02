@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem check_step_eq
   (hi : i + subLen ≤ mainLen) :
     (if sub = (main.drop i).take subLen then true else false) = true
       ↔ sub = (main.drop i).take subLen:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ def SetToSeq_postcond (s : List Int) (result: List Int) (h_precond : SetToSeq_pr
 theorem fold_step_of_not_mem {acc : List Int} {x : Int}
     (h : ¬ acc.contains x) :
     (if acc.contains x then acc else acc ++ [x]) = acc ++ [x]:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

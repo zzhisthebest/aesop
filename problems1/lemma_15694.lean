@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem foldl_add {xs : List Int} {acc : List Int} {x : Int}
     (hnot : ¬ acc.contains x) :
     List.foldl (fun a y => if a.contains y then a else a ++ [y]) acc (x :: xs) =
       List.foldl (fun a y => if a.contains y then a else a ++ [y]) (acc ++ [x]) xs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

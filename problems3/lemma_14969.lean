@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem foldl_take_succ (a : Array Int) (key : Int) (i : Nat) (h : i < a.size) :
     (a.take (i+1)).foldl (fun c x => if x = key then c + 1 else c) 0 =
         (if a[i] = key then (a.take i).foldl (fun c x => if x = key then c + 1 else c) 0 + 1
                        else (a.take i).foldl (fun c x => if x = key then c + 1 else c) 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

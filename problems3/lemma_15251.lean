@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def concat_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h_preco
 theorem concat_fst (a b : Array Int) (h : concat_precond a b) (k : Nat)
     (hk : k < a.size) :
     (concat a b h)[k]! = a[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

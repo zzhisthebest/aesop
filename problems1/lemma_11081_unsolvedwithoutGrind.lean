@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,23 +47,23 @@ theorem aux_returns_array_elem
   (s : Array Int) (i minIdx secondIdx : Nat)
   (h_i : i ≤ s.size) (h_min : minIdx < s.size) (h_sec : secondIdx < s.size) :
     secondSmallestAux s i minIdx secondIdx ∈ s:= by
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 induction i, minIdx, secondIdx using tmp.secondSmallestAux.induct s
 ·
   unfold tmp.secondSmallestAux
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 
 ·
   unfold tmp.secondSmallestAux
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 
 ·
   unfold tmp.secondSmallestAux
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 
 ·
   unfold tmp.secondSmallestAux
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 
 
 -- (Tactic.tacticSeq

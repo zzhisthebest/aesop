@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem pairwise_concat_of_all_le {l₁ l₂ : List Nat}
     (h₁ : List.Pairwise (· ≤ ·) l₁) (h₂ : List.Pairwise (· ≤ ·) l₂)
     (h : ∀ x ∈ l₁, ∀ y ∈ l₂, x ≤ y) :
     List.Pairwise (· ≤ ·) (l₁ ++ l₂):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

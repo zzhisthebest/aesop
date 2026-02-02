@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem mul_div_cancel_of_dvd {a b : Nat} (h : b ∣ a) :
 
 @[simp] theorem pow_four_succ (k : Nat) :
     4 ^ (k + 1) = 4 * 4 ^ k:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

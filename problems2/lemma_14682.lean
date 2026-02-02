@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem findP_spec (a : Array Int) (x : Nat) (m : Int) :
     let p := findP a x m x
     (p = a.size - 1 ∧ ∀ i, x ≤ i → i < a.size → a[i]! ≤ m) ∨
     (x ≤ p ∧ p < a.size ∧ a[p]! > m ∧ ∀ i, x ≤ i → i < p → a[i]! ≤ m):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

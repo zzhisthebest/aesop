@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ def allCharactersSame_postcond (s : String) (result: Bool) (h_precond : allChara
 @[simp]
 theorem List.mem_eq_const {α : Type _} {a a' : α} {l : List α}
     (h1:a' ∈ l)(h : ∀ x ∈ l, x = a) : a' = a :=by
-  aesop
+  codetic
 
 theorem pairwise_of_forall_eq {α} [DecidableEq α] (a : α) (l : List α)
     (h : ∀ x ∈ l, x = a) : List.Pairwise (· = ·) (a :: l):= by

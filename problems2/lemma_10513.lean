@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem drop_from_first_zero (arr : Array Int) :
     let l := (arr.toList.filter (· ≠ 0)) ++ (arr.toList.filter (· = 0))
     let i := l.idxOf 0
     l.drop i = arr.toList.filter (· = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

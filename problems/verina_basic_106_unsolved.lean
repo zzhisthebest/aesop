@@ -24,7 +24,7 @@
 -- !benchmark @end solution_aux
 
 -- !benchmark @start precond_aux
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end precond_aux
 @[reducible, simp]
@@ -75,5 +75,5 @@ def arraySum_postcond (a : Array Int) (b : Array Int) (result: Array Int) (h_pre
 theorem arraySum_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : arraySum_precond (a) (b)) :
     arraySum_postcond (a) (b) (arraySum (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

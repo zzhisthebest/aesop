@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem not_pairwise_iff_exists_sum
     (nums : Array Int) (target : Int)
     (h : ¬ List.Pairwise (fun a b => a + b ≠ target) nums.toList) :
     ∃ a b, a ∈ nums.toList ∧ b ∈ nums.toList ∧ a + b = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

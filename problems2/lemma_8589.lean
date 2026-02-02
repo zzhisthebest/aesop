@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem string_sum_le_sumOfDigits
     List.sum (List.map (fun c => Char.toNat c - Char.toNat '0')
                        (String.toList (Nat.repr n))) ≤
       sumOfDigits n h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem findSmallest_correct (xs : List Nat) :
     (match xs.min? with
       | none   => xs = []
       | some r => r ∈ xs ∧ ∀ x, x ∈ xs → r ≤ x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

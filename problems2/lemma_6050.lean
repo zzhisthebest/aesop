@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -107,7 +107,7 @@ def runLengthEncoder_postcond (input : String) (result: String) (h_precond : run
 theorem mk_cons_append (c₁ c₂ : Char) (s : String) :
     (String.mk [c₁] ++ String.mk [c₂] ++ s) =
       String.mk [c₁, c₂] ++ s:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

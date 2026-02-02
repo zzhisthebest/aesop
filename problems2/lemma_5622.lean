@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -57,7 +57,7 @@ theorem succ_lt_succ_iff {a b : Nat} : a.succ < b.succ ↔ a < b := Nat.succ_lt_
 
 @[simp] theorem get_zero (l : List (Int)) (h : l.length > 0) :
     l[0]! = l.head!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

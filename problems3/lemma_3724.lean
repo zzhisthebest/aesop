@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem result_is_upper_bound (xs : List Int) :
     s ≤ xs.length →
     l ≤ xs.length - s →
     (xs.drop s |>.take l |>.sum) ≤ (maxSubarraySum xs (by trivial) : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

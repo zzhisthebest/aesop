@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -62,7 +62,7 @@ def increasingTriplet_postcond (nums : List Int) (result: Bool) (h_precond : inc
 theorem length_ge_three_of_if_false {nums : List Int} (len : Nat)
     (hlen : (if len < 3 then false else true) = true) :
     3 ≤ len:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

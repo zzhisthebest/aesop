@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -19,7 +19,7 @@ theorem not_and_iff_or_not (p q : Prop) : ¬ (p ∧ q) ↔ (¬ p ∨ ¬ q):= by
 simp_all only [not_and]
 apply Iff.intro
 · intro a
-  aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
 · intro a a_1
   simp_all only [not_true_eq_false, false_or, not_false_eq_true]
 

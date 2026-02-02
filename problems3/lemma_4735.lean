@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem result_eq_missing (nums : List Nat) (h : missingNumber_precond nums) :
     let actualSum   := nums.foldl (· + ·) 0
     let r := expectedSum - actualSum
     (List.range (n + 1)).foldl (· + ·) 0 = actualSum + r:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

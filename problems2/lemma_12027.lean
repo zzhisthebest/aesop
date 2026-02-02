@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem upper_bound_property (a : Array Int) (key : Int)
     ∀ idx, idx ≤ a.size →
       (∀ i, idx ≤ i → i < a.size → a[i]! ≥ key) →
       idx ≤ binarySearchLoop a key 0 a.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

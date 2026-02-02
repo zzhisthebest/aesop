@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -44,7 +44,7 @@ def letterCombinations_postcond (digits : String) (result: List String) (h_preco
 theorem flatMap_map_eq (l₁ l₂ : List Char) (s₁ : List String) :
   l₁.flatMap (fun c => s₁.map (fun t => String.singleton c ++ t)) =
     (l₁.flatMap (fun c => s₁.map (fun t => String.singleton c ++ t))):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

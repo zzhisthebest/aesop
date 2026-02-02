@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem step_preserves
     (h_lb : ∀ j, j < i → c ≤ a[j]!)
     (h_in : ∃ j, j < i ∧ c = a[j]!) :
     ∃ c', (∀ j, j ≤ i → c' ≤ a[j]!) ∧ (∃ j, j ≤ i ∧ c' = a[j]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

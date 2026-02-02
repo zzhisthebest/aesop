@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem m_is_upper_bound (a : Array Int) (x : Nat) (h_pre : onlineMax_precond a 
       (let best := a[0]!
        let m := findBest a x 1 best
        m):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

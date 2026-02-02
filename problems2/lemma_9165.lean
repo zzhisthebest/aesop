@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem differenceMinMax_eq_max_minus_min
       (a.foldl (fun acc x => if x > acc then x else acc) (a[0]!))
         -
       (a.foldl (fun acc x => if x < acc then x else acc) (a[0]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

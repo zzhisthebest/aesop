@@ -12,7 +12,7 @@
 -- Returns false if both integers are either non-negative or non-positive, or if one (or both) is zero.
 
 -- !benchmark @start import type=solution
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @end import
 
@@ -63,17 +63,17 @@ def hasOppositeSign_postcond (a : Int) (b : Int) (result: Bool) (h_precond : has
 theorem hasOppositeSign_spec_satisfied (a: Int) (b: Int) (h_precond : hasOppositeSign_precond (a) (b)) :
     hasOppositeSign_postcond (a) (b) (hasOppositeSign (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   linarith
   unfold hasOppositeSign hasOppositeSign_postcond
   constructor
 
-  · --aesop
+  · --codetic
     intro h
     cases h with
     | inl h1 =>
       simp
-      aesop
+      codetic
     | inr h2 =>
       simp
       have ⟨ha, hb⟩ := h2
@@ -82,7 +82,7 @@ theorem hasOppositeSign_spec_satisfied (a: Int) (b: Int) (h_precond : hasOpposit
   -- . rw [Bool.decide_iff, mul_neg_iff]
   --   rw [Or.comm]
   --   simp
-  · aesop
+  · codetic
     rw [Bool.decide_iff, mul_neg_iff]
     simp_all
   -- !benchmark @end proof

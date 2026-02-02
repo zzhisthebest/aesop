@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem dp_entries_ge_one (a : Array Int) (h_precond : LongestIncreasingSubseque
              dp := dp.set! i newVal
        return dp
      dp).all (fun v => v ≥ 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

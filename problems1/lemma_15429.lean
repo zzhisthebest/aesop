@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ def rotate_postcond (a : Array Int) (offset : Int) (result: Array Int) (h_precon
 
 theorem mod_eq_ofNat_mod (n : Nat) (z : Int) :
     (z % (Int.ofNat n)) = Int.emod z (Int.ofNat n):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

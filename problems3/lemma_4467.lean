@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem diff_not_mem (nums : List Nat) (h_pre : missingNumber_precond nums) :
     let n := nums.length
     let diff := (n * (n + 1)) / 2 - nums.foldl (· + ·) 0
     diff ∉ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

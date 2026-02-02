@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -78,7 +78,7 @@ theorem hasChordIntersection_eq_any (N : Nat) (chords : List (List Nat))
          let b2 := y[1]!
          (a1 < a2 && a2 < b1 && b1 < b2) ||
          (a2 < a1 && a1 < b2 && b2 < b1))))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

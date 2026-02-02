@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem noWitnessIfLonger {sub main : List Int}
     (h : sub.length > main.length) :
     ¬ ∃ i, i + sub.length ≤ main.length ∧
           sub = (main.drop i).take sub.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

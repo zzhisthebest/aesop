@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem take_part (arr : Array Int) (h : MoveZeroesToEnd_precond arr) :
     let result := MoveZeroesToEnd arr h
     let firstIdx := result.toList.idxOf (0 : Int)
     result.toList.take firstIdx = nz:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

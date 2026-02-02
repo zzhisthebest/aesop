@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -21,7 +21,7 @@ def missingNumber_postcond (nums : List Nat) (result: Nat) (h_precond : missingN
 
 theorem foldl_append (l₁ l₂ : List Nat) (init : Nat) :
     (l₁ ++ l₂).foldl (· + ·) init = l₂.foldl (· + ·) (l₁.foldl (· + ·) init):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

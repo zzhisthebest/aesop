@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -64,7 +64,7 @@ theorem loop_returns_true (x first second : Int) (h₁ : ¬ x ≤ first) (h₂ :
 
 
 @[simp] theorem length_zipIdx (l : List α) : (l.zipIdx).length = l.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

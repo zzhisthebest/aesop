@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -42,7 +42,7 @@ def majorityElement_postcond (xs : List Nat) (result: Nat) (h_precond : majority
 
 theorem head?_some_of_nonempty {α} {xs : List α} (h : xs.length > 0) :
     xs.head? ≠ none:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

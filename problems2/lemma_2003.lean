@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem foldl_max_eq_foldl_max_on_lengths
     (ls : List (List Int)) :
     (ls.foldl (fun acc s => max acc s.length) 0) =
       (ls.map List.length).foldl max 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

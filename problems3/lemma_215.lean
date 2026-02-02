@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 theorem foldl_add_const (c : Nat) (n : Int) (lst : List Int) :
     lst.foldl (fun acc x => if x = n then acc + 1 else acc) c =
       c + lst.foldl (fun acc x => if x = n then acc + 1 else acc) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

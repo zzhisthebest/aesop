@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem aux_cons_none (x xs : List Int) (currLen maxLen : Nat) :
     (match (some (0 : Int)) with
     | none => 0
     | some p => if (0 : Int) > p then 1 else 2) = 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

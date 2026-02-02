@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem mismatch_or_end (str1 str2 : List Char)
     let r := LongestCommonPrefix str1 str2 h_precond
     let k := r.length
     (k = str1.length) ∨ (k = str2.length) ∨ (str1[k]? ≠ str2[k]?):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

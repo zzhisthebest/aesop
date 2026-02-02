@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem sorted_head_not_mem_tail {a b : Int} {t : List Int}
     (hpair : List.Pairwise (· ≤ ·) (a :: b :: t))
     (hneq : a ≠ b) :
     a ∉ b :: t:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

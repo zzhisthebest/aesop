@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem subArrays_contains_all (seq : List Int) :
           seq.drop start |>.take len))
     ∀ (i j : Nat) (h₁ : i ≤ seq.length) (h₂ : j ≤ seq.length - i),
       (seq.drop i |>.take j) ∈ subArrays:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

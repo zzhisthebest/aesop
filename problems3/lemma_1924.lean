@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem exists_start_of_max (nums : List Int) (r : Nat) (hr : longestIncreasingS
       (List.range (r - 1)).all (fun i => nums[start + i]! < nums[start + i + 1]!) ∧
       (start = 0 ∨ nums[start - 1]! ≥ nums[start]!) ∧
       (start + r = nums.length ∨ nums[start + r - 1]! ≥ nums[start + r]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

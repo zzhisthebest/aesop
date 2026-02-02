@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem missingNumber_is_the_missing
     let n := nums.length
     let r := missingNumber nums h_precond
     ∃ m, m ∈ List.range (n + 1) ∧ m ∉ nums ∧ r = m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

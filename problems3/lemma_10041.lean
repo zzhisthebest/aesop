@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem head_le_of_mem {l : List Nat} (h : List.Pairwise (· ≤ ·) l) {a : Nat
     (ha : List.elem a l) : l.head? = none ∨ (match l.head? with
       | some h0 => h0 ≤ a
       | none   => False):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

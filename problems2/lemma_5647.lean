@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ theorem eraseDups_eq_of_pairwise (l : List Int)
     l.eraseDups = List.foldl
       (fun acc x => if x ∈ acc then acc else acc ++ [x])
       [] l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

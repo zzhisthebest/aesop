@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -39,7 +39,7 @@ theorem findFirstEvenOdd_firstOdd_step
     let x := a[i]!
     let fo' := if firstOdd.isNone && isOdd x then some i else firstOdd
     fo' = some i ∨ fo' = firstOdd:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 
 
 theorem gt_of_decide_true (a b : Nat) (h : decide (a > b) = true) : a > b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

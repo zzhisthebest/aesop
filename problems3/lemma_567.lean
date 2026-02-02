@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ theorem helper_mod_eq_zero
     {l : Nat} (heq : (l + 2) % 4 = 0)
     (h : ifPowerOfFour_precond (Nat.succ (Nat.succ l))) :
     ifPowerOfFour (Nat.succ (Nat.succ l)) h = ifPowerOfFour ((l + 2) / 4) h:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

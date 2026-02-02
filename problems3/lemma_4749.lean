@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ theorem other_elems_in_nums (nums : List Nat) (h_all : nums.all (· ≤ nums.len
     let actualSum := nums.foldl (· + ·) 0
     let result := expectedSum - actualSum
     ∀ x, x ∈ List.range (n + 1) → x ≠ result → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

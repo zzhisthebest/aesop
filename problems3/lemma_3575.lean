@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem subarraySums_nonempty {xs : List Int} (h : xs ≠ []) :
     (List.range (xs.length + 1) |>.flatMap fun start =>
       List.range' 1 (xs.length - start) |>.map fun len =>
         ((xs.drop start).take len).sum).length > 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

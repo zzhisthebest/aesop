@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem aux_fuel_zero {a : Array (Array Int)} {key m n : Int} {fuel : Nat}
      else
        (let rows := a.size; let cols := if rows > 0 then (a[0]!).size else 0;
         (m, n - 1))) = (-1, -1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

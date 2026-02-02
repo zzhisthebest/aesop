@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -55,7 +55,7 @@ theorem candidates_eq_beautiful (s : String) (k : Nat) (h : shortestBeautifulSub
     candidates = ( (List.range chars.length).flatMap
         (fun i => (List.range (chars.length - i)).map
           (fun j => chars.drop i |>.take (j+1))) ).filter (fun sub => countOnes sub = k):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

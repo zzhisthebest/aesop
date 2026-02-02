@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem drop_at_idx_of_eq_filter_eq_zero (l : List Int) :
     (l.filter (· ≠ 0) ++ l.filter (· = 0)).drop
       ((l.filter (· ≠ 0) ++ l.filter (· = 0)).idxOf 0) =
     l.filter (· = 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem findP_last_if_all_bounded
     (a : Array Int) (x : Nat) (m p : Nat) (hx : x ≤ a.size)
     (hb : ∀ i, x ≤ i → i < a.size → a[i]! ≤ m) :
     p = a.size - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

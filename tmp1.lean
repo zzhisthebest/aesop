@@ -1,5 +1,5 @@
 module
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp_lemma_5624
 public def rain_precond (heights : List (Int)) : Prop :=
@@ -53,7 +53,7 @@ public def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_
 
 
 public theorem max_eq_left_of_le {a b : Int} (h : a ≥ b) : max a b = a:= by
-aesop?
+codetic?
 
 
 end tmp_lemma_5624

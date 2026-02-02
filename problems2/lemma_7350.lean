@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def uniqueSorted_postcond (arr : List Int) (result: List Int) (h_precond : uniqu
 
 theorem insertionSort_sorted (xs : List Int) :
     List.Pairwise (· ≤ ·) (uniqueSorted xs trivial).tail!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

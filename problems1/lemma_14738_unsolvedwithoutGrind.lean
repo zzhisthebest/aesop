@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem findBest_is_max (a : Array Int) (x i : Nat) (best : Int)
     (h_pre : onlineMax_precond a x) :
     findBest a x i best = best ∨
     (∃ j, j < x ∧ a[j]! = findBest a x i best):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

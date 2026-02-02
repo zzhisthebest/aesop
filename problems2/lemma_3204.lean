@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem updateMinAndProfit_is_well_typed
     (price minSoFar maxProfit : Nat) :
     ∃ newMin newProfit,
       updateMinAndProfit price minSoFar maxProfit = (newMin, newProfit):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

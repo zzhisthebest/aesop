@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isDigit (c : Char) : Bool :=
@@ -18,7 +18,7 @@ def countDigits_postcond (s : String) (result: Nat) (h_precond : countDigits_pre
 
 
 theorem sub_eq_zero_of_eq' {n m : Nat} (h : n = m) : m - n = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

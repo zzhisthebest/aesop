@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem boundedLoop_step (N bound r : Nat)
     (h : (r + 1) * (r + 1) ≤ N) :
     SquareRoot.boundedLoop N (bound + 1) r =
       SquareRoot.boundedLoop N bound (r + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

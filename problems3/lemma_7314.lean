@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem length_flatMap_filter_eq_card
     (p : Nat → Nat → Bool) :
     ((List.range n).flatMap (fun i => (List.range i).filter (fun j => p i j))).length
       = (List.range n).foldl (fun acc i => acc + ((List.range i).filter (fun j => p i j)).length) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

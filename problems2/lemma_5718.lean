@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem eraseDups_cons_of_le {a b : Int} {l : List Int}
     (hpair : List.Pairwise (· ≤ ·) (a :: b :: l)) :
     (a :: b :: l).eraseDups =
       if a = b then (b :: l).eraseDups else a :: (b :: l).eraseDups:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

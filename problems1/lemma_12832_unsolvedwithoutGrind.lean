@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -27,7 +27,7 @@ attribute[simp]List.zipIdx_eq_zip_range'
 #check List.zipIdx
 theorem zipIdx_def (l : List α) :
     l.zipIdx = List.zip l (List.range l.length):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

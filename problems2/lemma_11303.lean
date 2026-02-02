@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem sum_eq_step (n : Nat)
             trivial : sumOfFourthPowerOfOddNumbers_precond (n + 1)) =
       (n + 1) * (2 * (n + 1) + 1) *
         (7 + 24 * (n + 1) ^ 3 - 12 * (n + 1) ^ 2 - 14 * (n + 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

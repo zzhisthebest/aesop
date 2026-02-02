@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem swap_result_eq (arr : Array Int) (i j : Int)
     (r[iNat]! = arr[jNat]!) ∧
     (r[jNat]! = arr[iNat]!) ∧
     (∀ k : Nat, k < arr.size → k ≠ iNat → k ≠ jNat → r[k]! = arr[k]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

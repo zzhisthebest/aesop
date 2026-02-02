@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem zero_result_primes_not_div (n : Nat) (h : singleDigitPrimeFactor_precond
     r = 0 →
     n ≠ 0 →
     [2, 3, 5, 7].all (n % · ≠ 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

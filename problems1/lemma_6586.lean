@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem zero_result_explains_no_divisor (n : Nat) (h : singleDigitPrimeFactor_pr
     singleDigitPrimeFactor n h = 0 →
     n ≠ 0 →
     [2, 3, 5, 7].all (fun p => n % p ≠ 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

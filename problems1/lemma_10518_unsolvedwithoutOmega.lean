@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem take_len_nonZeros (xs : List Int) :
     (xs.filter (· ≠ 0) ++ xs.filter (· = 0)).take
         (xs.filter (· ≠ 0)).length =
       xs.filter (· ≠ 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

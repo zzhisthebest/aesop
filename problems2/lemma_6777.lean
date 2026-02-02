@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem subArray_sum_mem_map {sequence : List Int} {start len : Nat}
         (fun s => (List.range (sequence.length - s + 1)).map (fun l => sequence.drop s |>.take l))
         ).filter (· ≠ []) |>.map (·.sum)
     subArraySums.contains subArray.sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

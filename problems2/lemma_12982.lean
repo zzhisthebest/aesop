@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem Find_correct (a : Array Int) (key : Int) (h_precond : Find_precond a key
           (a[(Int.toNat r)]! = key ∧ ∀ i, i < Int.toNat r → a[i]! ≠ key))
       ∧ ((r = -1) →
           ∀ i, i < a.size → a[i]! ≠ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

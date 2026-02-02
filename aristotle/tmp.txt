@@ -1,0 +1,1004 @@
+[codetic] ✅️ (G0) [100.0000%] ⋯ ⊢ ∀ (r : List ℤ),
+      r.reverse.Sublist l → r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R0 [100.0000%] safe|tactic|global|Codetic.BuiltinRule.preprocess ▶
+[codetic] 🆕 ❓️ G1 [100.0000%] ⋯ ⊢ ∀ (r : List ℤ),
+      r.reverse.Sublist l → r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ ∀ (r : List ℤ),
+      r.reverse.Sublist l → r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R1 [50.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G2 [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G3 [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R2 [50.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G4 [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G5 [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R3 [50.0000%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G6 [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ G7 [50.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] ✅️ (G1) [100.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R4 [50.0000%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G8 [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ G9 [50.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] ✅️ (G9) [50.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R5 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G10 [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G11 [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] ✅️ (G8) [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R6 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G12 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G13 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1) ▶
+[codetic] ✅️ (G5) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] 🆕 ❓️ R7 [25.0000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G14 [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R8 [25.0000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G15 [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🏁 (G4) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G3) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1) ▶
+[codetic] 🆕 ❓️ R9 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G16 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] 🆕 ❓️ G17 [25.0000%] ⋯ ⊢ a_2 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] 🏁 (G2) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R10 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G18 [25.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G19 [25.0000%] ⋯ ⊢ a :: a_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G6) [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R11 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G20 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G21 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1) ▶
+[codetic] ✅️ (G9) [50.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R12 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G22 [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G23 [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_1]) ▶
+[codetic] ✅️ (G8) [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R13 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G24 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G25 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] ✅️ (G5) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R14 [25.0000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G26 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ G27 [25.0000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_2 = a_1 :: a_1_1 ▶
+[codetic] ✅️ (G3) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] 🆕 ❓️ R15 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G28 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] 🆕 ❓️ G29 [25.0000%] ⋯ ⊢ l ++ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] ✅️ (G7) [50.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R16 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G30 [25.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G31 [25.0000%] ⋯ ⊢ a :: a_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a_2]) ▶
+[codetic] ✅️ (G6) [50.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R17 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G32 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G33 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] ✅️ (G5) [50.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R18 [25.0000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G34 [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ G35 [25.0000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_2 = l ++ [a_1] ▶
+[codetic] ✅️ (G35) [25.0000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R19 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G36 [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R20 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G37 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🏁 (G34) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = [] ▶
+[codetic] 🏁 (G26) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_1 = [] ▶
+[codetic] ✅️ (G15) [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R21 [7.5000%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G38 [6.0000%] ⋯ ⊢ ?mpr.append_singleton.h.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧
+      a :: ?mpr.append_singleton.h.w = r ▶
+[codetic] 🏁 (G32) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ❌️ (G21) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1) ▶
+[codetic] ❌️ (G17) [25.0000%] ⋯ ⊢ a_2 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] ✅️ (G27) [25.0000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_2 = a_1 :: a_1_1 ▶
+[codetic] 🆕 ❓️ R22 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G39 [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R23 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G40 [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] 🏁 (G33) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] 🏁 (G12) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🏁 (G10) [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🏁 (G22) [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ❌️ (G11) [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] 🏁 (G25) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a]) ▶
+[codetic] 🏁 (G24) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G23) [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_1]) ▶
+[codetic] 🆕 ❓️ R24 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G41 [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R25 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G42 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] ✅️ (G31) [25.0000%] ⋯ ⊢ a :: a_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a_2]) ▶
+[codetic] 🆕 ❓️ R26 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G43 [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R27 [12.5000%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G44 [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a_2 = a ▶
+[codetic] 🏁 (G30) [25.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🏁 (G18) [25.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ❌️ (G28) [25.0000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a]] a_1 ▶
+[codetic] ✅️ (G14) [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R28 [18.7500%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G45 [18.7500%] ⋯ ⊢ r.reverse.Sublist l_1 ▶
+[codetic] ❌️ (G19) [25.0000%] ⋯ ⊢ a :: a_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ❌️ (G35) [25.0000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_2 = l ++ [a_1] ▶
+[codetic] ✅️ (G15) [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R29 [12.5000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G46 [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ G47 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = a_1 :: a_1_1 ▶
+[codetic] ❌️ (G27) [25.0000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] ❌️ (G23) [25.0000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ∨
+      ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2, a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] ❌️ (G31) [25.0000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a_2 = a ▶
+[codetic] ✅️ (G14) [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R30 [12.5000%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G48 [12.5000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G49 [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G15) [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R31 [12.5000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G50 [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ G51 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] ✅️ (G14) [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R32 [12.5000%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G52 [12.5000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G53 [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G15) [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R33 [12.5000%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G54 [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ G55 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1),
+      a :: a_2 = r ▶
+[codetic] ✅️ (G14) [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R34 [12.5000%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G56 [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G57 [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] ✅️ (G15) [25.0000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R35 [12.5000%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G58 [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ G59 [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_1]),
+      a :: a_2 = r ▶
+[codetic] ✅️ (G14) [25.0000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R36 [12.5000%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G60 [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G61 [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_1]) ▶
+[codetic] ✅️ (G45) [18.7500%] ⋯ ⊢ r.reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R37 [9.3750%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G62 [9.3750%] ⋯ ⊢ [].reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ G63 [9.3750%] ⋯ ⊢ (a_1 :: a_1_1).reverse.Sublist l_1 ▶
+[codetic] ✅️ (G45) [18.7500%] ⋯ ⊢ r.reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R38 [9.3750%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G64 [9.3750%] ⋯ ⊢ [].reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ G65 [9.3750%] ⋯ ⊢ (l ++ [a_1]).reverse.Sublist l_1 ▶
+[codetic] ✅️ (G45) [18.7500%] ⋯ ⊢ r.reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R39 [9.3750%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G66 [9.3750%] ⋯ ⊢ r.reverse.Sublist [] ▶
+[codetic] 🆕 ❓️ G67 [9.3750%] ⋯ ⊢ r.reverse.Sublist (a_1 :: a_1_1) ▶
+[codetic] ✅️ (G45) [18.7500%] ⋯ ⊢ r.reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R40 [9.3750%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G68 [9.3750%] ⋯ ⊢ r.reverse.Sublist [] ▶
+[codetic] 🆕 ❓️ G69 [9.3750%] ⋯ ⊢ r.reverse.Sublist (l ++ [a_1]) ▶
+[codetic] 🏁 (G48) [12.5000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G50) [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ R41 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G70 [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G71 [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G40) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] 🆕 ❓️ R42 [12.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G72 [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G73 [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G73) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R43 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G74 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G75 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G72) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R44 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G76 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G77 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G42) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R45 [3.7500%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G78 [3.0000%] ⋯ ⊢ ?mpr.append_singleton.append_singleton.h.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ∧
+      a_1 :: ?mpr.append_singleton.append_singleton.h.w = l_1 ++ [a] ▶
+[codetic] ✅️ (G41) [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R46 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G79 [9.3750%] ⋯ ⊢ l_1.reverse.Sublist l_2 →
+      l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G80 [9.3750%] ⋯ ⊢ (a :: l_1.reverse).Sublist l_2 ▶
+[codetic] ✅️ (G44) [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a_2 = a ▶
+[codetic] 🆕 ❓️ R47 [12.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G81 [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G82 [12.5000%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G82) [12.5000%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R48 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G83 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G84 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G81) [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R49 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G85 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G86 [6.2500%] ⋯ ⊢ a_3 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G43) [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R50 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G87 [9.3750%] ⋯ ⊢ a_1.reverse.Sublist l_1 →
+      a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G88 [9.3750%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist l_1 ▶
+[codetic] ✅️ (G58) [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R51 [12.5000%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G89 [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] 🆕 ❓️ G90 [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] 🏁 (G90) [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] ❌️ (G89) [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] ✅️ (G47) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = a_1 :: a_1_1 ▶
+[codetic] 🆕 ❓️ R52 [12.5000%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G91 [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G92 [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G92) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R53 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G93 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G94 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G91) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R54 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G95 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G96 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G46) [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_1 = [] ▶
+[codetic] 🆕 ❓️ R55 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G97 [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G98 [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G56) [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ R56 [12.5000%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G99 [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] 🆕 ❓️ G100 [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] ❌️ (G100) [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] ✅️ (G53) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R57 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G101 [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] ✅️ (G36) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R58 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G102 [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🏁 (G52) [12.5000%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G49) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R59 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G103 [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G55) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1),
+      a :: a_2 = r ▶
+[codetic] 🆕 ❓️ R60 [3.7500%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G104 [3.0000%] ⋯ ⊢ ?mpr.append_singleton.h.cons.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a_1]] a_1_1 ∧
+      a :: ?mpr.append_singleton.h.cons.w = r ▶
+[codetic] ✅️ (G39) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R61 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G105 [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G37) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R62 [3.7500%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G106 [3.0000%] ⋯ ⊢ ?mpr.append_singleton.append_singleton.h.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧
+      a :: ?mpr.append_singleton.append_singleton.h.w = l ++ [a_1] ▶
+[codetic] ✅️ (G54) [12.5000%] ⋯ ⊢ ∃ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_1 = r ▶
+[codetic] 🆕 ❓️ R63 [12.5000%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G107 [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] 🆕 ❓️ G108 [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] 🏁 (G108) [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] ❌️ (G107) [12.5000%] ⋯ ⊢ [a] = r ▶
+[codetic] ✅️ (G61) [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_1]) ▶
+[codetic] 🆕 ❓️ R64 [9.3750%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G109 [9.3750%] ⋯ ⊢ r.reverse.Sublist (l ++ [a_1]) ▶
+[codetic] ✅️ (G60) [12.5000%] ⋯ ⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ R65 [12.5000%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G110 [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] 🆕 ❓️ G111 [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] ❌️ (G111) [12.5000%] ⋯ ⊢ r = [] ▶
+[codetic] ✅️ (G51) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R66 [3.7500%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G112 [3.0000%] ⋯ ⊢ ?mpr.append_singleton.h.append_singleton.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧
+      a :: ?mpr.append_singleton.h.append_singleton.w = l ++ [a_1] ▶
+[codetic] ✅️ (G50) [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R67 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G113 [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G114 [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G73) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R68 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G115 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G116 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G72) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R69 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G117 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G118 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G42) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R70 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G119 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = [] ++ [a] ▶
+[codetic] 🆕 ❓️ G120 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_3 = a_2 :: a_1_1 ++ [a] ▶
+[codetic] ✅️ (G41) [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R71 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G121 [6.2500%] ⋯ ⊢ [] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G122 [6.2500%] ⋯ ⊢ a_2 :: a_1_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G82) [12.5000%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R72 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G123 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G124 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G81) [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R73 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G125 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G126 [6.2500%] ⋯ ⊢ l ++ [a_3] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G43) [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R74 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G127 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G128 [6.2500%] ⋯ ⊢ a :: a_3 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G92) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R75 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G129 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G130 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G91) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R76 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G131 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G132 [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G46) [12.5000%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R77 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G133 [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G134 [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G53) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R78 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G135 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G136 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G36) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R79 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G137 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G138 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G49) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R80 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G139 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G140 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G39) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R81 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G141 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G142 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G37) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R82 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G143 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ G144 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1),
+      a :: a_3 = l ++ [a_1] ▶
+[codetic] ✅️ (G51) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R83 [6.2500%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G145 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ G146 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1),
+      a :: a_3 = l ++ [a_1] ▶
+[codetic] ✅️ (G73) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R84 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G147 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G148 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G72) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R85 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G149 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G150 [6.2500%] ⋯ ⊢ a_2 :: a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G42) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R86 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G151 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = [] ++ [a] ▶
+[codetic] 🆕 ❓️ G152 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_3 = l ++ [a_2] ++ [a] ▶
+[codetic] ✅️ (G41) [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R87 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G153 [6.2500%] ⋯ ⊢ [] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G154 [6.2500%] ⋯ ⊢ l ++ [a_2] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G82) [12.5000%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R88 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G155 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G156 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G81) [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R89 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G157 [6.2500%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G158 [6.2500%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_3 :: a_1_1) ▶
+[codetic] ✅️ (G43) [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R90 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G159 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G160 [6.2500%] ⋯ ⊢ a :: (l ++ [a_3]) ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G92) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R91 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G161 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G162 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G91) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R92 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G163 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G164 [6.2500%] ⋯ ⊢ a_2 :: a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G53) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R93 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G165 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G166 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_2]) ▶
+[codetic] ✅️ (G36) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R94 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G167 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G168 [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_2]) ▶
+[codetic] ✅️ (G49) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R95 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G169 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G170 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G39) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R96 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G171 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G172 [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G37) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R97 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G173 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ G174 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_2]),
+      a :: a_3 = l ++ [a_1] ▶
+[codetic] ✅️ (G51) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R98 [6.2500%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G175 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ G176 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_2]),
+      a :: a_3 = l ++ [a_1] ▶
+[codetic] ✅️ (G73) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R99 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G177 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G178 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G72) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R100 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G179 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G180 [6.2500%] ⋯ ⊢ l ++ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G42) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R101 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G181 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ G182 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1),
+      a_1 :: a_3 = l_1 ++ [a] ▶
+[codetic] ✅️ (G41) [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R102 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G183 [6.2500%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G184 [6.2500%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G82) [12.5000%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R103 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G185 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G186 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G81) [12.5000%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R104 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G187 [6.2500%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G188 [6.2500%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_3]) ▶
+[codetic] ✅️ (G43) [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R105 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G189 [6.2500%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G190 [6.2500%] ⋯ ⊢ a :: a_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_3 :: a_1_1) ▶
+[codetic] ✅️ (G92) [12.5000%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R106 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G191 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G192 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G91) [12.5000%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R107 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G193 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G194 [6.2500%] ⋯ ⊢ l ++ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G36) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R108 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G195 [6.2500%] ⋯ ⊢ [] ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G196 [6.2500%] ⋯ ⊢ a_2 :: a_1_1 ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G39) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R109 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G197 [6.2500%] ⋯ ⊢ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G198 [6.2500%] ⋯ ⊢ a_1 :: a_2 :: a_1_2 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G37) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R110 [6.2500%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G199 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = [] ++ [a_1] ▶
+[codetic] 🆕 ❓️ G200 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_3 = a_2 :: a_1_1 ++ [a_1] ▶
+[codetic] ✅️ (G42) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2,
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R111 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G201 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ G202 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]),
+      a_1 :: a_3 = l_1 ++ [a] ▶
+[codetic] ✅️ (G41) [12.5000%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R112 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G203 [6.2500%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G204 [6.2500%] ⋯ ⊢ l_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G43) [12.5000%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R113 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G205 [6.2500%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G206 [6.2500%] ⋯ ⊢ a :: a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_3]) ▶
+[codetic] ✅️ (G36) [12.5000%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R114 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G207 [6.2500%] ⋯ ⊢ [] ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G208 [6.2500%] ⋯ ⊢ l_2 ++ [a_2] ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G39) [12.5000%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R115 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G209 [6.2500%] ⋯ ⊢ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G210 [6.2500%] ⋯ ⊢ a_1 :: (l ++ [a_2]) ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G37) [12.5000%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = l ++ [a_1] ▶
+[codetic] 🆕 ❓️ R116 [6.2500%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G211 [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = [] ++ [a_1] ▶
+[codetic] 🆕 ❓️ G212 [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_3 = l_2 ++ [a_2] ++ [a_1] ▶
+[codetic] ✅️ (G68) [9.3750%] ⋯ ⊢ r.reverse.Sublist [] ▶
+[codetic] 🆕 ❓️ R117 [9.3750%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G213 [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] 🆕 ❓️ G214 [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] ❌️ (G214) [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] ✅️ (G67) [9.3750%] ⋯ ⊢ r.reverse.Sublist (a_1 :: a_1_1) ▶
+[codetic] 🆕 ❓️ R118 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G215 [4.6875%] ⋯ ⊢ [].reverse.Sublist (a_1 :: a_1_1) ▶
+[codetic] 🆕 ❓️ G216 [4.6875%] ⋯ ⊢ (a_2 :: a_1_2).reverse.Sublist (a_1 :: a_1_1) ▶
+[codetic] 🏁 (G64) [9.3750%] ⋯ ⊢ [].reverse.Sublist l_1 ▶
+[codetic] ✅️ (G63) [9.3750%] ⋯ ⊢ (a_1 :: a_1_1).reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R119 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G217 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G218 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G66) [9.3750%] ⋯ ⊢ r.reverse.Sublist [] ▶
+[codetic] 🆕 ❓️ R120 [9.3750%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G219 [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] 🆕 ❓️ G220 [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] ❌️ (G220) [9.3750%] ⋯ ⊢ r = [] ▶
+[codetic] ✅️ (G65) [9.3750%] ⋯ ⊢ (l ++ [a_1]).reverse.Sublist l_1 ▶
+[codetic] 🆕 ❓️ R121 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G221 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G222 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] 🏁 (G62) [9.3750%] ⋯ ⊢ [].reverse.Sublist l_1 ▶
+[codetic] ✅️ (G101) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R122 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G223 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G224 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G79) [9.3750%] ⋯ ⊢ l_1.reverse.Sublist l_2 →
+      l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R123 [9.3750%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G225 [9.3750%] ⋯ ⊢ l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G226 [9.3750%] ⋯ ⊢ l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G226) [9.3750%] ⋯ ⊢ l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R124 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G227 [4.6875%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G228 [4.6875%] ⋯ ⊢ a_1 :: w ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] 🏁 (G225) [9.3750%] ⋯ ⊢ l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G105) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R125 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G229 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G230 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G88) [9.3750%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R126 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G231 [4.6875%] ⋯ ⊢ ([].reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G232 [4.6875%] ⋯ ⊢ ((a_3 :: a_1_1).reverse ++ [a]).Sublist l_1 ▶
+[codetic] ✅️ (G87) [9.3750%] ⋯ ⊢ a_1.reverse.Sublist l_1 →
+      a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R127 [9.3750%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G233 [9.3750%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G234 [9.3750%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G234) [9.3750%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R128 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G235 [4.6875%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G236 [4.6875%] ⋯ ⊢ a_2 :: w ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] 🏁 (G233) [9.3750%] ⋯ ⊢ a_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G80) [9.3750%] ⋯ ⊢ (a :: l_1.reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ R129 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G237 [4.6875%] ⋯ ⊢ (a :: [].reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ G238 [4.6875%] ⋯ ⊢ (a :: (a_2 :: a_1_1).reverse).Sublist l_2 ▶
+[codetic] ✅️ (G102) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R130 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G239 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G240 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G103) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R131 [4.6875%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G241 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G242 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G63) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R132 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G243 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G244 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (l ++ [a_2]) ▶
+[codetic] ✅️ (G65) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R133 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G245 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G246 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (l_2 ++ [a_2]) ▶
+[codetic] ✅️ (G101) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R134 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G247 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G248 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (l_2 ++ [a_2]) ▶
+[codetic] ✅️ (G226) [9.3750%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R135 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G249 [4.6875%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G250 [4.6875%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] ✅️ (G105) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R136 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G251 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G252 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (l ++ [a_2]) ▶
+[codetic] ✅️ (G88) [9.3750%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R137 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G253 [4.6875%] ⋯ ⊢ ([].reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G254 [4.6875%] ⋯ ⊢ ((l ++ [a_3]).reverse ++ [a]).Sublist l_1 ▶
+[codetic] ✅️ (G234) [9.3750%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R138 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G255 [4.6875%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G256 [4.6875%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_1]) ▶
+[codetic] ✅️ (G80) [9.3750%] ⋯ ⊢ (a :: l_1.reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ R139 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G257 [4.6875%] ⋯ ⊢ (a :: [].reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ G258 [4.6875%] ⋯ ⊢ (a :: (l ++ [a_2]).reverse).Sublist l_2 ▶
+[codetic] ✅️ (G102) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R140 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G259 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G260 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (l_2 ++ [a_2]) ▶
+[codetic] ✅️ (G103) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R141 [4.6875%] unsafe|induction|global|List.reverse_2 ▶
+[codetic] 🆕 ❓️ G261 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist [] ▶
+[codetic] 🆕 ❓️ G262 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (l ++ [a_2]) ▶
+[codetic] ✅️ (G101) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R142 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G263 [4.6875%] ⋯ ⊢ (a_1 :: [].reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G264 [4.6875%] ⋯ ⊢ (a_1 :: (a_2 :: a_1_1).reverse).Sublist l_1 ▶
+[codetic] ✅️ (G226) [9.3750%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R143 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G265 [4.6875%] ⋯ ⊢ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G266 [4.6875%] ⋯ ⊢ a_1 :: a_2 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G105) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R144 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G267 [4.6875%] ⋯ ⊢ ([].reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G268 [4.6875%] ⋯ ⊢ ((a_2 :: a_1_2).reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G88) [9.3750%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R145 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G269 [4.6875%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist [] ▶
+[codetic] 🆕 ❓️ G270 [4.6875%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist (a_3 :: a_1_1) ▶
+[codetic] ✅️ (G234) [9.3750%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R146 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G271 [4.6875%] ⋯ ⊢ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G272 [4.6875%] ⋯ ⊢ a_2 :: a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G80) [9.3750%] ⋯ ⊢ (a :: l_1.reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ R147 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G273 [4.6875%] ⋯ ⊢ (a :: l_1.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G274 [4.6875%] ⋯ ⊢ (a :: l_1.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G102) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R148 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G275 [4.6875%] ⋯ ⊢ (a_1 :: [].reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G276 [4.6875%] ⋯ ⊢ (a_1 :: (a_2 :: a_1_1).reverse).Sublist l_1 ▶
+[codetic] ✅️ (G103) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R149 [4.6875%] unsafe|induction|global|List.«3» ▶
+[codetic] 🆕 ❓️ G277 [4.6875%] ⋯ ⊢ ([].reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G278 [4.6875%] ⋯ ⊢ ((a_2 :: a_1_2).reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G101) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R150 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G279 [4.6875%] ⋯ ⊢ (a_1 :: [].reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G280 [4.6875%] ⋯ ⊢ (a_1 :: (l_2 ++ [a_2]).reverse).Sublist l_1 ▶
+[codetic] ✅️ (G226) [9.3750%] ⋯ ⊢ a_1 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R151 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G281 [4.6875%] ⋯ ⊢ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G282 [4.6875%] ⋯ ⊢ a_1 :: (l ++ [a_2]) ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G105) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R152 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G283 [4.6875%] ⋯ ⊢ ([].reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G284 [4.6875%] ⋯ ⊢ ((l ++ [a_2]).reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G88) [9.3750%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R153 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G285 [4.6875%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist [] ▶
+[codetic] 🆕 ❓️ G286 [4.6875%] ⋯ ⊢ (a_1.reverse ++ [a]).Sublist (l ++ [a_3]) ▶
+[codetic] ✅️ (G234) [9.3750%] ⋯ ⊢ a_2 :: w ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R154 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G287 [4.6875%] ⋯ ⊢ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G288 [4.6875%] ⋯ ⊢ a_2 :: (l ++ [a_1]) ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ✅️ (G80) [9.3750%] ⋯ ⊢ (a :: l_1.reverse).Sublist l_2 ▶
+[codetic] 🆕 ❓️ R155 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G289 [4.6875%] ⋯ ⊢ (a :: l_1.reverse).Sublist [] ▶
+[codetic] 🆕 ❓️ G290 [4.6875%] ⋯ ⊢ (a :: l_1.reverse).Sublist (l ++ [a_2]) ▶
+[codetic] ✅️ (G102) [9.3750%] ⋯ ⊢ (a_1 :: l.reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R156 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G291 [4.6875%] ⋯ ⊢ (a_1 :: [].reverse).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G292 [4.6875%] ⋯ ⊢ (a_1 :: (l_2 ++ [a_2]).reverse).Sublist l_1 ▶
+[codetic] ✅️ (G103) [9.3750%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ R157 [4.6875%] unsafe|induction|global|List.reverse_4 ▶
+[codetic] 🆕 ❓️ G293 [4.6875%] ⋯ ⊢ ([].reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] 🆕 ❓️ G294 [4.6875%] ⋯ ⊢ ((l ++ [a_2]).reverse ++ [a_1]).Sublist l_1 ▶
+[codetic] ✅️ (G71) [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R158 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G295 [4.6875%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] a_1_1 ▶
+[codetic] ✅️ (G131) [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ R159 [5.0000%] unsafe|tactic|global|Codetic.BuiltinRules.ext ▶
+[codetic] 🆕 ❓️ G296 [5.0000%] ⋯ ⊢ a_1_1[i]? = some a_2 ↔ [][i]? = some a_2 ▶
+[codetic] ✅️ (G129) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R160 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G297 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G298 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G162) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R161 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G299 [4.6875%] ⋯ ⊢ (a_1_2.reverse.Sublist l_1 →
+        a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1) →
+      a_1_2.reverse.Sublist (l_1 ++ [a]) →
+        ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_3 = a_1_2 ▶
+[codetic] 🆕 ❓️ G300 [4.6875%] ⋯ ⊢ (a_1_2.reverse ++ [a_1]).Sublist l_1 →
+      a_1 :: a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G301 [4.6875%] ⋯ ⊢ (a_1_2.reverse ++ [a_1]).Sublist (l_1 ++ [a]) ▶
+[codetic] ✅️ (G161) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R162 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G302 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G303 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🏁 (G303) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G302) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R163 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G304 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G305 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G77) [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] 🆕 ❓️ R164 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G306 [3.1250%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a_2]] a_1_2 ▶
+[codetic] 🆕 ❓️ G307 [3.1250%] ⋯ ⊢ a_3 :: a_1_3 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[], [a_2]] a_1_2 ▶
+[codetic] ✅️ (G76) [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ R165 [5.0000%] unsafe|tactic|global|Codetic.BuiltinRules.ext ▶
+[codetic] 🆕 ❓️ G308 [5.0000%] ⋯ ⊢ a_1_1[i]? = some a_2 ↔ [][i]? = some a_2 ▶
+[codetic] ✅️ (G121) [6.2500%] ⋯ ⊢ [] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R166 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G309 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G310 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G310) [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R167 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G311 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G312 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] ✅️ (G309) [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R168 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G313 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G314 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G142) [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] 🆕 ❓️ R169 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G315 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_2 :: a_1_2) ▶
+[codetic] ✅️ (G170) [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] 🆕 ❓️ R170 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G316 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (l ++ [a_2]) ▶
+[codetic] ✅️ (G75) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R171 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G317 [4.6875%] ⋯ ⊢ (a_1_1.reverse.Sublist a_1_2 →
+        a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] a_1_2) →
+      a_1_1.reverse.Sublist (a_1_2 ++ [a]) →
+        a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] a_1_2 ∨
+          ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] a_1_2, a :: a_3 = a_1_1 ▶
+[codetic] 🆕 ❓️ G318 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist a_1_2 →
+      a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] a_1_2 ▶
+[codetic] 🆕 ❓️ G319 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_1_2 ++ [a]) ▶
+[codetic] ✅️ (G74) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R172 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G320 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G321 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🏁 (G114) [6.2500%] ⋯ ⊢ False ▶
+[codetic] ❌️ (G113) [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G138) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] 🆕 ❓️ R173 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G322 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] ❌️ (G137) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ❌️ (G169) [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G140) [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_2) ▶
+[codetic] 🆕 ❓️ R174 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G323 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_1]).Sublist (a_2 :: a_1_2) ▶
+[codetic] ❌️ (G139) [6.2500%] ⋯ ⊢ a_1 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G212) [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_3 = l_2 ++ [a_2] ++ [a_1] ▶
+[codetic] 🆕 ❓️ R175 [1.8750%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G324 [1.5000%] ⋯ ⊢ ?mpr.append_singleton.append_singleton.h.append_singleton.w ∈
+        List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧
+      a :: ?mpr.append_singleton.append_singleton.h.append_singleton.w = l_2 ++ [a_2, a_1] ▶
+[codetic] ✅️ (G211) [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1,
+      a :: a_2 = [] ++ [a_1] ▶
+[codetic] 🆕 ❓️ R176 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G325 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] 🆕 ❓️ G326 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] ✅️ (G326) [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] 🆕 ❓️ R177 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G327 [3.1250%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G328 [3.1250%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a :: a_1_1) ▶
+[codetic] ✅️ (G325) [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∧ a = a_1 ▶
+[codetic] 🆕 ❓️ R178 [6.2500%] safe|constructors|global|And ▶
+[codetic] 🆕 ❓️ G329 [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G330 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G330) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R179 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G331 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G332 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G329) [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R180 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G333 [3.1250%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G334 [3.1250%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] 🏁 (G125) [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] ❌️ (G183) [6.2500%] ⋯ ⊢ l_1 ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G124) [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R181 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G335 [4.6875%] ⋯ ⊢ (l.reverse.Sublist l_1 →
+        l ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1) →
+      (l.reverse ++ [a]).Sublist l_1 →
+        a :: l ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G336 [4.6875%] ⋯ ⊢ l.reverse.Sublist (l_1 ++ [a_2]) →
+      l ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+        ∃ a ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a_2 :: a = l ▶
+[codetic] 🆕 ❓️ G337 [4.6875%] ⋯ ⊢ (l.reverse ++ [a]).Sublist (l_1 ++ [a_2]) ▶
+[codetic] ✅️ (G202) [6.2500%] ⋯ ⊢ ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]),
+      a_1 :: a_3 = l_1 ++ [a] ▶
+[codetic] 🆕 ❓️ R182 [1.8750%] unsafe|constructors|global|Exists ▶
+[codetic] 🆕 ❓️ G338 [1.5000%] ⋯ ⊢ (?mpr.append_singleton.append_singleton.h.append_singleton.w ∈
+          List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ∨
+        ∃ a ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l,
+          a_2 :: a = ?mpr.append_singleton.append_singleton.h.append_singleton.w) ∧
+      a_1 :: ?mpr.append_singleton.append_singleton.h.append_singleton.w = l_1 ++ [a] ▶
+[codetic] 🏁 (G181) [6.2500%] ⋯ ⊢ ∃ a_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [],
+      a_1 :: a_2 = l_1 ++ [a] ▶
+[codetic] ✅️ (G122) [6.2500%] ⋯ ⊢ a_2 :: a_1_1 ++ [a] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R183 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G339 [4.6875%] ⋯ ⊢ (a_1_1.reverse ++ [a_2]).Sublist l_2 →
+      a_2 :: a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G340 [4.6875%] ⋯ ⊢ (a :: (a_1_1.reverse ++ [a_2])).Sublist l_2 ▶
+[codetic] ✅️ (G154) [6.2500%] ⋯ ⊢ l ++ [a_2] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R184 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G341 [4.6875%] ⋯ ⊢ (a_2 :: l.reverse).Sublist l_2 →
+      l ++ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G342 [4.6875%] ⋯ ⊢ (a :: a_2 :: l.reverse).Sublist l_2 ▶
+[codetic] ✅️ (G153) [6.2500%] ⋯ ⊢ [] ++ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R185 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G343 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ G344 [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] ✅️ (G344) [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R186 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G345 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G346 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_1 :: a_1_1) ▶
+[codetic] ✅️ (G343) [6.2500%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_2 ▶
+[codetic] 🆕 ❓️ R187 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G347 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G348 [3.1250%] ⋯ ⊢ [a] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] ✅️ (G123) [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R188 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G349 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G350 [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🏁 (G350) [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G349) [6.2500%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ R189 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G351 [3.1250%] ⋯ ⊢ a_2 = a ▶
+[codetic] 🆕 ❓️ G352 [3.1250%] ⋯ ⊢ a_2 = a ▶
+[codetic] ✅️ (G192) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R190 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G353 [4.6875%] ⋯ ⊢ (l.reverse.Sublist l_1 →
+        l ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1) →
+      l.reverse.Sublist (l_1 ++ [a]) →
+        ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_3 = l ▶
+[codetic] 🆕 ❓️ G354 [4.6875%] ⋯ ⊢ (l.reverse ++ [a_1]).Sublist l_1 →
+      a_1 :: l ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ G355 [4.6875%] ⋯ ⊢ (l.reverse ++ [a_1]).Sublist (l_1 ++ [a]) ▶
+[codetic] ✅️ (G136) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_2 :: a_1_1) ▶
+[codetic] 🆕 ❓️ R191 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G356 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (a_2 :: a_1_1) ▶
+[codetic] ❌️ (G135) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G166) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_2 ++ [a_2]) ▶
+[codetic] 🆕 ❓️ R192 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G357 [4.6875%] ⋯ ⊢ (a_1 :: l.reverse).Sublist (l_2 ++ [a_2]) ▶
+[codetic] ❌️ (G165) [6.2500%] ⋯ ⊢ l ++ [a_1] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] ✅️ (G191) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R193 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G358 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G359 [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🏁 (G359) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G358) [6.2500%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ R194 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G360 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] 🆕 ❓️ G361 [3.1250%] ⋯ ⊢ a = a_1 ▶
+[codetic] ✅️ (G132) [6.2500%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l ++ [a_2]) ▶
+[codetic] 🆕 ❓️ R195 [3.1250%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G362 [3.1250%] ⋯ ⊢ a_1_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ▶
+[codetic] 🆕 ❓️ R196 [3.1250%] unsafe|constructors|global|Or ▶
+[codetic] 🆕 ❓️ G363 [3.1250%] ⋯ ⊢ ∃ a ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l,
+      a_2 :: a = a_1_1 ▶
+[codetic] ✅️ (G164) [6.2500%] ⋯ ⊢ a_2 :: a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R197 [3.1250%] unsafe|induction|global|List.«1» ▶
+[codetic] 🆕 ❓️ G364 [3.1250%] ⋯ ⊢ a_2 :: a_1_2 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] [] ▶
+[codetic] 🆕 ❓️ G365 [3.1250%] ⋯ ⊢ a_2 :: a_1_2 ∈
+      List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (a_3 :: a_1_1) ▶
+[codetic] ✅️ (G163) [6.2500%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] 🆕 ❓️ R198 [6.2500%] safe|cases|global|Or ▶
+[codetic] 🆕 ❓️ G366 [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ G367 [6.2500%] ⋯ ⊢ False ▶
+[codetic] ✅️ (G367) [6.2500%] ⋯ ⊢ False ▶
+[codetic] 🆕 ❓️ R199 [4.6875%] unsafe|tactic|global|Codetic.BuiltinRules.applyHyps ▶
+[codetic] 🆕 ❓️ G368 [4.6875%] ⋯ ⊢ [] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ▶
+[codetic] Expanding safe subtree of the root goal. 
+[codetic] Skipping safe rule expansion of goal 0 since safe rules have already been applied. 
+[codetic] Skipping safe rule expansion of goal 1 since safe rules have already been applied. 
+
+
+
+
+
+
+case append_singleton
+a : ℤ
+r l_1 : List ℤ
+a_2 : ℤ
+ih : (∀ (r : List ℤ),
+    r.reverse.Sublist l_1 → r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1) →
+  r.reverse.Sublist (l_1 ++ [a]) →
+    r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1 ∨
+      ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l_1, a :: a_3 = r
+a_1 : ∀ (r : List ℤ),
+  r.reverse.Sublist (l_1 ++ [a_2]) →
+    r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a_2])
+h : r.reverse.Sublist (l_1 ++ [a_2] ++ [a])
+⊢ r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a_2]) ∨
+  ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] (l_1 ++ [a_2]), a :: a_3 = r
+
+
+l : List ℤ
+a : ℤ
+a_1 : ∀ (r : List ℤ), r.reverse.Sublist l → r ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l
+l_1 : List ℤ
+a_2 : ℤ
+ih : l_1.reverse.Sublist (l ++ [a]) →
+  l_1 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ∨
+    ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l, a :: a_3 = l_1
+h : (l_1 ++ [a_2]).reverse.Sublist (l ++ [a])
+⊢ l_1 ++ [a_2] ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l ∨
+  ∃ a_3 ∈ List.foldl (fun acc x => acc ++ List.map (fun sub => x :: sub) acc) [[]] l, a :: a_3 = l_1 ++ [a_2]

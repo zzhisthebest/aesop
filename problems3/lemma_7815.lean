@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: (Nat × Nat)) (h_
 theorem all_take_drop_of_pairwise (l : List Int) (n : Nat) (target : Int)
     (h : List.Pairwise (fun a b => a + b ≠ target) l) :
     List.all (l.take n) (fun a => List.all (l.drop n) (fun b => a + b ≠ target)) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

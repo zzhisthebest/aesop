@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -54,7 +54,7 @@ def rain_postcond (heights : List (Int)) (result: Int) (h_precond : rain_precond
 
 
 theorem water_nonneg (w : Int) : w ≥ 0 → max 0 w = w:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

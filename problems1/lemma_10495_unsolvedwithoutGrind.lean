@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ attribute[simp]
 List.idxOf_eq_length
 theorem idxOf_eq_length_of_not_mem {l : List Int} {a : Int}
     (h : a ∉ l) : l.idxOf a = l.length:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

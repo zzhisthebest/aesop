@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ List.drop_append
 #check List.drop_append_of_le_length
 theorem drop_append (xs ys : List α) (n : Nat) :
   (xs ++ ys).drop n = (xs.drop n) ++ ys.drop (n - xs.length):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

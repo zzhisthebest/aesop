@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem profit_may_increase_when_higher (price minSoFar maxProfit : Nat)
     (h : minSoFar < price) :
     (updateMinAndProfit price minSoFar maxProfit).2 =
       Nat.max maxProfit (price - minSoFar):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

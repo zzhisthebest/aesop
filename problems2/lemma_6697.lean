@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem subArrays_of_nil :
           List.range (List.length ([] : List Int) - start + 1) |>.map
             (fun len => ([] : List Int).drop start |>.take len)))
       = ([[]] : List (List Int)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

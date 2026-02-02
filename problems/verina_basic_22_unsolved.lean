@@ -13,7 +13,7 @@
 -- !benchmark @start import type=solution
 import Std.Data.HashSet
 -- !benchmark @end import
-import Aesop
+import Codetic
 namespace tmp
 -- !benchmark @start solution_aux
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -65,5 +65,5 @@ def dissimilarElements_postcond (a : Array Int) (b : Array Int) (result: Array I
 theorem dissimilarElements_spec_satisfied (a: Array Int) (b: Array Int) (h_precond : dissimilarElements_precond (a) (b)) :
     dissimilarElements_postcond (a) (b) (dissimilarElements (a) (b) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -52,7 +52,7 @@ theorem mod_eq_of_lt {n m : Nat} (h : n < m) : n % m = n := Nat.mod_eq_of_lt h
 @[simp] theorem ofNat_succ (n : Nat) : (Nat.succ n : Int) = (n : Int) + 1 := rfl
 
 @[simp] theorem int_add_comm (a b : Int) : a + b = b + a:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ def majorityElement_postcond (xs : List Nat) (result: Nat) (h_precond : majority
 theorem any_iff_exists_gt_half (xs : List Nat) :
     xs.any (fun x => xs.count x > xs.length / 2) = true ↔
       ∃ y, y ∈ xs ∧ xs.count y > xs.length / 2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

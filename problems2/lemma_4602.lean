@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem precond_implies_subset_and_card (nums : List Nat)
     (h : missingNumber_precond nums) :
     nums ⊆ List.range (nums.length + 1) ∧
     nums.length = (List.range (nums.length + 1)).length - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem result_is_valid (arr : Array Int) (elem : Int)
     (lastPosition arr elem h_precond = -1) ∨
       (0 ≤ lastPosition arr elem h_precond ∧
         (lastPosition arr elem h_precond).toNat < arr.size):= by
-aesop(config := { enableGrind := false })
+codetic(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem idx_nat_eq (i : Nat) (offset : Int) (len : Nat) (hlen : 0 < len) :
           then ((Int.ofNat i + offset) % (Int.ofNat len)) + Int.ofNat len
           else ((Int.ofNat i + offset) % (Int.ofNat len))) =
     Int.toNat ((Int.ofNat i + offset) % (Int.ofNat len)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

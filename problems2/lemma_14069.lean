@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ def LongestCommonPrefix_postcond (str1 : List Char) (str2 : List Char) (result: 
 theorem index_some_of_lt_min {str1 str2 : List Char} {minLength idx : Nat}
     (hmin : idx < minLength) (hdef : minLength = Nat.min str1.length str2.length) :
     ∃ c1 c2, str1[idx]? = some c1 ∧ str2[idx]? = some c2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

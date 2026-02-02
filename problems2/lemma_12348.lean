@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem CanyonSearch_result_is_existing_diff
   ∃ i j, i < a.size ∧ j < b.size ∧
         CanyonSearch a b h_precond =
           ((a[i]! - b[j]!).natAbs):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

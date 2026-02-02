@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -53,7 +53,7 @@ def nthUglyNumber_postcond (n : Nat) (result: Nat) (h_precond : nthUglyNumber_pr
 theorem next_le_i2_i3_i5 (i2 i3 i5 next : Nat)
     (h : next = min i2 (min i3 i5)) :
     next ≤ i2 ∧ next ≤ i3 ∧ next ≤ i5:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

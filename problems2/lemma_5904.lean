@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ def runLengthEncode_postcond (s : String) (result: List (Char × Nat)) (h_precon
 theorem List.nthLe_reverse {α} {l : List α} {i : Nat}
     (h : i < l.length) :
     (l.reverse).get? i = l.get? (l.length - 1 - i):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

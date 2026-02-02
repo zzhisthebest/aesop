@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem loop_minimum_initial (a : Array Int) (h : a.size > 0) :
     let r := loop a 1 (a[0]!)
     (∀ i, i < a.size → r ≤ a[i]!) ∧
     (∃ i, i < a.size ∧ r = a[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

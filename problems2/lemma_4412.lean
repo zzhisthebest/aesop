@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -59,7 +59,7 @@ theorem rightShiftOnce_length (l : List Int) :
        | [] => []
        | last :: revInit => last :: revInit.reverse
      rightShiftOnce l).length = l.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

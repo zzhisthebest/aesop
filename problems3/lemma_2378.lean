@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem findCandidate_is_majority (xs : List Nat)
     (h_pre : majorityElement_precond xs) :
     let cand := (majorityElement xs h_pre)
     ∃ a, a = cand ∧ xs.count a > xs.length / 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

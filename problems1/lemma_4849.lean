@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ def moveZeroes_postcond (xs : List Int) (result: List Int) (h_precond : moveZero
 theorem countVal_zero_append_of_forall_ne (as bs : List Int)
     (h : ∀ x ∈ as, x ≠ 0) :
     countVal 0 (as ++ bs) = countVal 0 bs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

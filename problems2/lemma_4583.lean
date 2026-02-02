@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem actual_sum_le_expected (nums : List Nat)
     (h₁ : nums.all (fun x => x ≤ nums.length))
     (h₂ : List.Nodup nums) :
     nums.foldl (· + ·) 0 ≤ (nums.length * (nums.length + 1)) / 2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

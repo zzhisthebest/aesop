@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem isPalHelper_step (x : List Char) {i j : Nat}
     (hci : x[i]? = some ci) (hcj : x[j]? = some cj) :
     isPalindromeHelper x i j =
       if ci ≠ cj then false else isPalindromeHelper x (i+1) (j-1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -22,7 +22,7 @@ theorem binaryToDecimal_aux (a : Nat) (digits : List Nat)
     (h_precond : binaryToDecimal_precond digits) :
     a * 2 ^ digits.length + binaryToDecimal digits h_precond =
       List.foldl (fun acc bit => acc * 2 + bit) a digits:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

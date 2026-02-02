@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_preco
 theorem init_eq_natAbs (a b : Array Int) (h : a.size > 0) (h' : b.size > 0) :
     (if a[0]! < b[0]! then (b[0]! - a[0]!).natAbs else (a[0]! - b[0]!).natAbs)
       = (a[0]! - b[0]!).natAbs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

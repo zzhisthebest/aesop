@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ def cubeElements_postcond (a : Array Int) (result: Array Int) (h_precond : cubeE
 theorem array_get_map (a : Array Int) (i : Nat) (hi : i < a.size)
     (f : Int → Int) :
     (a.map f)[i]! = f (a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem pairwise_monotone (arr : Array Int)
     (h : findFirstOccurrence_precond arr (0 : Int)) :
     ∀ {i j}, i ≤ j → i < arr.size → j < arr.size →
       arr[i]! ≤ arr[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

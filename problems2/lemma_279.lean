@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem findMajorityElement_correct (l : List Int)
                l.all (fun x => cnt x ≤ n / 2 ∨ x = findMajorityElement l h_pre)
     (findMajorityElement l h_pre = -1 → l.all (cnt · ≤ n / 2) ∨ maj) ∧
     (findMajorityElement l h_pre ≠ -1 → maj):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

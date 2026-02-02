@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -60,7 +60,7 @@ theorem chosen_is_maximum
       let result :=
         maxCoverageAfterRemovingOne intervals h_precond
       result ≥ cov_i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

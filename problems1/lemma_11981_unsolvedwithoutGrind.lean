@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem binarySearchLoop_result_le_size
     (a : Array Int) (key : Int) (lo hi : Nat)
     (h_lo_le_hi : lo ≤ hi) (h_hi_le : hi ≤ a.size) :
     binarySearchLoop a key lo hi ≤ a.size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

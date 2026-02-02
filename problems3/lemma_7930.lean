@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem outer_correct (nums : Array Int) (target : Int) (n : Nat)
       List.Pairwise (fun a b => a + b ≠ target) (nums.toList.take i) ∧
       List.all (nums.toList.take i) (fun a => List.all (nums.toList.drop i) (fun b => a + b ≠ target)) ∧
       List.all (nums.toList.drop (j + 1)) (fun a => a + nums[j]! ≠ target):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

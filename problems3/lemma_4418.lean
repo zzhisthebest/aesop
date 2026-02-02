@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -58,7 +58,7 @@ theorem no_rotation_sort_when_neg_one
     let r := minimumRightShifts nums h_precond
     r = -1 →
     ∀ k : Nat, k < nums.length → ¬ List.Pairwise (· ≤ ·) (nums.rotateRight k):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

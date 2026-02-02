@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem secondSmallest_eq_aux
       secondSmallestAux s 2
         (if s[1]! < s[0]! then 1 else 0)
         (if s[1]! < s[0]! then 0 else 1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -38,7 +38,7 @@ theorem subarray_sum_eq_diff_prefix (xs : List Int) (start len : Nat) (hlen : le
     (hbound : start + len ≤ xs.length) :
     ((xs.drop start).take len).sum =
       (xs.take (start + len)).sum - (xs.take start).sum:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

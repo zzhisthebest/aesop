@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ def CanyonSearch_postcond (a : Array Int) (b : Array Int) (result: Nat) (h_preco
 theorem CanyonSearch_result_is_minimum (a b : Array Int) (h_precond : CanyonSearch_precond a b) :
     ∀ (ai : Int) (bi : Int), ai ∈ a.toList → bi ∈ b.toList →
       CanyonSearch a b h_precond ≤ (ai - bi).natAbs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem copyFrom_one_spec (a : Array Int) (h : a.size > 0) :
     let r := copyFrom a 1 (Array.mkEmpty (a.size - 1))
     (r.size = a.size - 1) ∧
     (∀ i, i < r.size → r[i]! = a[i+1]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

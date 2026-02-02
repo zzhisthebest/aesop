@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem eraseDups_cons_eq_of_sorted {a : Int} {l : List Int}
     (h : List.Pairwise (· ≤ ·) (a :: l)) :
     (l.eraseDups.head? = none) →
       (a :: l).eraseDups = a :: l.eraseDups:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

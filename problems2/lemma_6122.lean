@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem postcond_of_eq_takeWhile_len
     (xs : List Int) (target : Int) (hpre : searchInsert_precond xs target) :
     let result := (xs.takeWhile (· < target)).length
     searchInsert_postcond xs target result hpre:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

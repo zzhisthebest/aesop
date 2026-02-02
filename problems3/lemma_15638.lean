@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem foldl_pairwise_preserves (l : List Nat) (f : Array Int → Nat → Array
                      List.Pairwise (· ≤ ·) (f arr i).toList)
     (init : Array Int) (h_init : List.Pairwise (· ≤ ·) init.toList) :
     List.Pairwise (· ≤ ·) (l.foldl f init).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

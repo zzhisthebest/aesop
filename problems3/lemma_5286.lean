@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -54,7 +54,7 @@ theorem nthUglyNumber_is_nth_ugly (n : Nat) (h_precond : nthUglyNumber_precond n
     let res := nthUglyNumber n h_precond
     isUgly res = true ∧
     ((List.range res).filter (fun i => isUgly i)).length = n - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -19,7 +19,7 @@ theorem max_eq_b_of_outer_false_inner_true
     (a b c : Int) (h_precond : maxOfThree_precond a b c)
     (h₁ : ¬ (a ≥ b ∧ a ≥ c)) (h₂ : b ≥ a ∧ b ≥ c) :
     maxOfThree a b c h_precond = b:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

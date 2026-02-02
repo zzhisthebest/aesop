@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,6 +36,6 @@ Array.getElem?_push
 #check Array.getElem_push
 theorem get_push_eq (as : Array Nat) (x : Nat) (i : Nat) (h : i < as.size) :
     (as.push x)[i]! = as[i]!:= by
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem findFirstOccurrence_eq_neg_one_imp
     (h_precond : findFirstOccurrence_precond arr target)
     (hneg : findFirstOccurrence arr target h_precond = -1) :
     (∀ i : Nat, i < arr.size → arr[i]! ≠ target):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

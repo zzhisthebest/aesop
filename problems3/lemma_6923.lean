@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem ideal_le_algorithm (height : List Nat) :
           let rmax := List.drop i height |>.foldl Nat.max 0
           Nat.min lmax rmax - height[i]!)).foldl (· + ·) 0 ≤
       trapRainWater height trivial:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

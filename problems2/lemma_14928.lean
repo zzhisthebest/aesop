@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem only_once_loop_step_neq (a : Array Int) (key val : Int) (i cnt : Nat) (h
     a[i]? = some val →
     val ≠ key →
     only_once_loop a key i cnt = only_once_loop a key (i+1) cnt:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

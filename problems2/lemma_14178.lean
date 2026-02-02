@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem Match_spec (s p : String) (h : Match_precond s p) :
     (Match s p h = true ↔
       ∀ n, n < s.toList.length →
         (s.toList[n]! = p.toList[n]! ∨ p.toList[n]! = '?')):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

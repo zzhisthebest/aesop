@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem copyFrom_eq_append (a : Array Int) (i : Nat) (acc : Array Int)
     (h : i ≤ a.size) :
     copyFrom a i acc =
       acc ++ Array.ofFn (fun (j : Fin (a.size - i)) => a[(i + j.val)]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

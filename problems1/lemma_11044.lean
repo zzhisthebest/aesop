@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem first_two_correct
       if s[1]! < s[0]! then (1, 0) else (0, 1)
     (s[minIdx]! ≤ s[secondIdx]!) ∧
     (∀ i < 2, s[i]! = s[minIdx]! ∨ s[i]! = s[secondIdx]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

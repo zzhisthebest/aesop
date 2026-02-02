@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem take_extend_eq (xs ys : List Char) (i : Nat) (c : Char)
     (h_eq : xs[i] = c) (h_eq' : ys[i] = c) :
     xs.take (i+1) = xs.take i ++ [c] ∧
     ys.take (i+1) = ys.take i ++ [c]:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

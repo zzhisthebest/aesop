@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem findP_properties
     (x ≤ p ∧ p < a.size) ∧
     ((p < a.size - 1) → ∀ i, i < p → a[i]! < a[p]!) ∧
     ((∀ i, x ≤ i → i < a.size → a[i]! ≤ m) → p = a.size - 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

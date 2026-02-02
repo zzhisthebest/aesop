@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 theorem any_of_exists_divisor {n : Nat} {k : Nat} (hk : k ∈ List.range' 2 (n - 2))
     (hdiv : n % k = 0) :
     (List.range' 2 (n - 2)).any (fun k => n % k = 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

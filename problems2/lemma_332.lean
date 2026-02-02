@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem count_gt_one_mem_filter
     (lst : List Int) (x : Int)
     (h : lst.count x > 1) :
     x ∈ lst.filter (fun y => lst.count y > 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

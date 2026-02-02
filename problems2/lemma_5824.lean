@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ def removeElement_postcond (lst : List Nat) (target : Nat) (result: List Nat) (h
 
 theorem zipIdx_get (l : List Nat) (x : Nat) (i : Nat) (h : (x,i) ∈ l.zipIdx) :
     l[i]? = some x:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

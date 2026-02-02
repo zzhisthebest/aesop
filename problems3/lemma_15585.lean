@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def SelectionSort_postcond (a : Array Int) (result: Array Int) (h_precond : Sele
 theorem findMinIndex_correct (arr : Array Int) (start finish : Nat) (h₁ : start ≤ finish)
     (h₂ : finish ≤ arr.size) :
     ∀ k, start ≤ k ∧ k < finish → arr[findMinIndexInRange arr start finish]! ≤ arr[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

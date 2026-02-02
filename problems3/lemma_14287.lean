@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem maxArray_aux_if_pos (a : Array Int) (i : Nat) (c : Int) (h : i < a.size)
     maxArray_aux a i c =
       let new_current := if c > a[i]! then c else a[i]!
       maxArray_aux a (i + 1) new_current:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem length_gt_imp_false
   (h : sub.length > main.length) :
     isSublist sub main h_pre = false ∧
     ¬ ∃ i, i + sub.length ≤ main.length ∧ sub = (main.drop i).take sub.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

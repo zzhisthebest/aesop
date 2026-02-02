@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def mergeIntervals_postcond (intervals : List (Prod Int Int)) (result: List (Pro
 theorem insert_if_true {x y : Prod Int Int} {sorted : List (Prod Int Int)} :
     (x.fst ≤ y.fst) = true → (if x.fst ≤ y.fst then x :: sorted else y :: (mergeIntervals [] (by trivial))) =
     x :: sorted:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

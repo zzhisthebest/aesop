@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem aux_min_le (a b : Array Int) (m n : Nat) (d : Nat) (hm : m < a.size) (hn
     let diff : Nat := ((a[m]! - b[n]!).natAbs)
     let new_d := if diff < d then diff else d
     new_d ≤ d:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

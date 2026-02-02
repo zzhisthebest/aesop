@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem fold_step_pairwise (arr : Array Int) (i : Nat) (hsize : i < arr.size) :
     List.Pairwise (· ≤ ·) arr.toList →
     List.Pairwise (· ≤ ·)
       (swap arr i (findMinIndexInRange arr i arr.size)).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

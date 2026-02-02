@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem prefix_contains_all (nums : List Nat) (k : Nat) (h : minOperations_preco
     let processed := (nums.reverse).take result
     let target_nums := (List.range k).map (· + 1)
     target_nums.all (fun n => List.elem n processed) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

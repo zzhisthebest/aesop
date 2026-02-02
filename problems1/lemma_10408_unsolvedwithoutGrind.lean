@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def MoveZeroesToEnd_postcond (arr : Array Int) (result: Array Int) (h_precond : 
 
 theorem idxOf_zero_append (l₁ l₂ : List Int) (h : (0 : Int) ∉ l₁) :
     (l₁ ++ l₂).idxOf 0 = l₁.length + l₂.idxOf 0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

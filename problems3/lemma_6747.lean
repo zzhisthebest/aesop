@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem kadane_step (cur maxSoFar x : Int) :
     (newCur, newMax) =
       (if cur + x ≥ x then cur + x else x,
        max (maxSoFar) (if cur + x ≥ x then cur + x else x)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

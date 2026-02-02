@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem foldl_right (a b : Array Int) (h : dissimilarElements_precond a b) :
     (b.foldl (fun acc x => if !inArray a x then acc.insert x else acc)
             ((a.foldl (fun acc x => if !inArray b x then acc.insert x else acc)
                       Std.HashSet.empty))).toArray.all (fun x => inArray a x ≠ inArray b x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

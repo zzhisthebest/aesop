@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ def LongestCommonSubsequence_postcond (a : Array Int) (b : Array Int) (result: I
 theorem length_mem_of_mem {l : List (List Int)} {s : List Int}
     (hs : s ∈ l) :
     s.length ∈ (l.map (·.length)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

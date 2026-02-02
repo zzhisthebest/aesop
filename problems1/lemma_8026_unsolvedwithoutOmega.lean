@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem get_set!_else (a : Array Int) (i : Nat)
     (let a1 := a.set! 4 ((a[4]!) + 3);
      let a2 := a1.set! 7 516;
      a2)[i]! = a[i]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

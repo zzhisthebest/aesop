@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem lastPosition_vals (arr : Array Int) (elem : Int)
     (h : lastPosition_precond arr elem) :
     (lastPosition arr elem h = -1) ∨
     ∃ n : Nat, lastPosition arr elem h = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

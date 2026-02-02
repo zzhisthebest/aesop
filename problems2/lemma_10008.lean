@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def swapFirstAndLast_precond (a : Array Int) : Prop :=
@@ -21,7 +21,7 @@ theorem get_two_sets_ne (a : Array Int) {i₁ i₂ j : Nat} (v₁ v₂ : Int)
     (h₁ : i₁ < a.size) (h₂ : i₂ < a.size) (h_j : j < a.size)
     (hneq₁ : j ≠ i₁) (hneq₂ : j ≠ i₂) :
     ((a.set! i₁ v₁).set! i₂ v₂)[j]! = a[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

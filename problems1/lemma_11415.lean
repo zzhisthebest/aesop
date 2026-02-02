@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem lastPos_minus_one (arr : Array Int) (elem : Int) (h_precond : lastPositi
       (result = -1 → arr.toList.all (· ≠ elem)) →
       result = lastPosition arr elem h_precond → result = -1 →
       arr.toList.all (· ≠ elem):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

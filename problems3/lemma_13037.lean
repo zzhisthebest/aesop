@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def absDiff (a b : Float) : Float :=
@@ -38,7 +38,7 @@ theorem pairwise_iff_forall_ge
         i < numbers.length →
         j < numbers.length →
         absDiff (numbers.getD i 0.0) (numbers.getD j 0.0) ≥ threshold:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

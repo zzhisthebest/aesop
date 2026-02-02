@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem smallestMissingNumber_correct (s : List Nat)
     (h_precond : smallestMissingNumber_precond s) :
     let r := smallestMissingNumber s h_precond
     (¬ List.elem r s) ∧ (∀ k : Nat, k < r → List.elem k s):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

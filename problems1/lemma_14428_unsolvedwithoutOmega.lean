@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def minArray_postcond (a : Array Int) (result: Int) (h_precond : minArray_precon
 theorem newMin_def (currentMin a_i : Int) :
     (if currentMin > a_i then a_i else currentMin) ≤ currentMin ∧
     (if currentMin > a_i then a_i else currentMin) ≤ a_i:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

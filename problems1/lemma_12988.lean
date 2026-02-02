@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ theorem if_lt_then {a : Array Int} {key : Int} {idx : Nat}
         if a[idx]! = key then Int.ofNat idx else Find.search a key (idx+1)
       else -1) =
     (if a[idx]! = key then Int.ofNat idx else Find.search a key (idx+1)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

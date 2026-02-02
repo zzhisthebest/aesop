@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -97,7 +97,7 @@ theorem findInMap_correct (nums1 nums2 : List Int)
            match ng with
            | none => resultVal = -1
            | some off => resultVal = nums2[idx + off + 1]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

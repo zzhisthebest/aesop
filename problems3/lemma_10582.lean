@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem later_elements_cannot_be_target (arr : Array Int) (target : Int)
     (hpre : findFirstOccurrence_precond arr target) :
     ∀ {i j} (hi : i < arr.size) (hj : j < arr.size), i ≤ j →
       arr[i]! > target → arr[j]! ≠ target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

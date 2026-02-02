@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -51,7 +51,7 @@ theorem result_ne_zero_implies_maximum_property
     let divisibleSubarrays := subarrays.filter (fun subarray => subarray.size % k = 0 && subarray.size > 0)
     let subarraySums := divisibleSubarrays.map (fun subarray => subarray.sum)
     (r ∈ subarraySums) ∧ subarraySums.all (fun sum => sum ≤ r):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem pairwise_cons_tail {α} {r : α → α → Prop} {x} {xs : List α}
   (List.pairwise_cons.1 h).2
 
 @[simp] theorem length_range (n : Nat) : (List.range n).length = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

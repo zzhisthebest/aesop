@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem maxSubarraySumDivisibleByK_subarraySums_type (arr : Array Int) :
     (List.range (arr.size) |>.flatMap (fun start =>
       List.range (arr.size - start + 1) |>.map (fun len => arr.extract start (start + len)))).length
       ≥ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem canyonSearchAux_monotone (a b : Array Int) (m n d : Nat) (h : m < a.size
     let diff : Nat := ((a[m]! - b[n]!).natAbs)
     let new_d := if diff < d then diff else d
     new_d ≤ d:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem second_fold_correct (oline nl : Array Char) (l p atPos : Nat)
             (Array.mkArray (l + p) ' ')
             (Array.range l))
         (Array.range p)).size = l + p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem le_of_exists_sublist
   (sub main : List Int) (h : ∃ i, i + sub.length ≤ main.length ∧
     sub = (main.drop i).take sub.length) :
     sub.length ≤ main.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem perm_of_filters (l : List Int) :
     let nonZeros := l.filter (· ≠ 0)
     let zeros    := l.filter (· = 0)
     List.isPerm (nonZeros ++ zeros) l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

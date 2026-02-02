@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem fold_min_update (a : Array Int) (i : Nat) (minVal : Int)
     (hi : i < a.size) :
     (let x := a[i]!; if x < minVal then x else minVal) =
       (fun acc x => if x < acc then x else acc) minVal (a[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

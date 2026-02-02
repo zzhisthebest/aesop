@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ theorem SwapSimultaneous_neq (X Y : Int)
     (h : SwapSimultaneous_precond X Y) :
     X ≠ Y →
       ((SwapSimultaneous X Y h).1 ≠ X ∧ (SwapSimultaneous X Y h).2 ≠ Y):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

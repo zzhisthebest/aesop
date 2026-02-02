@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem diff_adjacent_reverse {l : List (Char × Nat)} :
     (∀ i, i < l.length - 1 → (l[i]!).fst ≠ (l[i+1]!).fst) →
     ∀ i, i < l.reverse.length - 1 →
       (l.reverse[i]!).fst ≠ (l.reverse[i+1]!).fst:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem helper_succ_succ_true {l : Nat}
     (ifPowerOfFour (Nat.succ (Nat.succ l)) h_pre) =
       (ifPowerOfFour ((l + 2) / 4) (by
         trivial)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -81,7 +81,7 @@ theorem sortedChords_eq_algorithm (N : Nat) (chords : List (List Nat))
                 let b := chord[1]!
                 if a > b then [b, a] else [a, b])
           exact sortedChords):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

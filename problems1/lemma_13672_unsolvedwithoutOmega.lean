@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem linearSearchAux_eq_if (a : Array Int) (e : Int) (n : Nat) :
         if a[n]! = e then n else linearSearchAux a e (n + 1)
       else
         0:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

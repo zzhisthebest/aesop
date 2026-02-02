@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def sumOfDigits_postcond (n : Nat) (result: Nat) (h_precond : sumOfDigits_precon
 theorem repr_digits_are_nat (n : Nat) (c : Char)
     (h : c ∈ String.toList (Nat.repr n)) :
     c.toNat ≥ Char.toNat '0' ∧ c.toNat ≤ Char.toNat '9':= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

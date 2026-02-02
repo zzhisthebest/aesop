@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem iteration_preserves_pairwise (arr : Array Int) (i : Nat)
     List.Pairwise (· ≤ ·)
       (let minIdx := findMinIndexInRange arr i arr.size
        swap arr i minIdx).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

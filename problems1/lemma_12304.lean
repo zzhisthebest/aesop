@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem CanyonSearch_init_eq (a b : Array Int) (h_precond : CanyonSearch_precond
       (a[0]! - b[0]!).natAbs ∨
     (if a[0]! < b[0]! then (b[0]! - a[0]!).natAbs else (a[0]! - b[0]!).natAbs) =
       (b[0]! - a[0]!).natAbs:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

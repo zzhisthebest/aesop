@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem fold_max_update (a : Array Int) (i : Nat) (maxVal : Int)
     (hi : i < a.size) :
     (let x := a[i]!; if x > maxVal then x else maxVal) =
       (fun acc x => if x > acc then x else acc) maxVal (a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

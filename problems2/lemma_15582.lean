@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem whole_array_sorted (a : Array Int) :
     List.Pairwise (· ≤ ·) ((List.range a.size).foldl (fun arr i =>
       let minIdx := findMinIndexInRange arr i a.size
       swap arr i minIdx) a).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

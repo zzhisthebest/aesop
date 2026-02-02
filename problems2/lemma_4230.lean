@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ theorem processed_contains_all (nums : List Nat) (k result : Nat)
     let processed := (nums.reverse).take result
     ((List.range k).map (· + 1)).all (fun n => List.elem n processed) →
     ((List.range k).map (· + 1)).all (fun n => List.elem n nums):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

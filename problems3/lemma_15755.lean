@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem order_preserved (s : List Int) :
     List.Pairwise (fun a b => ( (s.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []).idxOf a
         < (s.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []).idxOf b )
         → (s.idxOf a < s.idxOf b)) (s.foldl (fun acc x => if acc.contains x then acc else acc ++ [x]) []):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

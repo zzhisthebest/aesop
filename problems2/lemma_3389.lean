@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem prefixSums_update (arr : Array Int) (i : Nat) (n : Nat)
     (h₁ : i < n) (h₂ : i + 1 < n + 1) :
     let pref := (Array.mkArray (n + 1) 0).set! (i+1) (arr[i]!)
     pref.size = n + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

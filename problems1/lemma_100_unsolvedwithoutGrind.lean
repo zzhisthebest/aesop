@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -46,7 +46,7 @@ theorem FindSingleNumber_correct (nums : List Int)
     (nums.length > 0) ∧
     ((filterlist r nums).length = 1) ∧
     (∀ (x : Int), x ∈ nums → x = r ∨ (filterlist x nums).length = 2):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

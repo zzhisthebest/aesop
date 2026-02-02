@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isOdd (x : Int) : Bool :=
@@ -27,7 +27,7 @@ theorem takeWhile_zipIdx_preserves_not_odd (a : Array Int) :
     ∀ l ∈ a.toList.zipIdx,
       (l ∈ List.takeWhile (fun (x, _) => !isOdd x) a.toList.zipIdx) →
       ¬ isOdd l.1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

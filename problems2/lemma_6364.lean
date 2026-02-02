@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -53,7 +53,7 @@ theorem allSubstrings_def (s : List Char) :
     allSubstrings s =
       (List.range s.length).flatMap fun i =>
         (List.range (s.length - i)).map fun j => s.drop i |>.take (j + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

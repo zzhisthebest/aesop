@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem le_of_not_min_a_b
     (h_not_a : ¬ (a ≤ b ∧ a ≤ c))
     (h_not_b : ¬ (b ≤ a ∧ b ≤ c)) :
     c ≤ a ∧ c ≤ b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

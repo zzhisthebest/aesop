@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ theorem twoSum_none_implies_pairwise
     (nums : List Int) (target : Int) (h_precond : twoSum_precond nums target) :
     twoSum nums target h_precond = none →
     List.Pairwise (· + · ≠ target) nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

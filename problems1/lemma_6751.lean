@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 theorem foldl_pair_length (l : List Int) (init : Int × Int) :
     (l.foldl (fun (acc : Int × Int) _ => acc) init).1 = init.1 ∧
     (l.foldl (fun (acc : Int × Int) _ => acc) init).2 = init.2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

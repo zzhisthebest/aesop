@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem fold_preserves_size (a : Array Int) (indices : List Nat) :
     (indices.foldl (fun arr i =>
         let minIdx := findMinIndexInRange arr i a.size
         swap arr i minIdx) a).size = a.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

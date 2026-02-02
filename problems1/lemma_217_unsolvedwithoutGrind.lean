@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -29,7 +29,7 @@ theorem find?_some_iff {α : Type} (p : α → Bool) (lst : List α) (x : α) :
     lst = pre ++ x :: post ∧
     p x = true ∧
     (∀ y ∈ pre, p y = false):=by
-  aesop
+  codetic
 
 #check List.find?_some
 theorem majority_pred_holds (lst : List Int) (n : Nat) (x : Int)
@@ -38,7 +38,7 @@ theorem majority_pred_holds (lst : List Int) (n : Nat) (x : Int)
 simp_all only [countOccurrences, gt_iff_lt]
 apply List.find?_some
 grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

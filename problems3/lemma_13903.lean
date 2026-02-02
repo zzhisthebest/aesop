@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem LinearSearch3_minimal
     (a : Array Int) (P : Int → Bool)
     (h_precond : LinearSearch3_precond a P) :
     ∀ k, k < LinearSearch3 a P h_precond → ¬ P (a[k]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -39,7 +39,7 @@ theorem twoSum_all_after_j (nums : Array Int) (target : Int)
     (h_precond : twoSum_precond nums target) :
     ∀ i j, twoSum nums target h_precond = (i, j) →
       List.all (nums.toList.drop (j + 1)) (fun a => a + nums[j]! ≠ target):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

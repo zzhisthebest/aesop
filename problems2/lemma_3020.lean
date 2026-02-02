@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -19,7 +19,7 @@ theorem c_ge_a_of_not_ab_and_not_bc
     {a b c : Int}
     (h₁ : ¬ (a ≥ b ∧ a ≥ c))
     (h₂ : ¬ (b ≥ a ∧ b ≥ c)) : c ≥ a:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

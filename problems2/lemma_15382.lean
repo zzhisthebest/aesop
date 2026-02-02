@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -26,7 +26,7 @@ def reverse_postcond (a : Array Int) (result: Array Int) (h_precond : reverse_pr
 theorem swap_other (arr : Array Int) {i j k : Nat}
     (hi : i < arr.size) (hj : j < arr.size) (hk : k < arr.size) (hki : k ≠ i) (hkj : k ≠ j) :
     ((arr.set! i (arr[j]!)).set! j (arr[i]!))[k]! = arr[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

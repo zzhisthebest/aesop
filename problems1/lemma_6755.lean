@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem postcond_eq_iff (seq : List Int) :
        let subArraySums := subArrays.filter (· ≠ []) |>.map (·.sum)
        subArraySums.contains (task_code seq (by trivial)) ∧
        subArraySums.all (· ≤ task_code seq (by trivial))):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

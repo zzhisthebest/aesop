@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -50,7 +50,7 @@ theorem adjustedMoves_eq
     adjustedMoves =
       firstIndex + (n - 1 - lastIndex) -
         (if firstIndex > lastIndex then 1 else 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

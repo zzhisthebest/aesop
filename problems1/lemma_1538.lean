@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem foldl_step_preserves_nil
     (acc : List (List Int)) (x : Int)
     (h : acc.contains ([] : List Int)) :
     (acc ++ acc.map (fun sub => x :: sub)).contains ([] : List Int):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

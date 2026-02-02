@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -14,7 +14,7 @@ def cubeSurfaceArea_postcond (size : Nat) (result: Nat) (h_precond : cubeSurface
 
 
 theorem mul_assoc_nat (a b c : Nat) : a * b * c = a * (b * c):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

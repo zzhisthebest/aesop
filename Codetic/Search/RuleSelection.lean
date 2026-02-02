@@ -53,9 +53,9 @@ def createDynamicInductionRules (goal : MVarId)
         let ctorNames ← mkCtorNamesForInfo info
 
         idx:=idx+1
-        -- Create standard induction rule for this specific variable
+        -- Create standard induction rule for this specific variable (name shows e.g. List.xs)
         let ruleName : RuleName := {
-          name := declName ++ Name.mkSimple (toString idx) --++ ldecl.userName
+          name := declName ++ ldecl.userName
           builder := .induction
           phase := .unsafe
           scope := .global
@@ -86,7 +86,7 @@ def createDynamicInductionRules (goal : MVarId)
         if declName == ``List then
           idx := idx + 1
           let reverseRuleName : RuleName := {
-            name := declName ++ Name.mkSimple (s!"reverse_{idx}")
+            name := declName ++ ldecl.userName ++ Name.mkSimple "reverse"
             builder := .induction
             phase := .unsafe
             scope := .global

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -35,7 +35,7 @@ theorem pairwise_push_of_mem (arr : Array Int) (x : Int)
       (fun (y, i) (z, j) =>
         if i < j then arr.idxOf y ≤ arr.idxOf z else true)
       ((arr.push x).toList.zipIdx):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -33,7 +33,7 @@ theorem countSumDivisibleBy_eq_fold (n d : Nat)
     (h_precond : countSumDivisibleBy_precond n d) :
     countSumDivisibleBy n d h_precond =
       (List.range n).foldl (fun c x => if isSumDivisibleBy x d then c + 1 else c) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

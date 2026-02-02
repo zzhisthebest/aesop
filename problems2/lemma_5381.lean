@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ else
 theorem postcond_of_decide (cleaned : List Char) (b : Bool) :
     (if b then cleaned = cleaned.reverse else cleaned ≠ cleaned.reverse) ↔
       b = decide (cleaned = cleaned.reverse):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

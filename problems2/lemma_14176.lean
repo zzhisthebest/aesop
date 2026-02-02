@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ def Match_postcond (s : String) (p : String) (result: Bool) (h_precond : Match_p
 
 theorem lt_of_if_true {len i : Nat}
     (h : (if h' : i < len then True else False) = True) : i < len:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

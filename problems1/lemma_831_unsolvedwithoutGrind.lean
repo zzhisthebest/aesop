@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -33,7 +33,7 @@ theorem perm_trans {l₁ l₂ l₃ : List Int}
     (h₁ : List.Perm l₁ l₂) (h₂ : List.Perm l₂ l₃) :
     List.Perm l₁ l₃:= by
 grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

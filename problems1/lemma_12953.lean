@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem Find_if_outer (a : Array Int) (key : Int) (index : Nat) :
         (if a[index]! = key then Int.ofNat index else Find a key trivial)
       else -1) = (if index < a.size then
         (if a[index]! = key then Int.ofNat index else Find a key trivial) else -1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

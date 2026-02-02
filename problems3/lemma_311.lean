@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem no_majority_implies_all_counts_le (lst : List Int) (n : Nat) :
     (lst.find? (fun x => countOccurrences x lst > n / 2) = none) →
     let count := fun x => (lst.filter (fun y => y = x)).length
     lst.all (count · ≤ n / 2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

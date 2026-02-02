@@ -24,7 +24,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def isPrime_precond (n : Nat) : Prop :=
@@ -74,17 +74,17 @@ theorem check_spec (i fuel : Nat) (h_fuel : i + fuel ≥ n) :
   induction i, fuel using isPrime.check.induct n with
   | case1 fuel =>
     unfold isPrime.check
-    aesop
-    sorry--这个情形显然成立，只是涉及自然数运算所以aesop证不出来
+    codetic
+    sorry--这个情形显然成立，只是涉及自然数运算所以codetic证不出来
   | case2 i f h_fuel_ne h_sq =>
     unfold isPrime.check
-    aesop
-    sorry--这个情形显然成立，只是涉及自然数运算所以aesop证不出来
+    codetic
+    sorry--这个情形显然成立，只是涉及自然数运算所以codetic证不出来
   | case3 i f h_f_ne h_sq h_div =>
-    aesop
+    codetic
   | case4 i f h_f_ne h_sq h_ndiv ih =>
     unfold isPrime.check
-    aesop
+    codetic
 
 -- 辅助引理：如果存在一个因子 x，那么必然存在一个因子 k 使得 k*k ≤ n
 theorem exists_small_factor {n : Nat} (h_n : 2 ≤ n)
@@ -97,12 +97,12 @@ theorem exists_small_factor {n : Nat} (h_n : 2 ≤ n)
   -- 证明 d 也是因子且 d ≥ 2
   have hd_div : n % d = 0 := by rw [h_mul]; simp
   have hd_ge : 2 ≤ d := by
-    --aesop
+    --codetic
     sorry--这个显然成立
 
   -- x 和 d 必有一个其平方 ≤ n
   have h_sq_cases : x * x ≤ n ∨ d * d ≤ n := by
-    --aesop
+    --codetic
     sorry--这个显然成立
 
   cases h_sq_cases
@@ -111,30 +111,30 @@ theorem exists_small_factor {n : Nat} (h_n : 2 ≤ n)
 
 theorem factor_range_equivalence (n : Nat) (h_n : 2 ≤ n) :
     (∀ k, 2 ≤ k ∧ k * k ≤ n → n % k ≠ 0) ↔ (∀ k, 2 ≤ k ∧ k < n → n % k ≠ 0) := by
-  aesop
+  codetic
   · revert a
     simp
     apply exists_small_factor
-    aesop
+    codetic
     exists k
-  · aesop-- 这个方向很简单，因为小范围是大范围的子集
+  · codetic-- 这个方向很简单，因为小范围是大范围的子集
 
 
 theorem isPrime_spec_satisfied (n: Nat) (h_precond : isPrime_precond (n)) :
     isPrime_postcond (n) (isPrime (n) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop?
+  codetic?
   · rw [check_spec] at a
     rw [factor_range_equivalence] at a
-    aesop
-    aesop
-    aesop
+    codetic
+    codetic
+    codetic
   · by_contra
     revert a
     simp
     rw [check_spec]
     rw [factor_range_equivalence]
-    aesop
-    aesop
-    aesop
+    codetic
+    codetic
+    codetic
   -- !benchmark @end proof

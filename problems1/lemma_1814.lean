@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem sub_eq_zero_of_le {a b : Nat} (h : a ≤ b) : a - b = 0 := Nat.sub_eq_ze
 @[simp] theorem any_nil (p : α → Bool) : List.any ([] : List α) p = false := rfl
 
 @[simp] theorem length_range (n : Nat) : (List.range n).length = n:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

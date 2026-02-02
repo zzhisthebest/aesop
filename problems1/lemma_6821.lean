@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ def trapRainWater_postcond (height : List Nat) (result: Nat) (h_precond : trapRa
 theorem foldl_max_prefix (xs : List Nat) (n : Nat) :
     (List.take (n+1) xs).foldl Nat.max 0 =
       List.foldl Nat.max 0 (List.take (n+1) xs):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

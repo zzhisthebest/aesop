@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -46,7 +46,7 @@ def secondSmallest_postcond (s : Array Int) (result: Int) (h_precond : secondSma
 theorem init_inv (s : Array Int) (h : s.size > 1) :
     (∀ j < 2, s[(if s[1]! < s[0]! then 1 else 0)]! ≤ s[j]!) ∧
     (∀ j < 2, s[(if s[1]! < s[0]! then 0 else 1)]! ≤ s[j]! ∨ s[j]! = s[(if s[1]! < s[0]! then 1 else 0)]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

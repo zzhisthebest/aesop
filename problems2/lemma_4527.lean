@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -26,7 +26,7 @@ theorem diff_not_mem (nums : List Nat) (h_all : nums.all (· ≤ nums.length))
     let actual   := nums.foldl (· + ·) 0
     let diff := expected - actual
     diff ∉ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -28,7 +28,7 @@ theorem symdiff_fold (a b : Array Int) (x : Int) :
     let hs₂ :=
       b.foldl (fun acc y => if !inArray a y then acc.insert y else acc) hs₁;
     x ∈ hs₂ ↔ ((x ∈ a ∧ x ∉ b) ∨ (x ∈ b ∧ x ∉ a)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

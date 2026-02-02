@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem algorithm_returns_maximum
       (∀ i, i < numbers.length →
         (lengths.get! i) = 1 + (List.range i).foldl
           (fun best j => if numbers.get! j < numbers.get! i then max best (lengths.get! j) else best) 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

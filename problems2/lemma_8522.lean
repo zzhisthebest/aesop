@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def replaceChars_postcond (s : String) (oldChar : Char) (newChar : Char) (result
 theorem replaceChars_length (s : String) (oldChar newChar : Char)
     (h_precond : replaceChars_precond s oldChar newChar) :
     (replaceChars s oldChar newChar h_precond).length = s.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

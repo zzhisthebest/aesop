@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem idx_nat_lt_len (l : List Int) (n i : Nat) (h : rotateRight_precond l n) 
         ((Int.ofNat i - Int.ofNat n + Int.ofNat len) % Int.ofNat len)
     let idx_nat : Nat := Int.toNat idx_int
     idx_nat < len:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem minimality_of_result
     (result > 0) →
     let processedMinusOne := (xs.reverse).take (result - 1)
     ¬ ((List.range k).map (· + 1)).all (fun n => List.elem n processedMinusOne):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

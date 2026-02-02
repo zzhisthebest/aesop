@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem divMod_bounds (x y : Nat) (hy : y ≠ 0) :
     let r : Int := Int.ofNat (x % y)
     let q : Int := Int.ofNat (x / y)
     (0 ≤ r ∧ r < Int.ofNat y) ∧ (0 ≤ q):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

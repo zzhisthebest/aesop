@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem search_found (a : Array Int) (key : Int) (i : Nat) (hi : i < a.size)
     (if h : i < a.size then
         if a[i]! = key then Int.ofNat i else (0 : Int)
       else -1) = Int.ofNat i:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

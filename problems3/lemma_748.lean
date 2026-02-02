@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -67,7 +67,7 @@ theorem incTriplet_correct_forward (nums : List Int)
           nums'.any (fun (y, j) =>
             nums'.any (fun (z, k) =>
               i < j ∧ j < k ∧ x < y ∧ y < z)))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

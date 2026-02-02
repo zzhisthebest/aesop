@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem sum_odd_squares_eq (n : Nat) :
           ih + (2 * (k+1) - 1) * (2 * (k+1) - 1))
         n) =
       (n * (2 * n - 1) * (2 * n + 1)) / 3:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

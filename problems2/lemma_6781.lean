@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem sum_le_task_code (xs : List Int) (h_precond : task_code_precond xs) :
               xs.drop start |>.take len))
           ).filter (· ≠ []) |>.map (·.sum)),
       s ≤ task_code xs h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

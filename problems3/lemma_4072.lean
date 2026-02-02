@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem mergeSorted_sorted (a1 a2 : Array Nat)
     (h₁ : List.Pairwise (· ≤ ·) a1.toList)
     (h₂ : List.Pairwise (· ≤ ·) a2.toList) :
     List.Pairwise (· ≤ ·) (mergeSorted a1 a2).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

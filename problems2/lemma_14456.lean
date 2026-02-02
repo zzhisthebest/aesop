@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem loop_true (a : Array Int) (i : Nat) (c : Int) (h : i < a.size) :
     loop a i c =
       (let newMin := if c > a[i]! then a[i]! else c;
         loop a (i + 1) newMin):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

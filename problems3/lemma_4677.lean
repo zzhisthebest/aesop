@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem missingNumber_spec_aux (nums : List Nat) (h_precond : missingNumber_prec
     (missingNumber nums h_precond ∈ List.range (n + 1)) ∧
     ¬ (missingNumber nums h_precond ∈ nums) ∧
     ∀ x, (x ∈ List.range (n + 1)) → x ≠ missingNumber nums h_precond → x ∈ nums:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

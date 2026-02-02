@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -37,7 +37,7 @@ theorem countSumDivisibleBy_rec (n d : Nat) (h : d > 0) :
       countSumDivisibleBy n d
         (by
           simpa [countSumDivisibleBy_precond] using h):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

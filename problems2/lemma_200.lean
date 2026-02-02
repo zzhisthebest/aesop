@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem majority_is_unique (lst : List Int) {a b : Int}
     (ha : countOccurrences a lst > lst.length / 2)
     (hb : countOccurrences b lst > lst.length / 2) :
     a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

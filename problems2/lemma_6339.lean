@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem dist_last_eq (n posn : Nat) :
     (let endPos := n - 1;
      let shouldMoveLast := posn ≠ endPos;
      if shouldMoveLast then endPos - posn else 0) = n - 1 - posn:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

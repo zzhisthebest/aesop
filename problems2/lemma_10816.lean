@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem rotateRight_get_eq
     (hi : i < l.length) :
     (rotateRight l n hpre)[i]? =
       l[((Int.ofNat i - Int.ofNat n + Int.ofNat l.length) % Int.ofNat l.length).toNat]?:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

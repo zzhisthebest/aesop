@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isOdd (x : Int) : Bool :=
@@ -27,7 +27,7 @@ theorem findFirstOdd_some_iff {a : Array Int} {h : findFirstOdd_precond a} {i : 
     findFirstOdd a h = some i ↔
       i < a.size ∧ isOdd (a[i]!) ∧
         (∀ j, j < i → ¬ isOdd (a[j]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

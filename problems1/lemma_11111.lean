@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem secondSmallest_initial_secondIdx
     (s : Array Int) (h_precond : secondSmallest_precond s) :
     (if s[1]! < s[0]! then (1, 0) else (0, 1)).snd =
     (if s[1]! < s[0]! then 0 else 1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

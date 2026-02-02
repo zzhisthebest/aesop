@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem maxArray_aux_eq (a : Array Int) (i : Nat) (c : Int) :
       if h : i < a.size then
         maxArray_aux a (i+1) (if c > a[i]! then c else a[i]!)
       else c:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

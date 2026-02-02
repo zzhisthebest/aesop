@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -33,7 +33,7 @@ theorem foldl_add_const (p : Nat → Bool) (l : List Nat) :
     ∀ c : Nat,
       l.foldl (fun acc x => if p x then acc + 1 else acc) (c + 1) =
         l.foldl (fun acc x => if p x then acc + 1 else acc) c + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

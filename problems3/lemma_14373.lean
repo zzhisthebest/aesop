@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem loop_inv₂ (a : Array Int) (i : Nat) (cur newCur : Int)
     (h_exists : ∃ j, j < i ∧ cur = a[j]!)
     (h_new : newCur = if cur > a[i]! then a[i]! else cur) :
     ∃ j, j < i + 1 ∧ newCur = a[j]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

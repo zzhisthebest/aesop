@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem atMostOneMajority (lst : List Int) :
     ∀ {a b}, ( (lst.filter (· = a)).length > lst.length / 2) →
                ( (lst.filter (· = b)).length > lst.length / 2) →
                a = b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

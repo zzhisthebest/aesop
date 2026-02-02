@@ -26,9 +26,9 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
-set_option trace.aesop true
+set_option trace.codetic true
 namespace tmp
 
 @[reducible, simp]
@@ -78,7 +78,7 @@ theorem LinearSearch3_spec_satisfied (a: Array Int) (P: Int -> Bool) (h_precond 
   constructor
   · --这是一个spec
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → LinearSearch3.loop a P x < a.size := by
-      aesop
+      codetic
       -- intro hx₀ hx₁
       -- let nx := a.size - x
       -- have hn₁ : nx = a.size - x := by rfl
@@ -108,7 +108,7 @@ theorem LinearSearch3_spec_satisfied (a: Array Int) (P: Int -> Bool) (h_precond 
   · --这是一个spec
     unfold LinearSearch3_precond at h_precond
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → (∀ i < x, ¬P a[i]!) → P a[LinearSearch3.loop a P x]! = true:= by
-      aesop
+      codetic
       -- intro hx₀ hx₁
       -- let nx := a.size - x
       -- have hn₁ : nx = a.size - x := by rfl
@@ -136,7 +136,7 @@ theorem LinearSearch3_spec_satisfied (a: Array Int) (P: Int -> Bool) (h_precond 
     grind
   · --这是一个spec
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → (∀ i, x ≤ i → i < LinearSearch3.loop a P x → ¬P a[i]!) := by
-      aesop
+      codetic
       -- intro hx₀ hx₁
       -- let nx := a.size - x
       -- have hn₁ : nx = a.size - x := by rfl

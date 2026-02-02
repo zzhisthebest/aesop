@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem all_drop_ge
     (a : Array Int) (n : Nat) (key : Int) :
     ((a.drop n).all (fun x => x ≥ key)) →
     (∀ i, n ≤ i → i < a.size → a[i]! ≥ key):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

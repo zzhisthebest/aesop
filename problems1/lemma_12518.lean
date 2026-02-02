@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem unfold_postcond (numbers : Array Int) (threshold : Int) (result : Nat)
           if n < threshold then count + 1 else count) 0 = 0 ∧
         numbers.foldl (fun count n =>
           if n < threshold then count + 1 else count) 0 - result = 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

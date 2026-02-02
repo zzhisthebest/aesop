@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem searchInsert_cons (x : Int) (xs : List Int) (t : Int)
     searchInsert (x :: xs) t h =
       if t ≤ x then 0
       else (searchInsert xs t ((List.pairwise_cons.1 h).2) + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

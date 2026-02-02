@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -30,7 +30,7 @@ def insertionSort_postcond (xs : List Int) (result: List Int) (h_precond : inser
 theorem if_pairwise (c : Prop) [Decidable c] (a b : List Int)
     (ha : List.Pairwise (· ≤ ·) a) (hb : List.Pairwise (· ≤ ·) b) :
     List.Pairwise (· ≤ ·) (if c then a else b):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

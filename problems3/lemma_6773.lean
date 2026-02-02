@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -32,7 +32,7 @@ theorem subArray_mem_map {sequence : List Int} {start len : Nat} :
     let subArray := sequence.drop start |>.take len
     subArray ∈
       (List.range (sequence.length - start + 1)).map (fun l => sequence.drop start |>.take l):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

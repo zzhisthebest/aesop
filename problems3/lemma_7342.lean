@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -45,7 +45,7 @@ theorem precond_unique_pair {nums : Array Int} {target : Int}
       ((List.range nums.size).flatMap (fun i =>
         (List.range i).filter (fun j => nums[i]! + nums[j]! = target))) =
         [p.1, p.2]:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

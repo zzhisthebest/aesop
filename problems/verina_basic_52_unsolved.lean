@@ -25,7 +25,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def BubbleSort_precond (a : Array Int) : Prop :=
@@ -82,5 +82,5 @@ def BubbleSort_postcond (a : Array Int) (result: Array Int) (h_precond : BubbleS
 theorem BubbleSort_spec_satisfied (a: Array Int) (h_precond : BubbleSort_precond (a)) :
     BubbleSort_postcond (a) (BubbleSort (a) h_precond) h_precond := by
   -- !benchmark @start proof
-  aesop
+  codetic
   -- !benchmark @end proof

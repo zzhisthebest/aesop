@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def CountLessThan_postcond (numbers : Array Int) (threshold : Int) (result: Nat)
 
 theorem eq_iff_sub_eq_zero (a b : Nat) :
     a = b → (a - b = 0) ∧ (b - a = 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

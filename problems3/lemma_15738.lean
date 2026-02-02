@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -19,7 +19,7 @@ theorem SetToSeq_order_preserved (s : List Int) (h_precond : SetToSeq_precond s)
     List.Pairwise (fun a b =>
         (SetToSeq s h_precond).idxOf a < (SetToSeq s h_precond).idxOf b →
         s.idxOf a < s.idxOf b) (SetToSeq s h_precond):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

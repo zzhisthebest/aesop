@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -84,7 +84,7 @@ def nextGreaterElement_postcond (nums1 : List Int) (nums2 : List Int) (result: L
 
 theorem find_in_map_correct (val : Int) (m : List (Int × Int)) (default : Int) :
     (m.find? (fun p => p.1 = val)).map Prod.snd = (m.find? (fun p => p.1 = val)).map (fun p => p.2):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

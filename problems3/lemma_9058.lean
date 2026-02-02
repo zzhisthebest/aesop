@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -25,7 +25,7 @@ theorem result_elements_dissimilar (a b : Array Int)
     (h : dissimilarElements_precond a b) :
     (dissimilarElements a b h).all
       (fun x => inArray a x ≠ inArray b x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

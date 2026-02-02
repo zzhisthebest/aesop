@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem loop_one_step (s : Array Int) (i : Nat) (acc : Array Int)
         | some v => (fun loop => loop (i+1) (acc.push v)) (fun j a => a)
         | none   => acc
       else acc) = s.take (i+1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

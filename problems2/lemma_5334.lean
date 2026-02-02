@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -49,7 +49,7 @@ theorem endIndex_eq (s : String) :
      else (let cleaned : List Char :=
             s.data.filter (fun c => c.isAlpha || c.isDigit) |>.map Char.toLower;
           cleaned).length - 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -37,7 +37,7 @@ theorem return_when_both_known (a : Array Int) (e o : Nat) (he : e < a.size) (ho
     (match (some e : Option Nat), (some o : Option Nat) with
       | some e', some o' => a[e']! - a[o']!
       | _, _ => 0) = a[e]! - a[o]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

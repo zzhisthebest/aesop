@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem divMod_eq (x y : Nat) (hy : y ≠ 0) :
     let q : Int := Int.ofNat (x / y);
     let r : Int := Int.ofNat (x % y);
     q * Int.ofNat y + r = Int.ofNat x:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

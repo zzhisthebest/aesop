@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -57,7 +57,7 @@ theorem coverages_finite (intervals : List (Nat × Nat)) (n : Nat) (h : n = inte
               if curr.1 ≤ e then (s, max e curr.2) :: rest else curr :: acc) []
         let cov := merged.reverse.foldl (fun acc (s, e) => acc + (e - s)) 0
         cov):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

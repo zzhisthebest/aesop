@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem searchInsert_cons_eq (y : Int) (ys : List Int) (target : Int)
     (h : List.Pairwise (· < ·) (y :: ys)) :
     searchInsert (y :: ys) target h =
       if target ≤ y then 0 else Nat.succ (searchInsert ys target h.tail):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

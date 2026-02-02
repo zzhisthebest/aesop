@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem replace_loop_correct (oldArr : Array Int) (k : Int) :
     (∀ i, i < oldArr.size →
         (oldArr[i]! > k → (replace_loop oldArr k 0 oldArr)[i]! = -1) ∧
         (oldArr[i]! ≤ k → (replace_loop oldArr k 0 oldArr)[i]! = oldArr[i]!)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

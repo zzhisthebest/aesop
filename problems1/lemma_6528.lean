@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -52,7 +52,7 @@ def shortestBeautifulSubstring_postcond (s : String) (k : Nat) (result: String) 
 theorem filter_eq_nil_of_forall_not (l : List (List Char)) (k : Nat)
     (h : ∀ sub ∈ l, countOnes sub ≠ k) :
     l.filter (fun sub => countOnes sub = k) = []:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

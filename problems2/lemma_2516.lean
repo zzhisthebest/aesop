@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem exists_idx_of_max (n : Nat) (f : Nat → Nat) :
     let vals := List.range n |>.map f
     let mx   := vals.foldl max 0
     ∃ i ∈ List.range n, f i = mx:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

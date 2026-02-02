@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -63,7 +63,7 @@ theorem second_ge_first (first second x : Int) (h₁ : x ≤ first → False)
     (h₂ : x ≤ second → False) :
     let ns := if x > first ∧ x ≤ second then x else second
     first < ns ∨ first = ns:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

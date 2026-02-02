@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem result_true_implies_all_eq
     {a : Array Int} (h : hasOnlyOneDistinctElement_precond a) :
     hasOnlyOneDistinctElement a h = true →
     ∀ i, i < a.size → a[i]! = a[0]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

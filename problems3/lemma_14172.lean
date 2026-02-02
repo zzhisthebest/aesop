@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem match_eq_true_iff (s p : String) (hpre : Match_precond s p) :
     Match s p hpre = true ↔
       ∀ n, n < s.toList.length →
             (s.toList[n]! = p.toList[n]! ∨ p.toList[n]! = '?'):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

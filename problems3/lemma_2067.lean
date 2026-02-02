@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem max_is_max (ns : List Nat) :
     ns ≠ [] →
     (∃ m, ns.contains m ∧ ns.all (· ≤ m)) ∧
     (∀ m, ns.contains m → m ≤ (ns.foldl max 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

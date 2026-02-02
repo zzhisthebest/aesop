@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem init_min_le_second (s : Array Int) (h_precond : secondSmallest_precond s
     let (minIdx, secondIdx) :=
       if s[1]! < s[0]! then (1, 0) else (0, 1)
     s[minIdx]! ≤ s[secondIdx]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

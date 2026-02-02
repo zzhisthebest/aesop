@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -57,7 +57,7 @@ theorem exists_index_attaining_max
         | (s, e) :: rest => if curr.1 ≤ e then (s, max e curr.2) :: rest else curr :: acc) []
       let cov := merged.reverse.foldl (fun acc (s, e) => acc + (e - s)) 0
       (maxCoverageAfterRemovingOne intervals h_precond) = cov:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

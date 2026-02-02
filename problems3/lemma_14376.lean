@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem loop_terminates_mem (a : Array Int) (i : Nat) (cur : Int) :
     i = a.size →
     (∃ k, k < i ∧ cur = a[k]!) →
     ∃ k, k < a.size ∧ loop a i cur = a[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

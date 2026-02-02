@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ theorem elem_exists {arr : Array Int} {k : Nat} {result : Int}
     (hpre : kthElement_precond arr k)
     (hres : result = arr[k - 1]!) :
     arr.any (fun x : Int => x = result):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

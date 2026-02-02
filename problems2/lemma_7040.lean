@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -38,7 +38,7 @@ theorem twoSumAux_never_panic
     (nums : List Int) (target : Int) (i : Nat)
     (h : twoSum_precond nums target) :
     ∃ p : Prod Nat Nat, twoSumAux nums target i = p:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

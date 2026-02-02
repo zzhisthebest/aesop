@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ def findFirstOccurrence_postcond (arr : Array Int) (target : Int) (result: Int) 
 theorem loop_nonneg_lt_size (arr : Array Int) (target : Int)
     (loop : Nat → Int) (i : Nat) (hi : i ≤ arr.size) :
     (loop i = -1) ∨ (∃ k : Nat, loop i = k ∧ k < arr.size):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

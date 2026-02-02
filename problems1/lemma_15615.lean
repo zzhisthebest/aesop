@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -35,7 +35,7 @@ theorem swap_eq_set_set {a : Array Int} {i j : Nat}
     (h : i < a.size ∧ j < a.size ∧ i ≠ j) :
     swap a i j =
       (a.set! i (a[j]!)).set! j (a[i]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

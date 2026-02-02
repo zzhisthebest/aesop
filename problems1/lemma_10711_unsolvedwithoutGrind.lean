@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem pairwise_of_forall_eq
   {α : Type} (c : α) (l : List α)
   (h : ∀ a ∈ l, a = c) :
   List.Pairwise (· = ·) l := by
-  aesop
+  codetic
 
 
 theorem pairwise_of_forall_eq1 (c : Char) (l : List Char)
@@ -37,7 +37,7 @@ theorem pairwise_of_forall_eq1 (c : Char) (l : List Char)
 --   rename_i tail_ih
 --   clear tail_ih
 --   grind
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

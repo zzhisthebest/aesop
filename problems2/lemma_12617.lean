@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem c_le_of_not_first_and_not_second
     {a b c : Int}
     (h1 : ¬ (a ≤ b ∧ a ≤ c))
     (h2 : ¬ (b ≤ a ∧ b ≤ c)) : c ≤ a ∧ c ≤ b:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

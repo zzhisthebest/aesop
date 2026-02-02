@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ theorem insert_prefix (oline : Array Char) (l : Nat) (nl : Array Char) (p atPos 
     (h_pre : insert_precond oline l nl p atPos) :
     (∀ i, i < atPos → (insert oline l nl p atPos
         (by dsimp [insert_precond] at h_pre; exact h_pre))[i]! = oline[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

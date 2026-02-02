@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ theorem opposite_sign_implies_mul_lt_zero
   (a b : Int)
   (h : (a < 0 ∧ b > 0) ∨ (a > 0 ∧ b < 0)) :
     a * b < 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

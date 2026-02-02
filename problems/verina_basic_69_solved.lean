@@ -25,9 +25,9 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
-set_option trace.aesop true
+set_option trace.codetic true
 namespace tmp
 
 @[reducible, simp]
@@ -77,7 +77,7 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
   constructor
   · --这是一个spec
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → linearSearchAux a e x < a.size := by
-      aesop
+      codetic
       -- intro hx₀ hx₁
       -- let nx := a.size - x
       -- have hn₁ : nx = a.size - x := by rfl
@@ -95,7 +95,7 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
       --   grind--grind自动使用precond
 
       -- | succ n1 ih=>
-      --   aesop
+      --   codetic
     apply aux 0 (by simp) (by grind)
   constructor
   · have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → (∀ i < x, ¬ a[i]! =e) → a[linearSearchAux a e x]! = e:= by
@@ -151,7 +151,7 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
 
   · --这是一个spec
     have aux (x : Nat) : (0 ≤ x) → (x ≤ a.size) → (∀ i, x ≤ i → i < linearSearchAux a e x → a[i]! ≠ e) := by
-        aesop?
+        codetic?
         -- induction x using tmp.linearSearchAux.induct a a[w]
         -- · unfold tmp.linearSearchAux at a_4
         --   simp_all only [getElem!_pos, ↓reduceIte]
@@ -169,13 +169,13 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
         --   next x h h_1 => simp_all only [Nat.not_lt, Nat.not_lt_zero] --值得研究，为啥没证明出来:因为是在target里检测的，实际上应该在hyp里也检测
         -- -- induction x using tmp.linearSearchAux.induct a a[w]
         -- unfold linearSearchAux at a_4
-        -- aesop?
+        -- codetic?
         -- unfold linearSearchAux at a_4
-        -- aesop?
+        -- codetic?
         -- unfold linearSearchAux at a_4
-        -- aesop?
+        -- codetic?
 
-      --   --aesop(config:={maxRuleApplications:=500})
+      --   --codetic(config:={maxRuleApplications:=500})
       --   intro hx₀ hx₁
       --   let nx := a.size - x
       --   have hn₁ : nx = a.size - x := by rfl
@@ -200,6 +200,6 @@ theorem LinearSearch_spec_satisfied (a: Array Int) (e: Int) (h_precond : LinearS
       --   · intro h1
       --     grind
       --   · grind
-    aesop
+    codetic
   -- !benchmark @end proof
 --己

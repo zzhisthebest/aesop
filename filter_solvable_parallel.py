@@ -6,8 +6,8 @@ from tqdm import tqdm
 
 def test_problem(args):
     idx, data_item = args
-    code = data_item["header"].replace("import Mathlib", "import Aesop") + "\n" + \
-           data_item["lemma_formal_statements"].replace("sorry", "\n  aesop (config := { useDefaultSimpSet := false })")
+    code = data_item["header"].replace("import Mathlib", "import Codetic") + "\n" + \
+           data_item["lemma_formal_statements"].replace("sorry", "\n  codetic (config := { useDefaultSimpSet := false })")
     
     # 写临时文件
     tmp_file = f'/tmp/test_{idx}.lean'
@@ -18,7 +18,7 @@ def test_problem(args):
     try:
         result = subprocess.run(
             ['lake', 'env', 'lean', tmp_file],
-            cwd='/data1/zzh/aesop',
+            cwd='/data1/zzh/codetic',
             capture_output=True,
             timeout=60
         )
@@ -27,7 +27,7 @@ def test_problem(args):
         return (idx, False)
 
 # 读取题目索引
-with open('/data1/zzh/aesop/still_unsolvable.txt', 'r') as f:
+with open('/data1/zzh/codetic/still_unsolvable.txt', 'r') as f:
     indices = [int(line.strip()) for line in f if line.strip().isdigit()]
 
 # 读取题库
@@ -45,8 +45,8 @@ with Pool(64) as pool:
 unsolvable = [idx for idx, success in results if not success]
 
 # 保存结果
-with open('/data1/zzh/aesop/still_unsolvable.txt', 'w') as f:
-    f.write(f"# 使用 aesop (config := {{ useDefaultSimpSet := false }}) 仍无法证明的题目\n\n")
+with open('/data1/zzh/codetic/still_unsolvable.txt', 'w') as f:
+    f.write(f"# 使用 codetic (config := {{ useDefaultSimpSet := false }}) 仍无法证明的题目\n\n")
     f.write(f"总数: {len(unsolvable)}\n\n")
     for idx in unsolvable:
         f.write(f"{idx}\n")

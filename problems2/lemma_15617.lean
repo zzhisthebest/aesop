@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ def SelectionSort_postcond (a : Array Int) (result: Array Int) (h_precond : Sele
 theorem swap_preserves_pairwise_of_min (a : Array Int) (i j : Nat)
     (hmin : ∀ k, k < a.size → a[i]! ≤ a[k]!) :
     List.Pairwise (· ≤ ·) (swap a i j).toList:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

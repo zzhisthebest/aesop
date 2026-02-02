@@ -4,8 +4,8 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 
-THEOREMS_DIR = "/data1/zzh/aesop/Aesop/theorems"
-IDS_TXT = "/data1/zzh/aesop/Aesop/theorems_ids.txt"
+THEOREMS_DIR = "/data1/zzh/codetic/Codetic/theorems"
+IDS_TXT = "/data1/zzh/codetic/Codetic/theorems_ids.txt"
 
 
 def clear_theorems_dir():
@@ -45,10 +45,10 @@ def check_and_maybe_delete(file_path, do_delete: bool):
             content
             .replace("theorem", "@[simp]\npublic theorem")
             .replace(
-                "aesop(config:={enableGrind:=false,enableOmega:=false})",
+                "codetic(config:={enableGrind:=false,enableOmega:=false})",
                 "sorry"
             )
-            .replace("import Aesop", "import Lean")
+            .replace("import Codetic", "import Lean")
         )
 
         with open(target_path, "w", encoding="utf-8") as f:
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "directory",
         nargs="?",
-        default="/data1/zzh/aesop/problems2",
+        default="/data1/zzh/codetic/problems2",
         help="包含 .lean 文件的目录"
     )
     parser.add_argument(

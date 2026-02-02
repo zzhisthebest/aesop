@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -47,7 +47,7 @@ theorem twoSum_some_correct (nums : List Int) (target : Int)
     (hj : j < nums.length) (hij : i < j)
     (hij_eq : nums[i]! + nums[j]! = target) :
     twoSum nums target h_pre = some (i, j) → True:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

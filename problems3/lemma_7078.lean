@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem twoSumAux_correct
     (r.fst < r.snd) ∧
     (r.fst < nums.length) ∧ (r.snd < nums.length) ∧
     (nums[r.fst]! + nums[r.snd]!) = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

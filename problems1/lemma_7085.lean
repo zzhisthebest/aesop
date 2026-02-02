@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ theorem findComplement_first_eq (y : Int) (ys : List Int) (target : Int) (i : Na
       | []      => none
       | y'::ys' => if x + y' = target then some (i + 1 + 1) else none)) = some (i+1) →
     x + y = target:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

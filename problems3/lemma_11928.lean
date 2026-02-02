@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem binarySearchLoop_right_rec (a : Array Int) (key : Int) (lo hi mid : Nat)
     lo < hi → mid = (lo + hi) / 2 →
     (a[mid]! < key) →
     lo ≤ binarySearchLoop a key (mid + 1) hi:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

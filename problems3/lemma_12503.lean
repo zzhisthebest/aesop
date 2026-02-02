@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem updateSegment_spec (src : Array Int) (sStart dStart len : Nat)
     (dest : Array Int) (h_precond : copy_precond src sStart dest dStart len) :
     copy_postcond src sStart dest dStart len
       (updateSegment dest src sStart dStart len) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

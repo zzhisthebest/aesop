@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ theorem UpdateElements_get_other (a : Array Int)
     (h_precond : UpdateElements_precond a) (i : Nat)
     (hi : i < a.size) (hneq4 : i ≠ 4) (hneq7 : i ≠ 7) :
     (UpdateElements a h_precond)[i]! = a[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

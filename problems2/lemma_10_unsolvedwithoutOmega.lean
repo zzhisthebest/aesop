@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -39,11 +39,12 @@ def FindSingleNumber_postcond (nums : List Int) (result: Int) (h_precond : FindS
     x ∈ nums →
     (x = result) ∨ ((filterlist x nums).length = 2))
 
-
+attribute[codetic simp]
+Nat.add_comm
 theorem filterlist_length_one (x y : Int) :
     (filterlist x [y]).length = if y = x then 1 else 0:= by
-aesop?
-aesop(config := {enableOmega := false })
+codetic?
+codetic(config := {enableOmega := false })
 
 
 

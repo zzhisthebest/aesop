@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -97,7 +97,7 @@ theorem postcond_all_range (nums1 nums2 : List Int)
           match nxt? with
           | none => rVal = -1
           | some off => rVal = nums2[j + off + 1]!)) = true:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

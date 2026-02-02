@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -29,7 +29,7 @@ theorem postcond_of_eq
     (h_precond : removeElement_precond lst target)
     (h_eq : r = lst.filter (fun x => x ≠ target)) :
     removeElement_postcond lst target r h_precond:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

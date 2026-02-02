@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def replaceChars_postcond (s : String) (oldChar : Char) (newChar : Char) (result
 
 
 theorem length_toList (s : String) : s.toList.length = s.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

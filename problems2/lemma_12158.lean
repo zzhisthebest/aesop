@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem CalSum_succ (n : Nat) (h : CalSum_precond (n+1)) :
     CalSum (n+1) h = (n+1) + CalSum n (by
       have : CalSum_precond n := trivial
       exact this):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

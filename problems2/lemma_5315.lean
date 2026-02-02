@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -54,7 +54,7 @@ theorem sub_eq_of_le {a b : Nat} (h : b ≤ a) : a - b = a - b := rfl
 
 
 @[simp] theorem range_length (n : Nat) : (List.range n).length = n:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

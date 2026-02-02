@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem newMin_is_lower_bound
     (hcur : ∀ j, j < i → cur ≤ a[j]!) :
     let newMin := if cur > a[i]! then a[i]! else cur
     ∀ j, j < i + 1 → newMin ≤ a[j]!:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

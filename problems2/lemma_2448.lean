@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem maxCoverageAfterRemovingOne_spec_aux
     (h_precond : maxCoverageAfterRemovingOne_precond intervals) :
     maxCoverageAfterRemovingOne_postcond intervals
       (maxCoverageAfterRemovingOne intervals h_precond) h_precond:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

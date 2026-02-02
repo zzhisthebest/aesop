@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ List.erase_of_not_mem
 theorem sum_erase_of_not_mem {l : List Nat} {x : Nat}
     (hx : x ∉ l) : (l.erase x).sum = l.sum:= by
 simp only [List.erase_of_not_mem]
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

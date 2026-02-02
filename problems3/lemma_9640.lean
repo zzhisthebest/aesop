@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def isPrime_postcond (n : Nat) (result: Bool) (h_precond : isPrime_precond (n)) 
 theorem true_implies_no_divisor {n : Nat} (hpre : n ≥ 2)
     (htrue : isPrime n (by simpa [isPrime_precond] using hpre) = true) :
     ∀ k, 2 ≤ k → k ≤ n - 1 → n % k ≠ 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

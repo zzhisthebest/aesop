@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -22,7 +22,7 @@ theorem take_up_to_idxOf_zero (l : List Int) :
     (l.filter (· ≠ 0) ++ l.filter (· = 0)).take
       ((l.filter (· ≠ 0) ++ l.filter (· = 0)).idxOf 0) =
       l.filter (· ≠ 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

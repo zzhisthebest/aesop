@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -37,7 +37,7 @@ theorem findP_if_true_not_gt (a : Array Int) (x m i : Nat)
     (if i < a.size then
         if a[i]! > m then i else findP a x m (i + 1)
       else a.size - 1) = findP a x m (i + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

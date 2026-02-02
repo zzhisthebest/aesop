@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem postcond_implications (lst : List Int) :
          (List.range (len - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!));
      (validPeaks ≠ [] → isPeakValley lst (by trivial) = true) ∧
      (validPeaks.length = 0 → ¬ isPeakValley lst (by trivial) = true)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

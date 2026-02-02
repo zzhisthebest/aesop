@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -49,7 +49,7 @@ theorem minListHelper_cons_cons {a b : Int} {xs : List Int} :
       else
         let m := minListHelper (b :: xs.head! :: xs.tail!)
         if a ≤ m then a else m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

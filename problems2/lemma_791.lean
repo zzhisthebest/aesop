@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ theorem insert_preserves_pairwise_left
     (x y : Int) (ys : List Int) (hxy : x ≤ y)
     (hys : List.Pairwise (· ≤ ·) (y :: ys)) :
     List.Pairwise (· ≤ ·) (x :: y :: ys):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

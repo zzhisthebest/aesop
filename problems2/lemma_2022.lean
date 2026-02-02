@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem foldl_max_is_max (l : List Nat) :
     (∀ n ∈ l, n ≤ l.foldl max 0) ∧
     (l = [] → l.foldl max 0 = 0) ∧
     (l ≠ [] → ∃ n ∈ l, l.foldl max 0 = n):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

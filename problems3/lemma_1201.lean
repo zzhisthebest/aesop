@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem isPeakValley_correct (lst : List Int) (h : isPeakValley_precond lst) :
         (List.range p).all (fun i => lst[i]! < lst[i+1]!) ∧
         (List.range (lst.length - 1 - p)).all (fun i => lst[p+i]! > lst[p+i+1]!)
       ) ≠ []:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

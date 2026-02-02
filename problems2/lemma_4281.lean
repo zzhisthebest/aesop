@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -45,7 +45,7 @@ theorem loop_never_counts_out_of_range
     {remaining collected : List Nat} {collected_count ops k : Nat}
     (hhead : remaining.head? = some (head)) :
     (head > 0 ∧ head ≤ k) → ops ≤ (ops + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -22,8 +22,8 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
-set_option trace.aesop.zzh_custom true
+import Codetic
+set_option trace.codetic.zzh_custom true
 
 --set_option maxHeartbeats 0
 namespace tmp
@@ -67,8 +67,8 @@ def CalSum_postcond (N : Nat) (result: Nat) (h_precond : CalSum_precond (N)) :=
 #check List
 theorem CalSum_spec_satisfied (N: Nat) (h_precond : CalSum_precond (N)) :
     CalSum_postcond (N) (CalSum (N) h_precond) h_precond := by
-  aesop (config := { useDefaultSimpSet := false })
-  aesop
+  codetic (config := { useDefaultSimpSet := false })
+  codetic
   induction N
   ·
     unfold CalSum.loop

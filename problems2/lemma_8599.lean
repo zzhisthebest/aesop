@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem sum_digits_split (n : Nat) (h : n ≠ 0) :
         (List.map (fun c => Char.toNat c - Char.toNat '0')
           ((String.toList (Nat.repr n)).dropLast)) +
       (n % 10):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

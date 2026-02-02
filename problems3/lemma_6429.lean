@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -61,7 +61,7 @@ theorem shortestBeautifulSubstring_is_minimal
     result ≠ "" ∧ result ∈ targets ∧
       ∀ r ∈ targets,
         r.length ≥ result.length ∨ (r.length = result.length ∧ result ≤ r):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,20 +1,20 @@
-name = "aesop"
-defaultTargets = ["Aesop"]
-testDriver = "AesopTest"
+name = "codetic"
+defaultTargets = ["Codetic"]
+testDriver = "CodeticTest"
 precompileModules = false # We would like to turn this on, but it breaks the Mathlib cache.
 platformIndependent = true
 
 leanOptions = {experimental.module = true}
 
 [[require]]
-name = "batteries"
-git = "https://github.com/leanprover-community/batteries"
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
 rev = "v4.25.0"
 
 [[lean_lib]]
-name = "Aesop"
+name = "Codetic"
 
 [[lean_lib]]
-name = "AesopTest"
-globs = ["AesopTest.+"]
+name = "CodeticTest"
+globs = ["CodeticTest.+"]
 leanOptions = {linter.unusedVariables = false}

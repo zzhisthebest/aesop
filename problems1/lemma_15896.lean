@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -43,7 +43,7 @@ theorem get2d_bounds {a : Array (Array Int)} {i j : Int}
     (hi : 0 ≤ i) (hri : i < Int.ofNat a.size)
     (hj : 0 ≤ j) (hrj : j < Int.ofNat (a[Int.toNat i]!).size) :
     (Int.toNat i) < a.size ∧ (Int.toNat j) < (a[Int.toNat i]!).size:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -46,11 +46,11 @@ induction l with
 | @nil => simp_all only [List.count_nil, Nat.zero_ne_one]
 | @cons a a_1 =>
   simp_all only [List.mem_cons]
-  suffices ¬x=a→x ∈ a_1 by aesop
-  aesop?(config := { enableGrind := false })
+  suffices ¬x=a→x ∈ a_1 by codetic
+  codetic?(config := { enableGrind := false })
 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp
---搞出了一个定理，但依然无法直接aesop?(config := { enableGrind := false })证明。
+--搞出了一个定理，但依然无法直接codetic?(config := { enableGrind := false })证明。

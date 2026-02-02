@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -107,7 +107,7 @@ def runLengthEncoder_postcond (input : String) (result: String) (h_precond : run
 theorem encode_one_char (c : Char) (h : runLengthEncoder_precond (String.singleton c)) :
     runLengthEncoder (String.singleton c) h =
       String.mk [c] ++ (String.mk [Char.ofNat (1 + 48)]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

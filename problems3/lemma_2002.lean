@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -32,7 +32,7 @@ theorem filter_isStrictlyIncreasing_eq_pairwise
     (ls : List (List Int)) :
     ls.filter isStrictlyIncreasing =
       ls.filter (fun l => List.Pairwise (· < ·) l):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

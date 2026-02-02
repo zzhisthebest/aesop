@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem zero_is_in_subArraySums (numbers : List Int) :
   (List.range (numbers.length + 1) |>.flatMap (fun start =>
       List.range (numbers.length - start + 1) |>.map (fun len =>
         numbers.drop start |>.take len |>.sum))).contains (0 : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

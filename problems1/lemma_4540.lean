@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem nodup_all_le_subset_range
     {nums : List Nat} (h_all : nums.all (· ≤ nums.length))
     (h_nodup : List.Nodup nums) :
     ∀ x, x ∈ nums → x ∈ List.range (nums.length + 1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

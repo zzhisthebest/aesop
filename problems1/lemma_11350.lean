@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isOdd (n : Int) : Bool :=
@@ -22,7 +22,7 @@ theorem all_mapIdx_iff (a : Array Int) :
     ((a.mapIdx fun i x => (i, x)).all
         fun q : Nat × Int => (!isOdd q.1) || isOdd q.2) = true ↔
       ∀ i (hi : i < a.size), (!isOdd i) || isOdd (a[i]):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

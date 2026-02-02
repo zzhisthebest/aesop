@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem foldl_cons (a : Array Int) (key : Int) (x : Int) :
     (a.push x).foldl (fun c y => if y = key then c + 1 else c) 0 =
       (if x = key then a.foldl (fun c y => if y = key then c + 1 else c) 0 + 1
                 else a.foldl (fun c y => if y = key then c + 1 else c) 0):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

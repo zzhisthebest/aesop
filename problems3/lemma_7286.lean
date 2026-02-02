@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem twoSum_sum_target {nums : Array Int} {target : Int}
     (h : twoSum_precond nums target) :
     let r := twoSum nums target h
     nums[r[0]!]! + nums[r[1]!]! = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem loop_if_inside (a : Array Int) (P : Int → Bool) (n : Nat)
     (if h : n < a.size then
         if P (a[n]!) then n else (Nat.succ n)
      else 0) = (if P (a[n]!) then n else (Nat.succ n)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

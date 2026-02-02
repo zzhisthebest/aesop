@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem interval_preserved_down
     (a : Array Int) (key : Int) (lo hi : Nat) (mid : Nat) (hlohi : lo < hi)
     (hmid : mid = (lo + hi) / 2) (hle : ¬ a[mid]! < key) :
     lo ≤ hi:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

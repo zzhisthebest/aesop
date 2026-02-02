@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ theorem dp_unchanged_at_zero (a b : Array Int) (i j : Nat) (h : i = 0 ∨ j = 0)
             else
               ()
         return dp)[i]!)[j]! = 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -18,7 +18,7 @@ def reverseString_postcond (s : String) (result: String) (h_precond : reverseStr
 
 
 theorem string_length_eq (t : String) : t.length = t.toList.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

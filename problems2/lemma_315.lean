@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ def findMajorityElement_postcond (lst : List Int) (result: Int) (h_precond : fin
 
 
 theorem gt_iff_le_pred (a b : Nat) (h : a > b) : b ≤ a - 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

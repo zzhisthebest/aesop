@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem third_fold_reads (oline : Array Char) (l p atPos : Nat)
         (fun (acc : Array Char) (j : Nat) =>
           if j ≥ atPos then acc.set! (j + p) (oline[j]!) else acc)
         (Array.mkArray (l + p) ' '))[atPos + p + i]! = oline[atPos + i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

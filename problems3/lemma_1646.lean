@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -49,7 +49,7 @@ theorem letterCombinations_eq_expected
       ((digits.toList.map digitToLetters).foldl
           (fun acc ls => acc.flatMap (fun s => ls.map (fun c => s ++ String.singleton c)))
           [""]):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

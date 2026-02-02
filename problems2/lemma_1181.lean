@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem validPeaks_ne_nil_iff_len_pos
          (List.range p).all (fun i => lst[i]! < lst[i + 1]!) ∧
          (List.range (len - 1 - p)).all (fun i => lst[p + i]! > lst[p + i + 1]!))
      validPeaks != [] ↔ validPeaks.length ≠ 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

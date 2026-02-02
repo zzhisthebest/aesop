@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem pairwise_append_of_le {xs ys : List Nat}
     (hx : List.Pairwise (· ≤ ·) xs) (hy : List.Pairwise (· ≤ ·) ys)
     (hxy : ∀ x ∈ xs, ∀ y ∈ ys, x ≤ y) :
     List.Pairwise (· ≤ ·) (xs ++ ys):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

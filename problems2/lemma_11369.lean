@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -36,7 +36,7 @@ theorem firstEvenOddIndices_cases (lst : List Int) :
     (match lst.findIdx? isEven, lst.findIdx? isOdd with
       | some ei, some oi => True
       | _, _ => True):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

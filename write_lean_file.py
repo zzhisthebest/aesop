@@ -10,10 +10,10 @@ with open("/data1/zzh/verina/verina_lemmas_quickchecked.json", "r") as f:
 
 
 
-text = data[idx]["header"].replace("import Mathlib", "import Aesop") + "\n" + \
-       data[idx]["lemma_formal_statements"].replace("sorry", "\n  aesop?\n  aesop?(config := { useDefaultSimpSet := false })")
+text = data[idx]["header"].replace("import Mathlib", "import Codetic") + "\n" + \
+       data[idx]["lemma_formal_statements"].replace("sorry", "\n  codetic?\n  codetic?(config := { useDefaultSimpSet := false })")
 
-with open(f"/data1/zzh/aesop/lemmas_quickchecked_{idx}.lean", "w") as f:
+with open(f"/data1/zzh/codetic/lemmas_quickchecked_{idx}.lean", "w") as f:
     f.write(text)
 
 print(f"Successfully generated file at index {idx}")

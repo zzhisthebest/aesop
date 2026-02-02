@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -50,7 +50,7 @@ theorem coverage_cons (s e : Nat) (xs : List (Nat × Nat))
           xs.foldl (fun acc (s', e') => acc + (e' - s')) 0) :
     ( ( (s, e) :: xs ).reverse.foldl (fun acc (s', e') => acc + (e' - s')) 0 )
       = (xs.reverse.foldl (fun acc (s', e') => acc + (e' - s')) 0) + (e - s):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

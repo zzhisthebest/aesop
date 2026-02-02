@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem secondSmallestAux_finish
     (s : Array Int) (minIdx secondIdx : Nat)
     (hsize : secondIdx < s.size) :
     secondSmallestAux s s.size minIdx secondIdx = s[secondIdx]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

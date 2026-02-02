@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -43,7 +43,7 @@ def longestIncreasingSubsequence_postcond (numbers : List Int) (result: Nat) (h_
 theorem max_mem_of_nonempty {l : List Nat} (h : l ≠ []) :
     let max := (l.foldl max 0)
     l.contains max:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

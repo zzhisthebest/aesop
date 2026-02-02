@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -46,7 +46,7 @@ theorem twoSum_some_case (nums : List Int) (target : Int)
     (h_precond : twoSum_precond nums target) :
     ∃ i j, twoSum nums target h_precond = some (i, j) ∨
           twoSum nums target h_precond = none:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

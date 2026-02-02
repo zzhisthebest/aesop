@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ def allCharactersSame_postcond (s : String) (result: Bool) (h_precond : allChara
 theorem nonempty_and_exists_ne_of_not_all {c : Char} {cs : List Char}
     (h : cs.all (fun x => x = c) = false) :
     cs ≠ [] ∧ cs.any (fun x => x ≠ c) = true:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

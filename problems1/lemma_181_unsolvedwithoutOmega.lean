@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def filterlist (x : Int) (nums : List Int) : List Int :=
@@ -44,7 +44,7 @@ theorem precond_unpack (xs : List Int)
     (h : FindSingleNumber_precond xs) :
     (∀ c ∈ xs.map (fun y => xs.count y), c = 1 ∨ c = 2) ∧
     (xs.map (fun y => xs.count y)).count 1 = 1:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem reverse_core_if_true (arr : Array Int) (i : Nat) (h : i < arr.size / 2) 
        let arr' := arr.set! i (arr[j]!)
        let arr'' := arr'.set! j temp
        reverse_core arr'' (i + 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

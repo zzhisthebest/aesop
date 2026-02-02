@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem result_either_or (str1 str2 : List Char)
     (LongestCommonPrefix str1 str2 h_precond).length = str2.length ∨
     (str1[(LongestCommonPrefix str1 str2 h_precond).length]? ≠
      str2[(LongestCommonPrefix str1 str2 h_precond).length]?):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

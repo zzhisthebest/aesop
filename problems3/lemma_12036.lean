@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem binarySearchLoop_invariant (a : Array Int) (key : Int)
       let r := binarySearchLoop a key lo hi
       ((a.take r).all (fun x => x < key)) ∧
       ((a.drop r).all (fun x => x ≥ key)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

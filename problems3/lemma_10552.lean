@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem later_not_target (arr : Array Int) (target : Int)
     (hpre : List.Pairwise (· ≤ ·) arr.toList) {i : Nat}
     (hi : i < arr.size) (hgt : arr[i]! > target) :
     ∀ j, i ≤ j → j < arr.size → arr[j]! ≠ target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

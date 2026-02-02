@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -20,7 +20,7 @@ theorem post_of_c (a b c : Int)
     (h₁ : ¬ (a ≤ b ∧ a ≤ c))
     (h₂ : ¬ (b ≤ a ∧ b ≤ c)) :
     (c ≤ a ∧ c ≤ b ∧ c ≤ c) ∧ (c = a ∨ c = b ∨ c = c):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

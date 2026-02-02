@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def digitToLetters (c : Char) : List Char :=
@@ -53,7 +53,7 @@ theorem digitToLetters_eq (c : Char) :
       | '8' => ['t','u','v']
       | '9' => ['w','x','y','z']
       | _   => []:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

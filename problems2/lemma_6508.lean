@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -53,7 +53,7 @@ theorem compare_def (a b : List Char) :
     (a.length < b.length ∨ (a.length = b.length ∧ isLexSmaller a b)) = true
       ↔
     (a.length < b.length) ∨ (a.length = b.length ∧ a < b):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

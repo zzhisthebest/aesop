@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -36,7 +36,7 @@ def reverseWords_postcond (words_str : String) (result: String) (h_precond : rev
 theorem reverseWords_eq (s : String) (h : reverseWords_precond s) :
     reverseWords s h =
       String.intercalate " " ((s.splitOn " ").filter (· ≠ "")).reverse:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

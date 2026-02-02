@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ theorem pairwise_of_new_head {a b : Int} {l : List Int}
     (h : List.Pairwise (· ≤ ·) (b :: l))
     (hab : a ≤ b) :
     List.Pairwise (· ≤ ·) (a :: b :: l):= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

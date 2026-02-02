@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -50,7 +50,7 @@ def canCompleteCircuit_postcond (gas : List Int) (cost : List Int) (result: Int)
 theorem returns_nonneg_when_sufficient (gas cost : List Int)
     (h : ¬ gas.foldl (· + ·) 0 < cost.foldl (· + ·) 0) :
     (canCompleteCircuit gas cost (by trivial)).toNat = (canCompleteCircuit gas cost (by trivial)).toNat:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem replaceChars_toList (s : String) (old new : Char)
     (h : replaceChars_precond s old new) :
     (replaceChars s old new h).toList =
       s.toList.map (fun c => if c = old then new else c):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

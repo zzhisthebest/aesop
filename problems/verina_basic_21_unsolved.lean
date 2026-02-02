@@ -25,7 +25,7 @@
 -- !benchmark @start precond_aux
 
 -- !benchmark @end precond_aux
-import Aesop
+import Codetic
 namespace tmp
 @[reducible, simp]
 def isSublist_precond (sub : List Int) (main : List Int) : Prop :=
@@ -80,7 +80,7 @@ def isSublist_postcond (sub : List Int) (main : List Int) (result: Bool) (h_prec
 theorem isSublist_spec_satisfied (sub: List Int) (main: List Int) (h_precond : isSublist_precond (sub) (main)) :
     isSublist_postcond (sub) (main) (isSublist (sub) (main) h_precond) h_precond := by
   -- !benchmark @start proof
- -- aesop
+ -- codetic
   unfold isSublist_postcond isSublist
   simp
   constructor

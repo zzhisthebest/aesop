@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -42,7 +42,7 @@ def twoSum_postcond (nums : Array Int) (target : Int) (result: Array Nat) (h_pre
 theorem twoSum_result_sum
     (nums : Array Int) (target : Int) (h_precond : twoSum_precond nums target) :
     nums[(twoSum nums target h_precond)[0]!]! + nums[(twoSum nums target h_precond)[1]!]! = target:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

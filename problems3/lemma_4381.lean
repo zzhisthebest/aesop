@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -55,7 +55,7 @@ def minimumRightShifts_postcond (nums : List Int) (result: Int) (h_precond : min
 
 theorem rotateRight_add (k l : Nat) (xs : List Int) :
     (xs.rotateRight k).rotateRight l = xs.rotateRight (k + l):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

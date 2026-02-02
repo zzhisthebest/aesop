@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem nonzero_case (n p : Nat) (h : singleDigitPrimeFactor_precond n) :
     p ∈ [2,3,5,7] →
     singleDigitPrimeFactor n h = p →
       n ≠ 0 ∧ n % p = 0 ∧ (List.range p).all (fun x => x ∈ [2,3,5,7] → n % x ≠ 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

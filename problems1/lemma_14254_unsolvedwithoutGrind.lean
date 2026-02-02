@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem le_of_le_max
     {a : Array Int} {i : Nat} {c x : Int}
     (h_le : ∀ k, k < i → a[k]! ≤ c) (hci : c ≤ x) :
     ∀ k, k < i → a[k]! ≤ x:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

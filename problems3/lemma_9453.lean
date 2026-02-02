@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem prefix_pairwise_until_second {s : String} {c : Char}
       ((s.toList).take
         ((s.toList).zipIdx.findIdx
             (fun p => p.1 = c ∧ p.2 ≠ (s.toList).idxOf c))):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

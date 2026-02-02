@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem binarySearchLoop_branch_right
     (hmid : mid = (lo + hi) / 2) (hcond : ¬ a[mid]! < key) :
     binarySearchLoop a key lo hi =
       binarySearchLoop a key lo mid:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

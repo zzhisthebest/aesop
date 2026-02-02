@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -18,7 +18,7 @@ theorem impl_not_opposite_sign_to_not_result
     (hnot : ¬ ((a < 0 ∧ b > 0) ∨ (a > 0 ∧ b < 0)))
     (h_pre : hasOppositeSign_precond a b) :
     (hasOppositeSign a b h_pre) = false:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

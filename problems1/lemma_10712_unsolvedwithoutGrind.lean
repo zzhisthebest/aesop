@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 open TheoremsForCodeVerification
 set_option maxHeartbeats 0
 namespace tmp
@@ -25,13 +25,13 @@ def allCharactersSame_postcond (s : String) (result: Bool) (h_precond : allChara
 
 theorem pairwise_of_all_eq (c : Char) (cs : List Char)
     (h : cs.all (fun x => x = c)) : List.Pairwise (· = ·) (c :: cs):= by
-aesop?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 have: a'=c:=by
-  aesop?(config:={enableGrind:=false})
-aesop?(config:={enableGrind:=false})
+  codetic?(config:={enableGrind:=false})
+codetic?(config:={enableGrind:=false})
 
 
 
 
---可以看出aesop的缺陷，但提不出定理
+--可以看出codetic的缺陷，但提不出定理
 end tmp

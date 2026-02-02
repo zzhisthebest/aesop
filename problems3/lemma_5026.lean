@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -94,7 +94,7 @@ theorem result_matches_next_greater (nums1 nums2 : List Int)
                   (fun k => let pos := idx + k + 1; nums2[pos]! > v) with
           | none => rv = -1
           | some off => rv = nums2[idx + off + 1]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

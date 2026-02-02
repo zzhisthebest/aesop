@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ def task_code_postcond (sequence : List Int) (result: Int) (h_precond : task_cod
 theorem drop_take_sublist (xs : List α) (i len : Nat) (h₁ : i ≤ xs.length)
     (h₂ : len ≤ xs.length - i) :
     (xs.drop i).take len ⊆ xs:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

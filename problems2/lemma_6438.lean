@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def countOnes (lst : List Char) : Nat :=
@@ -61,7 +61,7 @@ theorem foldl_returns_min (cands : List (List Char)) (h : cands ≠ []) :
          (∀ x ∈ cands,
             x.length > b.length ∨
             x.length = b.length ∧ listToString b ≤ listToString x):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

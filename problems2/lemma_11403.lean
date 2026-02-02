@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem loop_done (arr : Array Int) (elem : Int) (pos : Int) :
         arr[pos.toNat]! = elem ∧
           (arr.toList.drop (pos.toNat + 1)).all (· ≠ elem)) ∧
     (pos = -1 → arr.toList.all (· ≠ elem)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

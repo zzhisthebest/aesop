@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -55,7 +55,7 @@ List.getElem_append
 #check List.getElem?_append
 theorem list_get_append (l₁ l₂ : List Nat) (k : Nat) (h : k < l₁.length) :
   (l₁ ++ l₂)[k]! = l₁[k]!:= by
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -30,7 +30,7 @@ theorem aux_last_disj (str1 str2 : List Char) (h_pre : LongestCommonPrefix_preco
       ∨ (LongestCommonPrefix str1 str2 h_pre).length = str2.length
       ∨ (str1[(LongestCommonPrefix str1 str2 h_pre).length]? ≠
           str2[(LongestCommonPrefix str1 str2 h_pre).length]?):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem result_contains_elem (arr : Array Int) (elem : Int)
     (h_precond : lastPosition_precond arr elem) :
     (0 ≤ lastPosition arr elem h_precond) →
       arr[(lastPosition arr elem h_precond).toNat]! = elem:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

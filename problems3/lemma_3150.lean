@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem maxProfitAux_lower_bound
     maxProfitAux prices minSoFar maxProfit ≥
       List.foldl (fun acc p => Nat.max acc (if p > minSoFar then p - minSoFar else 0))
                  maxProfit prices:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

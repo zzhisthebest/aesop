@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -25,7 +25,7 @@ theorem loop_base (a : Array Int) (cur : Int)
     (hcur_eq : ∃ j, j < a.size ∧ cur = a[j]!) :
     (∀ j, j < a.size → loop a a.size cur ≤ a[j]!) ∧
     (∃ j, j < a.size ∧ loop a a.size cur = a[j]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -27,7 +27,7 @@ theorem uniqueProduct_eq_eraseDups_foldl (arr : Array Int)
     (h : uniqueProduct_precond arr) :
     uniqueProduct arr h =
       arr.toList.eraseDups.foldl (· * ·) 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

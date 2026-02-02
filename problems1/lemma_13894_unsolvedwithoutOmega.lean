@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -21,7 +21,7 @@ def LinearSearch3_postcond (a : Array Int) (P : Int -> Bool) (result: Nat) (h_pr
 theorem loop_never_finishes_outside (a : Array Int) (P : Int → Bool)
     (n : Nat) (h_ex : ∃ i, i ≥ n ∧ i < a.size ∧ P (a[i]!)) :
     (¬ (n < a.size)) → False:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

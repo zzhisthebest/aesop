@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem exactly_one_missing (l : List Nat) (n : Nat) :
     l.all (fun x ↦ x ≤ n) ∧ List.Nodup l ∧ l.length = n →
       ∃ m, m ∈ List.range (n + 1) ∧ m ∉ l ∧
            ∀ x, x ∈ List.range (n + 1) → x ≠ m → x ∈ l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

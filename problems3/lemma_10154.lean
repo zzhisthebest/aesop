@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -28,7 +28,7 @@ theorem order_preservation
       isEven x → isEven y →
       arr.toList.idxOf x ≤ arr.toList.idxOf y →
       (findEvenNumbers arr h).toList.idxOf x ≤ (findEvenNumbers arr h).toList.idxOf y:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

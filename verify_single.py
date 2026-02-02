@@ -13,7 +13,7 @@ def verify_single(lean_code):
     """验证单个 Lean 代码"""
     verifier = LeanVerifier(
         path_to_repl="/data1/zzh/repl_v4.25.0/.lake/build/bin/repl",
-        path_to_mathlib="/data1/zzh/aesop"
+        path_to_mathlib="/data1/zzh/codetic"
     )
     verifier.initialize()
     response = verifier.verify_single(lean_code)

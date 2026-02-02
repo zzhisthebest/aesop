@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -34,7 +34,7 @@ def removeDuplicates_postcond (nums : List Int) (result: Nat) (h_precond : remov
 theorem countUniques_eq_eraseDups_len
     (xs : List Int) (hpair : List.Pairwise (· ≤ ·) xs) :
     (removeDuplicates xs (by simpa using hpair)) = xs.eraseDups.length:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

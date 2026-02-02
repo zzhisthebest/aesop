@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem updateMinAndProfit_spec (price minSoFar maxProfit : Nat) :
       updateMinAndProfit price minSoFar maxProfit = (newMin, newProfit) ∧
       newMin = Nat.min minSoFar price ∧
       newProfit = Nat.max maxProfit (if price > minSoFar then price - minSoFar else 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

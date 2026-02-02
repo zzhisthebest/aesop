@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -41,7 +41,7 @@ theorem dp_shape (a b : Array Int) (h : LongestCommonSubsequence_precond a b) :
     (Id.run do
       let mut dp := Array.mkArray (m + 1) (Array.mkArray (n + 1) 0)
       return dp).size = m + 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

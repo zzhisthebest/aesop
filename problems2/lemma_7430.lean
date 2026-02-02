@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def sumOfDigits (x : Nat) : Nat :=
@@ -33,7 +33,7 @@ theorem length_filter_singleton (n d : Nat) :
     List.length
       (List.filter (fun x => x < Nat.succ n ∧ (sumOfDigits x) % d = 0) [n]) =
       if (sumOfDigits n) % d = 0 then 1 else 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

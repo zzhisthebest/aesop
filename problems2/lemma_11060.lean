@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -53,7 +53,7 @@ theorem secondSmallestAux_preserves_min_lt_second
                 secondSmallestAux s (i+1) (if s[i]! < s[minIdx]! then i else minIdx)
                                           (if s[i]! < s[secondIdx]! ∧ ¬ s[i]! < s[minIdx]! then i else secondIdx)) :
     True:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

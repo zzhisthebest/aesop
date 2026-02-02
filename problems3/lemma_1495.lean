@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -31,7 +31,7 @@ def lengthOfLIS_postcond (nums : List Int) (result: Nat) (h_precond : lengthOfLI
 
 theorem foldl_max_isUpperBound (arr : Array Nat) (k : Nat) (hk : k ≤ arr.size) :
     ∀ i, i < k → arr[i]! ≤ arr.foldl (fun a b => if a ≥ b then a else b) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

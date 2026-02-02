@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -24,7 +24,7 @@ theorem succ_ne_zero (n : Nat) : n.succ ≠ 0 := Nat.succ_ne_zero _
 @[simp] theorem succ_sub_one (n : Nat) : n.succ - 1 = n := Nat.succ_sub_one _
 
 @[simp] theorem two_mul_succ (n : Nat) : 2 * n.succ = 2 * n + 2:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

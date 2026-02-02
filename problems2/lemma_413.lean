@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -25,7 +25,7 @@ theorem firstDuplicate_result_has_multiple_occurrences
     (lst : List Int) (h_precond : firstDuplicate_precond lst) {r : Int}
     (hr : firstDuplicate lst h_precond = r) (hneq : r ≠ -1) :
     lst.count r > 1:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

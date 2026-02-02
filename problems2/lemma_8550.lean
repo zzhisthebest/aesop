@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isUpperCase (c : Char) : Bool :=
@@ -30,7 +30,7 @@ theorem pointwise_property (s : String) (h : toLowercase_precond s) (i : Nat)
     (hi : i < s.length) :
     (isUpperCase (s.toList[i]!) → (toLowercase s h).toList[i]! = shift32 (s.toList[i]!)) ∧
     (¬ isUpperCase (s.toList[i]!) → (toLowercase s h).toList[i]! = s.toList[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

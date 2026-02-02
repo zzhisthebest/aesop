@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -34,7 +34,7 @@ theorem min_property_implies_all
   (h : ∀ i j, i < a.size → j < b.size →
         ((a[i]! - b[j]!).natAbs) ≥ r) :
   a.all (fun ai => b.all (fun bi => r ≤ (ai - bi).natAbs)):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

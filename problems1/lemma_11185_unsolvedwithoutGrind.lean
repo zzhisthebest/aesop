@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -28,7 +28,7 @@ theorem exists_ne_imp_any
     {a : Array Int} (h : hasOnlyOneDistinctElement_precond a) :
     (∃ i, i < a.size ∧ a[i]! ≠ a[0]!) →
     (a.toList).any (fun x => x ≠ a.toList[0]!):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

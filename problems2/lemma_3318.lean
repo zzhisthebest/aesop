@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -49,7 +49,7 @@ theorem filter_len_eq (arr : Array Int) (k : Int) (subarrays : List (Array Int))
     divisibleSubarrays =
       subarrays.filter
         (fun subarray => (subarray.size % k = 0) ∧ (subarray.size > 0)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

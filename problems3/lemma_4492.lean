@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem expected_eq_actual_plus_missing (nums : List Nat) (h : missingNumber_pre
     let expected := (n * (n + 1)) / 2
     let actual := nums.foldl (· + ·) 0
     ∃ m, m ≤ n ∧ expected = actual + m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

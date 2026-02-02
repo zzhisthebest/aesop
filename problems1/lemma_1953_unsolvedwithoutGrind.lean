@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -39,7 +39,7 @@ induction l with
   cases tail_ih with
   | inl h => grind
   | inr h_1 => simp_all only [List.foldr_nil, Nat.zero_le, Nat.max_eq_left, List.not_mem_nil, or_false]
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

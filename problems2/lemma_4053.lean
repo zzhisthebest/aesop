@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -35,7 +35,7 @@ theorem pairwise_cons_of_le {l : List Nat} {x y : Nat}
     (h₁ : List.Pairwise (· ≤ ·) (x :: l))
     (h₂ : y ≤ x) :
     List.Pairwise (· ≤ ·) (y :: x :: l):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

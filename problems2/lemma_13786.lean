@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ theorem succ_mul_three_factors (n : Nat) :
     (Nat.succ n) * (2 * Nat.succ n - 1) * (2 * Nat.succ n + 1) =
       n * (2 * n - 1) * (2 * n + 1) + 3 *
         ((2 * Nat.succ n - 1) * (2 * Nat.succ n - 1)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

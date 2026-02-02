@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -43,7 +43,7 @@ theorem dist_one_eq (nums : List Int) :
     let pos1 := nums.idxOf (1 : Int)
     (if pos1 ≠ 0 then (pos1 : Int) else 0) =
       if pos1 = 0 then (0 : Int) else (pos1 : Int):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

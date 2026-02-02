@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -23,7 +23,7 @@ def Match_postcond (s : String) (p : String) (result: Bool) (h_precond : Match_p
 theorem length_eq_of_precond {s p : String}
     (h : Match_precond s p) :
     s.toList.length = p.toList.length:= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

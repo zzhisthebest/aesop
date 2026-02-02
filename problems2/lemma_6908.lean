@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -48,7 +48,7 @@ theorem sum_waterAt_nonneg (height : List Nat) :
         ((List.range (i+1)).foldl (fun a j => Nat.max a (height[j]!)) 0)
         ((List.range (height.length - i)).foldl (fun a j => Nat.max a (height[i + j]!)) 0)
       - height[i]!)).foldl (· + ·) 0:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

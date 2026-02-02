@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -31,7 +31,7 @@ theorem countLessThan_eq_foldl_rec (numbers : Array Int) (threshold : Int) :
             let new := if numbers[i]! < threshold then ih + 1 else ih
             new
           else ih)) numbers.size:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

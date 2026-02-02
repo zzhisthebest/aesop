@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -42,7 +42,7 @@ def SlopeSearch_postcond (a : Array (Array Int)) (key : Int) (result: (Int × In
 theorem aux_returns_neg_one_on_zero_fuel {a : Array (Array Int)} {key : Int}
     {rows cols : Nat} :
     (fun (fuel : Nat) => (if fuel = 0 then (-1, -1) else (0,0)) ) 0 = (-1, -1):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

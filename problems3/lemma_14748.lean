@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -36,7 +36,7 @@ theorem findP_no_gap (a : Array Int) (x : Nat) (m : Int) (i i₀ : Nat) :
     i ≤ i₀ →
     findP a x m i = i₀ →
     ∀ j, i ≤ j → j < i₀ → ¬ a[j]! > m:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

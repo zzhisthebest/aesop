@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -47,7 +47,7 @@ theorem min_lmax_rmax_ge (height : List Nat) (i : Nat) (h : i < height.length) :
       (List.take (i + 1) height |>.foldl Nat.max 0)
       (List.drop i height |>.foldl Nat.max 0)
       ≥ height[i]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

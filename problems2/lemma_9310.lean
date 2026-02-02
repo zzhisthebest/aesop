@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def isEven (n : Int) : Bool :=
@@ -38,7 +38,7 @@ theorem both_some_returns
     (match (some e : Option Nat), (some o : Option Nat) with
      | some e', some o' => a[e']! - a[o']!
      | _, _ => (0 : Int)) = a[e]! - a[o]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ def runLengthEncode_postcond (s : String) (result: List (Char × Nat)) (h_precon
 theorem adjacent_diff (s : String) (h_precond : runLengthEncode_precond s)
     (i : Nat) (hi : i < (runLengthEncode s h_precond).length - 1) :
     (runLengthEncode s h_precond)[i]!.fst ≠ (runLengthEncode s h_precond)[i+1]!.fst:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

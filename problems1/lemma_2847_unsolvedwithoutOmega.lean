@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -24,7 +24,7 @@ theorem maxOfList_cons_cons (x y : Nat) (ys : List Nat)
     (h : (x :: y :: ys) ≠ []) (h' : (y :: ys) ≠ []) :
     maxOfList (x :: y :: ys) h =
       (if x > maxOfList (y :: ys) h' then x else maxOfList (y :: ys) h'):= by 
-aesop?(config := { enableGrind := false })
+codetic?(config := { enableGrind := false })
 
 
 end tmp

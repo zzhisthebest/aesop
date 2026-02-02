@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -44,7 +44,7 @@ theorem total_moves_eq (pos₁ posₙ n : Nat) :
       (if posₙ ≠ n - 1 then n - 1 - posₙ else 0) =
       (if pos₁ = 0 then 0 else pos₁) +
         (if posₙ = n - 1 then 0 else n - 1 - posₙ):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

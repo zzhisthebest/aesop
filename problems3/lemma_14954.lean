@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -33,7 +33,7 @@ theorem only_once_loop_step (a : Array Int) (key : Int) (i keyCount : Nat)
       let newCount :=
         if a[i] = key then keyCount + 1 else keyCount
       only_once_loop a key (i+1) newCount:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

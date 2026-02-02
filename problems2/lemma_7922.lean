@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -40,7 +40,7 @@ theorem prefix_all_with_suffix (nums : Array Int) (target : Int)
     let r := twoSum nums target h_precond
     List.all (nums.toList.take r.1)
       (fun a => List.all (nums.toList.drop r.1) (fun b => a + b ≠ target)):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

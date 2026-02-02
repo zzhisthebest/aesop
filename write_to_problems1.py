@@ -11,9 +11,9 @@ def main():
     json_file = "/data1/zzh/verina/verina_lemmas_quickchecked.json"
     solved_ids_file = "solved_ids.txt"
 
-    tactic = "aesop"
-    # tactic = "aesop"
-    import_statement = "import Aesop\n"
+    tactic = "codetic"
+    # tactic = "codetic"
+    import_statement = "import Codetic\n"
 
     # 读取 solved ids
     solved_ids = load_solved_ids(solved_ids_file)
@@ -29,7 +29,7 @@ def main():
     print(f"Processing {len(data)} objects from {json_file}")
 
     # 输出目录
-    output_path = "/data1/zzh/aesop/problems1"
+    output_path = "/data1/zzh/codetic/problems1"
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
         print(f"Cleared existing directory: {output_path}")

@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -23,7 +23,7 @@ theorem nodup_of_length_le {l : List Nat} {n : Nat}
     (hlen : l.length = n) (hall : ∀ x ∈ l, x ≤ n) (hnodup : l.Nodup) :
     ∃ m, m ∈ List.range (n + 1) ∧ m ∉ l ∧
       ∀ x, x ∈ List.range (n + 1) → x ≠ m → x ∈ l:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

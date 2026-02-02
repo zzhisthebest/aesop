@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -43,7 +43,7 @@ theorem encode_adjacent_diff (s : String)
     ∀ i : Nat,
       i < (runLengthEncode s h).length - 1 →
         (runLengthEncode s h)[i]!.fst ≠ (runLengthEncode s h)[i+1]!.fst:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

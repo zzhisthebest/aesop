@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -17,7 +17,7 @@ theorem TestArrayElements_unchanged_at_other
     (a : Array Int) (j k : Nat) (h_precond : TestArrayElements_precond a j)
     (hk : k < a.size) (hkj : k ≠ j) :
     (TestArrayElements a j h_precond)[k]! = a[k]!:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

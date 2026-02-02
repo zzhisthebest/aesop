@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem adj_diff_cons_upd
         (l[i]!).fst ≠ (l[i+1]!).fst) →
     (∀ i < ((c, n₁) :: l).length - 1,
         (( (c, n₁) :: l)[i]!).fst ≠ (( (c, n₁) :: l)[i+1]!).fst):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

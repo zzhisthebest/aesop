@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -41,7 +41,7 @@ theorem foldl_kadane_max (x : Int) (xs : List Int) :
         let newMax := if maxSoFar >= newCur then maxSoFar else newCur
         (newCur, newMax)
       ) (x, x)).2:= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

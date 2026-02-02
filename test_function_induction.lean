@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 
 namespace test
 
@@ -15,8 +15,8 @@ def sum (n : Nat) : Nat :=
 -- 测试：函数归纳应该被自动检测和应用
 theorem sum_aux_spec (n : Nat) (acc : Nat) :
     sum_aux n acc = acc + n * (n + 1) / 2 := by
-  -- Aesop 应该自动检测到 sum_aux 的调用，并尝试应用函数归纳
-  aesop?
+  -- Codetic 应该自动检测到 sum_aux 的调用，并尝试应用函数归纳
+  codetic?
 
 end test
 

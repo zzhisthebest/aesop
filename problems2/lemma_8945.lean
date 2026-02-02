@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 def inArray (a : Array Int) (x : Int) : Bool :=
@@ -30,7 +30,7 @@ theorem mem_toArray_prop (a b : Array Int) (x : Int) :
               if !inArray a y then s.insert y else s) res₁
           res₂.toArray) →
       (inArray a x = false ∨ inArray b x = false):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

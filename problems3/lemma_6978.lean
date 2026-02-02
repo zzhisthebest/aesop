@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -37,7 +37,7 @@ def twoSum_postcond (nums : List Int) (target : Int) (result: Prod Nat Nat) (h_p
 theorem findComplement_some_of_eq {nums : List Int} {target i : Nat} {x y : Int}
     (h : x + y = (target : Int)) (hpos : y ∈ nums) :
     findComplement (x := x) (target := (target : Int)) (i := i) (nums := nums) = some (i + List.indexOf y nums + 1):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

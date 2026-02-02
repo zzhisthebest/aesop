@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible, simp]
@@ -44,7 +44,7 @@ theorem foldl_step (ops : List Int) (i : Nat) (hi : i < ops.length) :
             let last := acc.getLast? |>.getD 0
             acc.append [last + op])
           [0]).get? i).map (fun v => v + ops[i]!):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp

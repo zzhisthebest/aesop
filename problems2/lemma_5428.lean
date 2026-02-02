@@ -1,4 +1,4 @@
-import Aesop
+import Codetic
 set_option maxHeartbeats 0
 namespace tmp
 @[reducible]
@@ -27,7 +27,7 @@ def partitionEvensOdds_postcond (nums : List Nat) (result: (List Nat × List Nat
 theorem partitionEvensOdds_fst_eq_filter (nums : List Nat)
     (h : partitionEvensOdds_precond nums) :
     (partitionEvensOdds nums h).fst = nums.filter (fun n => n % 2 == 0):= by 
-aesop(config:={enableGrind:=false,enableOmega:=false})
+codetic(config:={enableGrind:=false,enableOmega:=false})
 
 
 end tmp
