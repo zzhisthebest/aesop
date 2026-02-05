@@ -72,52 +72,40 @@ theorem uniqueSorted_spec_satisfied (arr: List Int) (h_precond : uniqueSorted_pr
       -- By definition of `insert`, we know that inserting an element into a list preserves the permutation property.
       have h_insert_perm : ∀ (x : ℤ) (l : List ℤ), List.Perm (x :: l) (uniqueSorted.insert x l) := by
         -- We can prove this by induction on the list `l`.
-        intro x l
-        induction' l with y l ih;
-        · -- In the base case, when the list is empty, inserting x results in [x], which is a permutation of [x].
-          simp [uniqueSorted.insert];
-        · by_cases h : x ≤ y <;> simp_all +decide [ uniqueSorted.insert ];
-          rw [ if_neg h.not_le ] ; exact List.Perm.trans ( List.Perm.swap .. ) ( List.Perm.cons _ ih ) ;
+        --codetic?可以证明
+        sorry
       -- By definition of `insertionSort`, we know that inserting elements into a list preserves the permutation property.
       have h_insertionSort_perm : ∀ (l : List ℤ), List.Perm l (uniqueSorted.insertionSort l) := by
+        --codetic?无法证明
         intro l; induction' l with x l ih; aesop;
+        --codetic?无法证明
         convert List.Perm.trans ( List.Perm.cons _ ih ) ( h_insert_perm _ _ ) using 1;
       -- By definition of `uniqueSorted`, we know that `uniqueSorted arr h_precond` is the insertion sort of the list obtained by removing duplicates from `arr`.
       simp [uniqueSorted];
       -- By definition of `uniqueSorted.aux`, we know that `uniqueSorted.aux arr [] []` is the list obtained by removing duplicates from `arr`.
       have h_aux_eq_eraseDups : ∀ (l : List ℤ) (seen : List ℤ) (acc : List ℤ), uniqueSorted.aux l seen acc = acc.reverse ++ (l.filter (fun x => x ∉ seen)).eraseDups := by
-        intros l seen acc; induction' l with x l ih generalizing seen acc <;> simp_all +decide [ List.eraseDups_cons ] ;
-        · -- By definition of `uniqueSorted.aux`, when the remaining list is empty, it returns the accumulator reversed.
-          simp [uniqueSorted.aux];
-        · by_cases hx : x ∈ seen <;> simp_all +decide [ List.filter_cons ];
-          · convert ih seen acc using 1;
-            exact if_pos hx;
-          · convert ih ( x :: seen ) ( x :: acc ) using 1;
-            · exact if_neg hx;
-            · simp +decide [ hx, List.eraseDups_cons ];
-              grind;
+        --codetic可以证明
+        sorry
+
       aesop;
     -- By definition of `insert`, we know that inserting an element into a sorted list maintains the sorted property.
     have h_insert_sorted (x : ℤ) (sorted : List ℤ) (h_sorted : List.Pairwise (· ≤ ·) sorted) : List.Pairwise (· ≤ ·) (uniqueSorted.insert x sorted) := by
       -- By definition of `insert`, we know that inserting an element into a sorted list maintains the sorted property. We can prove this by induction on the sorted list.
-      induction' sorted with y sorted ih;
-      · exact List.pairwise_singleton _ _;
-      · by_cases hxy : x ≤ y <;> simp_all +decide [ uniqueSorted.insert ];
-        · exact fun a ha => le_trans hxy ( h_sorted.1 a ha );
-        · split_ifs <;> simp_all +decide [ List.pairwise_cons ];
-          · linarith;
-          · intro a' ha'; induction' sorted with y sorted ih generalizing x <;> simp_all +decide [ uniqueSorted.insert ] ;
-            · linarith;
-            · grind;
+      --codetic?可以证明
+      sorry
+
     -- By definition of `insertionSort`, we know that the result is a sorted permutation of the input.
     have h_insertionSort_sorted (xs : List ℤ) : List.Pairwise (· ≤ ·) (uniqueSorted.insertionSort xs) := by
       -- By induction on the list, we can show that the insertion sort of any list is sorted.
       -- induction' xs with x xs ih;
       -- · trivial;
       -- · exact h_insert_sorted x _ ih;
+      --exact?
+      --codetic?
       induction xs
-
       codetic?
+      codetic?
+      exact?
       exact List.pwFilter_eq_self.mp rfl
       apply h_insert_sorted
       simp_all only

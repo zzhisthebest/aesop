@@ -1,7 +1,7 @@
--- -----Description----- 
+-- -----Description-----
 -- This task requires writing a Lean 4 function that finds the next greater element for a given array of numbers. The next greater element for an element x is defined as the first element greater than x that appears to the right of x in the array.
 --
--- Given two distinct 0-indexed integer arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`, the function should determine the next greater element for each value in `nums1` as it appears in `nums2`. 
+-- Given two distinct 0-indexed integer arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`, the function should determine the next greater element for each value in `nums1` as it appears in `nums2`.
 -- All integers in both arrays are unique, and the length constraints are.
 --
 -- -----Input-----
@@ -137,6 +137,3 @@ theorem nextGreaterElement_spec_satisfied (nums1: List Int) (nums2: List Int) (h
   -- !benchmark @start proof
   sorry
   -- !benchmark @end proof
-
-
-
